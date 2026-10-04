@@ -71,10 +71,6 @@
     @apply text-(--text-primary);
   }
 
-  .detail-cta-button {
-    @apply inline-block w-fit;
-  }
-
   .detail-block {
     @apply mb-12;
   }

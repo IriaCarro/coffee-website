@@ -1,4 +1,6 @@
-import { getCoffeeById } from './coffee-data.js';
+import coffees from '../../data/coffees.json';
+
+const getCoffeeById = (id) => coffees.find((coffee) => coffee.id === id);
 
 export function initCoffeeDetail() {
   const params = new URLSearchParams(window.location.search);
