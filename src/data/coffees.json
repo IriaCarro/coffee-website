@@ -1,0 +1,212 @@
+[
+  {
+    "id": "etiopia",
+    "emoji": "🌸",
+    "name": "Etiopía Floral",
+    "description": "Notas florales, cítricas y dulces",
+    "price": 14.9,
+    "image": "/photos/cafe-1.jpg",
+    "origin": "Etiopía - Yirgacheffe",
+    "roast": "Tueste Medio",
+    "altitude": "1800 - 2200 m",
+    "production": "250g por bolsa",
+    "detailedDescription": "Este café etíope presenta notas florales delicadas combinadas con toques cítricos frescos y un dulzor natural. Proveniente de las montañas de Etiopía, cada taza es una experiencia sensorial única. Perfecto para los amantes de los cafés con carácter, este grano es ideal para preparar con métodos de filtración como pour-over o prensa francesa.",
+    "flavorProfile": [
+      {
+        "title": "Notas Florales",
+        "description": "Aromas delicados de jazín y lavanda"
+      },
+      {
+        "title": "Notas Cítricas",
+        "description": "Toques de limón y naranja fresca"
+      },
+      {
+        "title": "Dulzor Natural",
+        "description": "Notas de miel y caramelo suave"
+      }
+    ],
+    "brewing": {
+      "temperature": "90-96°C",
+      "grind": "Media a fina (similar al azúcar de mesa)",
+      "ratio": "1:16 (1 parte café por 16 partes agua)",
+      "methods": "Pour Over, Prensa Francesa, AeroPress"
+    },
+    "rating": 5,
+    "reviews": 127
+  },
+  {
+    "id": "colombia",
+    "emoji": "🍫",
+    "name": "Colombia Caramelo",
+    "description": "Caramelo, chocolate y frutos secos",
+    "price": 12.9,
+    "image": "/photos/cafe-2.jpeg",
+    "origin": "Colombia - Huila",
+    "roast": "Tueste Medio-Oscuro",
+    "altitude": "1600 - 2000 m",
+    "production": "250g por bolsa",
+    "detailedDescription": "Un café colombiano de cuerpo pleno con notas de caramelo y chocolate. Este grano es perfectamente equilibrado, ofreciendo una experiencia suave y agradable. Ideal para disfrutar a cualquier hora del día, tanto solo como en bebidas con leche.",
+    "flavorProfile": [
+      {
+        "title": "Chocolate",
+        "description": "Aromas profundos de cacao oscuro"
+      },
+      {
+        "title": "Caramelo",
+        "description": "Dulzor natural y notas toffee"
+      },
+      {
+        "title": "Frutos Secos",
+        "description": "Toques sutiles de almendra y nuez"
+      }
+    ],
+    "brewing": {
+      "temperature": "93-96°C",
+      "grind": "Media (similar al café molido comercial)",
+      "ratio": "1:16 (1 parte café por 16 partes agua)",
+      "methods": "Espresso, Prensa Francesa, Pour Over"
+    },
+    "rating": 5,
+    "reviews": 89
+  },
+  {
+    "id": "kenia",
+    "emoji": "🫐",
+    "name": "Kenia Frutos Rojos",
+    "description": "Frutos rojos, acidez brillante",
+    "price": 15.5,
+    "image": "/photos/cafe-3.jpeg",
+    "origin": "Kenia - Mount Kenya",
+    "roast": "Tueste Ligero",
+    "altitude": "1900 - 2300 m",
+    "production": "250g por bolsa",
+    "detailedDescription": "Un café keniata vibrante con notas jugosas de frutos rojos. Su acidez brillante y compleja lo hace perfecto para los que buscan un café con personalidad. Cada sorbo revela nuevas capas de sabor, haciendo de esta una experiencia verdaderamente memorable.",
+    "flavorProfile": [
+      {
+        "title": "Frutos Rojos",
+        "description": "Notas de fresa, frambuesa y cereza"
+      },
+      {
+        "title": "Acidez Brillante",
+        "description": "Sensación vivaz y fresca en la boca"
+      },
+      {
+        "title": "Complejidad",
+        "description": "Capas sutiles de arándano y té negro"
+      }
+    ],
+    "brewing": {
+      "temperature": "90-95°C",
+      "grind": "Fina a media (para realzar la acidez)",
+      "ratio": "1:16 (1 parte café por 16 partes agua)",
+      "methods": "Pour Over, AeroPress, Filtro de papel"
+    },
+    "rating": 5,
+    "reviews": 156
+  },
+  {
+    "id": "brasil",
+    "emoji": "🥜",
+    "name": "Brasil Avellana",
+    "description": "Avellana, cacao y cuerpo cremoso",
+    "price": 11.9,
+    "image": "/photos/cafe-4.jpeg",
+    "origin": "Brasil - Minas Gerais",
+    "roast": "Tueste Medio-Oscuro",
+    "altitude": "1000 - 1300 m",
+    "production": "250g por bolsa",
+    "detailedDescription": "Un café brasileño suave y redondo, con cuerpo cremoso y baja acidez. Sus notas a avellana tostada y cacao lo convierten en una base excelente para espresso y para bebidas con leche. Un clásico reconfortante para el día a día.",
+    "flavorProfile": [
+      {
+        "title": "Avellana",
+        "description": "Notas de avellana tostada y praliné"
+      },
+      {
+        "title": "Cacao",
+        "description": "Toques de chocolate con leche"
+      },
+      {
+        "title": "Cuerpo Cremoso",
+        "description": "Textura suave y untuosa en boca"
+      }
+    ],
+    "brewing": {
+      "temperature": "92-95°C",
+      "grind": "Media-fina (para espresso) o media (para moka)",
+      "ratio": "1:16 (1 parte café por 16 partes agua)",
+      "methods": "Espresso, Moka, Prensa Francesa"
+    },
+    "rating": 4,
+    "reviews": 74
+  },
+  {
+    "id": "guatemala",
+    "emoji": "🍊",
+    "name": "Guatemala Cítrico",
+    "description": "Naranja, panela y especias suaves",
+    "price": 13.5,
+    "image": "/photos/cafe-5.jpeg",
+    "origin": "Guatemala - Antigua",
+    "roast": "Tueste Medio",
+    "altitude": "1500 - 1700 m",
+    "production": "250g por bolsa",
+    "detailedDescription": "Cultivado a la sombra de los volcanes de Antigua, este café ofrece un equilibrio elegante entre acidez cítrica y dulzor de panela. Deja un final largo con ligeras notas especiadas. Muy versátil, funciona bien tanto en filtro como en espresso.",
+    "flavorProfile": [
+      {
+        "title": "Naranja",
+        "description": "Acidez jugosa de naranja y mandarina"
+      },
+      {
+        "title": "Panela",
+        "description": "Dulzor profundo de caña de azúcar"
+      },
+      {
+        "title": "Especias",
+        "description": "Final con matices de canela y clavo"
+      }
+    ],
+    "brewing": {
+      "temperature": "91-95°C",
+      "grind": "Media (similar a la sal gruesa fina)",
+      "ratio": "1:16 (1 parte café por 16 partes agua)",
+      "methods": "Pour Over, Espresso, AeroPress"
+    },
+    "rating": 5,
+    "reviews": 98
+  },
+  {
+    "id": "costa-rica",
+    "emoji": "🍑",
+    "name": "Costa Rica Melocotón",
+    "description": "Melocotón, miel y té blanco",
+    "price": 16.9,
+    "image": "/photos/cafe-6.jpeg",
+    "origin": "Costa Rica - Tarrazú",
+    "roast": "Tueste Ligero",
+    "altitude": "1700 - 2000 m",
+    "production": "250g por bolsa",
+    "detailedDescription": "Un lote de proceso honey de la región de Tarrazú. Destaca por su dulzor afrutado, con notas a melocotón maduro y miel, y una textura sedosa. Un café delicado y limpio, pensado para quienes disfrutan de las tazas dulces y luminosas.",
+    "flavorProfile": [
+      {
+        "title": "Melocotón",
+        "description": "Fruta de hueso madura y jugosa"
+      },
+      {
+        "title": "Miel",
+        "description": "Dulzor suave del proceso honey"
+      },
+      {
+        "title": "Té Blanco",
+        "description": "Final ligero, floral y delicado"
+      }
+    ],
+    "brewing": {
+      "temperature": "90-94°C",
+      "grind": "Media a fina (similar al azúcar de mesa)",
+      "ratio": "1:16 (1 parte café por 16 partes agua)",
+      "methods": "Pour Over, V60, Chemex"
+    },
+    "rating": 4,
+    "reviews": 62
+  }
+]

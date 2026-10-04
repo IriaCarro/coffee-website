@@ -9,7 +9,7 @@
   }
 
   .home-photo {
-    background-image: url('../../assets/photos/cafe-1.jpg');
+    background-image: url('/photos/cafe-1.jpg');
   }
 
   .home-overlay,
@@ -172,7 +172,7 @@
   .hero-section {
     @apply relative flex flex-col items-center justify-center gap-8 px-4 py-12 sm:px-6 md:flex-row lg:px-8;
     isolation: isolate;
-    background-image: url('../../assets/photos/cafe-3.jpeg');
+    background-image: url('/photos/cafe-3.jpeg');
     background-size: cover;
     background-position: center;
   }
@@ -444,15 +444,11 @@
   }
 
   .coffee-grid {
-    @apply grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8;
-  }
-
-  .coffee-card-icon {
-    @apply flex h-48 items-center justify-center text-6xl;
+    @apply mx-auto grid max-w-4xl gap-6 px-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10;
   }
 
   .coffee-card-package {
-    @apply flex h-48 items-center justify-center bg-(--surface-container) p-4;
+    @apply flex h-40 items-center justify-center bg-(--surface-container) p-4;
   }
 
   .coffee-card-package-image {
@@ -464,7 +460,7 @@
   }
 
   .coffee-card-content {
-    @apply p-6;
+    @apply p-5;
   }
 
   .coffee-card-title {

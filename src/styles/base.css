@@ -330,4 +330,11 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
+
+  /* The footer lives outside <main>; without its own snap point the last
+     section traps the scroll and the footer can't be reached. */
+  .snap-scroll app-footer {
+    display: block;
+    scroll-snap-align: end;
+  }
 }
