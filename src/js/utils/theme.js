@@ -1,21 +1,13 @@
 import themeSelectorTemplate from '../../components/theme-selector.html?raw';
-import sunIcon from '../../assets/icons/theme/sun.svg';
-import moonIcon from '../../assets/icons/theme/moon.svg';
-import matchaIcon from '../../assets/icons/theme/matcha.svg';
-import coffeeIcon from '../../assets/icons/theme/coffee.svg';
-import blueIcon from '../../assets/icons/theme/blue.svg';
-import violetIcon from '../../assets/icons/theme/violet.svg';
-import chevronIcon from '../../assets/icons/theme/chevron-down.svg';
-
 const THEME_KEY = 'theme-preference';
 
 const THEMES = {
-  light: { label: 'Light', icon: sunIcon },
-  dark: { label: 'Dark', icon: moonIcon },
-  matcha: { label: 'Matcha', icon: matchaIcon },
-  cafe: { label: 'Café', icon: coffeeIcon },
-  blue: { label: 'Blue', icon: blueIcon },
-  violet: { label: 'Violet', icon: violetIcon },
+  light: { label: 'Light', icon: '/icons/theme/sun.svg' },
+  dark: { label: 'Dark', icon: '/icons/theme/moon.svg' },
+  matcha: { label: 'Matcha', icon: '/icons/theme/matcha.svg' },
+  cafe: { label: 'Café', icon: '/icons/theme/coffee.svg' },
+  blue: { label: 'Blue', icon: '/icons/theme/blue.svg' },
+  violet: { label: 'Violet', icon: '/icons/theme/violet.svg' },
 };
 
 function getStoredTheme() {
@@ -47,7 +39,7 @@ class ThemeSelector extends HTMLElement {
     this.toggle = this.querySelector('[data-theme-toggle]');
     this.menu = this.querySelector('[data-theme-menu]');
     this.chevron = this.querySelector('[data-theme-chevron]');
-    this.chevron.src = chevronIcon;
+    this.chevron.src = '/icons/theme/chevron-down.svg';
     this.querySelectorAll('[data-theme-icon-option]').forEach((icon) => {
       icon.src = THEMES[icon.dataset.themeIconOption].icon;
     });
