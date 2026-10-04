@@ -1,0 +1,149 @@
+@layer components {
+  .contact-section {
+    @apply bg-(--surface-page) px-4 py-12 transition-colors duration-300 sm:px-6 lg:px-8;
+  }
+
+  .contact-container {
+    @apply mx-auto max-w-4xl;
+  }
+
+  .contact-back {
+    @apply mb-8;
+  }
+
+  .contact-link {
+    @apply text-(--text-primary) transition-colors;
+  }
+
+  .contact-link:hover {
+    @apply text-(--color-accent);
+  }
+
+  .contact-back-link {
+    @apply inline-flex items-center gap-2;
+  }
+
+  .contact-header {
+    @apply mb-12 text-center;
+  }
+
+  .contact-title {
+    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
+  }
+
+  .contact-subtitle {
+    @apply text-xl text-(--text-primary);
+  }
+
+  .contact-grid {
+    @apply mb-12 grid gap-5 sm:gap-8 md:grid-cols-2;
+  }
+
+  .contact-card {
+    @apply rounded-lg bg-(--surface-container) p-5 sm:p-8;
+  }
+
+  .contact-card-title {
+    @apply text-2xl font-bold mb-6 text-(--text-primary) flex items-center gap-3;
+  }
+
+  .contact-card-icon {
+    @apply text-3xl;
+  }
+
+  .contact-card-body {
+    @apply space-y-4;
+  }
+
+  .contact-item-title {
+    @apply font-bold text-(--text-primary) mb-1;
+  }
+
+  .contact-text {
+    @apply text-(--text-primary);
+  }
+
+  .contact-text-note {
+    @apply text-(--text-primary) text-sm mt-2;
+  }
+
+  .contact-social {
+    @apply flex gap-3;
+  }
+
+  .contact-social-link {
+    @apply text-2xl transition-transform;
+  }
+
+  .contact-social-link:hover {
+    @apply scale-110;
+  }
+
+  .contact-block {
+    @apply mb-12;
+  }
+
+  .contact-block-title {
+    @apply text-2xl font-bold mb-6 text-(--text-primary);
+  }
+
+  .contact-map {
+    @apply flex h-72 items-center justify-center overflow-hidden rounded-lg bg-(--surface-container) p-4 sm:h-96;
+  }
+
+  .contact-map-content {
+    @apply text-center;
+  }
+
+  .contact-map-icon {
+    @apply text-6xl mb-4;
+  }
+
+  .contact-form {
+    @apply space-y-6 rounded-lg bg-(--surface-container) p-5 sm:p-8;
+  }
+
+  .contact-form-row {
+    @apply grid gap-6 sm:grid-cols-2;
+  }
+
+  .contact-input {
+    @apply w-full px-4 py-2 rounded border border-(--border-subtle) bg-(--surface-container) text-(--text-primary);
+  }
+
+  .contact-form-label {
+    @apply mb-1 block text-sm font-medium text-(--text-primary) transition-colors duration-300;
+  }
+
+  .contact-action {
+    @apply rounded-lg bg-(--color-accent) px-6 py-3 font-medium text-(--color-accent-contrast) transition-colors duration-200;
+  }
+
+  .contact-action:hover {
+    @apply bg-(--color-accent-hover);
+  }
+
+  .contact-textarea {
+    @apply resize-none;
+  }
+
+  .contact-submit {
+    @apply w-full;
+  }
+
+  .contact-faq {
+    @apply rounded-lg bg-(--surface-container) p-5 text-center sm:p-8;
+  }
+
+  .contact-faq-title {
+    @apply text-2xl font-bold mb-4 text-(--text-primary);
+  }
+
+  .contact-faq-text {
+    @apply text-lg text-(--text-primary) mb-6;
+  }
+
+  .contact-faq-button {
+    @apply inline-block;
+  }
+}

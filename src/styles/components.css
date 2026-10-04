@@ -1,0 +1,268 @@
+/* ============================================================================
+   COMPONENTS
+   Reusable component classes, ordered by usage:
+   1. Global (every page)  2. Shared  3. Subscription
+   ============================================================================ */
+
+@layer components {
+  /* --------------------------------------------------------------------------
+     1. GLOBAL — header, theme selector, footer (present on every page)
+     -------------------------------------------------------------------------- */
+
+  .site-header {
+    @apply sticky top-0 z-50 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 sm:py-4;
+    @apply bg-(--surface-page);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--surface-header);
+    box-shadow: var(--shadow-header);
+  }
+
+  .brand {
+    @apply flex items-center gap-3;
+  }
+
+  .brand-logo {
+    @apply h-10 w-10 rounded-lg object-cover shadow-sm;
+  }
+
+  .brand-name {
+    @apply text-2xl font-bold text-(--text-primary);
+  }
+
+  .nav-link{
+    @apply font-medium transition-colors duration-200 hover:opacity-75;
+    @apply text-(--text-primary);
+  }
+
+  .theme-toggle {
+    @apply flex items-center gap-2 rounded-lg px-3 py-2 text-(--color-accent);
+    @apply transition-colors duration-200 hover:bg-(--color-accent)/10;
+  }
+
+  .theme-menu {
+    @apply absolute right-0 z-50 mt-2 w-44 overflow-hidden rounded-lg border shadow-lg;
+    @apply border-(--border-subtle) bg-(--surface-container) text-(--text-primary) transition-all duration-200;
+  }
+
+  .theme-menu-option {
+    @apply flex cursor-pointer items-center gap-3 px-4 py-2.5;
+    @apply transition-colors duration-150 hover:bg-(--color-accent)/10;
+  }
+
+  .theme-menu-option[aria-disabled="true"] {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .theme-menu-option[aria-disabled="true"]:hover {
+    @apply bg-(--surface-transparent);
+  }
+
+  .footer {
+    @apply border-t border-(--border-subtle) bg-(--surface-footer) py-12 sm:py-16 lg:py-20;
+  }
+
+  .footer-grid {
+    @apply grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4 lg:gap-16;
+  }
+
+  .footer-brand {
+    @apply space-y-6;
+  }
+
+  .footer-logo {
+    @apply h-16 w-16 rounded-lg object-cover shadow-sm;
+  }
+
+  .footer-tagline {
+    @apply max-w-xs text-sm leading-relaxed text-(--text-primary);
+  }
+
+  .footer-heading {
+    @apply mb-6 text-2xl font-bold text-(--text-primary);
+  }
+
+  .footer-link-list {
+    @apply space-y-4;
+  }
+
+  .footer-contact-link {
+    @apply font-medium text-(--color-accent) transition-colors duration-200 hover:opacity-75;
+  }
+
+  .footer-bottom {
+    @apply flex flex-col items-center justify-between gap-4 sm:flex-row;
+  }
+
+  .footer-copyright {
+    @apply text-sm font-medium text-(--text-primary);
+  }
+
+  .faq-item {
+    @apply rounded-lg border-l-4 px-4 py-3 transition-colors duration-300;
+    @apply border-(--color-accent) bg-(--surface-transparent);
+  }
+
+  .faq-question {
+    @apply mb-2 font-bold text-(--text-primary);
+  }
+
+  .faq-answer {
+    @apply text-sm text-(--text-primary);
+  }
+
+  /* --------------------------------------------------------------------------
+     2. SHARED — buttons, cards, forms, section navigation
+     -------------------------------------------------------------------------- */
+
+  .btn-primary {
+    @apply rounded-lg px-6 py-3 font-medium transition-colors duration-200;
+    @apply bg-(--surface-button-primary) text-(--text-inverse);
+  }
+
+  .btn-primary:hover {
+    @apply bg-(--surface-button-primary-hover);
+  }
+
+  .btn-secondary {
+    @apply rounded-lg border-2 px-6 py-3 font-medium transition-colors duration-200;
+    @apply border-(--border-button-secondary) bg-(--surface-button-secondary) text-(--text-button-secondary);
+  }
+
+  .btn-secondary:hover {
+    @apply bg-(--surface-button-secondary-hover);
+  }
+
+  .card {
+    @apply overflow-hidden rounded-lg shadow-lg transition-all duration-300;
+    @apply border border-(--border-subtle) bg-(--surface-container);
+  }
+
+  .card:hover {
+    @apply shadow-xl hover:scale-105;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium transition-colors duration-300 mb-1;
+    @apply text-(--text-primary);
+  }
+
+  .section-nav {
+    @apply fixed right-1 top-1/2 z-40 hidden -translate-y-1/2 sm:right-4 sm:block;
+  }
+
+  section-navigation {
+    display: contents;
+  }
+
+  .section-nav-list {
+    @apply flex flex-col gap-2;
+  }
+
+  .section-nav-link {
+    @apply flex h-10 w-10 items-center justify-center rounded-full;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring);
+  }
+
+  .section-nav-dot {
+    @apply h-2.5 w-2.5 rounded-full border-2 border-(--surface-page);
+    @apply opacity-75 transition-all duration-300 ease-in-out;
+  }
+
+  .section-nav-link[aria-current="location"] .section-nav-dot {
+    @apply scale-125 bg-(--surface-page) opacity-100;
+  }
+
+  /* --------------------------------------------------------------------------
+     3. SUBSCRIPTION — wizard
+     -------------------------------------------------------------------------- */
+
+  .wizard-card {
+    @apply rounded-lg border border-(--border-subtle) shadow-lg transition-colors duration-300;
+    @apply bg-(--surface-container) p-4 sm:p-6 md:p-8;
+  }
+
+  .wizard-heading {
+    @apply mb-8 text-center;
+  }
+
+  .wizard-heading-title {
+    @apply mb-2 text-2xl font-bold text-(--text-primary) sm:text-3xl;
+  }
+
+  .wizard-heading-description {
+    @apply text-lg text-(--text-secondary);
+  }
+
+  .wizard-progress-track {
+    @apply relative mb-6 h-2 rounded-full bg-(--surface-muted);
+  }
+
+  .wizard-progress-bar {
+    @apply h-full w-[16.66%] rounded-full bg-(--color-accent) transition-all duration-500;
+  }
+
+  .wizard-progress-steps {
+    @apply grid grid-cols-3 gap-4;
+  }
+
+  .wizard-progress-step {
+    @apply flex flex-col items-center;
+  }
+
+  .wizard-progress-label {
+    @apply text-sm font-medium text-(--text-secondary);
+  }
+
+  .step-indicator {
+    @apply flex items-center justify-center rounded-full font-bold transition-all duration-300;
+    @apply h-10 w-10 text-(--color-accent);
+  }
+
+  .step-indicator.active {
+    @apply bg-(--color-accent) text-(--color-accent-contrast);
+  }
+
+  .step-indicator:not(.active) {
+    @apply border-2 border-(--color-accent);
+  }
+
+  .wizard-step-title {
+    @apply mb-2 text-xl font-bold text-(--text-primary);
+  }
+
+  .wizard-step-description {
+    @apply mb-6 text-(--text-secondary);
+  }
+
+  .wizard-option-list {
+    @apply space-y-3;
+  }
+
+  .radio-label,
+  .checkbox-label {
+    @apply flex cursor-pointer items-center rounded-lg border-2 p-4 transition-all duration-300;
+    @apply border-(--border-strong) bg-(--surface-transparent);
+  }
+
+  .radio-label:hover,
+  .checkbox-label:hover {
+    @apply bg-(--color-accent)/10;
+  }
+
+  .wizard-option-content {
+    @apply ml-3 flex min-w-0 flex-1 flex-col sm:ml-4;
+  }
+
+  .wizard-option-title {
+    @apply font-medium text-(--text-primary);
+  }
+
+  .wizard-option-description {
+    @apply text-sm text-(--text-secondary);
+  }
+
+  .wizard-option-price {
+    @apply font-bold text-(--color-accent);
+  }
+}

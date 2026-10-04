@@ -1,0 +1,481 @@
+@layer components {
+  /* Hero */
+  .home-hero-actions {
+    @apply flex flex-wrap gap-4;
+  }
+
+  .home-bg {
+    @apply absolute inset-0 bg-cover bg-center;
+  }
+
+  .home-photo {
+    background-image: url('../../assets/photos/cafe-1.jpg');
+  }
+
+  .home-overlay,
+  .hero-section::before {
+    background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--surface-home-overlay) 80%, transparent),
+      color-mix(in srgb, var(--surface-home-overlay) 70%, transparent),
+      color-mix(in srgb, var(--surface-home-overlay) 80%, transparent)
+    );
+  }
+
+  .home-content {
+    @apply relative z-10 w-full;
+    @apply max-w-6xl;
+  }
+
+  /* Shared typography on image backgrounds */
+  .home-title {
+    @apply text-5xl md:text-6xl font-bold text-(--text-on-image) mb-6 text-center;
+  }
+
+  .home-content .home-lead {
+    @apply text-center;
+  }
+
+  .home-lead {
+    @apply text-xl md:text-2xl text-(--text-on-image-muted) leading-relaxed;
+  }
+
+  .home-card-title {
+    @apply text-2xl font-bold text-(--text-on-image);
+  }
+
+  .home-text-muted {
+    @apply text-(--text-on-image-muted);
+  }
+
+  /* Location */
+  .home-location-grid {
+    @apply grid items-center gap-8 md:grid-cols-2 md:gap-12;
+  }
+
+  .home-location-card {
+    @apply rounded-2xl bg-(--surface-muted) p-5 shadow-2xl backdrop-blur-sm sm:p-8 lg:p-10;
+  }
+
+  .home-location-title {
+    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl md:text-5xl;
+  }
+
+  .home-location-lead {
+    @apply mb-6 text-lg leading-relaxed text-(--text-secondary) sm:mb-8 sm:text-xl;
+  }
+
+  .home-info-card {
+    @apply bg-(--surface-container) p-6 rounded-xl border-l-4;
+    @apply mb-6 border-(--color-accent);
+  }
+
+  .home-info-title {
+    @apply font-bold text-(--text-primary) mb-3 flex items-center gap-3;
+  }
+
+  .home-info-label {
+    @apply text-lg;
+  }
+
+  .home-address {
+    @apply text-(--text-secondary) space-y-1 not-italic;
+  }
+
+  .home-hours {
+    @apply space-y-2 text-(--text-secondary);
+  }
+
+  .home-hours-row {
+    @apply flex justify-between;
+  }
+
+  .home-hours-row--closed {
+    @apply text-(--color-accent);
+  }
+
+  /* Buttons */
+  .home-btn {
+    @apply inline-flex items-center gap-3 font-bold py-4 px-8 rounded-xl transition-all duration-300;
+  }
+
+  /* Highlights */
+  .home-highlights {
+    @apply space-y-6 text-(--text-on-image);
+  }
+
+  .home-highlight {
+    @apply cursor-pointer rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8;
+  }
+
+  .home-highlight-icon {
+    @apply text-5xl mb-4 transition-transform duration-300;
+  }
+
+  .home-highlight:hover .home-highlight-icon {
+    @apply scale-110;
+  }
+
+  .home-highlight-title {
+    @apply mb-2;
+  }
+
+  /* CTA */
+  .home-cta-lead {
+    @apply mb-12;
+  }
+
+  .home-cta-actions {
+    @apply flex flex-col sm:flex-row gap-6 justify-center items-center mt-8;
+  }
+
+  /* Coffees */
+  .home-coffee-link {
+    @apply block no-underline text-inherit;
+  }
+
+  /* About */
+  .home-about-header {
+    @apply text-center mb-16;
+  }
+
+  .home-about-lead {
+    @apply max-w-3xl mx-auto;
+  }
+
+  .home-about-grid {
+    @apply grid md:grid-cols-3 gap-8 mb-12;
+  }
+
+  .home-about-point {
+    @apply text-center;
+  }
+
+  .home-about-icon {
+    @apply text-7xl mb-6 transition-transform duration-300;
+  }
+
+  .home-about-point:hover .home-about-icon {
+    @apply scale-110;
+  }
+
+  .home-about-point-title {
+    @apply mb-3;
+  }
+
+  .home-about-action {
+    @apply text-center;
+  }
+
+  /* Hero and coffee section */
+
+  .hero-section {
+    @apply relative flex flex-col items-center justify-center gap-8 px-4 py-12 sm:px-6 md:flex-row lg:px-8;
+    isolation: isolate;
+    background-image: url('../../assets/photos/cafe-3.jpeg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(
+      to right,
+      rgb(0 0 0 / 85%),
+      rgb(0 0 0 / 70%) 50%,
+      rgb(0 0 0 / 35%) 75%,
+      transparent
+    );
+    pointer-events: none;
+  }
+
+  .home-overlay {
+    @apply absolute inset-0;
+  }
+
+  .hero-textbox {
+    @apply relative z-10;
+  }
+
+  .hero-textbox h1{
+    @apply text-6xl font-bold leading-tight text-(--text-title-light) sm:text-7xl lg:text-9xl;
+    line-height: 0.9;
+  }
+
+  .hero-textbox h2 {
+    @apply mt-6 mb-4 text-lg font-bold leading-tight text-(--text-subtitle-light) sm:mt-8 sm:mb-6 sm:text-xl;
+  }
+
+  .hero-textbox p {
+    @apply mb-8 text-lg text-(--text-primary);
+  }
+
+  .hero-textbox .text-accent {
+    @apply text-(--text-tittle-accent);
+  }
+
+  /* Breakfast */
+  .breakfast-section {
+    @apply overflow-hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(circle at 70% 35%, color-mix(in srgb, var(--color-accent-contrast) 14%, transparent), transparent 28rem),
+      var(--surface-page);
+  }
+
+  .breakfast-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.16;
+    background-image: radial-gradient(var(--text-primary) 0.7px, transparent 0.7px);
+    background-size: 7px 7px;
+    pointer-events: none;
+  }
+
+  .breakfast-content {
+    @apply relative z-10 w-full;
+    max-width: 1250px;
+  }
+
+  .breakfast-eyebrow {
+    @apply mb-4 text-xs font-bold tracking-[0.16em] text-(--text-primary);
+  }
+
+  .breakfast-headline-wrap {
+    @apply relative flex w-full items-center;
+    min-height: clamp(300px, 45vw, 570px);
+  }
+
+  .breakfast-headline {
+    @apply relative z-10 flex w-full items-center text-(--text-primary);
+    margin: 0;
+    font-family: var(--font-marker);
+    font-size: clamp(5rem, 15vw, 14rem);
+    line-height: 0.75;
+    letter-spacing: -0.07em;
+    white-space: nowrap;
+    transform: rotate(-3deg);
+    user-select: none;
+  }
+
+  .breakfast-headline span {
+    position: relative;
+  }
+
+  .breakfast-flake {
+    @apply pointer-events-none absolute z-20;
+    width: clamp(110px, 15vw, 230px);
+    filter: drop-shadow(0 14px 12px color-mix(in srgb, var(--text-primary) 18%, transparent))
+      drop-shadow(0 3px 3px color-mix(in srgb, var(--text-primary) 12%, transparent));
+    transition: transform 550ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .breakfast-flake--one {
+    top: 17%;
+    right: 42%;
+    width: clamp(90px, 12vw, 190px);
+    transform: rotate(-18deg);
+  }
+
+  .breakfast-flake--two {
+    right: 18%;
+    bottom: 13%;
+    z-index: 30;
+    width: clamp(120px, 17vw, 260px);
+    transform: rotate(12deg);
+  }
+
+  .breakfast-croissant {
+    @apply pointer-events-none absolute z-0;
+    top: 50%;
+    right: 3%;
+    width: clamp(300px, 42vw, 650px);
+    filter: drop-shadow(0 25px 18px color-mix(in srgb, var(--text-primary) 22%, transparent))
+      drop-shadow(0 5px 4px color-mix(in srgb, var(--text-primary) 15%, transparent));
+    transform: translateY(-50%) rotate(-8deg);
+    transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .breakfast-headline-wrap:hover .breakfast-flake--one {
+    transform: translate(-8px, -12px) rotate(-12deg);
+  }
+
+  .breakfast-headline-wrap:hover .breakfast-flake--two {
+    transform: translate(10px, 8px) rotate(18deg);
+  }
+
+  .breakfast-headline-wrap:hover .breakfast-croissant {
+    transform: translateY(calc(-50% - 8px)) rotate(-5deg) scale(1.025);
+  }
+
+  .breakfast-bottom {
+    @apply flex max-w-3xl items-end justify-between gap-8;
+    margin-top: -1rem;
+  }
+
+  .breakfast-bottom p {
+    max-width: 390px;
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    line-height: 1.45;
+    color: var(--text-secondary);
+  }
+
+  .breakfast-button {
+    @apply inline-flex items-center gap-3 rounded-full border-2 border-(--border-button-tertiary) bg-(--surface-button-tertiary) px-5 py-4 font-bold text-(--text-button-tertiary) no-underline;
+    white-space: nowrap;
+    transition: transform 200ms ease, background-color 200ms ease, color 200ms ease;
+  }
+
+  .breakfast-button:hover {
+    @apply bg-(--surface-button-tertiary-hover) text-(--text-button-tertiary-hover);
+    transform: translateY(-3px);
+  }
+
+  .breakfast-grain {
+    @apply absolute;
+    z-index: -1;
+    width: 18px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    opacity: 0.9;
+    transform: rotate(35deg);
+  }
+
+  .breakfast-grain::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 2px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-accent-contrast);
+  }
+
+  .breakfast-grain--one {
+    top: 18%;
+    right: 7%;
+  }
+
+  .breakfast-grain--two {
+    bottom: 22%;
+    left: 7%;
+    transform: rotate(-25deg) scale(0.7);
+  }
+
+  .coffee-section {
+    @apply flex items-center justify-center px-4 py-10 sm:px-6 sm:py-12 lg:px-8;
+    min-height: calc(100vh - var(--header-height));
+    scroll-margin-top: var(--header-height);
+    @apply relative;
+  }
+
+  @media (max-width: 800px) {
+    .breakfast-headline-wrap {
+      min-height: 430px;
+      align-items: flex-start;
+    }
+
+    .breakfast-headline {
+      display: block;
+      font-size: clamp(4.5rem, 20vw, 9rem);
+      line-height: 0.78;
+      white-space: normal;
+    }
+
+    .breakfast-headline span {
+      display: inline;
+    }
+
+    .breakfast-flake--one {
+      top: 30%;
+      right: 48%;
+    }
+
+    .breakfast-flake--two {
+      right: 4%;
+      bottom: 20%;
+    }
+
+    .breakfast-croissant {
+      top: 57%;
+      right: -12%;
+      width: min(105vw, 520px);
+    }
+
+    .breakfast-bottom {
+      display: grid;
+      margin-top: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .breakfast-flake,
+    .breakfast-croissant,
+    .breakfast-button {
+      transition: none;
+    }
+  }
+
+  .section-heading {
+    @apply mb-8 text-center sm:mb-12;
+  }
+
+  .section-title {
+    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
+  }
+
+  .section-description {
+    @apply text-lg text-(--text-secondary);
+  }
+
+  .coffee-grid {
+    @apply grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8;
+  }
+
+  .coffee-card-icon {
+    @apply flex h-48 items-center justify-center text-6xl;
+  }
+
+  .coffee-card-package {
+    @apply flex h-48 items-center justify-center bg-(--surface-container) p-4;
+  }
+
+  .coffee-card-package-image {
+    @apply h-full max-w-full object-contain transition-transform duration-300;
+  }
+
+  .home-coffee-link:hover .coffee-card-package-image {
+    @apply scale-105;
+  }
+
+  .coffee-card-content {
+    @apply p-6;
+  }
+
+  .coffee-card-title {
+    @apply mb-2 text-xl font-bold text-(--text-primary);
+  }
+
+  .coffee-card-description {
+    @apply mb-4 text-sm text-(--text-secondary);
+  }
+
+  .coffee-card-price {
+    @apply text-lg font-bold text-(--color-accent);
+  }
+}

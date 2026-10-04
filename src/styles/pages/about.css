@@ -1,0 +1,109 @@
+@layer components {
+  .about-section {
+    @apply px-4 py-12 sm:px-6 lg:px-8 bg-(--surface-page);
+  }
+
+  .about-container {
+    @apply mx-auto max-w-4xl;
+  }
+
+  .about-back {
+    @apply mb-8;
+  }
+
+  .about-back-link {
+    @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:text-(--text-primary);
+  }
+
+  .about-header {
+    @apply mb-12;
+  }
+
+  .about-title {
+    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
+  }
+
+  .about-subtitle {
+    @apply text-xl text-(--text-primary);
+  }
+
+  .about-story {
+    @apply mb-12 grid items-center gap-8 md:grid-cols-2;
+  }
+
+  .about-story-title {
+    @apply mb-4 text-2xl font-bold text-(--text-primary) sm:text-3xl;
+  }
+
+  .about-text {
+    @apply leading-relaxed text-(--text-primary);
+  }
+
+  .about-text-spaced {
+    @apply mb-4 leading-relaxed text-(--text-primary);
+  }
+
+  .about-figure {
+    @apply h-80 overflow-hidden rounded-lg bg-(--surface-container);
+  }
+
+  .about-figure img {
+    @apply h-full w-full object-cover;
+  }
+
+  .about-order-first {
+    @apply order-1;
+  }
+
+  .about-order-last {
+    @apply order-2;
+  }
+
+  .about-block {
+    @apply my-12;
+  }
+
+  .about-block-title {
+    @apply mb-8 text-center text-3xl font-bold text-(--text-primary);
+  }
+
+  .about-values-grid {
+    @apply grid gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3;
+  }
+
+  .about-value-card {
+    @apply rounded-lg bg-(--surface-container) p-6;
+  }
+
+  .about-value-icon {
+    @apply mb-4 text-4xl;
+  }
+
+  .about-value-title {
+    @apply mb-2 text-xl font-bold text-(--text-primary);
+  }
+
+  .about-value-text {
+    @apply text-(--text-primary);
+  }
+
+  .about-team-text {
+    @apply mb-8 text-center text-lg text-(--text-primary);
+  }
+
+  .about-cta {
+    @apply rounded-lg bg-(--surface-container) p-5 text-center sm:p-8;
+  }
+
+  .about-cta-title {
+    @apply mb-4 text-2xl font-bold text-(--text-primary);
+  }
+
+  .about-cta-text {
+    @apply mb-6 text-lg text-(--text-primary);
+  }
+
+  .about-cta-button {
+    @apply inline-block;
+  }
+}

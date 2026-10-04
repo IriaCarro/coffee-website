@@ -1,0 +1,79 @@
+@layer components {
+  .faq-page-section {
+    @apply py-12 px-4 sm:px-6 lg:px-8 bg-(--surface-page);
+  }
+
+  .faq-page-container {
+    @apply mx-auto max-w-3xl;
+  }
+
+  .faq-page-back {
+    @apply mb-8;
+  }
+
+  .faq-page-back-link {
+    @apply inline-flex items-center gap-2 text-(--text-primary) hover:text-(--text-primary) transition-colors;
+  }
+
+  .faq-page-header {
+    @apply mb-12 text-center;
+  }
+
+  .faq-page-title {
+    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
+  }
+
+  .faq-page-subtitle {
+    @apply text-lg text-(--text-primary);
+  }
+
+  .faq-page-list {
+    @apply space-y-4;
+  }
+
+  .faq-page-contact {
+    @apply mt-12 rounded-lg bg-(--surface-container) p-5 text-center sm:p-8;
+  }
+
+  .faq-page-contact-title {
+    @apply text-2xl font-bold mb-4 text-(--text-primary);
+  }
+
+  .faq-page-contact-text {
+    @apply text-lg text-(--text-primary) mb-6;
+  }
+
+  .faq-page-contact-btn {
+    @apply inline-block;
+  }
+
+  .faq-accordion {
+    @apply overflow-hidden rounded-lg border border-l-4 transition-colors duration-300;
+    @apply border-(--border-subtle) bg-(--surface-container);
+  }
+
+  .faq-accordion-summary {
+    @apply flex cursor-pointer list-none items-center justify-between gap-3 p-4 sm:gap-4 sm:p-6;
+    @apply focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-(--focus-ring);
+  }
+
+  .faq-accordion-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-accordion-question {
+    @apply text-base font-bold text-(--text-primary) sm:text-xl;
+  }
+
+  .faq-accordion-icon {
+    @apply h-3 w-3 shrink-0 rotate-45 border-b-2 border-r-2 border-(--text-primary) transition-transform duration-300;
+  }
+
+  .faq-accordion[open] .faq-accordion-icon {
+    @apply -rotate-[135deg];
+  }
+
+  .faq-accordion-answer {
+    @apply px-4 pb-4 leading-relaxed text-(--text-secondary) sm:px-6 sm:pb-6;
+  }
+}

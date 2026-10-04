@@ -1,0 +1,10 @@
+/* ============================================================================
+    RESET
+    Set of CSS rules that reset the default styles of HTML elements
+   ============================================================================ */
+
+@layer reset {
+  * {
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,82 @@
+@layer components {
+  .sub-page {
+    @apply min-h-screen bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
+  }
+
+  .sub-container {
+    @apply mx-auto max-w-2xl;
+  }
+
+  .sub-back {
+    @apply mb-8;
+  }
+
+  .sub-back-link {
+    @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:text-(--text-primary);
+  }
+
+  .sub-header {
+    @apply mb-12 text-center;
+  }
+
+  .sub-title {
+    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
+  }
+
+  .sub-subtitle {
+    @apply text-lg text-(--text-primary);
+  }
+
+  .sub-wizard {
+    @apply px-0 py-8 sm:px-4 sm:py-12 lg:px-8;
+  }
+
+  .sub-progress {
+    @apply mb-8;
+  }
+
+  .sub-step-indicator {
+    @apply mb-2;
+  }
+
+  .sub-form {
+    @apply space-y-6;
+  }
+
+  .sub-fields {
+    @apply space-y-4;
+  }
+
+  .sub-fields-row {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2;
+  }
+
+  .sub-option-emoji {
+    @apply text-2xl;
+  }
+
+  .sub-nav {
+    @apply flex items-center justify-between gap-4 pt-6;
+  }
+
+  .sub-nav-status {
+    @apply text-sm font-medium;
+  }
+
+  .sub-btn-prev {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  /* Step indicator states (toggled by subscription-wizard.js) */
+  .step-indicator:not(.active):not(.completed) {
+    @apply bg-(--surface-accent-bg) text-(--color-accent);
+  }
+
+  .step-indicator.active {
+    @apply bg-linear-to-br from-(--color-accent) to-(--color-accent-hover) text-(--color-accent-contrast);
+  }
+
+  .step-indicator.completed {
+    @apply bg-(--color-accent) text-(--color-accent-contrast);
+  }
+}

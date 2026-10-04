@@ -1,0 +1,16 @@
+/* ============================================================================
+    UTILITIES
+    Custom utility classes
+   ============================================================================ */
+
+@layer utilities {
+  /* Container padding for page content */
+  .page-gutter {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Transition for theme changes */
+  .theme-transition {
+    @apply transition-colors duration-300;
+  }
+}

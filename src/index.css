@@ -1,0 +1,16 @@
+@layer theme, reset, base, components, utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Playfair+Display:wght@500;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import "tailwindcss";
+@import "./styles/tokens.css";
+@import "./styles/reset.css";
+@import "./styles/base.css";
+@import "./styles/components.css";
+@import "./styles/utilities.css";
+@import "./styles/pages/home.css";
+@import "./styles/pages/about.css";
+@import "./styles/pages/coffee-detail.css";
+@import "./styles/pages/contact.css";
+@import "./styles/pages/faq.css";
+@import "./styles/pages/gallery.css";
+@import "./styles/pages/subscription.css";

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contacta con Café Rico y descubre cómo visitarnos." />
+  <title>Contacto - Café Rico</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
+  <link rel="stylesheet" href="/src/index.css" />
+  <script type="module" src="/src/js/main-simple.js"></script>
+</head>
+
+<body>
+  <app-header></app-header>
+
+  <main id="main-content">
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <!-- Back Button -->
+        <div class="contact-back">
+          <a href="/" class="contact-back-link contact-link">
+            <span>&larr;</span>
+            <span>Volver al inicio</span>
+          </a>
+        </div>
+
+        <!-- Page Header -->
+        <div class="contact-header">
+          <h1 class="contact-title">Cómo Llegar</h1>
+          <p class="contact-subtitle">Visítanos o contacta directamente con nuestro equipo</p>
+        </div>
+
+        <!-- Contact Grid -->
+        <div class="contact-grid">
+          <!-- Location Card -->
+          <article class="contact-card">
+            <h2 class="contact-card-title">
+              <span class="contact-card-icon">📍</span>
+              Ubicación
+            </h2>
+            <div class="contact-card-body">
+              <div>
+                <h3 class="contact-item-title">Oficina Principal</h3>
+                <p class="contact-text">Calle del Café, 42</p>
+                <p class="contact-text">28001 Madrid, España</p>
+              </div>
+              <div>
+                <h3 class="contact-item-title">Horario</h3>
+                <p class="contact-text">Lunes - Viernes: 9:00 - 18:00</p>
+                <p class="contact-text">Sábado: 10:00 - 14:00</p>
+                <p class="contact-text">Domingo: Cerrado</p>
+              </div>
+              <div>
+                <h3 class="contact-item-title">Transporte Público</h3>
+                <p class="contact-text">Metro: Línea 3, Estación Centro</p>
+                <p class="contact-text">Autobús: Línea 27, Parada Café Rico</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Contact Card -->
+          <article class="contact-card">
+            <h2 class="contact-card-title">
+              <span class="contact-card-icon">📞</span>
+              Contacto
+            </h2>
+            <div class="contact-card-body">
+              <div>
+                <h3 class="contact-item-title">Teléfono</h3>
+                <a href="tel:+34912345678" class="contact-link">
+                  +34 91 234 5678
+                </a>
+              </div>
+              <div>
+                <h3 class="contact-item-title">Email</h3>
+                <a href="mailto:caferico@correo.com" class="contact-link">
+                  caferico@correo.com
+                </a>
+              </div>
+              <div>
+                <h3 class="contact-item-title">Atención al Cliente</h3>
+                <a href="mailto:soporte@caferico.com" class="contact-link">
+                  soporte@caferico.com
+                </a>
+                <p class="contact-text-note">Respuesta en 24 horas</p>
+              </div>
+              <div>
+                <h3 class="contact-item-title">Redes Sociales</h3>
+                <div class="contact-social">
+                  <a href="#" class="contact-social-link">📘</a>
+                  <a href="#" class="contact-social-link">📷</a>
+                  <a href="#" class="contact-social-link">🐦</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Map Section -->
+        <article class="contact-block">
+          <h2 class="contact-block-title">Nuestra Ubicación</h2>
+          <div class="contact-map">
+            <div class="contact-map-content">
+              <p class="contact-map-icon">🗺️</p>
+              <p class="contact-text">Aquí irá integrado un mapa de Google Maps</p>
+              <p class="contact-text-note">Calle del Café, 42 - Madrid</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Contact Form -->
+        <article class="contact-block">
+          <h2 class="contact-block-title">Envíanos un Mensaje</h2>
+          <form class="contact-form">
+            <div class="contact-form-row">
+              <div>
+                <label for="name" class="contact-form-label">Nombre Completo</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre"
+                  class="contact-input"
+                  required>
+              </div>
+              <div>
+                <label for="email" class="contact-form-label">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com"
+                  class="contact-input"
+                  required>
+              </div>
+            </div>
+            <div>
+              <label for="subject" class="contact-form-label">Asunto</label>
+              <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?"
+                class="contact-input"
+                required>
+            </div>
+            <div>
+              <label for="message" class="contact-form-label">Mensaje</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tu mensaje..."
+                class="contact-input contact-textarea"
+                required></textarea>
+            </div>
+            <button type="submit" class="contact-action contact-submit">
+              Enviar Mensaje
+            </button>
+          </form>
+        </article>
+
+        <!-- FAQ Link -->
+        <div class="contact-faq">
+          <h2 class="contact-faq-title">¿Tienes Preguntas?</h2>
+          <p class="contact-faq-text">Consulta nuestras preguntas frecuentes para respuestas rápidas</p>
+          <a href="/src/pages/faq.html" class="contact-action contact-faq-button">
+            Ver FAQ
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</body>
+
+</html>
