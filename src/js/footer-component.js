@@ -1,4 +1,4 @@
-import footerTemplate from '../../components/footer.html?raw';
+import footerTemplate from '../components/footer.html?raw';
 class FooterComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = footerTemplate;

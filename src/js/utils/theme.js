@@ -2,12 +2,12 @@ import themeSelectorTemplate from '../../components/theme-selector.html?raw';
 const THEME_KEY = 'theme-preference';
 
 const THEMES = {
-  light: { label: 'Light', icon: '/icons/theme/sun.svg' },
-  dark: { label: 'Dark', icon: '/icons/theme/moon.svg' },
+  light: { label: 'Claro', icon: '/icons/theme/sun.svg' },
+  dark: { label: 'Oscuro', icon: '/icons/theme/moon.svg' },
   matcha: { label: 'Matcha', icon: '/icons/theme/matcha.svg' },
   cafe: { label: 'Café', icon: '/icons/theme/coffee.svg' },
-  blue: { label: 'Blue', icon: '/icons/theme/blue.svg' },
-  violet: { label: 'Violet', icon: '/icons/theme/violet.svg' },
+  blue: { label: 'Azul', icon: '/icons/theme/blue.svg' },
+  violet: { label: 'Violeta', icon: '/icons/theme/violet.svg' },
 };
 
 function getStoredTheme() {
@@ -70,10 +70,8 @@ class ThemeSelector extends HTMLElement {
     this.querySelector('[data-theme-icon]').src = themeData.icon;
     this.querySelector('[data-theme-label]').textContent = themeData.label;
 
-    this.querySelectorAll('[role="option"]').forEach((option) => {
-      const isSelected = option.dataset.theme === theme;
-      option.setAttribute('aria-selected', String(isSelected));
-      option.setAttribute('aria-disabled', String(isSelected));
+    this.querySelectorAll('[data-theme-menu] [data-theme]').forEach((option) => {
+      option.setAttribute('aria-pressed', String(option.dataset.theme === theme));
     });
   }
 
@@ -89,9 +87,8 @@ class ThemeSelector extends HTMLElement {
   }
 
   handleOptionClick(event) {
-    const option = event.target.closest('[role="option"][data-theme]');
+    const option = event.target.closest('[data-theme-menu] [data-theme]');
     if (!option || !this.contains(option)) return;
-    if (option.getAttribute('aria-disabled') === 'true') return;
 
     const selected = option.dataset.theme;
     if (!THEMES[selected]) return;
@@ -99,6 +96,7 @@ class ThemeSelector extends HTMLElement {
     storeTheme(selected);
     this.applyTheme(selected);
     this.setMenuOpen(false);
+    this.toggle.focus();
   }
 
   handleOutsideClick(event) {

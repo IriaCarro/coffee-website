@@ -48,19 +48,19 @@
   }
 
   .contact-card-icon {
-    @apply text-3xl;
-  }
-
-  .contact-card-body {
-    @apply space-y-4;
+    @apply text-3xl text-(--color-accent);
   }
 
   .contact-item-title {
-    @apply font-bold text-(--text-primary) mb-1;
+    @apply mt-4 mb-1 font-bold text-(--text-primary) first:mt-0;
   }
 
   .contact-text {
     @apply text-(--text-primary);
+  }
+
+  .contact-address {
+    @apply not-italic;
   }
 
   .contact-text-note {
@@ -88,23 +88,19 @@
   }
 
   .contact-map {
-    @apply flex h-72 items-center justify-center overflow-hidden rounded-lg bg-(--surface-container) p-4 sm:h-96;
-  }
-
-  .contact-map-content {
-    @apply text-center;
+    @apply flex h-72 flex-col items-center justify-center overflow-hidden rounded-lg bg-(--surface-container) p-4 text-center sm:h-96;
   }
 
   .contact-map-icon {
-    @apply text-6xl mb-4;
+    @apply mb-4 text-6xl text-(--color-accent);
   }
 
   .contact-form {
-    @apply space-y-6 rounded-lg bg-(--surface-container) p-5 sm:p-8;
+    @apply grid gap-6 rounded-lg bg-(--surface-container) p-5 sm:grid-cols-2 sm:p-8;
   }
 
-  .contact-form-row {
-    @apply grid gap-6 sm:grid-cols-2;
+  .contact-form-full {
+    @apply sm:col-span-2;
   }
 
   .contact-input {

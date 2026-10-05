@@ -44,15 +44,15 @@
   }
 
   .sub-fields {
-    @apply space-y-4;
+    @apply grid gap-4 sm:grid-cols-2;
   }
 
-  .sub-fields-row {
-    @apply grid grid-cols-1 gap-4 sm:grid-cols-2;
+  .sub-field-full {
+    @apply sm:col-span-2;
   }
 
-  .sub-option-emoji {
-    @apply text-2xl;
+  .sub-option-icon {
+    @apply text-2xl text-(--color-accent);
   }
 
   .sub-nav {
@@ -68,6 +68,10 @@
   }
 
   /* Step indicator states (toggled by subscription-wizard.js) */
+  .step-indicator:not(.active) {
+    @apply border-2 border-(--color-accent);
+  }
+
   .step-indicator:not(.active):not(.completed) {
     @apply bg-(--surface-accent-bg) text-(--color-accent);
   }

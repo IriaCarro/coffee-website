@@ -23,10 +23,6 @@
     @apply flex items-center justify-center;
   }
 
-  .detail-figure {
-    @apply w-full;
-  }
-
   .detail-image {
     @apply w-full rounded-lg object-cover shadow-lg;
   }
@@ -85,10 +81,6 @@
 
   .detail-paragraph {
     @apply text-lg text-(--text-primary);
-  }
-
-  .detail-paragraph-spaced {
-    @apply mb-4 text-lg text-(--text-primary);
   }
 
   .detail-specs {

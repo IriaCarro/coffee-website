@@ -76,7 +76,7 @@
   }
 
   .about-value-icon {
-    @apply mb-4 text-4xl;
+    @apply mb-4 block text-4xl text-(--color-accent);
   }
 
   .about-value-title {

@@ -4,15 +4,22 @@
     @apply flex flex-wrap gap-4;
   }
 
-  .home-bg {
-    @apply absolute inset-0 bg-cover bg-center;
-  }
-
-  .home-photo {
+  .home-photo-section {
+    isolation: isolate;
     background-image: url('/photos/cafe-1.jpg');
+    background-size: cover;
+    background-position: center;
   }
 
-  .home-overlay,
+  .home-photo-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .home-photo-section::before,
   .hero-section::before {
     background-image: linear-gradient(
       to right,
@@ -74,6 +81,10 @@
     @apply font-bold text-(--text-primary) mb-3 flex items-center gap-3;
   }
 
+  .home-info-title .icon {
+    @apply text-(--color-accent);
+  }
+
   .home-info-label {
     @apply text-lg;
   }
@@ -109,7 +120,7 @@
   }
 
   .home-highlight-icon {
-    @apply text-5xl mb-4 transition-transform duration-300;
+    @apply block text-5xl mb-4 transition-transform duration-300;
   }
 
   .home-highlight:hover .home-highlight-icon {
@@ -121,10 +132,6 @@
   }
 
   /* CTA */
-  .home-cta-lead {
-    @apply mb-12;
-  }
-
   .home-cta-actions {
     @apply flex flex-col sm:flex-row gap-6 justify-center items-center mt-8;
   }
@@ -152,7 +159,7 @@
   }
 
   .home-about-icon {
-    @apply text-7xl mb-6 transition-transform duration-300;
+    @apply block text-7xl mb-6 transition-transform duration-300;
   }
 
   .home-about-point:hover .home-about-icon {
@@ -164,7 +171,7 @@
   }
 
   .home-about-action {
-    @apply text-center;
+    @apply mx-auto flex w-fit;
   }
 
   /* Hero and coffee section */
@@ -198,10 +205,6 @@
       transparent
     );
     pointer-events: none;
-  }
-
-  .home-overlay {
-    @apply absolute inset-0;
   }
 
   .hero-textbox {

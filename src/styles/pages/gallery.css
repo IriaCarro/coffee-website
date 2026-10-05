@@ -52,7 +52,7 @@
   }
 
   .gallery-caption {
-    @apply absolute inset-0 flex items-end p-4 opacity-100 transition-opacity duration-300 sm:p-6 md:opacity-0;
+    @apply absolute inset-0 flex flex-col justify-end p-4 opacity-100 transition-opacity duration-300 sm:p-6 md:opacity-0;
   }
 
   .gallery-item:hover .gallery-caption {

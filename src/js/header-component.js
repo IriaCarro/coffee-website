@@ -1,4 +1,4 @@
-import headerTemplate from '../../components/header.html?raw';
+import headerTemplate from '../components/header.html?raw';
 class HeaderComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = headerTemplate;
