@@ -1,0 +1,106 @@
+<section class="detail-section theme-transition">
+  <div class="detail-container">
+    <!-- Back Button -->
+    <div class="detail-back">
+      <a href="/#cafes" class="detail-back-link">
+        <span>&larr;</span>
+        <span>Volver a Cafés</span>
+      </a>
+    </div>
+
+    <!-- Coffee Header -->
+    <div class="detail-header">
+      <div class="detail-image-wrap">
+        <figure class="detail-figure">
+          <img src="{{image}}" alt="{{name}}" class="detail-image" />
+        </figure>
+      </div>
+
+      <div class="detail-info">
+        <h1 class="detail-title">{{name}}</h1>
+
+        <div class="detail-summary">
+          <p class="detail-tagline">{{description}}</p>
+          <p class="detail-price">{{formattedPrice}} € <span class="detail-price-unit">/mes</span></p>
+        </div>
+
+        <div class="detail-rating">
+          <div class="detail-stars">
+            <span class="detail-stars-text">{{stars}}</span>
+          </div>
+          <p class="detail-reviews">{{reviews}} reseñas</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coffee Description -->
+    <div class="detail-block">
+      <h2 class="detail-block-title">Descripción</h2>
+      <p class="detail-paragraph">{{detailedDescription}}</p>
+    </div>
+
+    <!-- Specs -->
+    <div class="detail-specs">
+      <article class="detail-spec-card">
+        <h3 class="detail-spec-title">Origen</h3>
+        <p class="detail-spec-text">{{origin}}</p>
+      </article>
+
+      <article class="detail-spec-card">
+        <h3 class="detail-spec-title">Tueste</h3>
+        <p class="detail-spec-text">{{roast}}</p>
+      </article>
+
+      <article class="detail-spec-card">
+        <h3 class="detail-spec-title">Altitud</h3>
+        <p class="detail-spec-text">{{altitude}}</p>
+      </article>
+
+      <article class="detail-spec-card">
+        <h3 class="detail-spec-title">Producción</h3>
+        <p class="detail-spec-text">{{production}}</p>
+      </article>
+    </div>
+
+    <!-- Flavor Profile -->
+    <div class="detail-block">
+      <h2 class="detail-block-title-lg">Perfil de Sabor</h2>
+      <div class="detail-list">{{flavorProfileHtml}}</div>
+    </div>
+
+    <!-- Brewing Recommendations -->
+    <div class="detail-block">
+      <h2 class="detail-block-title-lg">Recomendaciones de Preparación</h2>
+      <div class="detail-list">
+        <article class="detail-spec-card">
+          <h3 class="detail-spec-title">Temperatura</h3>
+          <p class="detail-spec-text">{{brewing.temperature}}</p>
+        </article>
+
+        <article class="detail-spec-card">
+          <h3 class="detail-spec-title">Molienda</h3>
+          <p class="detail-spec-text">{{brewing.grind}}</p>
+        </article>
+
+        <article class="detail-spec-card">
+          <h3 class="detail-spec-title">Proporción</h3>
+          <p class="detail-spec-text">{{brewing.ratio}}</p>
+        </article>
+
+        <article class="detail-spec-card">
+          <h3 class="detail-spec-title">Métodos Recomendados</h3>
+          <p class="detail-spec-text">{{brewing.methods}}</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="detail-cta">
+      <h2 class="detail-block-title">¿Te gustaría probarlo?</h2>
+      <p class="detail-cta-text">Suscríbete y recibe este café premium cada mes</p>
+      <a href="/#wizard" class="btn-primary inline-block">
+        Comenzar Suscripción
+      </a>
+    </div>
+  </div>
+</section>

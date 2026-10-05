@@ -1,4 +1,4 @@
-export function initSubscriptionWizard() {
+function initSubscriptionWizard() {
   const form = document.getElementById('subscription-wizard-form');
   if (!form) return;
 
@@ -85,3 +85,5 @@ export function initSubscriptionWizard() {
 
   updateUI();
 }
+
+initSubscriptionWizard();

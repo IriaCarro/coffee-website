@@ -10,143 +10,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
   <link rel="stylesheet" href="/src/index.css" />
-  <script type="module" src="/src/js/coffee-detail-main.js"></script>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/utils/coffee-detail.js"></script>
 </head>
 
 <body>
   <app-header></app-header>
 
   <main id="main-content">
-    <!-- Coffee Detail Section -->
-    <section class="detail-section theme-transition">
-      <div class="detail-container">
-        <!-- Back Button -->
-        <div class="detail-back">
-          <a href="/#cafes" class="detail-back-link">
-            <span>&larr;</span>
-            <span>Volver a Cafés</span>
-          </a>
-        </div>
-
-        <!-- Coffee Header -->
-        <div class="detail-header">
-          <!-- Coffee Image -->
-          <div class="detail-image-wrap">
-            <figure class="detail-figure">
-              <img src="/photos/cafe-1.jpg" alt="Café Premium" class="detail-image" />
-            </figure>
-          </div>
-
-          <!-- Coffee Info -->
-          <div class="detail-info">
-            <h1 class="detail-title">Etiopía Floral</h1>
-
-            <div class="detail-summary">
-              <p class="detail-tagline">Notas florales, cítricas y dulces</p>
-              <p class="detail-price">14,90 € <span class="detail-price-unit">/mes</span></p>
-            </div>
-
-            <!-- Rating -->
-            <div class="detail-rating">
-              <div class="detail-stars">
-                <span class="detail-stars-text">★★★★★</span>
-              </div>
-              <p class="detail-reviews">127 reseñas</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Coffee Description -->
-        <div class="detail-block">
-          <h2 class="detail-block-title">Descripción</h2>
-          <p class="detail-paragraph-spaced">
-            Este café etíope presenta notas florales delicadas combinadas con toques cítricos frescos y un dulzor natural. Proveniente de las montañas de Etiopía, cada taza es una experiencia sensorial única.
-          </p>
-          <p class="detail-paragraph">
-            Perfecto para los amantes de los cafés con carácter, este grano es ideal para preparar con métodos de filtración como pour-over o prensa francesa.
-          </p>
-        </div>
-
-        <!-- Coffee Details Grid -->
-        <div class="detail-specs">
-          <article class="detail-spec-card">
-            <h3 class="detail-spec-title">Origen</h3>
-            <p class="detail-spec-text">Etiopía - Yirgacheffe</p>
-          </article>
-
-          <article class="detail-spec-card">
-            <h3 class="detail-spec-title">Tueste</h3>
-            <p class="detail-spec-text">Tueste Medio</p>
-          </article>
-
-          <article class="detail-spec-card">
-            <h3 class="detail-spec-title">Altitud</h3>
-            <p class="detail-spec-text">1800 - 2200 m</p>
-          </article>
-
-          <article class="detail-spec-card">
-            <h3 class="detail-spec-title">Producción</h3>
-            <p class="detail-spec-text">250g por bolsa</p>
-          </article>
-        </div>
-
-        <!-- Flavor Profile -->
-        <div class="detail-block">
-          <h2 class="detail-block-title-lg">Perfil de Sabor</h2>
-          <div class="detail-list">
-            <article class="detail-flavor">
-              <h3 class="detail-flavor-title">Notas Florales</h3>
-              <p class="detail-spec-text">Aromas delicados de jazín y lavanda</p>
-            </article>
-
-            <article class="detail-flavor">
-              <h3 class="detail-flavor-title">Notas Cítricas</h3>
-              <p class="detail-spec-text">Toques de limón y naranja fresca</p>
-            </article>
-
-            <article class="detail-flavor">
-              <h3 class="detail-flavor-title">Dulzor Natural</h3>
-              <p class="detail-spec-text">Notas de miel y caramelo suave</p>
-            </article>
-          </div>
-        </div>
-
-        <!-- Brewing Recommendations -->
-        <div class="detail-block">
-          <h2 class="detail-block-title-lg">Recomendaciones de Preparación</h2>
-          <div class="detail-list">
-            <article class="detail-spec-card">
-              <h3 class="detail-spec-title">Temperatura</h3>
-              <p class="detail-spec-text">90-96°C</p>
-            </article>
-
-            <article class="detail-spec-card">
-              <h3 class="detail-spec-title">Molienda</h3>
-              <p class="detail-spec-text">Media a fina (similar al azúcar de mesa)</p>
-            </article>
-
-            <article class="detail-spec-card">
-              <h3 class="detail-spec-title">Proporción</h3>
-              <p class="detail-spec-text">1:16 (1 parte café por 16 partes agua)</p>
-            </article>
-
-            <article class="detail-spec-card">
-              <h3 class="detail-spec-title">Métodos Recomendados</h3>
-              <p class="detail-spec-text">Pour Over, Prensa Francesa, AeroPress</p>
-            </article>
-          </div>
-        </div>
-
-        <!-- CTA Section -->
-        <div class="detail-cta">
-          <h2 class="detail-block-title">¿Te gustaría probarlo?</h2>
-          <p class="detail-cta-text">Suscríbete y recibe este café premium cada mes</p>
-          <a href="/#wizard" class="btn-primary inline-block">
-            Comenzar Suscripción
-          </a>
-        </div>
-      </div>
-    </section>
+    <div id="coffee-detail"></div>
   </main>
 
   <app-footer></app-footer>

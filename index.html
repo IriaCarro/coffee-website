@@ -11,6 +11,8 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
   <link rel="stylesheet" href="/src/index.css" />
   <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/utils/section-navigation.js"></script>
+  <script type="module" src="/src/js/utils/home-coffees.js"></script>
 </head>
 
 <body>
@@ -22,10 +24,12 @@
     <section id="hero" class="coffee-section hero-section theme-transition">
       <!-- Content -->
       <div class="hero-textbox">
-        <h1>Buen</h1>
-        <h1 class="text-accent">café,</h1>
-        <h1>mejores</h1>
-        <h1>días</h1>
+        <h1>
+          <span class="block">Buen</span>
+          <span class="block text-accent">café,</span>
+          <span class="block">mejores</span>
+          <span class="block">días</span>
+        </h1>
         <h2>
           Café recién tostado, en tu puerta cada mes.
         </h2>
@@ -42,6 +46,14 @@
           </li>
         </ul>
       </div>
+      <img
+        class="hero-image"
+        src="/photos/package-1.png"
+        alt="Bolsa de café de especialidad Etiopía Yirgacheffe, 250 g"
+        width="1145"
+        height="1374"
+        fetchpriority="high"
+      >
     </section>
 
     <section id="breakfast" aria-labelledby="breakfast-title" class="coffee-section breakfast-section theme-transition">
@@ -80,9 +92,9 @@
         <div class="home-location-grid">
           <!-- Left: Main Content in Card -->
           <article class="home-location-card">
-            <h1 id="location-title" class="home-location-title">
+            <h2 id="location-title" class="home-location-title">
               Un lugar para disfrutar
-            </h1>
+            </h2>
 
             <p class="home-location-lead">
               Buen café, buena compañía y un ambiente único en la ciudad.

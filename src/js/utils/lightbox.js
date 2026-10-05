@@ -1,4 +1,4 @@
-export function initLightbox(selector = '[data-gallery] figure') {
+function initLightbox(selector = '[data-gallery] figure') {
   const figures = [...document.querySelectorAll(selector)].filter((f) => f.querySelector('img'));
   if (!figures.length) return;
 
@@ -59,3 +59,5 @@ export function initLightbox(selector = '[data-gallery] figure') {
     if (e.key === 'ArrowRight') show(current + 1);
   });
 }
+
+initLightbox();
