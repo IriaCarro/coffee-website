@@ -1,186 +1,270 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Preguntas frecuentes sobre Café Rico." />
+    <title>Preguntas Frecuentes - Café Rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <link rel="stylesheet" href="/src/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Preguntas frecuentes sobre Café Rico." />
-  <title>Preguntas Frecuentes - Café Rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
-  <link rel="stylesheet" href="/src/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
 
-<body>
-  <app-header></app-header>
+    <main id="main-content">
+      <!-- FAQ Section -->
+      <section
+        class="faq-page-section theme-transition"
+        aria-labelledby="faq-title"
+      >
+        <div class="faq-page-container">
+          <!-- Back Button -->
+          <nav class="faq-page-back" aria-label="Migas de pan">
+            <a href="/" class="faq-page-back-link">
+              <span aria-hidden="true">&larr;</span>
+              <span>Volver al inicio</span>
+            </a>
+          </nav>
 
-  <main id="main-content">
-    <!-- FAQ Section -->
-    <section class="faq-page-section theme-transition" aria-labelledby="faq-title">
-      <div class="faq-page-container">
-        <!-- Back Button -->
-        <nav class="faq-page-back" aria-label="Migas de pan">
-          <a href="/" class="faq-page-back-link">
-            <span aria-hidden="true">&larr;</span>
-            <span>Volver al inicio</span>
-          </a>
-        </nav>
+          <!-- FAQ Header -->
+          <header class="faq-page-header">
+            <h1 class="faq-page-title" id="faq-title">Preguntas Frecuentes</h1>
+            <p class="faq-page-subtitle">
+              Encuentra respuestas a las preguntas más comunes sobre nuestros
+              cafés y servicios
+            </p>
+          </header>
 
-        <!-- FAQ Header -->
-        <header class="faq-page-header">
-          <h1 class="faq-page-title" id="faq-title">Preguntas Frecuentes</h1>
-          <p class="faq-page-subtitle">Encuentra respuestas a las preguntas más comunes sobre nuestros cafés y servicios</p>
-        </header>
+          <!-- FAQ Items -->
+          <h2 class="sr-only" id="faq-list-title">Lista de preguntas</h2>
+          <ul
+            class="faq-page-list"
+            role="list"
+            aria-labelledby="faq-list-title"
+          >
+            <!-- FAQ Item 1 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿Puedo cancelar mi suscripción?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Sí, puedes cancelar tu suscripción en cualquier momento sin
+                  penalización alguna. Solo necesitas contactarnos a través de
+                  tu cuenta o enviarnos un email a caferico@correo.com. La
+                  cancelación será efectiva al final de tu ciclo de facturación
+                  actual.
+                </p>
+              </details>
+            </li>
 
-        <!-- FAQ Items -->
-        <h2 class="sr-only" id="faq-list-title">Lista de preguntas</h2>
-        <ul class="faq-page-list" role="list" aria-labelledby="faq-list-title">
-          <!-- FAQ Item 1 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Puedo cancelar mi suscripción?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Sí, puedes cancelar tu suscripción en cualquier momento sin penalización alguna. Solo necesitas contactarnos a través de tu cuenta o enviarnos un email a caferico@correo.com. La cancelación será efectiva al final de tu ciclo de facturación actual.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 2 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">¿Molido o en grano?</h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Puedes elegir tanto granos enteros como café molido en el
+                  momento de tu suscripción. Los granos enteros mantienen mejor
+                  el aroma y la frescura, mientras que el café molido es más
+                  conveniente para una preparación rápida. Puedes cambiar tu
+                  preferencia en cualquier momento.
+                </p>
+              </details>
+            </li>
 
-          <!-- FAQ Item 2 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Molido o en grano?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Puedes elegir tanto granos enteros como café molido en el momento de tu suscripción. Los granos enteros mantienen mejor el aroma y la frescura, mientras que el café molido es más conveniente para una preparación rápida. Puedes cambiar tu preferencia en cualquier momento.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 3 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿Cuánto tiempo tarda la entrega?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Las entregas normalmente se realizan entre 3 a 5 días hábiles
+                  después del envío. Te enviaremos un email con el número de
+                  seguimiento para que puedas rastrear tu pedido en tiempo real.
+                  Las entregas internacionales pueden tardar más tiempo
+                  dependiendo de tu ubicación.
+                </p>
+              </details>
+            </li>
 
-          <!-- FAQ Item 3 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Cuánto tiempo tarda la entrega?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Las entregas normalmente se realizan entre 3 a 5 días hábiles después del envío. Te enviaremos un email con el número de seguimiento para que puedas rastrear tu pedido en tiempo real. Las entregas internacionales pueden tardar más tiempo dependiendo de tu ubicación.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 4 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿De dónde proviene vuestro café?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Nuestros cafés son seleccionados cuidadosamente de productores
+                  de todo el mundo. Trabajamos directamente con fincas de origen
+                  único para asegurar la máxima calidad y sostenibilidad. Cada
+                  café en nuestro catálogo cuenta con información completa sobre
+                  su origen, altitud y proceso de tostión.
+                </p>
+              </details>
+            </li>
 
-          <!-- FAQ Item 4 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿De dónde proviene vuestro café?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Nuestros cafés son seleccionados cuidadosamente de productores de todo el mundo. Trabajamos directamente con fincas de origen único para asegurar la máxima calidad y sostenibilidad. Cada café en nuestro catálogo cuenta con información completa sobre su origen, altitud y proceso de tostión.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 5 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿Cómo debo almacenar el café?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  El café se conserva mejor en un lugar fresco, oscuro y seco.
+                  Te recomendamos almacenarlo en un recipiente hermético lejos
+                  de la luz solar directa y de temperaturas extremas. Si es en
+                  grano, es mejor molerlo justo antes de prepararlo para
+                  mantener todo el aroma y sabor intactos.
+                </p>
+              </details>
+            </li>
 
-          <!-- FAQ Item 5 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Cómo debo almacenar el café?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                El café se conserva mejor en un lugar fresco, oscuro y seco. Te recomendamos almacenarlo en un recipiente hermético lejos de la luz solar directa y de temperaturas extremas. Si es en grano, es mejor molerlo justo antes de prepararlo para mantener todo el aroma y sabor intactos.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 6 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿Qué métodos de pago aceptan?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Aceptamos todas las tarjetas de crédito principales (Visa,
+                  Mastercard, American Express), transferencias bancarias y
+                  billeteras digitales. Tu información de pago es completamente
+                  segura y se procesa a través de plataformas de pago
+                  certificadas.
+                </p>
+              </details>
+            </li>
 
-          <!-- FAQ Item 6 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Qué métodos de pago aceptan?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Aceptamos todas las tarjetas de crédito principales (Visa, Mastercard, American Express), transferencias bancarias y billeteras digitales. Tu información de pago es completamente segura y se procesa a través de plataformas de pago certificadas.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 7 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿Ofrecen envíos internacionales?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Sí, realizamos envíos a muchos países alrededor del mundo. Los
+                  costos de envío internacional varían según tu ubicación.
+                  Durante el proceso de suscripción, podrás ver si tu país está
+                  disponible y cuál sería el costo exacto de envío para tu zona.
+                </p>
+              </details>
+            </li>
 
-          <!-- FAQ Item 7 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Ofrecen envíos internacionales?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Sí, realizamos envíos a muchos países alrededor del mundo. Los costos de envío internacional varían según tu ubicación. Durante el proceso de suscripción, podrás ver si tu país está disponible y cuál sería el costo exacto de envío para tu zona.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 8 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿Puedo cambiar mi selección de café?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Por supuesto. Puedes cambiar tu café seleccionado, el tipo de
+                  molienda o tu plan de envío en cualquier momento. Los cambios
+                  entrarán en vigor en tu próximo ciclo de envío. Simplemente
+                  accede a tu cuenta y realiza las modificaciones que necesites.
+                </p>
+              </details>
+            </li>
 
-          <!-- FAQ Item 8 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Puedo cambiar mi selección de café?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Por supuesto. Puedes cambiar tu café seleccionado, el tipo de molienda o tu plan de envío en cualquier momento. Los cambios entrarán en vigor en tu próximo ciclo de envío. Simplemente accede a tu cuenta y realiza las modificaciones que necesites.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 9 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿Hay descuentos por volumen?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Nuestros planes semanales y quincenales ofrecen mejor valor
+                  que el plan mensual. Además, somos miembros de varios
+                  programas de sostenibilidad que permiten descuentos especiales
+                  para clientes comprometidos con el café de origen ético.
+                </p>
+              </details>
+            </li>
 
-          <!-- FAQ Item 9 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Hay descuentos por volumen?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Nuestros planes semanales y quincenales ofrecen mejor valor que el plan mensual. Además, somos miembros de varios programas de sostenibilidad que permiten descuentos especiales para clientes comprometidos con el café de origen ético.
-              </p>
-            </details>
-          </li>
+            <!-- FAQ Item 10 -->
+            <li>
+              <details class="faq-accordion">
+                <summary class="faq-accordion-summary">
+                  <h3 class="faq-accordion-question">
+                    ¿Cuál es vuestra política de devolución?
+                  </h3>
+                  <span class="faq-accordion-icon" aria-hidden="true"></span>
+                </summary>
+                <p class="faq-accordion-answer">
+                  Si no estás completamente satisfecho con tu café, podemos
+                  ofrecerte un reemplazo o devolución dentro de 30 días de la
+                  compra. Queremos que disfrutes de cada taza, así que no dudes
+                  en contactarnos si tienes algún problema.
+                </p>
+              </details>
+            </li>
+          </ul>
 
-          <!-- FAQ Item 10 -->
-          <li>
-            <details class="faq-accordion">
-              <summary class="faq-accordion-summary">
-                <h3 class="faq-accordion-question">¿Cuál es vuestra política de devolución?</h3>
-                <span class="faq-accordion-icon" aria-hidden="true"></span>
-              </summary>
-              <p class="faq-accordion-answer">
-                Si no estás completamente satisfecho con tu café, podemos ofrecerte un reemplazo o devolución dentro de 30 días de la compra. Queremos que disfrutes de cada taza, así que no dudes en contactarnos si tienes algún problema.
-              </p>
-            </details>
-          </li>
-        </ul>
-
-        <!-- Contact Section -->
-        <div class="faq-page-contact">
-          <h2 class="faq-page-contact-title">¿No encontraste tu respuesta?</h2>
-          <p class="faq-page-contact-text">Estamos aquí para ayudarte. Contáctanos directamente:</p>
-          <a href="mailto:caferico@correo.com" class="btn-primary faq-page-contact-btn">
-            Enviar Email
-          </a>
+          <!-- Contact Section -->
+          <div class="faq-page-contact">
+            <h2 class="faq-page-contact-title">
+              ¿No encontraste tu respuesta?
+            </h2>
+            <p class="faq-page-contact-text">
+              Estamos aquí para ayudarte. Contáctanos directamente:
+            </p>
+            <a
+              href="mailto:caferico@correo.com"
+              class="btn-primary faq-page-contact-btn"
+            >
+              Enviar Email
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <app-footer></app-footer>
-</body>
-
+    <app-footer></app-footer>
+  </body>
 </html>

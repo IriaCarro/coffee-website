@@ -1,160 +1,273 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contacta con Café Rico y descubre cómo visitarnos."
+    />
+    <title>Contacto - Café Rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <link rel="stylesheet" href="/src/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contacta con Café Rico y descubre cómo visitarnos." />
-  <title>Contacto - Café Rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
-  <link rel="stylesheet" href="/src/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
 
-<body>
-  <app-header></app-header>
+    <main id="main-content">
+      <section class="contact-section" aria-labelledby="contact-title">
+        <div class="contact-container">
+          <nav class="contact-back" aria-label="Migas de pan">
+            <a href="/" class="contact-back-link contact-link">
+              <span aria-hidden="true">&larr;</span>
+              <span>Volver al inicio</span>
+            </a>
+          </nav>
 
-  <main id="main-content">
-    <section class="contact-section" aria-labelledby="contact-title">
-      <div class="contact-container">
-        <nav class="contact-back" aria-label="Migas de pan">
-          <a href="/" class="contact-back-link contact-link">
-            <span aria-hidden="true">&larr;</span>
-            <span>Volver al inicio</span>
-          </a>
-        </nav>
+          <header class="contact-header">
+            <h1 class="contact-title" id="contact-title">Cómo Llegar</h1>
+            <p class="contact-subtitle">
+              Visítanos o contacta directamente con nuestro equipo
+            </p>
+          </header>
 
-        <header class="contact-header">
-          <h1 class="contact-title" id="contact-title">Cómo Llegar</h1>
-          <p class="contact-subtitle">Visítanos o contacta directamente con nuestro equipo</p>
-        </header>
+          <div class="contact-grid">
+            <!-- Location Card -->
+            <section
+              class="contact-card"
+              aria-labelledby="contact-location-title"
+            >
+              <h2 class="contact-card-title" id="contact-location-title">
+                <span
+                  class="contact-card-icon icon icon-pin"
+                  aria-hidden="true"
+                ></span>
+                Ubicación
+              </h2>
+              <dl>
+                <dt class="contact-item-title">Oficina Principal</dt>
+                <dd>
+                  <address class="contact-text contact-address">
+                    Calle del Café, 42<br />
+                    28001 Madrid, España
+                  </address>
+                </dd>
+                <dt class="contact-item-title">Horario</dt>
+                <dd class="contact-text">Lunes - Viernes: 9:00 - 18:00</dd>
+                <dd class="contact-text">Sábado: 10:00 - 14:00</dd>
+                <dd class="contact-text">Domingo: Cerrado</dd>
+                <dt class="contact-item-title">Transporte Público</dt>
+                <dd class="contact-text">Metro: Línea 3, Estación Centro</dd>
+                <dd class="contact-text">
+                  Autobús: Línea 27, Parada Café Rico
+                </dd>
+              </dl>
+            </section>
 
-        <div class="contact-grid">
-          <!-- Location Card -->
-          <section class="contact-card" aria-labelledby="contact-location-title">
-            <h2 class="contact-card-title" id="contact-location-title">
-              <span class="contact-card-icon icon icon-pin" aria-hidden="true"></span>
-              Ubicación
+            <!-- Contact Card -->
+            <section class="contact-card" aria-labelledby="contact-info-title">
+              <h2 class="contact-card-title" id="contact-info-title">
+                <span
+                  class="contact-card-icon icon icon-phone"
+                  aria-hidden="true"
+                ></span>
+                Contacto
+              </h2>
+              <dl>
+                <dt class="contact-item-title">Teléfono</dt>
+                <dd>
+                  <a href="tel:+34912345678" class="contact-link"
+                    >+34 91 234 5678</a
+                  >
+                </dd>
+                <dt class="contact-item-title">Email</dt>
+                <dd>
+                  <a href="mailto:caferico@correo.com" class="contact-link"
+                    >caferico@correo.com</a
+                  >
+                </dd>
+                <dt class="contact-item-title">Atención al Cliente</dt>
+                <dd>
+                  <a href="mailto:soporte@caferico.com" class="contact-link"
+                    >soporte@caferico.com</a
+                  >
+                  <p class="contact-text-note">Respuesta en 24 horas</p>
+                </dd>
+                <dt class="contact-item-title">Redes Sociales</dt>
+                <dd>
+                  <ul class="contact-social" role="list">
+                    <li>
+                      <a
+                        href="#"
+                        class="contact-social-link"
+                        aria-label="Facebook"
+                      >
+                        <span
+                          class="icon icon-facebook"
+                          aria-hidden="true"
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="contact-social-link"
+                        aria-label="Instagram"
+                      >
+                        <span
+                          class="icon icon-instagram"
+                          aria-hidden="true"
+                        ></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="contact-social-link"
+                        aria-label="Twitter"
+                      >
+                        <span
+                          class="icon icon-twitter"
+                          aria-hidden="true"
+                        ></span>
+                      </a>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
+            </section>
+          </div>
+
+          <!-- Map Section -->
+          <section class="contact-block" aria-labelledby="contact-map-title">
+            <h2 class="contact-block-title" id="contact-map-title">
+              Nuestra Ubicación
             </h2>
-            <dl>
-              <dt class="contact-item-title">Oficina Principal</dt>
-              <dd>
-                <address class="contact-text contact-address">
-                  Calle del Café, 42<br>
-                  28001 Madrid, España
-                </address>
-              </dd>
-              <dt class="contact-item-title">Horario</dt>
-              <dd class="contact-text">Lunes - Viernes: 9:00 - 18:00</dd>
-              <dd class="contact-text">Sábado: 10:00 - 14:00</dd>
-              <dd class="contact-text">Domingo: Cerrado</dd>
-              <dt class="contact-item-title">Transporte Público</dt>
-              <dd class="contact-text">Metro: Línea 3, Estación Centro</dd>
-              <dd class="contact-text">Autobús: Línea 27, Parada Café Rico</dd>
-            </dl>
+            <figure class="contact-map">
+              <span
+                class="contact-map-icon icon icon-map"
+                aria-hidden="true"
+              ></span>
+              <p class="contact-text">
+                Aquí irá integrado un mapa de Google Maps
+              </p>
+              <figcaption class="contact-text-note">
+                Calle del Café, 42 - Madrid
+              </figcaption>
+            </figure>
           </section>
 
-          <!-- Contact Card -->
-          <section class="contact-card" aria-labelledby="contact-info-title">
-            <h2 class="contact-card-title" id="contact-info-title">
-              <span class="contact-card-icon icon icon-phone" aria-hidden="true"></span>
-              Contacto
+          <!-- Contact Form -->
+          <section class="contact-block" aria-labelledby="contact-form-title">
+            <h2 class="contact-block-title" id="contact-form-title">
+              Envíanos un Mensaje
             </h2>
-            <dl>
-              <dt class="contact-item-title">Teléfono</dt>
-              <dd>
-                <a href="tel:+34912345678" class="contact-link">+34 91 234 5678</a>
-              </dd>
-              <dt class="contact-item-title">Email</dt>
-              <dd>
-                <a href="mailto:caferico@correo.com" class="contact-link">caferico@correo.com</a>
-              </dd>
-              <dt class="contact-item-title">Atención al Cliente</dt>
-              <dd>
-                <a href="mailto:soporte@caferico.com" class="contact-link">soporte@caferico.com</a>
-                <p class="contact-text-note">Respuesta en 24 horas</p>
-              </dd>
-              <dt class="contact-item-title">Redes Sociales</dt>
-              <dd>
-                <ul class="contact-social" role="list">
-                  <li>
-                    <a href="#" class="contact-social-link" aria-label="Facebook">
-                      <span class="icon icon-facebook" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="contact-social-link" aria-label="Instagram">
-                      <span class="icon icon-instagram" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="contact-social-link" aria-label="Twitter">
-                      <span class="icon icon-twitter" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                </ul>
-              </dd>
-            </dl>
+            <form class="contact-form" aria-describedby="contact-form-note">
+              <p
+                class="contact-text-note contact-form-full"
+                id="contact-form-note"
+              >
+                Todos los campos son obligatorios.
+              </p>
+              <label for="name" class="contact-field">
+                <span class="contact-form-label">Nombre Completo</span>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Tu nombre"
+                  class="contact-input"
+                  autocomplete="name"
+                  required
+                />
+              </label>
+              <label for="email" class="contact-field">
+                <span class="contact-form-label">Email</span>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  class="contact-input"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+              <label for="subject" class="contact-field contact-form-full">
+                <span class="contact-form-label">Asunto</span>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="¿En qué podemos ayudarte?"
+                  class="contact-input"
+                  required
+                />
+              </label>
+              <label for="message" class="contact-field contact-form-full">
+                <span class="contact-form-label">Mensaje</span>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tu mensaje..."
+                  class="contact-input contact-textarea"
+                  required
+                ></textarea>
+              </label>
+              <button
+                type="submit"
+                class="contact-action contact-submit contact-form-full"
+              >
+                Enviar Mensaje
+              </button>
+              <p
+                role="status"
+                aria-live="polite"
+                class="contact-text-note contact-form-full"
+                id="contact-form-status"
+              ></p>
+            </form>
+          </section>
+
+          <!-- FAQ Link -->
+          <section class="contact-faq" aria-labelledby="contact-faq-title">
+            <h2 class="contact-faq-title" id="contact-faq-title">
+              ¿Tienes Preguntas?
+            </h2>
+            <p class="contact-faq-text">
+              Consulta nuestras preguntas frecuentes para respuestas rápidas
+            </p>
+            <a
+              href="/src/pages/faq.html"
+              class="contact-action contact-faq-button"
+            >
+              Ver FAQ
+            </a>
           </section>
         </div>
+      </section>
+    </main>
 
-        <!-- Map Section -->
-        <section class="contact-block" aria-labelledby="contact-map-title">
-          <h2 class="contact-block-title" id="contact-map-title">Nuestra Ubicación</h2>
-          <figure class="contact-map">
-            <span class="contact-map-icon icon icon-map" aria-hidden="true"></span>
-            <p class="contact-text">Aquí irá integrado un mapa de Google Maps</p>
-            <figcaption class="contact-text-note">Calle del Café, 42 - Madrid</figcaption>
-          </figure>
-        </section>
-
-        <!-- Contact Form -->
-        <section class="contact-block" aria-labelledby="contact-form-title">
-          <h2 class="contact-block-title" id="contact-form-title">Envíanos un Mensaje</h2>
-          <form class="contact-form" aria-describedby="contact-form-note">
-            <p class="contact-text-note contact-form-full" id="contact-form-note">Todos los campos son obligatorios.</p>
-            <label for="name" class="contact-field">
-              <span class="contact-form-label">Nombre Completo</span>
-              <input type="text" id="name" name="name" placeholder="Tu nombre"
-                class="contact-input" autocomplete="name" required>
-            </label>
-            <label for="email" class="contact-field">
-              <span class="contact-form-label">Email</span>
-              <input type="email" id="email" name="email" placeholder="tu@email.com"
-                class="contact-input" autocomplete="email" required>
-            </label>
-            <label for="subject" class="contact-field contact-form-full">
-              <span class="contact-form-label">Asunto</span>
-              <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?"
-                class="contact-input" required>
-            </label>
-            <label for="message" class="contact-field contact-form-full">
-              <span class="contact-form-label">Mensaje</span>
-              <textarea id="message" name="message" rows="5" placeholder="Tu mensaje..."
-                class="contact-input contact-textarea" required></textarea>
-            </label>
-            <button type="submit" class="contact-action contact-submit contact-form-full">
-              Enviar Mensaje
-            </button>
-            <p role="status" aria-live="polite" class="contact-text-note contact-form-full" id="contact-form-status"></p>
-          </form>
-        </section>
-
-        <!-- FAQ Link -->
-        <section class="contact-faq" aria-labelledby="contact-faq-title">
-          <h2 class="contact-faq-title" id="contact-faq-title">¿Tienes Preguntas?</h2>
-          <p class="contact-faq-text">Consulta nuestras preguntas frecuentes para respuestas rápidas</p>
-          <a href="/src/pages/faq.html" class="contact-action contact-faq-button">
-            Ver FAQ
-          </a>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <app-footer></app-footer>
-</body>
-
+    <app-footer></app-footer>
+  </body>
 </html>

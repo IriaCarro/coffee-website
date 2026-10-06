@@ -1,180 +1,308 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Configura tu suscripción de café premium."
+    />
+    <title>Suscripción - Café Rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <link rel="stylesheet" href="/src/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/utils/subscription-wizard.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Configura tu suscripción de café premium." />
-  <title>Suscripción - Café Rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
-  <link rel="stylesheet" href="/src/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/utils/subscription-wizard.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
 
-<body>
-  <app-header></app-header>
+    <main id="main-content">
+      <!-- Subscription Page Section -->
+      <section class="sub-page theme-transition" aria-labelledby="sub-title">
+        <div class="sub-container">
+          <!-- Back Button -->
+          <nav class="sub-back" aria-label="Migas de pan">
+            <a href="/" class="sub-back-link">
+              <span aria-hidden="true">&larr;</span>
+              <span>Volver al inicio</span>
+            </a>
+          </nav>
 
-  <main id="main-content">
-    <!-- Subscription Page Section -->
-    <section class="sub-page theme-transition" aria-labelledby="sub-title">
-      <div class="sub-container">
-        <!-- Back Button -->
-        <nav class="sub-back" aria-label="Migas de pan">
-          <a href="/" class="sub-back-link">
-            <span aria-hidden="true">&larr;</span>
-            <span>Volver al inicio</span>
-          </a>
-        </nav>
-
-        <!-- Wizard Header -->
-        <header class="sub-header">
-          <h1 class="sub-title" id="sub-title">Configura tu Suscripción</h1>
-          <p class="sub-subtitle">Elige tu café favorito y recíbelo cada mes en tu puerta</p>
-        </header>
-
-        <!-- Wizard Component -->
-        <section id="wizard" aria-labelledby="subscription-wizard-title" class="sub-wizard">
-          <header class="wizard-heading">
-            <h2 id="subscription-wizard-title" class="sr-only">Pasos de la suscripción</h2>
-            <p class="wizard-heading-description">Completa los siguientes pasos para empezar a recibir tu café
-              favorito</p>
+          <!-- Wizard Header -->
+          <header class="sub-header">
+            <h1 class="sub-title" id="sub-title">Configura tu Suscripción</h1>
+            <p class="sub-subtitle">
+              Elige tu café favorito y recíbelo cada mes en tu puerta
+            </p>
           </header>
 
-          <!-- Progress Bar -->
-          <div id="subscription-progress-track" class="wizard-progress-track theme-transition" role="progressbar"
-            aria-label="Progreso de la suscripción" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"
-            aria-valuetext="Paso 1 de 3">
-            <div id="subscription-progress-bar" class="wizard-progress-bar" aria-hidden="true"></div>
-          </div>
-          <ol class="wizard-progress-steps sub-progress" aria-label="Pasos de la suscripción">
-            <li class="wizard-progress-step">
-              <span class="step-indicator sub-step-indicator active" data-step="1" aria-current="step">1</span>
-              <span class="wizard-progress-label">Tu café</span>
-            </li>
-            <li class="wizard-progress-step">
-              <span class="step-indicator sub-step-indicator" data-step="2">2</span>
-              <span class="wizard-progress-label">Tu plan</span>
-            </li>
-            <li class="wizard-progress-step">
-              <span class="step-indicator sub-step-indicator" data-step="3">3</span>
-              <span class="wizard-progress-label">Entrega</span>
-            </li>
-          </ol>
+          <!-- Wizard Component -->
+          <section
+            id="wizard"
+            aria-labelledby="subscription-wizard-title"
+            class="sub-wizard"
+          >
+            <header class="wizard-heading">
+              <h2 id="subscription-wizard-title" class="sr-only">
+                Pasos de la suscripción
+              </h2>
+              <p class="wizard-heading-description">
+                Completa los siguientes pasos para empezar a recibir tu café
+                favorito
+              </p>
+            </header>
 
-          <!-- Wizard Card -->
-          <form id="subscription-wizard-form" class="wizard-card sub-form">
-            <!-- Step 1: Choose Coffee -->
-            <fieldset class="wizard-step active" data-step="1">
-              <legend class="wizard-step-title">¿Qué café prefieres?</legend>
-              <p class="wizard-step-description">Selecciona tu café favorito para empezar</p>
-              <div class="wizard-option-list">
-                <label class="radio-label">
-                  <input type="radio" name="coffee" value="etiopia" checked>
-                  <span class="wizard-option-content">
-                    <span class="sub-option-icon icon icon-flower" aria-hidden="true"></span>
-                    <strong class="wizard-option-title">Etiopía Floral</strong>
-                    <span class="wizard-option-description">14,90 €/mes</span>
-                  </span>
-                </label>
-                <label class="radio-label">
-                  <input type="radio" name="coffee" value="colombia">
-                  <span class="wizard-option-content">
-                    <span class="sub-option-icon icon icon-chocolate" aria-hidden="true"></span>
-                    <strong class="wizard-option-title">Colombia Caramelo</strong>
-                    <span class="wizard-option-description">12,90 €/mes</span>
-                  </span>
-                </label>
-                <label class="radio-label">
-                  <input type="radio" name="coffee" value="kenia">
-                  <span class="wizard-option-content">
-                    <span class="sub-option-icon icon icon-cherry" aria-hidden="true"></span>
-                    <strong class="wizard-option-title">Kenia Frutos Rojos</strong>
-                    <span class="wizard-option-description">15,50 €/mes</span>
-                  </span>
-                </label>
-              </div>
-            </fieldset>
-
-            <!-- Step 2: Choose Plan -->
-            <fieldset class="wizard-step hidden" data-step="2">
-              <legend class="wizard-step-title">Elige tu plan</legend>
-              <p class="wizard-step-description">Selecciona la frecuencia y cantidad</p>
-              <div class="wizard-option-list">
-                <label class="radio-label">
-                  <input type="radio" name="plan" value="monthly" checked>
-                  <span class="wizard-option-content">
-                    <strong class="wizard-option-title">Plan Mensual</strong>
-                    <span class="wizard-option-description">1 bolsa de 250g cada mes</span>
-                  </span>
-                  <span class="wizard-option-price">14,90 €</span>
-                </label>
-                <label class="radio-label">
-                  <input type="radio" name="plan" value="biweekly">
-                  <span class="wizard-option-content">
-                    <strong class="wizard-option-title">Plan Quincenal</strong>
-                    <span class="wizard-option-description">1 bolsa de 250g cada 15 días</span>
-                  </span>
-                  <span class="wizard-option-price">29,80 €</span>
-                </label>
-                <label class="radio-label">
-                  <input type="radio" name="plan" value="weekly">
-                  <span class="wizard-option-content">
-                    <strong class="wizard-option-title">Plan Semanal</strong>
-                    <span class="wizard-option-description">1 bolsa de 250g cada semana</span>
-                  </span>
-                  <span class="wizard-option-price">59,60 €</span>
-                </label>
-              </div>
-            </fieldset>
-
-            <!-- Step 3: Delivery -->
-            <fieldset class="wizard-step hidden" data-step="3">
-              <legend class="wizard-step-title">Datos de entrega</legend>
-              <p class="wizard-step-description">¿Dónde te enviamos tu café?</p>
-              <div class="sub-fields">
-              <label for="subscription-name" class="sub-field sub-field-full">
-                <span class="form-label">Nombre completo</span>
-                <input type="text" id="subscription-name" name="name" placeholder="Tu nombre" autocomplete="name">
-              </label>
-              <label for="subscription-email" class="sub-field sub-field-full">
-                <span class="form-label">Email</span>
-                <input type="email" id="subscription-email" name="email" placeholder="tu@email.com" autocomplete="email">
-              </label>
-              <label for="subscription-address" class="sub-field sub-field-full">
-                <span class="form-label">Dirección de envío</span>
-                <input type="text" id="subscription-address" name="address" placeholder="Calle, número, piso..."
-                  autocomplete="street-address">
-              </label>
-              <label for="subscription-city" class="sub-field">
-                <span class="form-label">Ciudad</span>
-                <input type="text" id="subscription-city" name="city" placeholder="Madrid"
-                  autocomplete="address-level2">
-              </label>
-              <label for="subscription-zip" class="sub-field">
-                <span class="form-label">Código postal</span>
-                <input type="text" id="subscription-zip" name="zip" placeholder="28001" autocomplete="postal-code">
-              </label>
+            <!-- Progress Bar -->
+            <div
+              id="subscription-progress-track"
+              class="wizard-progress-track theme-transition"
+              role="progressbar"
+              aria-label="Progreso de la suscripción"
+              aria-valuemin="1"
+              aria-valuemax="3"
+              aria-valuenow="1"
+              aria-valuetext="Paso 1 de 3"
+            >
+              <div
+                id="subscription-progress-bar"
+                class="wizard-progress-bar"
+                aria-hidden="true"
+              ></div>
             </div>
-            </fieldset>
+            <ol
+              class="wizard-progress-steps sub-progress"
+              aria-label="Pasos de la suscripción"
+            >
+              <li class="wizard-progress-step">
+                <span
+                  class="step-indicator sub-step-indicator active"
+                  data-step="1"
+                  aria-current="step"
+                  >1</span
+                >
+                <span class="wizard-progress-label">Tu café</span>
+              </li>
+              <li class="wizard-progress-step">
+                <span class="step-indicator sub-step-indicator" data-step="2"
+                  >2</span
+                >
+                <span class="wizard-progress-label">Tu plan</span>
+              </li>
+              <li class="wizard-progress-step">
+                <span class="step-indicator sub-step-indicator" data-step="3"
+                  >3</span
+                >
+                <span class="wizard-progress-label">Entrega</span>
+              </li>
+            </ol>
 
-            <!-- Navigation Buttons -->
-            <nav aria-label="Navegación de pasos" class="sub-nav">
-              <button type="button" id="subscription-btn-prev" disabled class="btn-primary sub-btn-prev">
-                <span aria-hidden="true">&larr;</span> Anterior
-              </button>
-              <span class="sub-nav-status" aria-live="polite">Paso <span id="subscription-current-step">1</span> de 3</span>
-              <button type="button" id="subscription-btn-next" class="btn-primary">Siguiente &rarr;</button>
-            </nav>
-          </form>
-        </section>
-      </div>
-    </section>
-  </main>
+            <!-- Wizard Card -->
+            <form id="subscription-wizard-form" class="wizard-card sub-form">
+              <!-- Step 1: Choose Coffee -->
+              <fieldset class="wizard-step active" data-step="1">
+                <legend class="wizard-step-title">¿Qué café prefieres?</legend>
+                <p class="wizard-step-description">
+                  Selecciona tu café favorito para empezar
+                </p>
+                <div class="wizard-option-list">
+                  <label class="radio-label">
+                    <input type="radio" name="coffee" value="etiopia" checked />
+                    <span class="wizard-option-content">
+                      <span
+                        class="sub-option-icon icon icon-flower"
+                        aria-hidden="true"
+                      ></span>
+                      <strong class="wizard-option-title"
+                        >Etiopía Floral</strong
+                      >
+                      <span class="wizard-option-description">14,90 €/mes</span>
+                    </span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="coffee" value="colombia" />
+                    <span class="wizard-option-content">
+                      <span
+                        class="sub-option-icon icon icon-chocolate"
+                        aria-hidden="true"
+                      ></span>
+                      <strong class="wizard-option-title"
+                        >Colombia Caramelo</strong
+                      >
+                      <span class="wizard-option-description">12,90 €/mes</span>
+                    </span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="coffee" value="kenia" />
+                    <span class="wizard-option-content">
+                      <span
+                        class="sub-option-icon icon icon-cherry"
+                        aria-hidden="true"
+                      ></span>
+                      <strong class="wizard-option-title"
+                        >Kenia Frutos Rojos</strong
+                      >
+                      <span class="wizard-option-description">15,50 €/mes</span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
 
-  <app-footer></app-footer>
-</body>
+              <!-- Step 2: Choose Plan -->
+              <fieldset class="wizard-step hidden" data-step="2">
+                <legend class="wizard-step-title">Elige tu plan</legend>
+                <p class="wizard-step-description">
+                  Selecciona la frecuencia y cantidad
+                </p>
+                <div class="wizard-option-list">
+                  <label class="radio-label">
+                    <input type="radio" name="plan" value="monthly" checked />
+                    <span class="wizard-option-content">
+                      <strong class="wizard-option-title">Plan Mensual</strong>
+                      <span class="wizard-option-description"
+                        >1 bolsa de 250g cada mes</span
+                      >
+                    </span>
+                    <span class="wizard-option-price">14,90 €</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="plan" value="biweekly" />
+                    <span class="wizard-option-content">
+                      <strong class="wizard-option-title"
+                        >Plan Quincenal</strong
+                      >
+                      <span class="wizard-option-description"
+                        >1 bolsa de 250g cada 15 días</span
+                      >
+                    </span>
+                    <span class="wizard-option-price">29,80 €</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="plan" value="weekly" />
+                    <span class="wizard-option-content">
+                      <strong class="wizard-option-title">Plan Semanal</strong>
+                      <span class="wizard-option-description"
+                        >1 bolsa de 250g cada semana</span
+                      >
+                    </span>
+                    <span class="wizard-option-price">59,60 €</span>
+                  </label>
+                </div>
+              </fieldset>
 
+              <!-- Step 3: Delivery -->
+              <fieldset class="wizard-step hidden" data-step="3">
+                <legend class="wizard-step-title">Datos de entrega</legend>
+                <p class="wizard-step-description">
+                  ¿Dónde te enviamos tu café?
+                </p>
+                <div class="sub-fields">
+                  <label
+                    for="subscription-name"
+                    class="sub-field sub-field-full"
+                  >
+                    <span class="form-label">Nombre completo</span>
+                    <input
+                      type="text"
+                      id="subscription-name"
+                      name="name"
+                      placeholder="Tu nombre"
+                      autocomplete="name"
+                    />
+                  </label>
+                  <label
+                    for="subscription-email"
+                    class="sub-field sub-field-full"
+                  >
+                    <span class="form-label">Email</span>
+                    <input
+                      type="email"
+                      id="subscription-email"
+                      name="email"
+                      placeholder="tu@email.com"
+                      autocomplete="email"
+                    />
+                  </label>
+                  <label
+                    for="subscription-address"
+                    class="sub-field sub-field-full"
+                  >
+                    <span class="form-label">Dirección de envío</span>
+                    <input
+                      type="text"
+                      id="subscription-address"
+                      name="address"
+                      placeholder="Calle, número, piso..."
+                      autocomplete="street-address"
+                    />
+                  </label>
+                  <label for="subscription-city" class="sub-field">
+                    <span class="form-label">Ciudad</span>
+                    <input
+                      type="text"
+                      id="subscription-city"
+                      name="city"
+                      placeholder="Madrid"
+                      autocomplete="address-level2"
+                    />
+                  </label>
+                  <label for="subscription-zip" class="sub-field">
+                    <span class="form-label">Código postal</span>
+                    <input
+                      type="text"
+                      id="subscription-zip"
+                      name="zip"
+                      placeholder="28001"
+                      autocomplete="postal-code"
+                    />
+                  </label>
+                </div>
+              </fieldset>
+
+              <!-- Navigation Buttons -->
+              <nav aria-label="Navegación de pasos" class="sub-nav">
+                <button
+                  type="button"
+                  id="subscription-btn-prev"
+                  disabled
+                  class="btn-primary sub-btn-prev"
+                >
+                  <span aria-hidden="true">&larr;</span> Anterior
+                </button>
+                <span class="sub-nav-status" aria-live="polite"
+                  >Paso <span id="subscription-current-step">1</span> de 3</span
+                >
+                <button
+                  type="button"
+                  id="subscription-btn-next"
+                  class="btn-primary"
+                >
+                  Siguiente &rarr;
+                </button>
+              </nav>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <app-footer></app-footer>
+  </body>
 </html>

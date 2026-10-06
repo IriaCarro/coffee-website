@@ -1,258 +1,383 @@
 <!doctype html>
 <html lang="es" class="snap-scroll">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Café de especialidad recién tostado, seleccionado para disfrutar en casa."
+    />
+    <title>Café rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <link rel="stylesheet" href="/src/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/utils/section-navigation.js"></script>
+    <script type="module" src="/src/js/utils/home-coffees.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Café de especialidad recién tostado, seleccionado para disfrutar en casa." />
-  <title>Café rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
-  <link rel="stylesheet" href="/src/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/utils/section-navigation.js"></script>
-  <script type="module" src="/src/js/utils/home-coffees.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
+    <section-navigation></section-navigation>
+    <main id="main-content">
+      <!-- Section 1: Hero with Background Image -->
 
-<body>
-  <app-header></app-header>
-  <section-navigation></section-navigation>
-  <main id="main-content">
-    <!-- Section 1: Hero with Background Image -->
-
-    <section id="hero" aria-labelledby="hero-title" class="coffee-section hero-section theme-transition">
-      <!-- Content -->
-      <div class="hero-textbox">
-        <h1 id="hero-title">
-          <span class="block">Buen</span>
-          <span class="block text-accent">café,</span>
-          <span class="block">mejores</span>
-          <span class="block">días</span>
-        </h1>
-        <h2>
-          Café recién tostado, en tu puerta cada mes.
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Descubre nuestras selecciones premium de café de
-          origen único.
-        </p>
-        <ul class="home-hero-actions">
-          <li>
-            <a href="/src/pages/subscription.html" class="btn-primary">Subscríbete Ahora</a>
-          </li>
-          <li>
-            <a href="#cafes" class="btn-secondary">Ver Cafés</a>
-          </li>
-        </ul>
-      </div>
-      <img
-        class="hero-image"
-        src="/photos/package-1.png"
-        alt="Bolsa de café de especialidad Etiopía Yirgacheffe, 250 g"
-        width="1145"
-        height="1374"
-        fetchpriority="high"
+      <section
+        id="hero"
+        aria-labelledby="hero-title"
+        class="coffee-section hero-section theme-transition"
       >
-    </section>
-
-    <section id="breakfast" aria-labelledby="breakfast-title" class="coffee-section breakfast-section theme-transition">
-      <div class="breakfast-grain breakfast-grain--one" aria-hidden="true"></div>
-      <div class="breakfast-grain breakfast-grain--two" aria-hidden="true"></div>
-
-      <div class="breakfast-content">
-        <p class="breakfast-eyebrow">CAFÉ RICO · MAÑANAS</p>
-
-        <div class="breakfast-headline-wrap">
-          <h2 id="breakfast-title" class="breakfast-headline" aria-label="Desayunos">
-            <span aria-hidden="true">DESA</span><span aria-hidden="true">Y</span><span aria-hidden="true">UNOS</span>
-          </h2>
-
-          <img class="breakfast-flake breakfast-flake--one" src="/flake-01.png" alt="" aria-hidden="true">
-          <img class="breakfast-flake breakfast-flake--two" src="/flake-02.png" alt="" aria-hidden="true">
-          <img class="breakfast-croissant" src="/croissant.png" alt="" aria-hidden="true">
-        </div>
-
-        <div class="breakfast-bottom">
-          <p>Empieza el día con café recién hecho, bollería artesanal y algo rico.</p>
-          <a class="breakfast-button" href="#cafes">VER CAFÉS <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-    <!-- Section 2: Location - Hero with Background Image -->
-    <section id="location" aria-labelledby="location-title" class="coffee-section home-photo-section theme-transition">
-      
-      <!-- Content -->
-      <div class="home-content">
-        <div class="home-location-grid">
-          <!-- Left: Main Content in Card -->
-          <div class="home-location-card">
-            <h2 id="location-title" class="home-location-title">
-              Un lugar para disfrutar
-            </h2>
-
-            <p class="home-location-lead">
-              Buen café, buena compañía y un ambiente único en la ciudad.
-            </p>
-
-            <!-- Location Info Card -->
-            <section class="home-info-card" aria-labelledby="info-address-title">
-              <h3 class="home-info-title" id="info-address-title">
-                <span class="icon icon-pin" aria-hidden="true"></span>
-                <span class="home-info-label">Ubicación</span>
-              </h3>
-              <address class="home-address">
-                <strong>Calle del Café, 42</strong>
-                <p>28003 Madrid, España</p>
-              </address>
-            </section>
-
-            <!-- Hours Card -->
-            <section class="home-info-card" aria-labelledby="info-hours-title">
-              <h3 class="home-info-title" id="info-hours-title">
-                <span class="icon icon-clock" aria-hidden="true"></span>
-                <span class="home-info-label">Horario</span>
-              </h3>
-              <ul class="home-hours">
-                <li class="home-hours-row">
-                  <p>Lunes - Viernes:</p>
-                  <strong>9:00 - 18:00</strong>
-                </li>
-                <li class="home-hours-row">
-                  <p>Sábado:</p>
-                  <strong>10:00 - 14:00</strong>
-                </li>
-                <li class="home-hours-row home-hours-row--closed">
-                  <p>Domingo:</p>
-                  <strong>Cerrado</strong>
-                </li>
-              </ul>
-            </section>
-
-            <a href="https://maps.google.com/?q=Calle+del+Caf%C3%A9+42+Madrid" target="_blank" rel="noopener noreferrer"
-              class="btn-secondary home-btn">
-              <span class="icon icon-map" aria-hidden="true"></span>
-              <span>Cómo Llegar en Google Maps<span class="sr-only"> (se abre en una pestaña nueva)</span></span>
-            </a>
-          </div>
-
-          <!-- Right: Info Highlights -->
-          <ul class="home-highlights" role="list">
-            <li class="home-highlight">
-              <span class="home-highlight-icon icon icon-coffee" aria-hidden="true"></span>
-              <h3 class="home-highlight-title">Café Artesanal</h3>
-              <p class="home-text-muted">Seleccionado y tostado a la perfección</p>
+        <!-- Content -->
+        <div class="hero-textbox">
+          <h1 id="hero-title">
+            <span class="block">Buen</span>
+            <span class="text-accent block">café,</span>
+            <span class="block">mejores</span>
+            <span class="block">días</span>
+          </h1>
+          <h2>Café recién tostado, en tu puerta cada mes.</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Descubre
+            nuestras selecciones premium de café de origen único.
+          </p>
+          <ul class="home-hero-actions">
+            <li>
+              <a
+                href="/src/pages/subscription.html"
+                class="btn-primary btn-on-image"
+                >Subscríbete Ahora</a
+              >
             </li>
-
-            <li class="home-highlight">
-              <span class="home-highlight-icon icon icon-music" aria-hidden="true"></span>
-              <h3 class="home-highlight-title">Ambiente Único</h3>
-              <p class="home-text-muted">Música y buena compañía garantizadas</p>
-            </li>
-
-            <li class="home-highlight">
-              <span class="home-highlight-icon icon icon-users" aria-hidden="true"></span>
-              <h3 class="home-highlight-title">Comunidad</h3>
-              <p class="home-text-muted">Conecta con otros amantes del café</p>
+            <li>
+              <a href="#cafes" class="btn-secondary btn-on-image">Ver Cafés</a>
             </li>
           </ul>
         </div>
-      </div>
-    </section>
-    <!-- Section 3: Call to Action - Menu & Subscription -->
-    <section id="cta" aria-labelledby="cta-title" class="coffee-section theme-transition">
+        <img
+          class="hero-image"
+          src="/photos/package-1.png"
+          alt="Bolsa de café de especialidad Etiopía Yirgacheffe, 250 g"
+          width="1145"
+          height="1374"
+          fetchpriority="high"
+        />
+      </section>
 
-      <!-- Content -->
-      <div class="home-content">
-        <h2 class="home-title" id="cta-title">
-          Tucafé, donde quieras
-        </h2>
+      <section
+        id="breakfast"
+        aria-labelledby="breakfast-title"
+        class="coffee-section breakfast-section theme-transition"
+      >
+        <div
+          class="breakfast-grain breakfast-grain--one"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="breakfast-grain breakfast-grain--two"
+          aria-hidden="true"
+        ></div>
 
-        <p class="home-lead">
-          Disfruta de nuestro menú en el local o haz tu pedido online para llevar.
-        </p>
+        <div class="breakfast-content">
+          <p class="breakfast-eyebrow">CAFÉ RICO · MAÑANAS</p>
 
-        <ul class="home-cta-actions" role="list">
-          <li>
-            <a href="#cafes" class="home-btn btn-secondary">
-              <span class="icon icon-clipboard" aria-hidden="true"></span>
-              <span>Ver Menú</span>
-            </a>
-          </li>
-          <li>
-            <a href="/src/pages/subscription.html" class="home-btn btn-secondary">
-              <span class="icon icon-coffee" aria-hidden="true"></span>
-              <span>Suscribirse</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <!-- Section 4: Coffee Selection -->
-    <section id="cafes" aria-labelledby="cafes-title" class="coffee-section home-photo-section theme-transition">
+          <div class="breakfast-headline-wrap">
+            <h2
+              id="breakfast-title"
+              class="breakfast-headline"
+              aria-label="Desayunos"
+            >
+              <span aria-hidden="true">DESA</span
+              ><span aria-hidden="true">Y</span
+              ><span aria-hidden="true">UNOS</span>
+            </h2>
 
-      <!-- Content -->
-      <div class="home-content">
-        <!-- Header -->
-        <header class="section-heading">
-          <h2 class="section-title" id="cafes-title">Cafés del Mes</h2>
-          <p class="section-description">Selecciona tu favorito y comienza tu viaje de
-            sabor</p>
-        </header>
+            <img
+              class="breakfast-flake breakfast-flake--one"
+              src="/flake-01.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="breakfast-flake breakfast-flake--two"
+              src="/flake-02.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="breakfast-croissant"
+              src="/croissant.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
 
-        <!-- Coffee Cards -->
-        <ul id="coffee-grid" class="coffee-grid"></ul>
-      </div>
-    </section>
-    <!-- Section 5: About - More Than Coffee -->
-    <section id="about" aria-labelledby="about-title" class="coffee-section home-photo-section theme-transition">
+          <div class="breakfast-bottom">
+            <p>
+              Empieza el día con café recién hecho, bollería artesanal y algo
+              rico.
+            </p>
+            <a class="breakfast-button" href="#cafes"
+              >VER CAFÉS <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Section 2: Location - Hero with Background Image -->
+      <section
+        id="location"
+        aria-labelledby="location-title"
+        class="coffee-section home-photo-section theme-transition"
+      >
+        <!-- Content -->
+        <div class="home-content">
+          <div class="home-location-grid">
+            <!-- Left: Main Content in Card -->
+            <div class="home-location-card">
+              <h2 id="location-title" class="home-location-title">
+                Un lugar para disfrutar
+              </h2>
 
-      <!-- Content -->
-      <div class="home-content">
-        <header class="home-about-header">
-          <h2 id="about-title" class="home-title">
-            Más que Café
-          </h2>
+              <p class="home-location-lead">
+                Buen café, buena compañía y un ambiente único en la ciudad.
+              </p>
 
-          <p class="home-lead home-about-lead">
-            Selección de granos, tueste artesanal y un profundo respeto por el origen. Trabajamos con productores que
-            comparten nuestra visión de un café más consciente y sostenible.
+              <!-- Location Info Card -->
+              <section
+                class="home-info-card"
+                aria-labelledby="info-address-title"
+              >
+                <h3 class="home-info-title" id="info-address-title">
+                  <span class="icon icon-pin" aria-hidden="true"></span>
+                  <span class="home-info-label">Ubicación</span>
+                </h3>
+                <address class="home-address">
+                  <strong>Calle del Café, 42</strong>
+                  <p>28003 Madrid, España</p>
+                </address>
+              </section>
+
+              <!-- Hours Card -->
+              <section
+                class="home-info-card"
+                aria-labelledby="info-hours-title"
+              >
+                <h3 class="home-info-title" id="info-hours-title">
+                  <span class="icon icon-clock" aria-hidden="true"></span>
+                  <span class="home-info-label">Horario</span>
+                </h3>
+                <ul class="home-hours">
+                  <li class="home-hours-row">
+                    <p>Lunes - Viernes:</p>
+                    <strong>9:00 - 18:00</strong>
+                  </li>
+                  <li class="home-hours-row">
+                    <p>Sábado:</p>
+                    <strong>10:00 - 14:00</strong>
+                  </li>
+                  <li class="home-hours-row home-hours-row--closed">
+                    <p>Domingo:</p>
+                    <strong>Cerrado</strong>
+                  </li>
+                </ul>
+              </section>
+
+              <a
+                href="https://maps.google.com/?q=Calle+del+Caf%C3%A9+42+Madrid"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary home-btn"
+              >
+                <span class="icon icon-map" aria-hidden="true"></span>
+                <span
+                  >Cómo Llegar en Google Maps<span class="sr-only">
+                    (se abre en una pestaña nueva)</span
+                  ></span
+                >
+              </a>
+            </div>
+
+            <!-- Right: Info Highlights -->
+            <ul class="home-highlights" role="list">
+              <li class="home-highlight">
+                <span
+                  class="home-highlight-icon icon icon-coffee"
+                  aria-hidden="true"
+                ></span>
+                <h3 class="home-highlight-title">Café Artesanal</h3>
+                <p class="home-text-muted">
+                  Seleccionado y tostado a la perfección
+                </p>
+              </li>
+
+              <li class="home-highlight">
+                <span
+                  class="home-highlight-icon icon icon-music"
+                  aria-hidden="true"
+                ></span>
+                <h3 class="home-highlight-title">Ambiente Único</h3>
+                <p class="home-text-muted">
+                  Música y buena compañía garantizadas
+                </p>
+              </li>
+
+              <li class="home-highlight">
+                <span
+                  class="home-highlight-icon icon icon-users"
+                  aria-hidden="true"
+                ></span>
+                <h3 class="home-highlight-title">Comunidad</h3>
+                <p class="home-text-muted">
+                  Conecta con otros amantes del café
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Section 3: Call to Action - Menu & Subscription -->
+      <section
+        id="cta"
+        aria-labelledby="cta-title"
+        class="coffee-section home-overlay-section theme-transition"
+      >
+        <!-- Content -->
+        <div class="home-content">
+          <h2 class="home-title" id="cta-title">Tucafé, donde quieras</h2>
+
+          <p class="home-lead">
+            Disfruta de nuestro menú en el local o haz tu pedido online para
+            llevar.
           </p>
-        </header>
 
-        <!-- Three Point Cards -->
-        <ul class="home-about-grid" role="list">
-          <li class="home-about-point">
-            <span class="home-about-icon icon icon-globe" aria-hidden="true"></span>
-            <h3 class="home-card-title home-about-point-title">Origen Responsable</h3>
-            <p class="home-text-muted">Relaciones directas con productores locales que respetan el medio
-              ambiente</p>
-          </li>
+          <ul class="home-cta-actions" role="list">
+            <li>
+              <a href="#cafes" class="home-btn btn-secondary btn-on-image">
+                <span class="icon icon-clipboard" aria-hidden="true"></span>
+                <span>Ver Menú</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/src/pages/subscription.html"
+                class="home-btn btn-secondary btn-on-image"
+              >
+                <span class="icon icon-coffee" aria-hidden="true"></span>
+                <span>Suscribirse</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Section 4: Coffee Selection -->
+      <section
+        id="cafes"
+        aria-labelledby="cafes-title"
+        class="coffee-section home-photo-section theme-transition"
+      >
+        <!-- Content -->
+        <div class="home-content">
+          <!-- Header -->
+          <header class="section-heading section-heading-on-image">
+            <h2 class="section-title" id="cafes-title">Cafés del Mes</h2>
+            <p class="section-description">
+              Selecciona tu favorito y comienza tu viaje de sabor
+            </p>
+          </header>
 
-          <li class="home-about-point">
-            <span class="home-about-icon icon icon-flame" aria-hidden="true"></span>
-            <h3 class="home-card-title home-about-point-title">Tueste Artesanal</h3>
-            <p class="home-text-muted">Tostado a pequeños lotes para garantizar la máxima calidad y
-              frescura</p>
-          </li>
+          <!-- Coffee Cards -->
+          <ul id="coffee-grid" class="coffee-grid"></ul>
+        </div>
+      </section>
+      <!-- Section 5: About - More Than Coffee -->
+      <section
+        id="about"
+        aria-labelledby="about-title"
+        class="coffee-section home-photo-section theme-transition"
+      >
+        <!-- Content -->
+        <div class="home-content">
+          <header class="home-about-header">
+            <h2 id="about-title" class="home-title">Más que Café</h2>
 
-          <li class="home-about-point">
-            <span class="home-about-icon icon icon-recycle" aria-hidden="true"></span>
-            <h3 class="home-card-title home-about-point-title">Café Consciente</h3>
-            <p class="home-text-muted">Envases sostenibles y prácticas responsables en cada paso del
-              proceso</p>
-          </li>
-        </ul>
+            <p class="home-lead home-about-lead">
+              Selección de granos, tueste artesanal y un profundo respeto por el
+              origen. Trabajamos con productores que comparten nuestra visión de
+              un café más consciente y sostenible.
+            </p>
+          </header>
 
-        <!-- CTA Button -->
-        <a href="/src/pages/about.html" class="home-btn home-about-action btn-secondary">
-          <span class="icon icon-book-open" aria-hidden="true"></span>
-          <span>Nuestra Historia</span>
-        </a>
-      </div>
-    </section>
-  </main>
-  <app-footer></app-footer>
-</body>
+          <!-- Three Point Cards -->
+          <ul class="home-about-grid" role="list">
+            <li class="home-about-point">
+              <span
+                class="home-about-icon icon icon-globe"
+                aria-hidden="true"
+              ></span>
+              <h3 class="home-card-title home-about-point-title">
+                Origen Responsable
+              </h3>
+              <p class="home-text-muted">
+                Relaciones directas con productores locales que respetan el
+                medio ambiente
+              </p>
+            </li>
 
+            <li class="home-about-point">
+              <span
+                class="home-about-icon icon icon-flame"
+                aria-hidden="true"
+              ></span>
+              <h3 class="home-card-title home-about-point-title">
+                Tueste Artesanal
+              </h3>
+              <p class="home-text-muted">
+                Tostado a pequeños lotes para garantizar la máxima calidad y
+                frescura
+              </p>
+            </li>
+
+            <li class="home-about-point">
+              <span
+                class="home-about-icon icon icon-recycle"
+                aria-hidden="true"
+              ></span>
+              <h3 class="home-card-title home-about-point-title">
+                Café Consciente
+              </h3>
+              <p class="home-text-muted">
+                Envases sostenibles y prácticas responsables en cada paso del
+                proceso
+              </p>
+            </li>
+          </ul>
+
+          <!-- CTA Button -->
+          <a
+            href="/src/pages/about.html"
+            class="home-btn home-about-action btn-secondary btn-on-image"
+          >
+            <span class="icon icon-book-open" aria-hidden="true"></span>
+            <span>Nuestra Historia</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <app-footer></app-footer>
+  </body>
 </html>

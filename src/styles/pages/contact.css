@@ -44,7 +44,7 @@
   }
 
   .contact-card-title {
-    @apply text-2xl font-bold mb-6 text-(--text-primary) flex items-center gap-3;
+    @apply mb-6 flex items-center gap-3 text-2xl font-bold text-(--text-primary);
   }
 
   .contact-card-icon {
@@ -64,7 +64,7 @@
   }
 
   .contact-text-note {
-    @apply text-(--text-primary) text-sm mt-2;
+    @apply mt-2 text-sm text-(--text-primary);
   }
 
   .contact-social {
@@ -84,7 +84,7 @@
   }
 
   .contact-block-title {
-    @apply text-2xl font-bold mb-6 text-(--text-primary);
+    @apply mb-6 text-2xl font-bold text-(--text-primary);
   }
 
   .contact-map {
@@ -104,7 +104,7 @@
   }
 
   .contact-input {
-    @apply w-full px-4 py-2 rounded border border-(--border-input) bg-(--surface-container) text-(--text-primary);
+    @apply w-full rounded border border-(--border-input) bg-(--surface-container) px-4 py-2 text-(--text-primary);
   }
 
   .contact-form-label {
@@ -132,11 +132,11 @@
   }
 
   .contact-faq-title {
-    @apply text-2xl font-bold mb-4 text-(--text-primary);
+    @apply mb-4 text-2xl font-bold text-(--text-primary);
   }
 
   .contact-faq-text {
-    @apply text-lg text-(--text-primary) mb-6;
+    @apply mb-6 text-lg text-(--text-primary);
   }
 
   .contact-faq-button {

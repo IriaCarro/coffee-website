@@ -30,7 +30,7 @@
     @apply text-2xl font-bold text-(--text-primary);
   }
 
-  .nav-link{
+  .nav-link {
     @apply font-medium transition-colors duration-200 hover:opacity-75;
     @apply text-(--text-primary);
   }
@@ -139,20 +139,23 @@
   }
 
   .form-label {
-    @apply block text-sm font-medium transition-colors duration-300 mb-1;
+    @apply mb-1 block text-sm font-medium transition-colors duration-300;
     @apply text-(--text-primary);
   }
 
   .section-nav {
-    @apply fixed right-1 top-1/2 z-40 hidden -translate-y-1/2 sm:right-4 sm:block;
+    @apply fixed top-1/2 right-1 z-40 hidden -translate-y-1/2 sm:right-4 sm:block;
   }
 
   section-navigation {
     display: contents;
   }
 
+  /* The pill gives the dots their own page-tinted backing, so they stay
+     readable over any section (page surface, photo overlay or dark band) */
   .section-nav-list {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-1 rounded-full border border-(--border-subtle) p-1 backdrop-blur-sm;
+    background-color: var(--surface-header);
   }
 
   .section-nav-link {
@@ -161,12 +164,12 @@
   }
 
   .section-nav-dot {
-    @apply h-2.5 w-2.5 rounded-full border-2 border-(--surface-page);
-    @apply opacity-75 transition-all duration-300 ease-in-out;
+    @apply h-2.5 w-2.5 rounded-full border-2 border-(--text-primary);
+    @apply transition-all duration-300 ease-in-out;
   }
 
   .section-nav-link[aria-current="location"] .section-nav-dot {
-    @apply scale-125 bg-(--surface-page) opacity-100;
+    @apply scale-125 bg-(--text-primary);
   }
 
   /* --------------------------------------------------------------------------

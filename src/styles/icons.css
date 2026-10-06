@@ -22,86 +22,86 @@
   }
 
   .icon-pin {
-    --icon: url('/icons/ui/pin.svg');
+    --icon: url("/icons/ui/pin.svg");
   }
 
   .icon-clock {
-    --icon: url('/icons/ui/clock.svg');
+    --icon: url("/icons/ui/clock.svg");
   }
 
   .icon-map {
-    --icon: url('/icons/ui/map.svg');
+    --icon: url("/icons/ui/map.svg");
   }
 
   .icon-phone {
-    --icon: url('/icons/ui/phone.svg');
+    --icon: url("/icons/ui/phone.svg");
   }
 
   .icon-book-open {
-    --icon: url('/icons/ui/book-open.svg');
+    --icon: url("/icons/ui/book-open.svg");
   }
 
   .icon-clipboard {
-    --icon: url('/icons/ui/clipboard.svg');
+    --icon: url("/icons/ui/clipboard.svg");
   }
 
   .icon-coffee {
-    --icon: url('/icons/ui/coffee.svg');
+    --icon: url("/icons/ui/coffee.svg");
   }
 
   .icon-music {
-    --icon: url('/icons/ui/music.svg');
+    --icon: url("/icons/ui/music.svg");
   }
 
   .icon-users {
-    --icon: url('/icons/ui/users.svg');
+    --icon: url("/icons/ui/users.svg");
   }
 
   .icon-globe {
-    --icon: url('/icons/ui/globe.svg');
+    --icon: url("/icons/ui/globe.svg");
   }
 
   .icon-flame {
-    --icon: url('/icons/ui/flame.svg');
+    --icon: url("/icons/ui/flame.svg");
   }
 
   .icon-recycle {
-    --icon: url('/icons/ui/recycle.svg');
+    --icon: url("/icons/ui/recycle.svg");
   }
 
   .icon-sparkles {
-    --icon: url('/icons/ui/sparkles.svg');
+    --icon: url("/icons/ui/sparkles.svg");
   }
 
   .icon-sprout {
-    --icon: url('/icons/ui/sprout.svg');
+    --icon: url("/icons/ui/sprout.svg");
   }
 
   .icon-graduation-cap {
-    --icon: url('/icons/ui/graduation-cap.svg');
+    --icon: url("/icons/ui/graduation-cap.svg");
   }
 
   .icon-facebook {
-    --icon: url('/icons/ui/facebook.svg');
+    --icon: url("/icons/ui/facebook.svg");
   }
 
   .icon-instagram {
-    --icon: url('/icons/ui/instagram.svg');
+    --icon: url("/icons/ui/instagram.svg");
   }
 
   .icon-twitter {
-    --icon: url('/icons/ui/twitter.svg');
+    --icon: url("/icons/ui/twitter.svg");
   }
 
   .icon-flower {
-    --icon: url('/icons/ui/flower.svg');
+    --icon: url("/icons/ui/flower.svg");
   }
 
   .icon-chocolate {
-    --icon: url('/icons/ui/chocolate.svg');
+    --icon: url("/icons/ui/chocolate.svg");
   }
 
   .icon-cherry {
-    --icon: url('/icons/ui/cherry.svg');
+    --icon: url("/icons/ui/cherry.svg");
   }
 }

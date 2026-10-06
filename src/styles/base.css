@@ -13,20 +13,53 @@
     --header-height: calc(var(--brand-logo-size) + 2 * var(--header-padding-y));
     --surface-transparent: transparent;
     --surface-header: color-mix(in srgb, var(--surface-page) 85%, transparent);
-    --surface-gallery-overlay: color-mix(in srgb, var(--color-mine-shaft-950) 65%, transparent);
-    --surface-modal-overlay: color-mix(in srgb, var(--color-mine-shaft-950) 88%, transparent);
-    --surface-control-overlay: color-mix(in srgb, var(--color-mine-shaft-50) 10%, transparent);
-    --surface-control-overlay-hover: color-mix(in srgb, var(--color-mine-shaft-50) 25%, transparent);
-    --surface-glass: color-mix(in srgb, var(--color-mine-shaft-50) 10%, transparent);
-    --surface-glass-hover: color-mix(in srgb, var(--color-mine-shaft-50) 20%, transparent);
-    --border-glass: color-mix(in srgb, var(--color-mine-shaft-50) 20%, transparent);
+    --surface-gallery-overlay: color-mix(
+      in srgb,
+      var(--color-mine-shaft-950) 65%,
+      transparent
+    );
+    --surface-modal-overlay: color-mix(
+      in srgb,
+      var(--color-mine-shaft-950) 88%,
+      transparent
+    );
+    --surface-control-overlay: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 10%,
+      transparent
+    );
+    --surface-control-overlay-hover: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 25%,
+      transparent
+    );
+    --surface-glass: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 10%,
+      transparent
+    );
+    --surface-glass-hover: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 20%,
+      transparent
+    );
+    --border-glass: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 20%,
+      transparent
+    );
     --text-on-image: var(--color-mine-shaft-50);
-    --text-on-image-muted: color-mix(in srgb, var(--color-mine-shaft-50) 80%, transparent);
-    --shadow-header: 0 8px 32px 0 color-mix(in srgb, var(--color-mine-shaft-950) 10%, transparent);
+    --text-on-image-muted: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 90%,
+      transparent
+    );
+    --shadow-header: 0 8px 32px 0
+      color-mix(in srgb, var(--color-mine-shaft-950) 10%, transparent);
   }
 
   /* Light theme (default) */
-  :root, 
+  :root,
   [data-theme="light"] {
     color-scheme: light;
     --surface-page: var(--color-coffee-50);
@@ -36,7 +69,11 @@
     --surface-button-primary: var(--color-coffee-950);
     --surface-button-primary-hover: var(--color-coffee-200);
     --surface-button-secondary: transparent;
-    --surface-button-secondary-hover: color-mix(in srgb, var(--color-coffee-700) 10%, transparent);
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-coffee-700) 10%,
+      transparent
+    );
     --surface-button-tertiary: var(--color-coffee-950);
     --surface-button-tertiary-hover: var(--color-coffee-50);
     --text-button-secondary: var(--color-coffee-700);
@@ -78,7 +115,11 @@
       --surface-button-primary: var(--color-white);
       --surface-button-primary-hover: var(--color-dark-ebony-300);
       --surface-button-secondary: transparent;
-      --surface-button-secondary-hover: color-mix(in srgb, var(--color-mine-shaft-200) 10%, transparent);
+      --surface-button-secondary-hover: color-mix(
+        in srgb,
+        var(--color-mine-shaft-200) 10%,
+        transparent
+      );
       --surface-button-tertiary: var(--color-white);
       --surface-button-tertiary-hover: var(--color-mine-shaft-900);
       --text-button-secondary: var(--color-mine-shaft-200);
@@ -110,42 +151,46 @@
 
   /* Dark theme (explicit) */
   [data-theme="dark"] {
-      color-scheme: dark;
-      --surface-page: var(--color-mine-shaft-900);
-      --surface-footer: var(--color-mine-shaft-800);
-      --surface-container: var(--color-mine-shaft-900);
-      /* Buttons */
-      --surface-button-primary: var(--color-white);
-      --surface-button-primary-hover: var(--color-dark-ebony-300);
-      --surface-button-secondary: transparent;
-      --surface-button-secondary-hover: color-mix(in srgb, var(--color-mine-shaft-200) 10%, transparent);
-      --surface-button-tertiary: var(--color-white);
-      --surface-button-tertiary-hover: var(--color-mine-shaft-900);
-      --text-button-secondary: var(--color-mine-shaft-200);
-      --text-button-tertiary: var(--color-mine-shaft-950);
-      --text-button-tertiary-hover: var(--color-white);
-      --border-button-secondary: var(--color-mine-shaft-200);
-      --border-button-tertiary: var(--color-white);
-      /* Titles */
-      --text-title-light: var(--color-white);
-      --text-title-accent: var(--color-dark-ebony-400);
-      --text-subtitle-light: var(--color-dark-ebony-400);
-      --color-accent: var(--color-mine-shaft-200);
-      --color-accent-hover: var(--color-dark-ebony-300);
-      --color-accent-contrast: var(--color-dark-ebony-400);
-      --surface-home-overlay: var(--color-mine-shaft-950);
-      --border-subtle: var(--color-mine-shaft-700);
-      --border-strong: var(--color-mine-shaft-500);
-      --focus-ring: var(--color-dark-ebony-400);
-      --surface-muted: var(--color-mine-shaft-950);
-      --surface-accent-bg: var(--color-dark-ebony-950);
-      --text-primary: var(--color-white);
-      --text-secondary: var(--color-mine-shaft-300);
-      --text-inverse: var(--color-mine-shaft-950);
-      --text-on-accent: var(--color-mine-shaft-950);
-      --text-on-accent-hover: var(--color-mine-shaft-950);
-      --border-input: var(--color-mine-shaft-500);
-    }
+    color-scheme: dark;
+    --surface-page: var(--color-mine-shaft-900);
+    --surface-footer: var(--color-mine-shaft-800);
+    --surface-container: var(--color-mine-shaft-900);
+    /* Buttons */
+    --surface-button-primary: var(--color-white);
+    --surface-button-primary-hover: var(--color-dark-ebony-300);
+    --surface-button-secondary: transparent;
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-mine-shaft-200) 10%,
+      transparent
+    );
+    --surface-button-tertiary: var(--color-white);
+    --surface-button-tertiary-hover: var(--color-mine-shaft-900);
+    --text-button-secondary: var(--color-mine-shaft-200);
+    --text-button-tertiary: var(--color-mine-shaft-950);
+    --text-button-tertiary-hover: var(--color-white);
+    --border-button-secondary: var(--color-mine-shaft-200);
+    --border-button-tertiary: var(--color-white);
+    /* Titles */
+    --text-title-light: var(--color-white);
+    --text-title-accent: var(--color-dark-ebony-400);
+    --text-subtitle-light: var(--color-dark-ebony-400);
+    --color-accent: var(--color-mine-shaft-200);
+    --color-accent-hover: var(--color-dark-ebony-300);
+    --color-accent-contrast: var(--color-dark-ebony-400);
+    --surface-home-overlay: var(--color-mine-shaft-950);
+    --border-subtle: var(--color-mine-shaft-700);
+    --border-strong: var(--color-mine-shaft-500);
+    --focus-ring: var(--color-dark-ebony-400);
+    --surface-muted: var(--color-mine-shaft-950);
+    --surface-accent-bg: var(--color-dark-ebony-950);
+    --text-primary: var(--color-white);
+    --text-secondary: var(--color-mine-shaft-300);
+    --text-inverse: var(--color-mine-shaft-950);
+    --text-on-accent: var(--color-mine-shaft-950);
+    --text-on-accent-hover: var(--color-mine-shaft-950);
+    --border-input: var(--color-mine-shaft-500);
+  }
 
   [data-theme="matcha"] {
     color-scheme: light;
@@ -156,7 +201,11 @@
     --surface-button-primary: var(--color-turtle-green-950);
     --surface-button-primary-hover: var(--color-turtle-green-400);
     --surface-button-secondary: transparent;
-    --surface-button-secondary-hover: color-mix(in srgb, var(--color-turtle-green-800) 10%, transparent);
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-turtle-green-800) 10%,
+      transparent
+    );
     --surface-button-tertiary: var(--color-turtle-green-950);
     --surface-button-tertiary-hover: var(--color-turtle-green-200);
     --text-button-secondary: var(--color-turtle-green-900);
@@ -195,7 +244,11 @@
     --surface-button-primary: var(--color-coffee-100);
     --surface-button-primary-hover: var(--color-coffee-200);
     --surface-button-secondary: transparent;
-    --surface-button-secondary-hover: color-mix(in srgb, var(--color-coffee-300) 10%, transparent);
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-coffee-300) 10%,
+      transparent
+    );
     --surface-button-tertiary: var(--color-coffee-50);
     --surface-button-tertiary-hover: var(--color-coffee-950);
     --text-button-secondary: var(--color-coffee-300);
@@ -233,7 +286,11 @@
     --surface-button-primary: var(--color-midnight-950);
     --surface-button-primary-hover: var(--color-midnight-200);
     --surface-button-secondary: transparent;
-    --surface-button-secondary-hover: color-mix(in srgb, var(--color-midnight-700) 10%, transparent);
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-midnight-700) 10%,
+      transparent
+    );
     --surface-button-tertiary: var(--color-midnight-950);
     --surface-button-tertiary-hover: var(--color-midnight-50);
     --text-button-secondary: var(--color-midnight-800);
@@ -271,18 +328,22 @@
     --surface-button-primary: var(--color-revolver-950);
     --surface-button-primary-hover: var(--color-revolver-200);
     --surface-button-secondary: transparent;
-    --surface-button-secondary-hover: color-mix(in srgb, var(--color-revolver-700) 10%, transparent);
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-revolver-700) 10%,
+      transparent
+    );
     --surface-button-tertiary: var(--color-revolver-950);
     --surface-button-tertiary-hover: var(--color-revolver-50);
-    --text-button-secondary: var(--color-revolver-700);
+    --text-button-secondary: var(--color-revolver-800);
     --text-button-tertiary: var(--color-revolver-50);
     --text-button-tertiary-hover: var(--color-revolver-950);
-    --border-button-secondary: var(--color-revolver-700);
+    --border-button-secondary: var(--color-revolver-800);
     --border-button-tertiary: var(--color-revolver-950);
     /* Titles */
     --text-title-light: var(--color-revolver-50);
     --text-title-accent: var(--color-revolver-500);
-    --text-subtitle-light: var(--color-revolver-500);
+    --text-subtitle-light: var(--color-revolver-400);
     --color-accent: var(--color-revolver-700);
     --color-accent-hover: var(--color-revolver-200);
     --color-accent-contrast: var(--color-revolver-500);
@@ -306,7 +367,7 @@
   }
 
   html.snap-scroll {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
   }
 
   body {
@@ -372,13 +433,16 @@
     @apply h-4 w-4;
   }
 
-  /* Scroll Snap Layout (proximity: tall sections stay fully reachable) */
+  /* Scroll Snap Layout (mandatory: scrolling always settles on a section;
+     sections taller than the viewport still scroll freely inside) */
   .snap-scroll main > section {
     scroll-snap-align: start;
   }
 
   /* The footer lives outside <main>; without its own snap point the last
-     section traps the scroll and the footer can't be reached. */
+     section traps the scroll and the footer can't be reached. Aligning its
+     end lets the page rest on the footer without forcing it to fill the
+     window. */
   .snap-scroll app-footer {
     display: block;
     scroll-snap-align: end;

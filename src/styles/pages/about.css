@@ -1,6 +1,6 @@
 @layer components {
   .about-section {
-    @apply px-4 py-12 sm:px-6 lg:px-8 bg-(--surface-page);
+    @apply bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
   }
 
   .about-container {

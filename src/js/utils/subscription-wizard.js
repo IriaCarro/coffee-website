@@ -1,14 +1,14 @@
 function initSubscriptionWizard() {
-  const form = document.getElementById('subscription-wizard-form');
+  const form = document.getElementById("subscription-wizard-form");
   if (!form) return;
 
-  const steps = form.querySelectorAll('.wizard-step');
-  const indicators = document.querySelectorAll('.step-indicator');
-  const progressBar = document.getElementById('subscription-progress-bar');
-  const progressTrack = document.getElementById('subscription-progress-track');
-  const btnPrev = document.getElementById('subscription-btn-prev');
-  const btnNext = document.getElementById('subscription-btn-next');
-  const currentStepLabel = document.getElementById('subscription-current-step');
+  const steps = form.querySelectorAll(".wizard-step");
+  const indicators = document.querySelectorAll(".step-indicator");
+  const progressBar = document.getElementById("subscription-progress-bar");
+  const progressTrack = document.getElementById("subscription-progress-track");
+  const btnPrev = document.getElementById("subscription-btn-prev");
+  const btnNext = document.getElementById("subscription-btn-next");
+  const currentStepLabel = document.getElementById("subscription-current-step");
 
   let currentStep = 1;
   const totalSteps = steps.length;
@@ -16,8 +16,8 @@ function initSubscriptionWizard() {
   const updateUI = () => {
     steps.forEach((step) => {
       const stepNum = parseInt(step.dataset.step);
-      step.classList.toggle('active', stepNum === currentStep);
-      step.classList.toggle('hidden', stepNum !== currentStep);
+      step.classList.toggle("active", stepNum === currentStep);
+      step.classList.toggle("hidden", stepNum !== currentStep);
     });
 
     indicators.forEach((indicator) => {
@@ -25,12 +25,12 @@ function initSubscriptionWizard() {
       const isActive = stepNum === currentStep;
       const isCompleted = stepNum < currentStep;
 
-      indicator.classList.toggle('active', isActive);
-      indicator.classList.toggle('completed', isCompleted);
+      indicator.classList.toggle("active", isActive);
+      indicator.classList.toggle("completed", isCompleted);
       if (isActive) {
-        indicator.setAttribute('aria-current', 'step');
+        indicator.setAttribute("aria-current", "step");
       } else {
-        indicator.removeAttribute('aria-current');
+        indicator.removeAttribute("aria-current");
       }
     });
 
@@ -39,16 +39,20 @@ function initSubscriptionWizard() {
       progressBar.style.width = `${progress}%`;
     }
     if (progressTrack) {
-      progressTrack.setAttribute('aria-valuemax', String(totalSteps));
-      progressTrack.setAttribute('aria-valuenow', String(currentStep));
-      progressTrack.setAttribute('aria-valuetext', `Paso ${currentStep} de ${totalSteps}`);
+      progressTrack.setAttribute("aria-valuemax", String(totalSteps));
+      progressTrack.setAttribute("aria-valuenow", String(currentStep));
+      progressTrack.setAttribute(
+        "aria-valuetext",
+        `Paso ${currentStep} de ${totalSteps}`,
+      );
     }
 
     if (btnPrev) {
       btnPrev.disabled = currentStep === 1;
     }
     if (btnNext) {
-      btnNext.textContent = currentStep === totalSteps ? 'Finalizar' : 'Siguiente →';
+      btnNext.textContent =
+        currentStep === totalSteps ? "Finalizar" : "Siguiente →";
     }
 
     if (currentStepLabel) {
@@ -77,10 +81,10 @@ function initSubscriptionWizard() {
   };
 
   if (btnNext) {
-    btnNext.addEventListener('click', nextStep);
+    btnNext.addEventListener("click", nextStep);
   }
   if (btnPrev) {
-    btnPrev.addEventListener('click', prevStep);
+    btnPrev.addEventListener("click", prevStep);
   }
 
   updateUI();

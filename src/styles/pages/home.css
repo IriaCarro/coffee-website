@@ -6,7 +6,7 @@
 
   .home-photo-section {
     isolation: isolate;
-    background-image: url('/photos/cafe-1.jpg');
+    background-image: url("/photos/cafe-1.jpg");
     background-size: cover;
     background-position: center;
   }
@@ -23,10 +23,41 @@
   .hero-section::before {
     background-image: linear-gradient(
       to right,
+      color-mix(in srgb, var(--surface-home-overlay) 85%, transparent),
       color-mix(in srgb, var(--surface-home-overlay) 80%, transparent),
-      color-mix(in srgb, var(--surface-home-overlay) 70%, transparent),
-      color-mix(in srgb, var(--surface-home-overlay) 80%, transparent)
+      color-mix(in srgb, var(--surface-home-overlay) 85%, transparent)
     );
+  }
+
+  /* Plain dark band (no photo) for sections whose text uses the on-image colors */
+  .home-overlay-section {
+    background-color: var(--surface-home-overlay);
+  }
+
+  /* Buttons placed over a photo/dark overlay: themed button colors are tuned
+     for the page surface, so they switch to the on-image palette here */
+  .btn-secondary.btn-on-image {
+    @apply border-(--text-on-image) text-(--text-on-image);
+  }
+
+  .btn-secondary.btn-on-image:hover {
+    @apply bg-(--surface-glass);
+  }
+
+  .btn-primary.btn-on-image {
+    @apply bg-(--text-on-image) text-(--surface-home-overlay);
+  }
+
+  .btn-primary.btn-on-image:hover {
+    @apply bg-(--text-title-accent) text-(--surface-home-overlay);
+  }
+
+  .section-heading-on-image .section-title {
+    @apply text-(--text-on-image);
+  }
+
+  .section-heading-on-image .section-description {
+    @apply text-(--text-on-image-muted);
   }
 
   .home-content {
@@ -36,7 +67,7 @@
 
   /* Shared typography on image backgrounds */
   .home-title {
-    @apply text-5xl md:text-6xl font-bold text-(--text-on-image) mb-6 text-center;
+    @apply mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl;
   }
 
   .home-content .home-lead {
@@ -44,7 +75,7 @@
   }
 
   .home-lead {
-    @apply text-xl md:text-2xl text-(--text-on-image-muted) leading-relaxed;
+    @apply text-xl leading-relaxed text-(--text-on-image-muted) md:text-2xl;
   }
 
   .home-card-title {
@@ -73,12 +104,12 @@
   }
 
   .home-info-card {
-    @apply bg-(--surface-container) p-6 rounded-xl border-l-4;
+    @apply rounded-xl border-l-4 bg-(--surface-container) p-6;
     @apply mb-6 border-(--color-accent);
   }
 
   .home-info-title {
-    @apply font-bold text-(--text-primary) mb-3 flex items-center gap-3;
+    @apply mb-3 flex items-center gap-3 font-bold text-(--text-primary);
   }
 
   .home-info-title .icon {
@@ -90,7 +121,7 @@
   }
 
   .home-address {
-    @apply text-(--text-secondary) space-y-1 not-italic;
+    @apply space-y-1 text-(--text-secondary) not-italic;
   }
 
   .home-hours {
@@ -107,7 +138,7 @@
 
   /* Buttons */
   .home-btn {
-    @apply inline-flex items-center gap-3 font-bold py-4 px-8 rounded-xl transition-all duration-300;
+    @apply inline-flex items-center gap-3 rounded-xl px-8 py-4 font-bold transition-all duration-300;
   }
 
   /* Highlights */
@@ -120,7 +151,7 @@
   }
 
   .home-highlight-icon {
-    @apply block text-5xl mb-4 transition-transform duration-300;
+    @apply mb-4 block text-5xl transition-transform duration-300;
   }
 
   .home-highlight:hover .home-highlight-icon {
@@ -133,33 +164,33 @@
 
   /* CTA */
   .home-cta-actions {
-    @apply flex flex-col sm:flex-row gap-6 justify-center items-center mt-8;
+    @apply mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row;
   }
 
   /* Coffees */
   .home-coffee-link {
-    @apply block no-underline text-inherit;
+    @apply block text-inherit no-underline;
   }
 
   /* About */
   .home-about-header {
-    @apply text-center mb-16;
+    @apply mb-16 text-center;
   }
 
   .home-about-lead {
-    @apply max-w-3xl mx-auto;
+    @apply mx-auto max-w-3xl;
   }
 
   .home-about-grid {
-    @apply grid md:grid-cols-3 gap-8 mb-12;
+    @apply mb-12 grid gap-8 md:grid-cols-3;
   }
 
   .home-about-point {
-    @apply text-center;
+    @apply flex flex-col items-center text-center;
   }
 
   .home-about-icon {
-    @apply block text-7xl mb-6 transition-transform duration-300;
+    @apply mb-6 block text-7xl transition-transform duration-300;
   }
 
   .home-about-point:hover .home-about-icon {
@@ -179,7 +210,7 @@
   .hero-section {
     @apply relative flex flex-col items-center justify-center gap-8 px-4 py-12 sm:px-6 md:flex-row lg:px-8;
     isolation: isolate;
-    background-image: url('/photos/cafe-3.jpeg');
+    background-image: url("/photos/cafe-3.jpeg");
     background-size: cover;
     background-position: center;
   }
@@ -215,17 +246,17 @@
     @apply relative z-10 h-auto w-48 shrink-0 object-contain drop-shadow-2xl sm:w-60 md:w-72 lg:w-96;
   }
 
-  .hero-textbox h1{
-    @apply text-6xl font-bold leading-tight text-(--text-title-light) sm:text-7xl lg:text-9xl;
+  .hero-textbox h1 {
+    @apply text-6xl leading-tight font-bold text-(--text-title-light) sm:text-7xl lg:text-9xl;
     line-height: 0.9;
   }
 
   .hero-textbox h2 {
-    @apply mt-6 mb-4 text-lg font-bold leading-tight text-(--text-subtitle-light) sm:mt-8 sm:mb-6 sm:text-xl;
+    @apply mt-6 mb-4 text-lg leading-tight font-bold text-(--text-subtitle-light) sm:mt-8 sm:mb-6 sm:text-xl;
   }
 
   .hero-textbox p {
-    @apply mb-8 text-lg text-(--text-primary);
+    @apply mb-8 text-lg text-(--text-on-image-muted);
   }
 
   .hero-textbox .text-accent {
@@ -237,7 +268,11 @@
     @apply overflow-hidden;
     isolation: isolate;
     background:
-      radial-gradient(circle at 70% 35%, color-mix(in srgb, var(--color-accent-contrast) 14%, transparent), transparent 28rem),
+      radial-gradient(
+        circle at 70% 35%,
+        color-mix(in srgb, var(--color-accent-contrast) 14%, transparent),
+        transparent 28rem
+      ),
       var(--surface-page);
   }
 
@@ -247,7 +282,10 @@
     inset: 0;
     z-index: -1;
     opacity: 0.16;
-    background-image: radial-gradient(var(--text-primary) 0.7px, transparent 0.7px);
+    background-image: radial-gradient(
+      var(--text-primary) 0.7px,
+      transparent 0.7px
+    );
     background-size: 7px 7px;
     pointer-events: none;
   }
@@ -285,8 +323,12 @@
   .breakfast-flake {
     @apply pointer-events-none absolute z-20;
     width: clamp(110px, 15vw, 230px);
-    filter: drop-shadow(0 14px 12px color-mix(in srgb, var(--text-primary) 18%, transparent))
-      drop-shadow(0 3px 3px color-mix(in srgb, var(--text-primary) 12%, transparent));
+    filter: drop-shadow(
+        0 14px 12px color-mix(in srgb, var(--text-primary) 18%, transparent)
+      )
+      drop-shadow(
+        0 3px 3px color-mix(in srgb, var(--text-primary) 12%, transparent)
+      );
     transition: transform 550ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
@@ -310,8 +352,12 @@
     top: 50%;
     right: 3%;
     width: clamp(300px, 42vw, 650px);
-    filter: drop-shadow(0 25px 18px color-mix(in srgb, var(--text-primary) 22%, transparent))
-      drop-shadow(0 5px 4px color-mix(in srgb, var(--text-primary) 15%, transparent));
+    filter: drop-shadow(
+        0 25px 18px color-mix(in srgb, var(--text-primary) 22%, transparent)
+      )
+      drop-shadow(
+        0 5px 4px color-mix(in srgb, var(--text-primary) 15%, transparent)
+      );
     transform: translateY(-50%) rotate(-8deg);
     transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
@@ -343,7 +389,10 @@
   .breakfast-button {
     @apply inline-flex items-center gap-3 rounded-full border-2 border-(--border-button-tertiary) bg-(--surface-button-tertiary) px-5 py-4 font-bold text-(--text-button-tertiary) no-underline;
     white-space: nowrap;
-    transition: transform 200ms ease, background-color 200ms ease, color 200ms ease;
+    transition:
+      transform 200ms ease,
+      background-color 200ms ease,
+      color 200ms ease;
   }
 
   .breakfast-button:hover {

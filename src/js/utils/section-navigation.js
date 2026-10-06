@@ -1,80 +1,115 @@
-import sectionNavigationTemplate from '../../components/section-navigation.html?raw';
+import sectionNavigationTemplate from "../../components/section-navigation.html?raw";
 
 class SectionNavigation extends HTMLElement {
   constructor() {
     super();
     this.handleLinkClick = this.handleLinkClick.bind(this);
+    this.scheduleUpdate = this.scheduleUpdate.bind(this);
   }
 
   connectedCallback() {
-    if (!this.querySelector('.section-nav-link')) {
+    if (!this.querySelector(".section-nav-link")) {
       this.innerHTML = sectionNavigationTemplate;
     }
 
-    this.links = this.querySelectorAll('.section-nav-link');
-    this.addEventListener('click', this.handleLinkClick);
+    this.links = this.querySelectorAll(".section-nav-link");
+    this.addEventListener("click", this.handleLinkClick);
     this.sections = [...this.links]
-      .map((link) => document.querySelector(link.getAttribute('href')))
+      .map((link) => document.querySelector(link.getAttribute("href")))
       .filter(Boolean);
 
     this.syncHeaderHeight();
+
+    window.addEventListener("scroll", this.scheduleUpdate, { passive: true });
+    window.addEventListener("resize", this.scheduleUpdate);
+    this.updateCurrent();
+  }
+
+  scheduleUpdate() {
+    if (this.frame) return;
+    this.frame = requestAnimationFrame(() => {
+      this.frame = 0;
+      this.updateCurrent();
+    });
+  }
+
+  // The active section is the last one whose top has passed a probe line
+  // placed a quarter of the way down the area below the header. Reading
+  // positions directly (instead of IntersectionObserver entries) keeps the
+  // result right after instant jumps, where a section that merely touches
+  // the viewport edge used to be picked.
+  updateCurrent() {
     const headerHeight = this.getHeaderHeight();
-    const rootMargin = `${-headerHeight}px 0px -50% 0px`;
+    const probe = headerHeight + (window.innerHeight - headerHeight) * 0.25;
+    const atBottom =
+      window.scrollY + window.innerHeight >=
+      document.documentElement.scrollHeight - 2;
 
-    this.sectionObserver = new IntersectionObserver(
-      (entries) => {
-        const visibleSection = entries.find((entry) => entry.isIntersecting);
-        if (!visibleSection) return;
+    const active = atBottom
+      ? this.sections.at(-1)
+      : ([...this.sections]
+          .reverse()
+          .find((section) => section.getBoundingClientRect().top <= probe) ??
+        this.sections[0]);
 
-        this.links.forEach((link) => {
-          if (link.hash === `#${visibleSection.target.id}`) {
-            link.setAttribute('aria-current', 'location');
-          } else {
-            link.removeAttribute('aria-current');
-          }
-        });
-      },
-      { rootMargin },
-    );
-
-    this.sections.forEach((section) => this.sectionObserver.observe(section));
+    this.links.forEach((link) => {
+      if (link.hash === `#${active.id}`) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
   }
 
   getHeaderHeight() {
-    const header = document.querySelector('.site-header');
+    const header = document.querySelector(".site-header");
     if (header) return header.offsetHeight;
-    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 0;
+    return (
+      parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--header-height",
+        ),
+      ) || 0
+    );
   }
 
   syncHeaderHeight() {
     const attach = (header) => {
       this.headerObserver = new ResizeObserver(() => {
-        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+        document.documentElement.style.setProperty(
+          "--header-height",
+          `${header.offsetHeight}px`,
+        );
       });
       this.headerObserver.observe(header);
     };
 
-    const header = document.querySelector('.site-header');
+    const header = document.querySelector(".site-header");
     if (header) return attach(header);
 
     this.headerWatcher = new MutationObserver(() => {
-      const found = document.querySelector('.site-header');
+      const found = document.querySelector(".site-header");
       if (!found) return;
       this.headerWatcher.disconnect();
       attach(found);
     });
-    this.headerWatcher.observe(document.body, { childList: true, subtree: true });
+    this.headerWatcher.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
   }
 
   disconnectedCallback() {
-    this.removeEventListener('click', this.handleLinkClick);
-    this.sectionObserver?.disconnect();
+    this.removeEventListener("click", this.handleLinkClick);
+    window.removeEventListener("scroll", this.scheduleUpdate);
+    window.removeEventListener("resize", this.scheduleUpdate);
+    cancelAnimationFrame(this.frame);
     this.headerObserver?.disconnect();
     this.headerWatcher?.disconnect();
   }
 
   handleLinkClick(event) {
-    const link = event.target.closest('.section-nav-link');
+    const link = event.target.closest(".section-nav-link");
     if (
       !link ||
       event.button !== 0 ||
@@ -86,15 +121,15 @@ class SectionNavigation extends HTMLElement {
       return;
     }
 
-    const section = document.querySelector(link.getAttribute('href'));
+    const section = document.querySelector(link.getAttribute("href"));
     if (!section) return;
 
     event.preventDefault();
     if (window.location.hash !== link.hash) {
-      window.history.pushState(null, '', link.hash);
+      window.history.pushState(null, "", link.hash);
     }
-    section.scrollIntoView({ behavior: 'instant', block: 'start' });
+    section.scrollIntoView({ behavior: "instant", block: "start" });
   }
 }
 
-customElements.define('section-navigation', SectionNavigation);
+customElements.define("section-navigation", SectionNavigation);

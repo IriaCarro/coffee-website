@@ -1,146 +1,183 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Galería de imágenes de nuestros cafés premium."
+    />
+    <title>Galería - Café Rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <link rel="stylesheet" href="/src/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/utils/lightbox.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Galería de imágenes de nuestros cafés premium." />
-  <title>Galería - Café Rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
-  <link rel="stylesheet" href="/src/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/utils/lightbox.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
 
-<body>
-  <app-header></app-header>
+    <main id="main-content">
+      <!-- Gallery Section -->
+      <section class="gallery-section" aria-labelledby="gallery-title">
+        <div class="gallery-container">
+          <!-- Back Button -->
+          <nav class="gallery-back-wrap" aria-label="Migas de pan">
+            <a href="/" class="gallery-back-link">
+              <span aria-hidden="true">&larr;</span>
+              <span>Volver al inicio</span>
+            </a>
+          </nav>
 
-  <main id="main-content">
-    <!-- Gallery Section -->
-    <section class="gallery-section" aria-labelledby="gallery-title">
-      <div class="gallery-container">
-        <!-- Back Button -->
-        <nav class="gallery-back-wrap" aria-label="Migas de pan">
-          <a href="/" class="gallery-back-link">
-            <span aria-hidden="true">&larr;</span>
-            <span>Volver al inicio</span>
-          </a>
-        </nav>
+          <!-- Gallery Header -->
+          <header class="gallery-header">
+            <h1 class="gallery-title" id="gallery-title">Galería de Café</h1>
+            <p class="gallery-subtitle">
+              Explora nuestra colección de cafés premium de origen único
+            </p>
+          </header>
 
-        <!-- Gallery Header -->
-        <header class="gallery-header">
-          <h1 class="gallery-title" id="gallery-title">Galería de Café</h1>
-          <p class="gallery-subtitle">Explora nuestra colección de cafés premium de origen único</p>
-        </header>
+          <!-- Gallery Grid -->
+          <ul data-gallery class="gallery-grid" role="list">
+            <!-- Image 1: Etiopía -->
+            <li class="gallery-item">
+              <figure class="gallery-figure">
+                <img
+                  src="/photos/cafe-1.jpg"
+                  alt="Café Etiopía Floral"
+                  class="gallery-img"
+                />
+                <figcaption class="gallery-caption-overlay gallery-caption">
+                  <h3 class="gallery-caption-title">Etiopía Floral</h3>
+                  <p class="gallery-caption-text">
+                    Notas florales, cítricas y dulces
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
 
-        <!-- Gallery Grid -->
-        <ul data-gallery class="gallery-grid" role="list">
-          <!-- Image 1: Etiopía -->
-          <li class="gallery-item">
-            <figure class="gallery-figure">
-              <img
-                src="/photos/cafe-1.jpg"
-                alt="Café Etiopía Floral"
-                class="gallery-img"
-              />
-              <figcaption class="gallery-caption-overlay gallery-caption">
-                <h3 class="gallery-caption-title">Etiopía Floral</h3>
-                <p class="gallery-caption-text">Notas florales, cítricas y dulces</p>
-              </figcaption>
-            </figure>
-          </li>
+            <!-- Image 2: Colombia -->
+            <li class="gallery-item">
+              <figure class="gallery-figure">
+                <img
+                  src="/photos/cafe-2.jpeg"
+                  alt="Café Colombia Caramelo"
+                  class="gallery-img"
+                />
+                <figcaption class="gallery-caption-overlay gallery-caption">
+                  <h3 class="gallery-caption-title">Colombia Caramelo</h3>
+                  <p class="gallery-caption-text">
+                    Caramelo, chocolate y frutos secos
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
 
-          <!-- Image 2: Colombia -->
-          <li class="gallery-item">
-            <figure class="gallery-figure">
-              <img
-                src="/photos/cafe-2.jpeg"
-                alt="Café Colombia Caramelo"
-                class="gallery-img"
-              />
-              <figcaption class="gallery-caption-overlay gallery-caption">
-                <h3 class="gallery-caption-title">Colombia Caramelo</h3>
-                <p class="gallery-caption-text">Caramelo, chocolate y frutos secos</p>
-              </figcaption>
-            </figure>
-          </li>
+            <!-- Image 3: Kenia -->
+            <li class="gallery-item">
+              <figure class="gallery-figure">
+                <img
+                  src="/photos/cafe-3.jpeg"
+                  alt="Café Kenia Frutos Rojos"
+                  class="gallery-img"
+                />
+                <figcaption class="gallery-caption-overlay gallery-caption">
+                  <h3 class="gallery-caption-title">Kenia Frutos Rojos</h3>
+                  <p class="gallery-caption-text">
+                    Frutos rojos, acidez brillante
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
 
-          <!-- Image 3: Kenia -->
-          <li class="gallery-item">
-            <figure class="gallery-figure">
-              <img
-                src="/photos/cafe-3.jpeg"
-                alt="Café Kenia Frutos Rojos"
-                class="gallery-img"
-              />
-              <figcaption class="gallery-caption-overlay gallery-caption">
-                <h3 class="gallery-caption-title">Kenia Frutos Rojos</h3>
-                <p class="gallery-caption-text">Frutos rojos, acidez brillante</p>
-              </figcaption>
-            </figure>
-          </li>
+            <!-- Image 4: Café Artesanal -->
+            <li class="gallery-item">
+              <figure class="gallery-figure">
+                <img
+                  src="/photos/cafe-4.jpeg"
+                  alt="Café Artesanal"
+                  class="gallery-img"
+                />
+                <figcaption class="gallery-caption-overlay gallery-caption">
+                  <h3 class="gallery-caption-title">Tueste Artesanal</h3>
+                  <p class="gallery-caption-text">
+                    Pequeños lotes, máxima calidad
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
 
-          <!-- Image 4: Café Artesanal -->
-          <li class="gallery-item">
-            <figure class="gallery-figure">
-              <img
-                src="/photos/cafe-4.jpeg"
-                alt="Café Artesanal"
-                class="gallery-img"
-              />
-              <figcaption class="gallery-caption-overlay gallery-caption">
-                <h3 class="gallery-caption-title">Tueste Artesanal</h3>
-                <p class="gallery-caption-text">Pequeños lotes, máxima calidad</p>
-              </figcaption>
-            </figure>
-          </li>
+            <!-- Image 5: Café en Grano -->
+            <li class="gallery-item">
+              <figure class="gallery-figure">
+                <img
+                  src="/photos/cafe-5.jpeg"
+                  alt="Granos de Café Premium"
+                  class="gallery-img"
+                />
+                <figcaption class="gallery-caption-overlay gallery-caption">
+                  <h3 class="gallery-caption-title">Granos Premium</h3>
+                  <p class="gallery-caption-text">
+                    Seleccionados de origen responsable
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
 
-          <!-- Image 5: Café en Grano -->
-          <li class="gallery-item">
-            <figure class="gallery-figure">
-              <img
-                src="/photos/cafe-5.jpeg"
-                alt="Granos de Café Premium"
-                class="gallery-img"
-              />
-              <figcaption class="gallery-caption-overlay gallery-caption">
-                <h3 class="gallery-caption-title">Granos Premium</h3>
-                <p class="gallery-caption-text">Seleccionados de origen responsable</p>
-              </figcaption>
-            </figure>
-          </li>
+            <!-- Image 6: Experiencia Café -->
+            <li class="gallery-item">
+              <figure class="gallery-figure">
+                <img
+                  src="/photos/cafe-6.jpeg"
+                  alt="Experiencia de Café Premium"
+                  class="gallery-img"
+                />
+                <figcaption class="gallery-caption-overlay gallery-caption">
+                  <h3 class="gallery-caption-title">Experiencia Premium</h3>
+                  <p class="gallery-caption-text">
+                    Disfruta del mejor café en tu hogar
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
 
-          <!-- Image 6: Experiencia Café -->
-          <li class="gallery-item">
-            <figure class="gallery-figure">
-              <img
-                src="/photos/cafe-6.jpeg"
-                alt="Experiencia de Café Premium"
-                class="gallery-img"
-              />
-              <figcaption class="gallery-caption-overlay gallery-caption">
-                <h3 class="gallery-caption-title">Experiencia Premium</h3>
-                <p class="gallery-caption-text">Disfruta del mejor café en tu hogar</p>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
+          <!-- CTA Section -->
+          <section class="gallery-cta" aria-labelledby="gallery-cta-title">
+            <h2 class="gallery-cta-title" id="gallery-cta-title">
+              ¿Te gustaría probar nuestros cafés?
+            </h2>
+            <p class="gallery-cta-text">
+              Suscríbete y recibe café premium cada mes
+            </p>
+            <a
+              href="/src/pages/subscription.html"
+              class="btn-primary gallery-cta-btn"
+            >
+              Comenzar Suscripción
+            </a>
+          </section>
+        </div>
+      </section>
+    </main>
 
-        <!-- CTA Section -->
-        <section class="gallery-cta" aria-labelledby="gallery-cta-title">
-          <h2 class="gallery-cta-title" id="gallery-cta-title">¿Te gustaría probar nuestros cafés?</h2>
-          <p class="gallery-cta-text">Suscríbete y recibe café premium cada mes</p>
-          <a href="/src/pages/subscription.html" class="btn-primary gallery-cta-btn">
-            Comenzar Suscripción
-          </a>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <app-footer></app-footer>
-</body>
-
+    <app-footer></app-footer>
+  </body>
 </html>

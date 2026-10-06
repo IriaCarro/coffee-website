@@ -1,13 +1,13 @@
-import themeSelectorTemplate from '../../components/theme-selector.html?raw';
-const THEME_KEY = 'theme-preference';
+import themeSelectorTemplate from "../../components/theme-selector.html?raw";
+const THEME_KEY = "theme-preference";
 
 const THEMES = {
-  light: { label: 'Claro', icon: '/icons/theme/sun.svg' },
-  dark: { label: 'Oscuro', icon: '/icons/theme/moon.svg' },
-  matcha: { label: 'Matcha', icon: '/icons/theme/matcha.svg' },
-  cafe: { label: 'Café', icon: '/icons/theme/coffee.svg' },
-  blue: { label: 'Azul', icon: '/icons/theme/blue.svg' },
-  violet: { label: 'Violeta', icon: '/icons/theme/violet.svg' },
+  light: { label: "Claro", icon: "/icons/theme/sun.svg" },
+  dark: { label: "Oscuro", icon: "/icons/theme/moon.svg" },
+  matcha: { label: "Matcha", icon: "/icons/theme/matcha.svg" },
+  cafe: { label: "Café", icon: "/icons/theme/coffee.svg" },
+  blue: { label: "Azul", icon: "/icons/theme/blue.svg" },
+  violet: { label: "Violeta", icon: "/icons/theme/violet.svg" },
 };
 
 function getStoredTheme() {
@@ -19,7 +19,9 @@ function storeTheme(theme) {
 }
 
 function getSystemTheme() {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 class ThemeSelector extends HTMLElement {
@@ -32,32 +34,32 @@ class ThemeSelector extends HTMLElement {
   }
 
   connectedCallback() {
-    if (!this.querySelector('[data-theme-toggle]')) {
+    if (!this.querySelector("[data-theme-toggle]")) {
       this.render();
     }
 
-    this.toggle = this.querySelector('[data-theme-toggle]');
-    this.menu = this.querySelector('[data-theme-menu]');
-    this.chevron = this.querySelector('[data-theme-chevron]');
-    this.chevron.src = '/icons/theme/chevron-down.svg';
-    this.querySelectorAll('[data-theme-icon-option]').forEach((icon) => {
+    this.toggle = this.querySelector("[data-theme-toggle]");
+    this.menu = this.querySelector("[data-theme-menu]");
+    this.chevron = this.querySelector("[data-theme-chevron]");
+    this.chevron.src = "/icons/theme/chevron-down.svg";
+    this.querySelectorAll("[data-theme-icon-option]").forEach((icon) => {
       icon.src = THEMES[icon.dataset.themeIconOption].icon;
     });
 
     const stored = getStoredTheme();
     this.applyTheme(stored && THEMES[stored] ? stored : getSystemTheme());
 
-    this.toggle.addEventListener('click', this.handleToggle);
-    this.addEventListener('click', this.handleOptionClick);
-    document.addEventListener('click', this.handleOutsideClick);
-    document.addEventListener('keydown', this.handleKeydown);
+    this.toggle.addEventListener("click", this.handleToggle);
+    this.addEventListener("click", this.handleOptionClick);
+    document.addEventListener("click", this.handleOutsideClick);
+    document.addEventListener("keydown", this.handleKeydown);
   }
 
   disconnectedCallback() {
-    this.toggle?.removeEventListener('click', this.handleToggle);
-    this.removeEventListener('click', this.handleOptionClick);
-    document.removeEventListener('click', this.handleOutsideClick);
-    document.removeEventListener('keydown', this.handleKeydown);
+    this.toggle?.removeEventListener("click", this.handleToggle);
+    this.removeEventListener("click", this.handleOptionClick);
+    document.removeEventListener("click", this.handleOutsideClick);
+    document.removeEventListener("keydown", this.handleKeydown);
   }
 
   render() {
@@ -67,27 +69,32 @@ class ThemeSelector extends HTMLElement {
   applyTheme(theme) {
     const themeData = THEMES[theme];
     document.documentElement.dataset.theme = theme;
-    this.querySelector('[data-theme-icon]').src = themeData.icon;
-    this.querySelector('[data-theme-label]').textContent = themeData.label;
+    this.querySelector("[data-theme-icon]").src = themeData.icon;
+    this.querySelector("[data-theme-label]").textContent = themeData.label;
 
-    this.querySelectorAll('[data-theme-menu] [data-theme]').forEach((option) => {
-      option.setAttribute('aria-pressed', String(option.dataset.theme === theme));
-    });
+    this.querySelectorAll("[data-theme-menu] [data-theme]").forEach(
+      (option) => {
+        option.setAttribute(
+          "aria-pressed",
+          String(option.dataset.theme === theme),
+        );
+      },
+    );
   }
 
   setMenuOpen(isOpen) {
-    this.menu.classList.toggle('hidden', !isOpen);
-    this.toggle.setAttribute('aria-expanded', String(isOpen));
-    this.chevron.style.transform = isOpen ? 'rotate(180deg)' : '';
+    this.menu.classList.toggle("hidden", !isOpen);
+    this.toggle.setAttribute("aria-expanded", String(isOpen));
+    this.chevron.style.transform = isOpen ? "rotate(180deg)" : "";
   }
 
   handleToggle(event) {
     event.stopPropagation();
-    this.setMenuOpen(this.menu.classList.contains('hidden'));
+    this.setMenuOpen(this.menu.classList.contains("hidden"));
   }
 
   handleOptionClick(event) {
-    const option = event.target.closest('[data-theme-menu] [data-theme]');
+    const option = event.target.closest("[data-theme-menu] [data-theme]");
     if (!option || !this.contains(option)) return;
 
     const selected = option.dataset.theme;
@@ -100,17 +107,20 @@ class ThemeSelector extends HTMLElement {
   }
 
   handleOutsideClick(event) {
-    if (!this.menu.classList.contains('hidden') && !this.contains(event.target)) {
+    if (
+      !this.menu.classList.contains("hidden") &&
+      !this.contains(event.target)
+    ) {
       this.setMenuOpen(false);
     }
   }
 
   handleKeydown(event) {
-    if (event.key === 'Escape' && !this.menu.classList.contains('hidden')) {
+    if (event.key === "Escape" && !this.menu.classList.contains("hidden")) {
       this.setMenuOpen(false);
       this.toggle.focus();
     }
   }
 }
 
-customElements.define('theme-selector', ThemeSelector);
+customElements.define("theme-selector", ThemeSelector);

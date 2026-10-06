@@ -1,6 +1,6 @@
 @layer components {
   .faq-page-section {
-    @apply py-12 px-4 sm:px-6 lg:px-8 bg-(--surface-page);
+    @apply bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
   }
 
   .faq-page-container {
@@ -36,11 +36,11 @@
   }
 
   .faq-page-contact-title {
-    @apply text-2xl font-bold mb-4 text-(--text-primary);
+    @apply mb-4 text-2xl font-bold text-(--text-primary);
   }
 
   .faq-page-contact-text {
-    @apply text-lg text-(--text-primary) mb-6;
+    @apply mb-6 text-lg text-(--text-primary);
   }
 
   .faq-page-contact-btn {
@@ -66,7 +66,7 @@
   }
 
   .faq-accordion-icon {
-    @apply h-3 w-3 shrink-0 rotate-45 border-b-2 border-r-2 border-(--text-primary) transition-transform duration-300;
+    @apply h-3 w-3 shrink-0 rotate-45 border-r-2 border-b-2 border-(--text-primary) transition-transform duration-300;
   }
 
   .faq-accordion[open] .faq-accordion-icon {

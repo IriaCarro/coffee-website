@@ -1,6 +1,6 @@
 @layer components {
   .gallery-section {
-    @apply bg-(--surface-page) transition-colors duration-300 px-4 py-12 sm:px-6 lg:px-8;
+    @apply bg-(--surface-page) px-4 py-12 transition-colors duration-300 sm:px-6 lg:px-8;
   }
 
   .gallery-container {
@@ -86,7 +86,7 @@
   /* Lightbox */
 
   .lightbox {
-    @apply m-auto h-screen w-screen max-h-none max-w-none bg-(--surface-transparent) p-2 sm:p-4;
+    @apply m-auto h-screen max-h-none w-screen max-w-none bg-(--surface-transparent) p-2 sm:p-4;
   }
 
   .lightbox[open] {
@@ -123,10 +123,14 @@
   }
 
   .gallery-caption-overlay {
-    background-image: linear-gradient(to top, var(--surface-gallery-overlay), var(--surface-transparent));
+    background-image: linear-gradient(
+      to top,
+      var(--surface-gallery-overlay),
+      var(--surface-transparent)
+    );
   }
 
   .lightbox-close {
-    @apply absolute right-4 top-4;
+    @apply absolute top-4 right-4;
   }
 }

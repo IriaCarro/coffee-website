@@ -38,6 +38,7 @@ There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`,
 ## Conventions
 
 **Semantic HTML first.**
+
 - Use the element that matches the meaning: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<ul>`/`<ol>`/`<li>`, `<figure>`, `<details>`/`<summary>`, `<button>`, `<a>`. Don't reach for a `<div>` or `<span>` when one of these fits.
 - Use `<div>` only as a layout/styling wrapper with no semantic equivalent. Before adding one, ask whether an existing element can take the class instead.
 - A `<section>` needs a heading and `aria-labelledby`; use `<article>` only for self-contained, redistributable content. Collections of similar items (cards, FAQ entries, links) are lists.
@@ -46,6 +47,7 @@ There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`,
 - Keep keyboard access intact: visible `:focus-visible` styles, interactive things are real `<a>`/`<button>` elements.
 
 **Respect the themes.** Every change to CSS or markup must keep working in all six themes (light, dark, matcha, cafe, blue, violet).
+
 - Colors, surfaces, borders and focus rings come from the theme CSS variables (`--text-primary`, `--surface-container`, `--border-subtle`, `--focus-ring`...), never hard-coded hex/rgb/Tailwind palette colors in components or pages.
 - New colors that vary by theme must be added as variables in every `[data-theme="..."]` block in `src/styles/base.css`, not only for light/dark.
 - Verify contrast in **each** of the six themes after styling changes (switch with `<theme-selector>`), not just the default. Target WCAG AA: 4.5:1 for normal text, 3:1 for large text, UI components and focus rings. Lighthouse's accessibility audit should stay ≥ 90 per theme.
@@ -53,6 +55,7 @@ There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`,
 - No inline styles: don't use the `style` attribute in HTML or set `element.style.*` / `style.cssText` in JS. Put styles in the CSS files via classes; toggle state with classes or `data-*`/`aria-*` attributes. (Inline styles bypass the cascade layers and theme variables, and are easy to miss when theming.)
 
 **Keep code small and readable.**
+
 - Split large files by responsibility: one JS module per feature in `src/js/utils/`, one CSS file per page in `src/styles/pages/`, and repeated markup as a component in `src/components/` rather than copied between pages.
 - Prefer small functions with a single purpose over long `connectedCallback`/init bodies; move data into `src/data/` instead of hard-coding it in JS or HTML.
 - Reuse existing classes (`btn-primary`, `card`...) before creating new ones, and put shared styles in `components.css`, page-only styles in the page's file.
