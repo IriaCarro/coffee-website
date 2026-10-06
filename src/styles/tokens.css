@@ -31,18 +31,7 @@
   --color-dark-ebony-400: #ffdd00;
   --color-dark-ebony-950: #381c00;
 
-  --color-cardin-green-50: #f2fbf5;
-  --color-cardin-green-100: #e0f8e8;
-  --color-cardin-green-200: #c2f0d3;
-  --color-cardin-green-300: #93e2b0;
-  --color-cardin-green-400: #5ccc86;
-  --color-cardin-green-500: #36b165;
-  --color-cardin-green-600: #279250;
-  --color-cardin-green-700: #227341;
-  --color-cardin-green-800: #205b37;
-  --color-cardin-green-900: #1c4b2f;
-  --color-cardin-green-950: #0d351e;
-
+  /* Mine shaft palette */
   --color-mine-shaft-50: #fafafa;
   --color-mine-shaft-100: #f4f5f5;
   --color-mine-shaft-200: #e3e7e8;
@@ -55,48 +44,42 @@
   --color-mine-shaft-900: #171b1c;
   --color-mine-shaft-950: #080b0c;
 
-  --color-celtic-50: #f1f8f3;
---color-celtic-100: #ddeee1;
---color-celtic-200: #bdddc6;
---color-celtic-300: #90c5a2;
---color-celtic-400: #61a67a;
---color-celtic-500: #40895d;
---color-celtic-600: #2e6d48;
---color-celtic-700: #25573b;
---color-celtic-800: #1f4630;
---color-celtic-900: #183425;
---color-celtic-950: #0e2017;
---color-revolver-50: #f3edff;
---color-revolver-100: #e9deff;
---color-revolver-200: #d9c4ff;
---color-revolver-300: #c5a0ff;
---color-revolver-400: #b87bfe;
---color-revolver-500: #b05bf9;
---color-revolver-600: #aa3dee;
---color-revolver-700: #9730d2;
---color-revolver-800: #792aa9;
---color-revolver-900: #602a85;
---color-revolver-950: #281136;
---color-midnight-50: #eaf6ff;
---color-midnight-100: #d0ebff;
---color-midnight-200: #abddff;
---color-midnight-300: #72caff;
---color-midnight-400: #30adff;
---color-midnight-500: #0088ff;
---color-midnight-600: #0077ff;
---color-midnight-700: #006aff;
---color-midnight-800: #0056dd;
---color-midnight-900: #0047ac;
---color-midnight-950: #021636;
---color-turtle-green-50: #f7ffe6;
---color-turtle-green-100: #eaffc2;
---color-turtle-green-200: #d9ff8a;
---color-turtle-green-300: #c5ff46;
---color-turtle-green-400: #b6ff11;
---color-turtle-green-500: #a9ef00;
---color-turtle-green-600: #93c700;
---color-turtle-green-700: #789b00;
---color-turtle-green-800: #667d06;
---color-turtle-green-900: #596a0b;
---color-turtle-green-950: #2b3401;
+  /* Revolver (violet theme) */
+  --color-revolver-50: #f3edff;
+  --color-revolver-100: #e9deff;
+  --color-revolver-200: #d9c4ff;
+  --color-revolver-300: #c5a0ff;
+  --color-revolver-400: #b87bfe;
+  --color-revolver-500: #b05bf9;
+  --color-revolver-600: #aa3dee;
+  --color-revolver-700: #9730d2;
+  --color-revolver-800: #792aa9;
+  --color-revolver-900: #602a85;
+  --color-revolver-950: #281136;
+
+  /* Midnight (blue theme) */
+  --color-midnight-50: #eaf6ff;
+  --color-midnight-100: #d0ebff;
+  --color-midnight-200: #abddff;
+  --color-midnight-300: #72caff;
+  --color-midnight-400: #30adff;
+  --color-midnight-500: #0088ff;
+  --color-midnight-600: #0077ff;
+  --color-midnight-700: #006aff;
+  --color-midnight-800: #0056dd;
+  --color-midnight-900: #0047ac;
+  --color-midnight-950: #021636;
+
+  /* Turtle green (matcha theme) */
+  --color-turtle-green-50: #f7ffe6;
+  --color-turtle-green-100: #eaffc2;
+  --color-turtle-green-200: #d9ff8a;
+  --color-turtle-green-300: #c5ff46;
+  --color-turtle-green-400: #b6ff11;
+  --color-turtle-green-500: #a9ef00;
+  --color-turtle-green-600: #93c700;
+  --color-turtle-green-700: #789b00;
+  --color-turtle-green-800: #667d06;
+  --color-turtle-green-900: #596a0b;
+  --color-turtle-green-950: #2b3401;
 }

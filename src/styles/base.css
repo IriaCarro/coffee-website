@@ -5,17 +5,16 @@
 
 @layer base {
   :root {
-    --header-height: 73px;
+    --brand-logo-size: 2.5rem;
+    --header-padding-y: 1rem;
+    /* Single-row height (logo + vertical padding). When the nav wraps on small
+       screens the real height is larger: section-navigation.js measures the
+       header and overwrites this variable on <html>. */
+    --header-height: calc(var(--brand-logo-size) + 2 * var(--header-padding-y));
     --surface-transparent: transparent;
     --surface-header: color-mix(in srgb, var(--surface-page) 85%, transparent);
     --surface-gallery-overlay: color-mix(in srgb, var(--color-mine-shaft-950) 65%, transparent);
     --surface-modal-overlay: color-mix(in srgb, var(--color-mine-shaft-950) 88%, transparent);
-    --surface-image-overlay-subtle: color-mix(in srgb, var(--color-mine-shaft-950) 40%, transparent);
-    --surface-image-overlay-medium: color-mix(in srgb, var(--color-mine-shaft-950) 70%, transparent);
-    --surface-image-overlay-strong: color-mix(in srgb, var(--color-mine-shaft-950) 80%, transparent);
-    --surface-image-overlay-intense: color-mix(in srgb, var(--color-mine-shaft-950) 85%, transparent);
-    --surface-image-overlay-deep: color-mix(in srgb, var(--color-mine-shaft-950) 75%, transparent);
-    --surface-home-overlay: var(--color-coffee-950);
     --surface-control-overlay: color-mix(in srgb, var(--color-mine-shaft-50) 10%, transparent);
     --surface-control-overlay-hover: color-mix(in srgb, var(--color-mine-shaft-50) 25%, transparent);
     --surface-glass: color-mix(in srgb, var(--color-mine-shaft-50) 10%, transparent);
@@ -47,7 +46,7 @@
     --border-button-tertiary: var(--color-coffee-950);
     /* Titles */
     --text-title-light: var(--color-coffee-50);
-    --text-tittle-accent: var(--color-coffee-400);
+    --text-title-accent: var(--color-coffee-400);
     --text-subtitle-light: var(--color-coffee-400);
     --color-accent: var(--color-coffee-700);
     --color-accent-hover: var(--color-coffee-200);
@@ -61,12 +60,16 @@
     --text-primary: var(--color-coffee-950);
     --text-secondary: var(--color-mine-shaft-700);
     --text-inverse: var(--color-coffee-50);
+    --text-on-accent: var(--color-coffee-50);
+    --text-on-accent-hover: var(--color-coffee-950);
+    --border-input: var(--color-coffee-600);
   }
 
-  /* Support for dark mode based on user preference without explicit theme */
+  /* Dark mode from the OS preference when no theme is stored. Same values as
+     [data-theme="dark"] below: CSS can't share one block across a media query
+     and an attribute selector. Keep both in sync. */
   @media (prefers-color-scheme: dark) {
-    html:not([data-theme]),
-    [data-theme="dark"] {
+    html:not([data-theme]) {
       color-scheme: dark;
       --surface-page: var(--color-mine-shaft-900);
       --surface-footer: var(--color-mine-shaft-800);
@@ -85,7 +88,7 @@
       --border-button-tertiary: var(--color-white);
       /* Titles */
       --text-title-light: var(--color-white);
-      --text-tittle-accent: var(--color-dark-ebony-400);
+      --text-title-accent: var(--color-dark-ebony-400);
       --text-subtitle-light: var(--color-dark-ebony-400);
       --color-accent: var(--color-mine-shaft-200);
       --color-accent-hover: var(--color-dark-ebony-300);
@@ -99,6 +102,9 @@
       --text-primary: var(--color-white);
       --text-secondary: var(--color-mine-shaft-300);
       --text-inverse: var(--color-mine-shaft-950);
+      --text-on-accent: var(--color-mine-shaft-950);
+      --text-on-accent-hover: var(--color-mine-shaft-950);
+      --border-input: var(--color-mine-shaft-500);
     }
   }
 
@@ -122,7 +128,7 @@
       --border-button-tertiary: var(--color-white);
       /* Titles */
       --text-title-light: var(--color-white);
-      --text-tittle-accent: var(--color-dark-ebony-400);
+      --text-title-accent: var(--color-dark-ebony-400);
       --text-subtitle-light: var(--color-dark-ebony-400);
       --color-accent: var(--color-mine-shaft-200);
       --color-accent-hover: var(--color-dark-ebony-300);
@@ -136,6 +142,9 @@
       --text-primary: var(--color-white);
       --text-secondary: var(--color-mine-shaft-300);
       --text-inverse: var(--color-mine-shaft-950);
+      --text-on-accent: var(--color-mine-shaft-950);
+      --text-on-accent-hover: var(--color-mine-shaft-950);
+      --border-input: var(--color-mine-shaft-500);
     }
 
   [data-theme="matcha"] {
@@ -150,28 +159,31 @@
     --surface-button-secondary-hover: color-mix(in srgb, var(--color-turtle-green-800) 10%, transparent);
     --surface-button-tertiary: var(--color-turtle-green-950);
     --surface-button-tertiary-hover: var(--color-turtle-green-200);
-    --text-button-secondary: var(--color-turtle-green-800);
+    --text-button-secondary: var(--color-turtle-green-900);
     --text-button-tertiary: var(--color-turtle-green-50);
     --text-button-tertiary-hover: var(--color-turtle-green-950);
-    --border-button-secondary: var(--color-turtle-green-800);
+    --border-button-secondary: var(--color-turtle-green-900);
     --border-button-tertiary: var(--color-turtle-green-950);
     /* Titles */
     --text-title-light: var(--color-turtle-green-50);
-    --text-tittle-accent: var(--color-turtle-green-400);
+    --text-title-accent: var(--color-turtle-green-400);
     --text-subtitle-light: var(--color-turtle-green-400);
     /* Accent colors */
-    --color-accent: var(--color-turtle-green-800);
+    --color-accent: var(--color-turtle-green-900);
     --color-accent-hover: var(--color-turtle-green-400);
     --color-accent-contrast: var(--color-turtle-green-400);
     --surface-home-overlay: var(--color-turtle-green-950);
     --border-subtle: var(--color-turtle-green-200);
     --border-strong: var(--color-turtle-green-400);
-    --focus-ring: var(--color-turtle-green-700);
+    --focus-ring: var(--color-turtle-green-800);
     --surface-muted: var(--color-turtle-green-100);
     --surface-accent-bg: var(--color-turtle-green-50);
     --text-primary: var(--color-turtle-green-950);
-    --text-secondary: var(--color-turtle-green-600);
+    --text-secondary: var(--color-turtle-green-900);
     --text-inverse: var(--color-turtle-green-50);
+    --text-on-accent: var(--color-turtle-green-50);
+    --text-on-accent-hover: var(--color-turtle-green-950);
+    --border-input: var(--color-turtle-green-800);
   }
 
   [data-theme="cafe"] {
@@ -180,7 +192,7 @@
     --surface-footer: var(--color-coffee-900);
     --surface-container: var(--color-coffee-800);
     /* Buttons */
-    --surface-button-primary: var(--color-coffee-950);
+    --surface-button-primary: var(--color-coffee-100);
     --surface-button-primary-hover: var(--color-coffee-200);
     --surface-button-secondary: transparent;
     --surface-button-secondary-hover: color-mix(in srgb, var(--color-coffee-300) 10%, transparent);
@@ -193,7 +205,7 @@
     --border-button-tertiary: var(--color-coffee-300);
     /* Titles */
     --text-title-light: var(--color-coffee-50);
-    --text-tittle-accent: var(--color-coffee-200);
+    --text-title-accent: var(--color-coffee-200);
     --text-subtitle-light: var(--color-coffee-400);
     --color-accent: var(--color-coffee-300);
     --color-accent-hover: var(--color-coffee-200);
@@ -206,7 +218,10 @@
     --surface-accent-bg: var(--color-coffee-800);
     --text-primary: var(--color-coffee-50);
     --text-secondary: var(--color-coffee-200);
-    --text-inverse: var(--color-coffee-50);
+    --text-inverse: var(--color-coffee-950);
+    --text-on-accent: var(--color-coffee-950);
+    --text-on-accent-hover: var(--color-coffee-950);
+    --border-input: var(--color-coffee-400);
   }
 
   [data-theme="blue"] {
@@ -221,16 +236,16 @@
     --surface-button-secondary-hover: color-mix(in srgb, var(--color-midnight-700) 10%, transparent);
     --surface-button-tertiary: var(--color-midnight-950);
     --surface-button-tertiary-hover: var(--color-midnight-50);
-    --text-button-secondary: var(--color-midnight-700);
+    --text-button-secondary: var(--color-midnight-800);
     --text-button-tertiary: var(--color-midnight-50);
     --text-button-tertiary-hover: var(--color-midnight-950);
-    --border-button-secondary: var(--color-midnight-700);
+    --border-button-secondary: var(--color-midnight-800);
     --border-button-tertiary: var(--color-midnight-950);
     /* Titles */
     --text-title-light: var(--color-midnight-50);
-    --text-tittle-accent: var(--color-midnight-500);
+    --text-title-accent: var(--color-midnight-500);
     --text-subtitle-light: var(--color-midnight-500);
-    --color-accent: var(--color-midnight-700);
+    --color-accent: var(--color-midnight-800);
     --color-accent-hover: var(--color-midnight-200);
     --color-accent-contrast: var(--color-midnight-500);
     --surface-home-overlay: var(--color-midnight-950);
@@ -242,6 +257,9 @@
     --text-primary: var(--color-midnight-950);
     --text-secondary: var(--color-midnight-800);
     --text-inverse: var(--color-midnight-50);
+    --text-on-accent: var(--color-midnight-50);
+    --text-on-accent-hover: var(--color-midnight-950);
+    --border-input: var(--color-midnight-700);
   }
 
   [data-theme="violet"] {
@@ -263,7 +281,7 @@
     --border-button-tertiary: var(--color-revolver-950);
     /* Titles */
     --text-title-light: var(--color-revolver-50);
-    --text-tittle-accent: var(--color-revolver-500);
+    --text-title-accent: var(--color-revolver-500);
     --text-subtitle-light: var(--color-revolver-500);
     --color-accent: var(--color-revolver-700);
     --color-accent-hover: var(--color-revolver-200);
@@ -277,6 +295,9 @@
     --text-primary: var(--color-revolver-950);
     --text-secondary: var(--color-revolver-800);
     --text-inverse: var(--color-revolver-50);
+    --text-on-accent: var(--color-revolver-50);
+    --text-on-accent-hover: var(--color-revolver-950);
+    --border-input: var(--color-revolver-600);
   }
 
   /* HTML & Body Styles */
@@ -285,7 +306,7 @@
   }
 
   html.snap-scroll {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
   }
 
   body {
@@ -299,6 +320,32 @@
     font-family: var(--font-display);
   }
 
+  /* Keyboard focus for links, buttons and anything else focusable */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* On photo backgrounds the themed ring would blend in */
+  .hero-section :focus-visible,
+  .home-photo-section :focus-visible {
+    outline-color: var(--text-on-image);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   /* Native Form Elements */
   label {
     @apply transition-colors duration-300;
@@ -308,7 +355,7 @@
   input[type="email"],
   textarea {
     @apply w-full rounded-lg border-2 px-4 py-2 transition-all duration-300;
-    @apply border-(--border-subtle) bg-(--surface-container) text-(--text-primary);
+    @apply border-(--border-input) bg-(--surface-container) text-(--text-primary);
   }
 
   input[type="text"]:focus-visible,
@@ -325,10 +372,9 @@
     @apply h-4 w-4;
   }
 
-  /* Scroll Snap Layout */
+  /* Scroll Snap Layout (proximity: tall sections stay fully reachable) */
   .snap-scroll main > section {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
   }
 
   /* The footer lives outside <main>; without its own snap point the last

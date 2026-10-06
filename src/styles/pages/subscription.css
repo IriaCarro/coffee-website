@@ -12,7 +12,7 @@
   }
 
   .sub-back-link {
-    @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:text-(--text-primary);
+    @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:underline;
   }
 
   .sub-header {
@@ -63,7 +63,7 @@
     @apply text-sm font-medium;
   }
 
-  .sub-btn-prev {
+  .sub-btn-prev:disabled {
     @apply cursor-not-allowed opacity-50;
   }
 
@@ -77,10 +77,10 @@
   }
 
   .step-indicator.active {
-    @apply bg-linear-to-br from-(--color-accent) to-(--color-accent-hover) text-(--color-accent-contrast);
+    @apply bg-(--color-accent) text-(--text-on-accent) outline-2 outline-offset-2 outline-(--color-accent);
   }
 
   .step-indicator.completed {
-    @apply bg-(--color-accent) text-(--color-accent-contrast);
+    @apply bg-(--color-accent) text-(--text-on-accent);
   }
 }

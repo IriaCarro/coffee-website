@@ -10,7 +10,7 @@
      -------------------------------------------------------------------------- */
 
   .site-header {
-    @apply sticky top-0 z-50 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 sm:py-4;
+    @apply sticky top-0 z-50 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 sm:py-(--header-padding-y);
     @apply bg-(--surface-page);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -23,7 +23,7 @@
   }
 
   .brand-logo {
-    @apply h-10 w-10 rounded-lg object-cover shadow-sm;
+    @apply size-(--brand-logo-size) rounded-lg object-cover shadow-sm;
   }
 
   .brand-name {
@@ -117,7 +117,7 @@
   }
 
   .btn-primary:hover {
-    @apply bg-(--surface-button-primary-hover);
+    @apply bg-(--surface-button-primary-hover) text-(--text-on-accent-hover);
   }
 
   .btn-secondary {
@@ -135,7 +135,7 @@
   }
 
   .card:hover {
-    @apply shadow-xl hover:scale-105;
+    @apply scale-105 shadow-xl;
   }
 
   .form-label {
@@ -225,7 +225,7 @@
 
   .radio-label {
     @apply flex cursor-pointer items-center rounded-lg border-2 p-4 transition-all duration-300;
-    @apply border-(--border-strong) bg-(--surface-transparent);
+    @apply border-(--border-input) bg-(--surface-transparent);
   }
 
   .radio-label:hover {

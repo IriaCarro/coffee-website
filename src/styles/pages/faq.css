@@ -12,7 +12,7 @@
   }
 
   .faq-page-back-link {
-    @apply inline-flex items-center gap-2 text-(--text-primary) hover:text-(--text-primary) transition-colors;
+    @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:underline;
   }
 
   .faq-page-header {

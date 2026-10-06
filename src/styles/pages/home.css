@@ -116,7 +116,7 @@
   }
 
   .home-highlight {
-    @apply cursor-pointer rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8;
+    @apply rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8;
   }
 
   .home-highlight-icon {
@@ -199,9 +199,9 @@
     z-index: 0;
     background-image: linear-gradient(
       to right,
-      rgb(0 0 0 / 85%),
-      rgb(0 0 0 / 70%) 50%,
-      rgb(0 0 0 / 35%) 75%,
+      color-mix(in srgb, var(--surface-home-overlay) 85%, transparent),
+      color-mix(in srgb, var(--surface-home-overlay) 70%, transparent) 50%,
+      color-mix(in srgb, var(--surface-home-overlay) 35%, transparent) 75%,
       transparent
     );
     pointer-events: none;
@@ -229,7 +229,7 @@
   }
 
   .hero-textbox .text-accent {
-    @apply text-(--text-tittle-accent);
+    @apply text-(--text-title-accent);
   }
 
   /* Breakfast */
