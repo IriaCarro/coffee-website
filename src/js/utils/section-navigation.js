@@ -8,11 +8,11 @@ class SectionNavigation extends HTMLElement {
   }
 
   connectedCallback() {
-    if (!this.querySelector(".section-nav-link")) {
+    if (!this.querySelector(".section-nav__link")) {
       this.innerHTML = sectionNavigationTemplate;
     }
 
-    this.links = this.querySelectorAll(".section-nav-link");
+    this.links = this.querySelectorAll(".section-nav__link");
     this.addEventListener("click", this.handleLinkClick);
     this.sections = [...this.links]
       .map((link) => document.querySelector(link.getAttribute("href")))
@@ -109,7 +109,7 @@ class SectionNavigation extends HTMLElement {
   }
 
   handleLinkClick(event) {
-    const link = event.target.closest(".section-nav-link");
+    const link = event.target.closest(".section-nav__link");
     if (
       !link ||
       event.button !== 0 ||

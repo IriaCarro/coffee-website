@@ -1,0 +1,363 @@
+/* ============================================================================
+   THEMES
+   Design variables per theme (light, dark, matcha, cafe, blue, violet)
+   ============================================================================ */
+
+@layer base {
+  :root {
+    --brand-logo-size: 2.5rem;
+    --header-padding-y: 1rem;
+    /* Single-row height (logo + vertical padding). When the nav wraps on small
+       screens the real height is larger: section-navigation.js measures the
+       header and overwrites this variable on <html>. */
+    --header-height: calc(var(--brand-logo-size) + 2 * var(--header-padding-y));
+    --surface-transparent: transparent;
+    --surface-header: color-mix(in srgb, var(--surface-page) 85%, transparent);
+    --surface-gallery-overlay: color-mix(
+      in srgb,
+      var(--color-mine-shaft-950) 65%,
+      transparent
+    );
+    --surface-modal-overlay: color-mix(
+      in srgb,
+      var(--color-mine-shaft-950) 88%,
+      transparent
+    );
+    --surface-control-overlay: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 10%,
+      transparent
+    );
+    --surface-control-overlay-hover: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 25%,
+      transparent
+    );
+    --surface-glass: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 10%,
+      transparent
+    );
+    --surface-glass-hover: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 20%,
+      transparent
+    );
+    --border-glass: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 20%,
+      transparent
+    );
+    --text-on-image: var(--color-mine-shaft-50);
+    --text-on-image-muted: color-mix(
+      in srgb,
+      var(--color-mine-shaft-50) 90%,
+      transparent
+    );
+    --shadow-header: 0 8px 32px 0
+      color-mix(in srgb, var(--color-mine-shaft-950) 10%, transparent);
+  }
+
+  /* Light theme (default) */
+  :root,
+  [data-theme="light"] {
+    color-scheme: light;
+    --surface-page: var(--color-coffee-50);
+    --surface-footer: var(--color-neutral-50);
+    --surface-container: var(--color-neutral-50);
+    /* Buttons */
+    --surface-button-primary: var(--color-coffee-950);
+    --surface-button-primary-hover: var(--color-coffee-200);
+    --surface-button-secondary: transparent;
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-coffee-700) 10%,
+      transparent
+    );
+    --surface-button-tertiary: var(--color-coffee-950);
+    --surface-button-tertiary-hover: var(--color-coffee-50);
+    --text-button-secondary: var(--color-coffee-700);
+    --text-button-tertiary: var(--color-coffee-50);
+    --text-button-tertiary-hover: var(--color-coffee-950);
+    --border-button-secondary: var(--color-coffee-700);
+    --border-button-tertiary: var(--color-coffee-950);
+    /* Titles */
+    --text-on-image-title: var(--color-coffee-50);
+    --text-on-image-accent: var(--color-coffee-400);
+    --text-on-image-subtitle: var(--color-coffee-400);
+    --accent: var(--color-coffee-700);
+    --accent-hover: var(--color-coffee-200);
+    --accent-contrast: var(--color-coffee-400);
+    --surface-home-overlay: var(--color-coffee-950);
+    --border-subtle: var(--color-coffee-700);
+    --border-strong: var(--color-coffee-700);
+    --focus-ring: var(--color-coffee-700);
+    --surface-muted: var(--color-coffee-100);
+    --surface-accent: var(--color-coffee-100);
+    --text-primary: var(--color-coffee-950);
+    --text-secondary: var(--color-mine-shaft-700);
+    --text-inverse: var(--color-coffee-50);
+    --text-on-accent: var(--color-coffee-50);
+    --text-on-accent-hover: var(--color-coffee-950);
+    --border-input: var(--color-coffee-600);
+  }
+
+  /* Dark mode from the OS preference when no theme is stored. Same values as
+     [data-theme="dark"] below: CSS can't share one block across a media query
+     and an attribute selector. Keep both in sync. */
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+      color-scheme: dark;
+      --surface-page: var(--color-mine-shaft-900);
+      --surface-footer: var(--color-mine-shaft-800);
+      --surface-container: var(--color-mine-shaft-900);
+      /* Buttons */
+      --surface-button-primary: var(--color-white);
+      --surface-button-primary-hover: var(--color-dark-ebony-300);
+      --surface-button-secondary: transparent;
+      --surface-button-secondary-hover: color-mix(
+        in srgb,
+        var(--color-mine-shaft-200) 10%,
+        transparent
+      );
+      --surface-button-tertiary: var(--color-white);
+      --surface-button-tertiary-hover: var(--color-mine-shaft-900);
+      --text-button-secondary: var(--color-mine-shaft-200);
+      --text-button-tertiary: var(--color-mine-shaft-950);
+      --text-button-tertiary-hover: var(--color-white);
+      --border-button-secondary: var(--color-mine-shaft-200);
+      --border-button-tertiary: var(--color-white);
+      /* Titles */
+      --text-on-image-title: var(--color-white);
+      --text-on-image-accent: var(--color-dark-ebony-400);
+      --text-on-image-subtitle: var(--color-dark-ebony-400);
+      --accent: var(--color-mine-shaft-200);
+      --accent-hover: var(--color-dark-ebony-300);
+      --accent-contrast: var(--color-dark-ebony-400);
+      --surface-home-overlay: var(--color-mine-shaft-950);
+      --border-subtle: var(--color-mine-shaft-700);
+      --border-strong: var(--color-mine-shaft-500);
+      --focus-ring: var(--color-dark-ebony-400);
+      --surface-muted: var(--color-mine-shaft-950);
+      --surface-accent: var(--color-dark-ebony-950);
+      --text-primary: var(--color-white);
+      --text-secondary: var(--color-mine-shaft-300);
+      --text-inverse: var(--color-mine-shaft-950);
+      --text-on-accent: var(--color-mine-shaft-950);
+      --text-on-accent-hover: var(--color-mine-shaft-950);
+      --border-input: var(--color-mine-shaft-500);
+    }
+  }
+
+  /* Dark theme (explicit) */
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --surface-page: var(--color-mine-shaft-900);
+    --surface-footer: var(--color-mine-shaft-800);
+    --surface-container: var(--color-mine-shaft-900);
+    /* Buttons */
+    --surface-button-primary: var(--color-white);
+    --surface-button-primary-hover: var(--color-dark-ebony-300);
+    --surface-button-secondary: transparent;
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-mine-shaft-200) 10%,
+      transparent
+    );
+    --surface-button-tertiary: var(--color-white);
+    --surface-button-tertiary-hover: var(--color-mine-shaft-900);
+    --text-button-secondary: var(--color-mine-shaft-200);
+    --text-button-tertiary: var(--color-mine-shaft-950);
+    --text-button-tertiary-hover: var(--color-white);
+    --border-button-secondary: var(--color-mine-shaft-200);
+    --border-button-tertiary: var(--color-white);
+    /* Titles */
+    --text-on-image-title: var(--color-white);
+    --text-on-image-accent: var(--color-dark-ebony-400);
+    --text-on-image-subtitle: var(--color-dark-ebony-400);
+    --accent: var(--color-mine-shaft-200);
+    --accent-hover: var(--color-dark-ebony-300);
+    --accent-contrast: var(--color-dark-ebony-400);
+    --surface-home-overlay: var(--color-mine-shaft-950);
+    --border-subtle: var(--color-mine-shaft-700);
+    --border-strong: var(--color-mine-shaft-500);
+    --focus-ring: var(--color-dark-ebony-400);
+    --surface-muted: var(--color-mine-shaft-950);
+    --surface-accent: var(--color-dark-ebony-950);
+    --text-primary: var(--color-white);
+    --text-secondary: var(--color-mine-shaft-300);
+    --text-inverse: var(--color-mine-shaft-950);
+    --text-on-accent: var(--color-mine-shaft-950);
+    --text-on-accent-hover: var(--color-mine-shaft-950);
+    --border-input: var(--color-mine-shaft-500);
+  }
+
+  [data-theme="matcha"] {
+    color-scheme: light;
+    --surface-page: var(--color-turtle-green-200);
+    --surface-footer: var(--color-turtle-green-100);
+    --surface-container: var(--color-turtle-green-50);
+    /* Buttons */
+    --surface-button-primary: var(--color-turtle-green-950);
+    --surface-button-primary-hover: var(--color-turtle-green-400);
+    --surface-button-secondary: transparent;
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-turtle-green-800) 10%,
+      transparent
+    );
+    --surface-button-tertiary: var(--color-turtle-green-950);
+    --surface-button-tertiary-hover: var(--color-turtle-green-200);
+    --text-button-secondary: var(--color-turtle-green-900);
+    --text-button-tertiary: var(--color-turtle-green-50);
+    --text-button-tertiary-hover: var(--color-turtle-green-950);
+    --border-button-secondary: var(--color-turtle-green-900);
+    --border-button-tertiary: var(--color-turtle-green-950);
+    /* Titles */
+    --text-on-image-title: var(--color-turtle-green-50);
+    --text-on-image-accent: var(--color-turtle-green-400);
+    --text-on-image-subtitle: var(--color-turtle-green-400);
+    /* Accent colors */
+    --accent: var(--color-turtle-green-900);
+    --accent-hover: var(--color-turtle-green-400);
+    --accent-contrast: var(--color-turtle-green-400);
+    --surface-home-overlay: var(--color-turtle-green-950);
+    --border-subtle: var(--color-turtle-green-200);
+    --border-strong: var(--color-turtle-green-400);
+    --focus-ring: var(--color-turtle-green-800);
+    --surface-muted: var(--color-turtle-green-100);
+    --surface-accent: var(--color-turtle-green-50);
+    --text-primary: var(--color-turtle-green-950);
+    --text-secondary: var(--color-turtle-green-900);
+    --text-inverse: var(--color-turtle-green-50);
+    --text-on-accent: var(--color-turtle-green-50);
+    --text-on-accent-hover: var(--color-turtle-green-950);
+    --border-input: var(--color-turtle-green-800);
+  }
+
+  [data-theme="cafe"] {
+    color-scheme: dark;
+    --surface-page: var(--color-coffee-950);
+    --surface-footer: var(--color-coffee-900);
+    --surface-container: var(--color-coffee-800);
+    /* Buttons */
+    --surface-button-primary: var(--color-coffee-100);
+    --surface-button-primary-hover: var(--color-coffee-200);
+    --surface-button-secondary: transparent;
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-coffee-300) 10%,
+      transparent
+    );
+    --surface-button-tertiary: var(--color-coffee-50);
+    --surface-button-tertiary-hover: var(--color-coffee-950);
+    --text-button-secondary: var(--color-coffee-300);
+    --text-button-tertiary: var(--color-coffee-900);
+    --text-button-tertiary-hover: var(--color-coffee-50);
+    --border-button-secondary: var(--color-coffee-300);
+    --border-button-tertiary: var(--color-coffee-300);
+    /* Titles */
+    --text-on-image-title: var(--color-coffee-50);
+    --text-on-image-accent: var(--color-coffee-200);
+    --text-on-image-subtitle: var(--color-coffee-400);
+    --accent: var(--color-coffee-300);
+    --accent-hover: var(--color-coffee-200);
+    --accent-contrast: var(--color-coffee-950);
+    --surface-home-overlay: var(--color-coffee-950);
+    --border-subtle: var(--color-coffee-800);
+    --border-strong: var(--color-coffee-600);
+    --focus-ring: var(--color-coffee-300);
+    --surface-muted: var(--color-coffee-900);
+    --surface-accent: var(--color-coffee-800);
+    --text-primary: var(--color-coffee-50);
+    --text-secondary: var(--color-coffee-200);
+    --text-inverse: var(--color-coffee-950);
+    --text-on-accent: var(--color-coffee-950);
+    --text-on-accent-hover: var(--color-coffee-950);
+    --border-input: var(--color-coffee-400);
+  }
+
+  [data-theme="blue"] {
+    color-scheme: light;
+    --surface-page: var(--color-midnight-50);
+    --surface-footer: var(--color-neutral-50);
+    --surface-container: var(--color-neutral-50);
+    /* Buttons */
+    --surface-button-primary: var(--color-midnight-950);
+    --surface-button-primary-hover: var(--color-midnight-200);
+    --surface-button-secondary: transparent;
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-midnight-700) 10%,
+      transparent
+    );
+    --surface-button-tertiary: var(--color-midnight-950);
+    --surface-button-tertiary-hover: var(--color-midnight-50);
+    --text-button-secondary: var(--color-midnight-800);
+    --text-button-tertiary: var(--color-midnight-50);
+    --text-button-tertiary-hover: var(--color-midnight-950);
+    --border-button-secondary: var(--color-midnight-800);
+    --border-button-tertiary: var(--color-midnight-950);
+    /* Titles */
+    --text-on-image-title: var(--color-midnight-50);
+    --text-on-image-accent: var(--color-midnight-500);
+    --text-on-image-subtitle: var(--color-midnight-500);
+    --accent: var(--color-midnight-800);
+    --accent-hover: var(--color-midnight-200);
+    --accent-contrast: var(--color-midnight-500);
+    --surface-home-overlay: var(--color-midnight-950);
+    --border-subtle: var(--color-midnight-200);
+    --border-strong: var(--color-midnight-400);
+    --focus-ring: var(--color-midnight-600);
+    --surface-muted: var(--color-midnight-100);
+    --surface-accent: var(--color-midnight-100);
+    --text-primary: var(--color-midnight-950);
+    --text-secondary: var(--color-midnight-800);
+    --text-inverse: var(--color-midnight-50);
+    --text-on-accent: var(--color-midnight-50);
+    --text-on-accent-hover: var(--color-midnight-950);
+    --border-input: var(--color-midnight-700);
+  }
+
+  [data-theme="violet"] {
+    color-scheme: light;
+    --surface-page: var(--color-revolver-50);
+    --surface-footer: var(--color-neutral-50);
+    --surface-container: var(--color-neutral-50);
+    /* Buttons */
+    --surface-button-primary: var(--color-revolver-950);
+    --surface-button-primary-hover: var(--color-revolver-200);
+    --surface-button-secondary: transparent;
+    --surface-button-secondary-hover: color-mix(
+      in srgb,
+      var(--color-revolver-700) 10%,
+      transparent
+    );
+    --surface-button-tertiary: var(--color-revolver-950);
+    --surface-button-tertiary-hover: var(--color-revolver-50);
+    --text-button-secondary: var(--color-revolver-800);
+    --text-button-tertiary: var(--color-revolver-50);
+    --text-button-tertiary-hover: var(--color-revolver-950);
+    --border-button-secondary: var(--color-revolver-800);
+    --border-button-tertiary: var(--color-revolver-950);
+    /* Titles */
+    --text-on-image-title: var(--color-revolver-50);
+    --text-on-image-accent: var(--color-revolver-500);
+    --text-on-image-subtitle: var(--color-revolver-400);
+    --accent: var(--color-revolver-700);
+    --accent-hover: var(--color-revolver-200);
+    --accent-contrast: var(--color-revolver-500);
+    --surface-home-overlay: var(--color-revolver-950);
+    --border-subtle: var(--color-revolver-200);
+    --border-strong: var(--color-revolver-400);
+    --focus-ring: var(--color-revolver-600);
+    --surface-muted: var(--color-revolver-100);
+    --surface-accent: var(--color-revolver-100);
+    --text-primary: var(--color-revolver-950);
+    --text-secondary: var(--color-revolver-800);
+    --text-inverse: var(--color-revolver-50);
+    --text-on-accent: var(--color-revolver-50);
+    --text-on-accent-hover: var(--color-revolver-950);
+    --border-input: var(--color-revolver-600);
+  }
+}

@@ -1,121 +1,125 @@
 @layer components {
-  .detail-section {
+  .detail {
     @apply bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
   }
 
-  .detail-container {
+  .detail__container {
     @apply mx-auto max-w-4xl;
   }
 
-  .detail-back {
+  .detail__back {
     @apply mb-8;
   }
 
-  .detail-back-link {
+  .detail__back-link {
     @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:underline;
   }
 
-  .detail-header {
+  .detail__header {
     @apply mb-12 grid gap-8 md:grid-cols-2;
   }
 
-  .detail-image-wrap {
+  .detail__image-wrap {
     @apply flex items-center justify-center;
   }
 
-  .detail-image {
+  .detail__image {
     @apply w-full rounded-lg object-cover shadow-lg;
   }
 
-  .detail-info {
+  .detail__info {
     @apply flex flex-col justify-center;
   }
 
-  .detail-title {
+  .detail__title {
     @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
   }
 
-  .detail-summary {
+  .detail__summary {
     @apply mb-6;
   }
 
-  .detail-tagline {
+  .detail__tagline {
     @apply mb-2 text-lg text-(--text-primary);
   }
 
-  .detail-price {
+  .detail__price {
     @apply text-3xl font-bold text-(--text-primary);
   }
 
-  .detail-price-unit {
+  .detail__price-unit {
     @apply text-lg;
   }
 
-  .detail-rating {
+  .detail__rating {
     @apply mb-6;
   }
 
-  .detail-stars {
+  .detail__stars {
     @apply mb-2 flex gap-1;
   }
 
-  .detail-stars-text {
+  .detail__stars-text {
     @apply text-xl;
   }
 
-  .detail-reviews {
+  .detail__reviews {
     @apply text-(--text-primary);
   }
 
-  .detail-block {
+  .detail__block {
     @apply mb-12;
   }
 
-  .detail-block-title {
+  .detail__block-title {
     @apply mb-4 text-2xl font-bold text-(--text-primary);
   }
 
-  .detail-block-title-lg {
-    @apply mb-6 text-2xl font-bold text-(--text-primary);
+  .detail__block-title--lg {
+    @apply mb-6;
   }
 
-  .detail-paragraph {
+  .detail__paragraph {
     @apply text-lg text-(--text-primary);
   }
 
-  .detail-specs {
+  .detail__specs {
     @apply mb-12 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4;
   }
 
-  .detail-spec-card {
+  .detail__spec-card {
     @apply rounded-lg bg-(--surface-container) p-6;
   }
 
-  .detail-spec-title {
+  .detail__spec-title {
     @apply mb-2 font-bold text-(--text-primary);
   }
 
-  .detail-spec-text {
+  .detail__spec-text {
     @apply text-(--text-primary);
   }
 
-  .detail-list {
+  .detail__list {
     @apply space-y-4;
   }
 
-  .detail-flavor {
+  .detail__flavor {
     @apply border-l-4 border-(--border-strong) pl-4;
   }
 
-  .detail-flavor-title {
+  .detail__flavor-title {
     @apply mb-1 font-bold text-(--text-primary);
   }
 
-  .detail-cta {
+  .detail__cta {
     @apply rounded-lg bg-(--surface-container) p-5 text-center sm:p-8;
   }
 
-  .detail-cta-text {
+  .detail__cta-button {
+    @apply inline-block;
+  }
+
+  .detail__cta-text {
     @apply mb-6 text-lg text-(--text-primary);
   }
 }

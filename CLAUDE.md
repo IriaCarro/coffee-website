@@ -15,7 +15,7 @@ npm run build     # outputs to dist/
 npm run preview   # serve the built dist/
 ```
 
-There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`, see `.prettierrc`) is installed for formatting only.
+There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`, see `.prettierrc`) is installed for formatting only. **After making changes, format the files you touched with Prettier** (e.g. `npx prettier --write <files>`).
 
 ## Architecture
 
@@ -25,15 +25,15 @@ There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`,
 
 **Custom-element components with HTML templates.** Shared UI (`<app-header>`, `<app-footer>`, `<theme-selector>`, `<section-navigation>`) are Web Components whose markup lives in `src/components/*.html` and is imported with Vite's `?raw` suffix, then injected via `innerHTML` in `connectedCallback`. Pages just place the tag (e.g. `<app-header></app-header>`). Change shared markup in `src/components/`, not per page.
 
-**Theming.** `src/js/utils/theme.js` defines the `<theme-selector>` element and six themes (light, dark, matcha, cafe, blue, violet). The choice is stored in `localStorage` under `theme-preference` and applied as `data-theme` on `<html>`; with no stored value it follows `prefers-color-scheme`. Theme CSS variables are defined per `[data-theme="..."]` in `src/styles/base.css`.
+**Theming.** `src/js/utils/theme.js` defines the `<theme-selector>` element and six themes (light, dark, matcha, cafe, blue, violet). The choice is stored in `localStorage` under `theme-preference` and applied as `data-theme` on `<html>`; with no stored value it follows `prefers-color-scheme`. Theme CSS variables are defined per `[data-theme="..."]` in `src/styles/themes.css`.
 
 **Data-driven coffee detail.** `src/data/coffees.json` is the single source of coffee data (id, price, origin, flavor profile, brewing...). `coffee-detail.html?id=<id>` is rendered client-side by `utils/coffee-detail.js` from that data. The home page's coffee cards are rendered from the same JSON by `utils/home-coffees.js` into `#coffee-grid`, so adding a coffee only means editing the JSON.
 
-**Styling.** `src/index.css` is the single stylesheet, imported by every page. It declares the cascade order `@layer theme, reset, base, components, utilities` and imports Tailwind plus `src/styles/`: `tokens.css` (`@theme`: fonts, coffee color palette), `reset`, `base` (theme variables), `components`, `utilities`, and one file per page in `styles/pages/`. Styles are mostly semantic CSS classes (`btn-primary`, `card`, `detail-back-link`...) in these files rather than inline Tailwind utilities in the HTML. Fonts load from Google Fonts via `@import`.
+**Styling.** `src/index.css` is the single stylesheet, imported by every page. It declares the cascade order `@layer theme, reset, base, components, utilities` and imports Tailwind plus `src/styles/`: `tokens.css` (`@theme`: fonts, coffee color palette), `themes.css` (per-theme variables), `base.css` (reset, html/body, native elements, utility classes), `icons.css`, one file per shared component in `styles/components/` (header, theme-selector, footer, section-nav, ui for `btn`/`card`/`form-label`), and one file per page in `styles/pages/` (the home page is split by section in `styles/pages/home/`). Inside each file rules are grouped by BEM block (block, its modifiers, then its elements in markup order). Styles are mostly semantic CSS classes (`btn btn--primary`, `card`, `detail__back-link`...) in these files, with Tailwind utilities applied through `@apply`, rather than long utility lists inline in the HTML. Fonts load from Google Fonts via `@import`.
 
 **Static assets.** Images/icons are served from `public/` and referenced by absolute paths (`/photos/...`, `/icons/...`), including inside JS data and templates.
 
-**Icons.** No emojis as icons. UI icons are stroke SVGs in `public/icons/ui/` (24×24 viewBox, `stroke-width="2"`), applied as a CSS mask by `src/styles/icons.css` so they take `currentColor` and follow the active theme: `<span class="icon icon-pin" aria-hidden="true"></span>`. Size them with `font-size` (they are `1em`). To add one, drop the SVG in `public/icons/ui/` and add an `.icon-<name>` rule with its `--icon` url in `icons.css`.
+**Icons.** No emojis as icons. UI icons are stroke SVGs in `public/icons/ui/` (24×24 viewBox, `stroke-width="2"`), applied as a CSS mask by `src/styles/icons.css` so they take `currentColor` and follow the active theme: `<span class="icon icon--pin" aria-hidden="true"></span>`. Size them with `font-size` (they are `1em`). To add one, drop the SVG in `public/icons/ui/` and add an `.icon--<name>` rule with its `--icon` url in `icons.css`.
 
 ## Conventions
 
@@ -49,16 +49,18 @@ There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`,
 **Respect the themes.** Every change to CSS or markup must keep working in all six themes (light, dark, matcha, cafe, blue, violet).
 
 - Colors, surfaces, borders and focus rings come from the theme CSS variables (`--text-primary`, `--surface-container`, `--border-subtle`, `--focus-ring`...), never hard-coded hex/rgb/Tailwind palette colors in components or pages.
-- New colors that vary by theme must be added as variables in every `[data-theme="..."]` block in `src/styles/base.css`, not only for light/dark.
+- New colors that vary by theme must be added as variables in every `[data-theme="..."]` block in `src/styles/themes.css`, not only for light/dark.
 - Verify contrast in **each** of the six themes after styling changes (switch with `<theme-selector>`), not just the default. Target WCAG AA: 4.5:1 for normal text, 3:1 for large text, UI components and focus rings. Lighthouse's accessibility audit should stay ≥ 90 per theme.
 - Keep the `theme-transition` behavior on themed surfaces.
 - No inline styles: don't use the `style` attribute in HTML or set `element.style.*` / `style.cssText` in JS. Put styles in the CSS files via classes; toggle state with classes or `data-*`/`aria-*` attributes. (Inline styles bypass the cascade layers and theme variables, and are easy to miss when theming.)
 
+**Style with Tailwind.** All styling uses Tailwind: utilities via `@apply` in the semantic classes (or Tailwind classes in markup for one-offs). Don't write plain CSS properties when a Tailwind utility exists; keep raw CSS only for things Tailwind can't express (gradients with `color-mix`, `clamp()` sizing, pseudo-element content, etc.).
+
 **Keep code small and readable.**
 
-- Split large files by responsibility: one JS module per feature in `src/js/utils/`, one CSS file per page in `src/styles/pages/`, and repeated markup as a component in `src/components/` rather than copied between pages.
+- Split large files by responsibility: one JS module per feature in `src/js/utils/`, one CSS file per page in `src/styles/pages/` and per shared component in `src/styles/components/`, and repeated markup as a component in `src/components/` rather than copied between pages.
 - Prefer small functions with a single purpose over long `connectedCallback`/init bodies; move data into `src/data/` instead of hard-coding it in JS or HTML.
 - Reuse existing classes (`btn-primary`, `card`...) before creating new ones, and put shared styles in `components.css`, page-only styles in the page's file.
-- Follow existing naming (`page-element` BEM-like class names such as `faq-accordion-summary`).
+- Name classes with BEM: `block__element--modifier` (e.g. `faq-accordion__summary`, `btn btn--primary`, `step-indicator--active`). One level of element only (no `a__b__c`); a modifier always accompanies its base class in the markup. State toggled from JS is a modifier too.
 
 **Copy and accessibility basics.** Spanish copy, with `lang="es"` and a unique `<title>` and meta description per page. Respect `prefers-reduced-motion` for animations. Run `npm run build` after adding or renaming pages to confirm they're in the production build.

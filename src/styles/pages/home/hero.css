@@ -1,0 +1,61 @@
+@layer components {
+  .hero {
+    @apply relative flex flex-col items-center justify-center gap-8 px-4 py-12 sm:px-6 md:flex-row lg:px-8;
+    isolation: isolate;
+    background-image: url("/photos/cafe-3.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--surface-home-overlay) 85%, transparent),
+      color-mix(in srgb, var(--surface-home-overlay) 70%, transparent) 50%,
+      color-mix(in srgb, var(--surface-home-overlay) 35%, transparent) 75%,
+      transparent
+    );
+    pointer-events: none;
+  }
+
+  .hero__textbox {
+    @apply relative z-10;
+  }
+
+  .hero__textbox h1 > span {
+    @apply block;
+  }
+
+  .hero__textbox h1 {
+    @apply text-6xl leading-tight font-bold text-(--text-on-image-title) sm:text-7xl lg:text-9xl;
+    line-height: 0.9;
+  }
+
+  .hero__textbox h2 {
+    @apply mt-6 mb-4 text-lg leading-tight font-bold text-(--text-on-image-subtitle) sm:mt-8 sm:mb-6 sm:text-xl;
+  }
+
+  .hero__textbox p {
+    @apply mb-8 text-lg text-(--text-on-image-muted);
+  }
+
+  .hero__image {
+    @apply relative z-10 h-auto w-48 shrink-0 object-contain drop-shadow-2xl sm:w-60 md:w-72 lg:w-96;
+  }
+
+  .hero__textbox .hero__accent {
+    @apply text-(--text-on-image-accent);
+  }
+}

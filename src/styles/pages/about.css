@@ -1,109 +1,109 @@
 @layer components {
-  .about-section {
+  .about {
     @apply bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
   }
 
-  .about-container {
+  .about__container {
     @apply mx-auto max-w-4xl;
   }
 
-  .about-back {
+  .about__back {
     @apply mb-8;
   }
 
-  .about-back-link {
+  .about__back-link {
     @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:underline;
   }
 
-  .about-header {
+  .about__header {
     @apply mb-12;
   }
 
-  .about-title {
+  .about__title {
     @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
   }
 
-  .about-subtitle {
+  .about__subtitle {
     @apply text-xl text-(--text-primary);
   }
 
-  .about-story {
+  .about__story {
     @apply mb-12 grid items-center gap-8 md:grid-cols-2;
   }
 
-  .about-story-title {
+  .about__story-title {
     @apply mb-4 text-2xl font-bold text-(--text-primary) sm:text-3xl;
   }
 
-  .about-text {
+  .about__text {
     @apply leading-relaxed text-(--text-primary);
   }
 
-  .about-text-spaced {
-    @apply mb-4 leading-relaxed text-(--text-primary);
+  .about__text--spaced {
+    @apply mb-4;
   }
 
-  .about-figure {
+  .about__figure {
     @apply h-80 overflow-hidden rounded-lg bg-(--surface-container);
   }
 
-  .about-figure img {
+  .about__figure img {
     @apply h-full w-full object-cover;
   }
 
-  .about-order-first {
+  .about__order-first {
     @apply order-1;
   }
 
-  .about-order-last {
+  .about__order-last {
     @apply order-2;
   }
 
-  .about-block {
+  .about__block {
     @apply my-12;
   }
 
-  .about-block-title {
+  .about__block-title {
     @apply mb-8 text-center text-3xl font-bold text-(--text-primary);
   }
 
-  .about-values-grid {
+  .about__values-grid {
     @apply grid gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3;
   }
 
-  .about-value-card {
+  .about__value-card {
     @apply rounded-lg bg-(--surface-container) p-6;
   }
 
-  .about-value-icon {
-    @apply mb-4 block text-4xl text-(--color-accent);
+  .about__value-icon {
+    @apply mb-4 block text-4xl text-(--accent);
   }
 
-  .about-value-title {
+  .about__value-title {
     @apply mb-2 text-xl font-bold text-(--text-primary);
   }
 
-  .about-value-text {
+  .about__value-text {
     @apply text-(--text-primary);
   }
 
-  .about-team-text {
+  .about__team-text {
     @apply mb-8 text-center text-lg text-(--text-primary);
   }
 
-  .about-cta {
+  .about__cta {
     @apply rounded-lg bg-(--surface-container) p-5 text-center sm:p-8;
   }
 
-  .about-cta-title {
+  .about__cta-title {
     @apply mb-4 text-2xl font-bold text-(--text-primary);
   }
 
-  .about-cta-text {
+  .about__cta-text {
     @apply mb-6 text-lg text-(--text-primary);
   }
 
-  .about-cta-button {
+  .about__cta-button {
     @apply inline-block;
   }
 }

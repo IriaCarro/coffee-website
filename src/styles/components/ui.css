@@ -1,0 +1,54 @@
+@layer components {
+  .btn {
+    @apply rounded-lg px-6 py-3 font-medium transition-colors duration-200;
+  }
+
+  .btn--primary {
+    @apply bg-(--surface-button-primary) text-(--text-inverse);
+  }
+
+  .btn--primary:hover {
+    @apply bg-(--surface-button-primary-hover) text-(--text-on-accent-hover);
+  }
+
+  .btn--secondary {
+    @apply border-2;
+    @apply border-(--border-button-secondary) bg-(--surface-button-secondary) text-(--text-button-secondary);
+  }
+
+  .btn--secondary:hover {
+    @apply bg-(--surface-button-secondary-hover);
+  }
+
+  /* Buttons placed over a photo/dark overlay: themed button colors are tuned
+  for the page surface, so they switch to the on-image palette here */
+  .btn--secondary.btn--on-image {
+    @apply border-(--text-on-image) text-(--text-on-image);
+  }
+
+  .btn--secondary.btn--on-image:hover {
+    @apply bg-(--surface-glass);
+  }
+
+  .btn--primary.btn--on-image {
+    @apply bg-(--text-on-image) text-(--surface-home-overlay);
+  }
+
+  .btn--primary.btn--on-image:hover {
+    @apply bg-(--text-on-image-accent) text-(--surface-home-overlay);
+  }
+
+  .card {
+    @apply overflow-hidden rounded-lg shadow-lg transition-all duration-300;
+    @apply border border-(--border-subtle) bg-(--surface-container);
+  }
+
+  .card:hover {
+    @apply scale-105 shadow-xl;
+  }
+
+  .form-label {
+    @apply mb-1 block text-sm font-medium transition-colors duration-300;
+    @apply text-(--text-primary);
+  }
+}

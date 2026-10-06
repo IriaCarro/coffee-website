@@ -1,86 +1,161 @@
 @layer components {
-  .sub-page {
-    @apply min-h-screen bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
+  .wizard__card {
+    @apply rounded-lg border border-(--border-subtle) shadow-lg transition-colors duration-300;
+    @apply bg-(--surface-container) p-4 sm:p-6 md:p-8;
   }
 
-  .sub-container {
-    @apply mx-auto max-w-2xl;
+  .wizard__heading {
+    @apply mb-8 text-center;
   }
 
-  .sub-back {
-    @apply mb-8;
+  .wizard__heading-description {
+    @apply text-lg text-(--text-secondary);
   }
 
-  .sub-back-link {
-    @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:underline;
+  .wizard__progress-track {
+    @apply relative mb-6 h-2 rounded-full bg-(--surface-muted);
   }
 
-  .sub-header {
-    @apply mb-12 text-center;
+  .wizard__progress-bar {
+    @apply h-full w-[16.66%] rounded-full bg-(--accent) transition-all duration-500;
   }
 
-  .sub-title {
-    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
+  .wizard__progress-steps {
+    @apply grid grid-cols-3 gap-4;
   }
 
-  .sub-subtitle {
-    @apply text-lg text-(--text-primary);
+  .wizard__progress-step {
+    @apply flex flex-col items-center;
   }
 
-  .sub-wizard {
-    @apply px-0 py-8 sm:px-4 sm:py-12 lg:px-8;
+  .wizard__progress-label {
+    @apply text-sm font-medium text-(--text-secondary);
   }
 
-  .sub-progress {
-    @apply mb-8;
+  .wizard__step-title {
+    @apply mb-2 text-xl font-bold text-(--text-primary);
   }
 
-  .sub-step-indicator {
-    @apply mb-2;
+  .wizard__step-description {
+    @apply mb-6 text-(--text-secondary);
   }
 
-  .sub-form {
-    @apply space-y-6;
+  .wizard__option-list {
+    @apply space-y-3;
   }
 
-  .sub-fields {
-    @apply grid gap-4 sm:grid-cols-2;
+  .wizard__radio-label {
+    @apply flex cursor-pointer items-center rounded-lg border-2 p-4 transition-all duration-300;
+    @apply border-(--border-input) bg-(--surface-transparent);
   }
 
-  .sub-field-full {
-    @apply sm:col-span-2;
+  .wizard__radio-label:hover {
+    @apply bg-(--accent)/10;
   }
 
-  .sub-option-icon {
-    @apply text-2xl text-(--color-accent);
+  .wizard__option-content {
+    @apply ml-3 flex min-w-0 flex-1 flex-col sm:ml-4;
   }
 
-  .sub-nav {
-    @apply flex items-center justify-between gap-4 pt-6;
+  .wizard__option-title {
+    @apply font-medium text-(--text-primary);
   }
 
-  .sub-nav-status {
-    @apply text-sm font-medium;
+  .wizard__option-description {
+    @apply text-sm text-(--text-secondary);
   }
 
-  .sub-btn-prev:disabled {
-    @apply cursor-not-allowed opacity-50;
+  .wizard__option-price {
+    @apply font-bold text-(--accent);
+  }
+
+  .step-indicator {
+    @apply flex items-center justify-center rounded-full font-bold transition-all duration-300;
+    @apply h-10 w-10 text-(--accent);
+  }
+
+  .step-indicator--active {
+    @apply bg-(--accent) text-(--text-on-accent) outline-2 outline-offset-2 outline-(--accent);
+  }
+
+  .step-indicator--completed {
+    @apply bg-(--accent) text-(--text-on-accent);
   }
 
   /* Step indicator states (toggled by subscription-wizard.js) */
-  .step-indicator:not(.active) {
-    @apply border-2 border-(--color-accent);
+  .step-indicator:not(.step-indicator--active) {
+    @apply border-2 border-(--accent);
   }
 
-  .step-indicator:not(.active):not(.completed) {
-    @apply bg-(--surface-accent-bg) text-(--color-accent);
+  .step-indicator:not(.step-indicator--active):not(.step-indicator--completed) {
+    @apply bg-(--surface-accent) text-(--accent);
   }
 
-  .step-indicator.active {
-    @apply bg-(--color-accent) text-(--text-on-accent) outline-2 outline-offset-2 outline-(--color-accent);
+  .subscription {
+    @apply min-h-screen bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
   }
 
-  .step-indicator.completed {
-    @apply bg-(--color-accent) text-(--text-on-accent);
+  .subscription__container {
+    @apply mx-auto max-w-2xl;
+  }
+
+  .subscription__back {
+    @apply mb-8;
+  }
+
+  .subscription__back-link {
+    @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:underline;
+  }
+
+  .subscription__header {
+    @apply mb-12 text-center;
+  }
+
+  .subscription__title {
+    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
+  }
+
+  .subscription__subtitle {
+    @apply text-lg text-(--text-primary);
+  }
+
+  .subscription__wizard {
+    @apply px-0 py-8 sm:px-4 sm:py-12 lg:px-8;
+  }
+
+  .subscription__progress {
+    @apply mb-8;
+  }
+
+  .subscription__step-indicator {
+    @apply mb-2;
+  }
+
+  .subscription__form {
+    @apply space-y-6;
+  }
+
+  .subscription__fields {
+    @apply grid gap-4 sm:grid-cols-2;
+  }
+
+  .subscription__field--full {
+    @apply sm:col-span-2;
+  }
+
+  .subscription__option-icon {
+    @apply text-2xl text-(--accent);
+  }
+
+  .subscription__nav {
+    @apply flex items-center justify-between gap-4 pt-6;
+  }
+
+  .subscription__nav-status {
+    @apply text-sm font-medium;
+  }
+
+  .subscription__btn-prev:disabled {
+    @apply cursor-not-allowed opacity-50;
   }
 }

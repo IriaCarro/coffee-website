@@ -85,7 +85,6 @@ class ThemeSelector extends HTMLElement {
   setMenuOpen(isOpen) {
     this.menu.classList.toggle("hidden", !isOpen);
     this.toggle.setAttribute("aria-expanded", String(isOpen));
-    this.chevron.style.transform = isOpen ? "rotate(180deg)" : "";
   }
 
   handleToggle(event) {

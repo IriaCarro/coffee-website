@@ -8,18 +8,18 @@ function initLightbox(selector = "[data-gallery] figure") {
   dialog.className = "lightbox";
   dialog.setAttribute("aria-label", "Imagen ampliada");
   dialog.innerHTML = `
-    <button type="button" class="lightbox-btn lightbox-close" aria-label="Cerrar">&times;</button>
-    <button type="button" class="lightbox-btn lightbox-prev" aria-label="Anterior">&#8249;</button>
-    <figure class="lightbox-figure">
-      <img class="lightbox-img" alt="" />
-      <figcaption class="lightbox-caption"></figcaption>
+    <button type="button" class="lightbox__btn lightbox__close" aria-label="Cerrar">&times;</button>
+    <button type="button" class="lightbox__btn lightbox__prev" aria-label="Anterior">&#8249;</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="" />
+      <figcaption class="lightbox__caption"></figcaption>
     </figure>
-    <button type="button" class="lightbox-btn lightbox-next" aria-label="Siguiente">&#8250;</button>
+    <button type="button" class="lightbox__btn lightbox__next" aria-label="Siguiente">&#8250;</button>
   `;
   document.body.append(dialog);
 
-  const img = dialog.querySelector(".lightbox-img");
-  const caption = dialog.querySelector(".lightbox-caption");
+  const img = dialog.querySelector(".lightbox__img");
+  const caption = dialog.querySelector(".lightbox__caption");
   let current = 0;
 
   const show = (index) => {
@@ -34,7 +34,7 @@ function initLightbox(selector = "[data-gallery] figure") {
   };
 
   figures.forEach((figure, index) => {
-    figure.classList.add("gallery-zoomable");
+    figure.classList.add("gallery__figure--zoomable");
     figure.tabIndex = 0;
     figure.setAttribute("role", "button");
     figure.setAttribute(
@@ -55,10 +55,10 @@ function initLightbox(selector = "[data-gallery] figure") {
   });
 
   dialog.addEventListener("click", (e) => {
-    if (e.target.closest(".lightbox-close") || e.target === dialog)
+    if (e.target.closest(".lightbox__close") || e.target === dialog)
       dialog.close();
-    else if (e.target.closest(".lightbox-prev")) show(current - 1);
-    else if (e.target.closest(".lightbox-next")) show(current + 1);
+    else if (e.target.closest(".lightbox__prev")) show(current - 1);
+    else if (e.target.closest(".lightbox__next")) show(current + 1);
   });
 
   dialog.addEventListener("keydown", (e) => {

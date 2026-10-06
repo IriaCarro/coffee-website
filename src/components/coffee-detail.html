@@ -1,120 +1,126 @@
-<div class="detail-container">
+<div class="detail__container">
   <!-- Back Button -->
-  <nav class="detail-back" aria-label="Migas de pan">
-    <a href="/#cafes" class="detail-back-link">
+  <nav class="detail__back" aria-label="Migas de pan">
+    <a href="/#cafes" class="detail__back-link">
       <span aria-hidden="true">&larr;</span>
       <span>Volver a Cafés</span>
     </a>
   </nav>
 
   <!-- Coffee Header -->
-  <header class="detail-header">
-    <div class="detail-image-wrap">
-      <img src="{{image}}" alt="{{name}}" class="detail-image" />
+  <header class="detail__header">
+    <div class="detail__image-wrap">
+      <img src="{{image}}" alt="{{name}}" class="detail__image" />
     </div>
 
-    <div class="detail-info">
-      <h1 class="detail-title">{{name}}</h1>
+    <div class="detail__info">
+      <h1 class="detail__title">{{name}}</h1>
 
-      <div class="detail-summary">
-        <p class="detail-tagline">{{description}}</p>
-        <p class="detail-price">
-          {{formattedPrice}} € <span class="detail-price-unit">/mes</span>
+      <div class="detail__summary">
+        <p class="detail__tagline">{{description}}</p>
+        <p class="detail__price">
+          {{formattedPrice}} € <span class="detail__price-unit">/mes</span>
         </p>
       </div>
 
-      <div class="detail-rating">
+      <div class="detail__rating">
         <div
-          class="detail-stars"
+          class="detail__stars"
           role="img"
           aria-label="Valoración: {{rating}} de 5"
         >
-          <span class="detail-stars-text" aria-hidden="true">{{stars}}</span>
+          <span class="detail__stars-text" aria-hidden="true">{{stars}}</span>
         </div>
-        <p class="detail-reviews">{{reviews}} reseñas</p>
+        <p class="detail__reviews">{{reviews}} reseñas</p>
       </div>
     </div>
   </header>
 
   <!-- Coffee Description -->
-  <section class="detail-block" aria-labelledby="detail-description-title">
-    <h2 id="detail-description-title" class="detail-block-title">
+  <section class="detail__block" aria-labelledby="detail-description-title">
+    <h2 id="detail-description-title" class="detail__block-title">
       Descripción
     </h2>
-    <p class="detail-paragraph">{{detailedDescription}}</p>
+    <p class="detail__paragraph">{{detailedDescription}}</p>
   </section>
 
   <!-- Specs -->
   <section aria-labelledby="detail-specs-title">
     <h2 id="detail-specs-title" class="sr-only">Ficha técnica</h2>
-    <dl class="detail-specs">
-      <div class="detail-spec-card">
-        <dt class="detail-spec-title">Origen</dt>
-        <dd class="detail-spec-text">{{origin}}</dd>
+    <dl class="detail__specs">
+      <div class="detail__spec-card">
+        <dt class="detail__spec-title">Origen</dt>
+        <dd class="detail__spec-text">{{origin}}</dd>
       </div>
 
-      <div class="detail-spec-card">
-        <dt class="detail-spec-title">Tueste</dt>
-        <dd class="detail-spec-text">{{roast}}</dd>
+      <div class="detail__spec-card">
+        <dt class="detail__spec-title">Tueste</dt>
+        <dd class="detail__spec-text">{{roast}}</dd>
       </div>
 
-      <div class="detail-spec-card">
-        <dt class="detail-spec-title">Altitud</dt>
-        <dd class="detail-spec-text">{{altitude}}</dd>
+      <div class="detail__spec-card">
+        <dt class="detail__spec-title">Altitud</dt>
+        <dd class="detail__spec-text">{{altitude}}</dd>
       </div>
 
-      <div class="detail-spec-card">
-        <dt class="detail-spec-title">Producción</dt>
-        <dd class="detail-spec-text">{{production}}</dd>
+      <div class="detail__spec-card">
+        <dt class="detail__spec-title">Producción</dt>
+        <dd class="detail__spec-text">{{production}}</dd>
       </div>
     </dl>
   </section>
 
   <!-- Flavor Profile -->
-  <section class="detail-block" aria-labelledby="detail-flavor-title">
-    <h2 id="detail-flavor-title" class="detail-block-title-lg">
+  <section class="detail__block" aria-labelledby="detail-flavor-title">
+    <h2
+      id="detail-flavor-title"
+      class="detail__block-title detail__block-title--lg"
+    >
       Perfil de Sabor
     </h2>
-    <dl class="detail-list">{{flavorProfileHtml}}</dl>
+    <dl class="detail__list">{{flavorProfileHtml}}</dl>
   </section>
 
   <!-- Brewing Recommendations -->
-  <section class="detail-block" aria-labelledby="detail-brewing-title">
-    <h2 id="detail-brewing-title" class="detail-block-title-lg">
+  <section class="detail__block" aria-labelledby="detail-brewing-title">
+    <h2
+      id="detail-brewing-title"
+      class="detail__block-title detail__block-title--lg"
+    >
       Recomendaciones de Preparación
     </h2>
-    <dl class="detail-list">
-      <div class="detail-spec-card">
-        <dt class="detail-spec-title">Temperatura</dt>
-        <dd class="detail-spec-text">{{brewing.temperature}}</dd>
+    <dl class="detail__list">
+      <div class="detail__spec-card">
+        <dt class="detail__spec-title">Temperatura</dt>
+        <dd class="detail__spec-text">{{brewing.temperature}}</dd>
       </div>
 
-      <div class="detail-spec-card">
-        <dt class="detail-spec-title">Molienda</dt>
-        <dd class="detail-spec-text">{{brewing.grind}}</dd>
+      <div class="detail__spec-card">
+        <dt class="detail__spec-title">Molienda</dt>
+        <dd class="detail__spec-text">{{brewing.grind}}</dd>
       </div>
 
-      <div class="detail-spec-card">
-        <dt class="detail-spec-title">Proporción</dt>
-        <dd class="detail-spec-text">{{brewing.ratio}}</dd>
+      <div class="detail__spec-card">
+        <dt class="detail__spec-title">Proporción</dt>
+        <dd class="detail__spec-text">{{brewing.ratio}}</dd>
       </div>
 
-      <div class="detail-spec-card">
-        <dt class="detail-spec-title">Métodos Recomendados</dt>
-        <dd class="detail-spec-text">{{brewing.methods}}</dd>
+      <div class="detail__spec-card">
+        <dt class="detail__spec-title">Métodos Recomendados</dt>
+        <dd class="detail__spec-text">{{brewing.methods}}</dd>
       </div>
     </dl>
   </section>
 
   <!-- CTA Section -->
-  <aside class="detail-cta" aria-labelledby="detail-cta-title">
-    <h2 id="detail-cta-title" class="detail-block-title">
+  <aside class="detail__cta" aria-labelledby="detail-cta-title">
+    <h2 id="detail-cta-title" class="detail__block-title">
       ¿Te gustaría probarlo?
     </h2>
-    <p class="detail-cta-text">
+    <p class="detail__cta-text">
       Suscríbete y recibe este café premium cada mes
     </p>
-    <a href="/#wizard" class="btn-primary inline-block">
+    <a href="/#wizard" class="btn btn--primary detail__cta-button">
       Comenzar Suscripción
     </a>
   </aside>

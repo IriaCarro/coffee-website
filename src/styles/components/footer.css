@@ -1,0 +1,70 @@
+@layer components {
+  .footer {
+    @apply border-t border-(--border-subtle) bg-(--surface-footer) py-12 sm:py-16 lg:py-20;
+  }
+
+  .footer__grid {
+    @apply grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4 lg:gap-16;
+  }
+
+  .footer__brand {
+    @apply space-y-6;
+  }
+
+  .footer__logo {
+    @apply h-16 w-16 rounded-lg object-cover shadow-sm;
+  }
+
+  .footer__tagline {
+    @apply max-w-xs text-sm leading-relaxed text-(--text-primary);
+  }
+
+  .footer__heading {
+    @apply mb-6 text-2xl font-bold text-(--text-primary);
+  }
+
+  .footer__link-list {
+    @apply space-y-4 text-(--text-primary) not-italic;
+  }
+
+  .footer__contact-link {
+    @apply font-medium text-(--accent) transition-colors duration-200 hover:opacity-75;
+  }
+
+  .footer__faq-list {
+    @apply space-y-6;
+  }
+
+  .footer__divider {
+    @apply my-12 h-px;
+  }
+
+  .footer__address {
+    @apply not-italic;
+  }
+
+  .footer__bottom {
+    @apply flex flex-col items-center justify-between gap-4 sm:flex-row;
+  }
+
+  .footer__copyright {
+    @apply text-sm font-medium text-(--text-primary);
+  }
+
+  .footer__icon {
+    margin-inline-end: 0.35em;
+  }
+
+  .faq-item {
+    @apply rounded-lg border-l-4 px-4 py-3 transition-colors duration-300;
+    @apply border-(--accent) bg-(--surface-transparent);
+  }
+
+  .faq-item__question {
+    @apply mb-2 font-bold text-(--text-primary);
+  }
+
+  .faq-item__answer {
+    @apply text-sm text-(--text-primary);
+  }
+}

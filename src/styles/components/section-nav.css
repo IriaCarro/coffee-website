@@ -1,0 +1,30 @@
+@layer components {
+  .section-nav {
+    @apply fixed top-1/2 right-1 z-40 hidden -translate-y-1/2 sm:right-4 sm:block;
+  }
+
+  section-navigation {
+    display: contents;
+  }
+
+  /* The pill gives the dots their own page-tinted backing, so they stay
+     readable over any section (page surface, photo overlay or dark band) */
+  .section-nav__list {
+    @apply flex flex-col gap-1 rounded-full border border-(--border-subtle) p-1 backdrop-blur-sm;
+    background-color: var(--surface-header);
+  }
+
+  .section-nav__link {
+    @apply flex h-10 w-10 items-center justify-center rounded-full;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring);
+  }
+
+  .section-nav__dot {
+    @apply h-2.5 w-2.5 rounded-full border-2 border-(--text-primary);
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .section-nav__link[aria-current="location"] .section-nav__dot {
+    @apply scale-125 bg-(--text-primary);
+  }
+}

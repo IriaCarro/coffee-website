@@ -2,7 +2,7 @@ function initSubscriptionWizard() {
   const form = document.getElementById("subscription-wizard-form");
   if (!form) return;
 
-  const steps = form.querySelectorAll(".wizard-step");
+  const steps = form.querySelectorAll(".wizard__step");
   const indicators = document.querySelectorAll(".step-indicator");
   const progressBar = document.getElementById("subscription-progress-bar");
   const progressTrack = document.getElementById("subscription-progress-track");
@@ -16,7 +16,7 @@ function initSubscriptionWizard() {
   const updateUI = () => {
     steps.forEach((step) => {
       const stepNum = parseInt(step.dataset.step);
-      step.classList.toggle("active", stepNum === currentStep);
+      step.classList.toggle("wizard__step--active", stepNum === currentStep);
       step.classList.toggle("hidden", stepNum !== currentStep);
     });
 
@@ -25,8 +25,8 @@ function initSubscriptionWizard() {
       const isActive = stepNum === currentStep;
       const isCompleted = stepNum < currentStep;
 
-      indicator.classList.toggle("active", isActive);
-      indicator.classList.toggle("completed", isCompleted);
+      indicator.classList.toggle("step-indicator--active", isActive);
+      indicator.classList.toggle("step-indicator--completed", isCompleted);
       if (isActive) {
         indicator.setAttribute("aria-current", "step");
       } else {
@@ -66,11 +66,19 @@ function initSubscriptionWizard() {
     updateUI();
   };
 
+  // There is no backend yet: log the data instead of sending it
+  const submitForm = () => {
+    console.info(
+      "[Suscripción] Aún no se gestiona el envío del formulario. Datos recogidos:",
+      Object.fromEntries(new FormData(form)),
+    );
+  };
+
   const nextStep = () => {
     if (currentStep < totalSteps) {
       goToStep(currentStep + 1);
     } else {
-      form.submit();
+      submitForm();
     }
   };
 

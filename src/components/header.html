@@ -1,27 +1,28 @@
 <header class="site-header page-gutter theme-transition">
-  <a href="/" class="brand text-inherit no-underline">
-    <img data-brand-logo alt="Logo" class="brand-logo" />
+  <a href="/" class="brand">
+    <img data-brand-logo alt="Logo" class="brand__logo" />
   </a>
 
-  <nav
-    aria-label="Navegación principal"
-    class="order-3 w-full overflow-x-auto md:order-none md:w-auto md:overflow-visible"
-  >
-    <ul class="flex w-max items-center gap-5 py-2 sm:gap-8 md:w-auto md:py-0">
-      <li><a href="/#cafes" class="nav-link">Caf&eacute;s</a></li>
+  <nav aria-label="Navegación principal" class="site-header__nav">
+    <ul class="site-header__nav-list">
+      <li><a href="/#cafes" class="site-header__link">Caf&eacute;s</a></li>
       <li>
-        <a href="/src/pages/about.html" class="nav-link">Nuestra Historia</a>
+        <a href="/src/pages/about.html" class="site-header__link"
+          >Nuestra Historia</a
+        >
       </li>
       <li>
-        <a href="/src/pages/gallery.html" class="nav-link">Galer&iacute;a</a>
+        <a href="/src/pages/gallery.html" class="site-header__link"
+          >Galer&iacute;a</a
+        >
       </li>
       <li>
-        <a href="/src/pages/subscription.html" class="nav-link"
+        <a href="/src/pages/subscription.html" class="site-header__link"
           >Subscr&iacute;bete</a
         >
       </li>
     </ul>
   </nav>
 
-  <theme-selector class="relative block"></theme-selector>
+  <theme-selector class="site-header__theme"></theme-selector>
 </header>

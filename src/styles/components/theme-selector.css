@@ -1,0 +1,45 @@
+@layer components {
+  .theme-selector__toggle {
+    @apply flex items-center gap-2 rounded-lg px-3 py-2 text-(--accent);
+    @apply transition-colors duration-200 hover:bg-(--accent)/10;
+  }
+
+  .theme-selector__toggle-icon {
+    @apply h-5 w-5;
+  }
+
+  .theme-selector__toggle-label {
+    @apply text-sm font-medium;
+  }
+
+  .theme-selector__toggle-chevron {
+    @apply h-4 w-4 transition-transform duration-200;
+  }
+
+  .theme-selector__toggle[aria-expanded="true"]
+    .theme-selector__toggle-chevron {
+    @apply rotate-180;
+  }
+
+  .theme-selector__menu {
+    @apply absolute right-0 z-50 mt-2 w-44 overflow-hidden rounded-lg border shadow-lg;
+    @apply border-(--border-subtle) bg-(--surface-container) text-(--text-primary) transition-all duration-200;
+  }
+
+  .theme-selector__menu-icon {
+    @apply h-5 w-5;
+  }
+
+  .theme-selector__menu-label {
+    @apply text-sm font-medium;
+  }
+
+  .theme-selector__menu-option {
+    @apply flex w-full cursor-pointer items-center gap-3 px-4 py-2.5 text-left;
+    @apply transition-colors duration-150 hover:bg-(--accent)/10;
+  }
+
+  .theme-selector__menu-option[aria-pressed="true"] {
+    @apply bg-(--accent)/10 font-semibold;
+  }
+}
