@@ -24,7 +24,7 @@
   }
 
   .detail__image {
-    @apply w-full rounded-lg object-cover shadow-lg;
+    @apply max-h-[36rem] w-full object-contain;
   }
 
   .detail__info {

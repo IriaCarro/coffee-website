@@ -39,8 +39,8 @@
     @apply relative h-64 overflow-hidden sm:h-72 lg:h-80;
   }
 
-  .gallery__figure--zoomable {
-    @apply cursor-zoom-in;
+  .gallery__zoom {
+    @apply block h-full w-full cursor-zoom-in focus-visible:outline-offset-[-4px];
   }
 
   .gallery__img {
@@ -52,10 +52,11 @@
   }
 
   .gallery__caption {
-    @apply absolute inset-0 flex flex-col justify-end p-4 opacity-100 transition-opacity duration-300 sm:p-6 md:opacity-0;
+    @apply pointer-events-none absolute inset-0 flex flex-col justify-end p-4 opacity-100 transition-opacity duration-300 sm:p-6 md:opacity-0;
   }
 
-  .gallery__item:hover .gallery__caption {
+  .gallery__item:hover .gallery__caption,
+  .gallery__item:focus-within .gallery__caption {
     @apply opacity-100;
   }
 

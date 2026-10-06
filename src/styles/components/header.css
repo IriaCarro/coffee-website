@@ -1,4 +1,10 @@
 @layer components {
+  .skip-link {
+    @apply fixed top-2 left-2 z-60 -translate-y-24 rounded-lg px-4 py-2 font-medium;
+    @apply border-2 border-(--focus-ring) bg-(--surface-container) text-(--text-primary);
+    @apply transition-transform duration-200 focus-visible:translate-y-0;
+  }
+
   .site-header {
     @apply sticky top-0 z-50 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 sm:py-(--header-padding-y);
     @apply bg-(--surface-page);

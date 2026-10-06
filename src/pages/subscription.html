@@ -312,6 +312,34 @@
                 </button>
               </nav>
             </form>
+
+            <!-- Confirmation (shown after finishing the wizard) -->
+            <section
+              id="subscription-confirmation"
+              class="wizard__card wizard__confirmation hidden"
+              aria-labelledby="subscription-confirmation-title"
+            >
+              <span
+                class="icon icon--mail wizard__confirmation-icon"
+                aria-hidden="true"
+              ></span>
+              <h2
+                id="subscription-confirmation-title"
+                class="wizard__confirmation-title"
+                tabindex="-1"
+              >
+                Revisa tu correo
+              </h2>
+              <p class="wizard__confirmation-text">
+                Para continuar con tu suscripción, abre el mensaje que te
+                enviaremos a
+                <strong id="subscription-confirmation-email">tu correo</strong>
+                y confirma tus datos.
+              </p>
+              <a href="/" class="btn btn--secondary wizard__confirmation-action"
+                >Volver al inicio</a
+              >
+            </section>
           </section>
         </div>
       </section>

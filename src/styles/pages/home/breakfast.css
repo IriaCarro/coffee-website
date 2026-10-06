@@ -31,7 +31,7 @@
   }
 
   .breakfast__eyebrow {
-    @apply mb-4 text-xs font-bold tracking-[0.16em] text-(--text-primary);
+    @apply mb-4 text-sm font-bold tracking-[0.16em] text-(--text-primary);
   }
 
   .breakfast__headline-wrap {

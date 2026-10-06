@@ -40,11 +40,10 @@
 
   .card {
     @apply overflow-hidden rounded-lg shadow-lg transition-all duration-300;
-    @apply border border-(--border-subtle) bg-(--surface-container);
   }
 
   .card:hover {
-    @apply scale-105 shadow-xl;
+    @apply -translate-y-2 shadow-xl;
   }
 
   .form-label {

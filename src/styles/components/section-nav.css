@@ -7,11 +7,8 @@
     display: contents;
   }
 
-  /* The pill gives the dots their own page-tinted backing, so they stay
-     readable over any section (page surface, photo overlay or dark band) */
   .section-nav__list {
-    @apply flex flex-col gap-1 rounded-full border border-(--border-subtle) p-1 backdrop-blur-sm;
-    background-color: var(--surface-header);
+    @apply flex flex-col gap-1 p-1;
   }
 
   .section-nav__link {

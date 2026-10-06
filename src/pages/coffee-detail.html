@@ -32,7 +32,18 @@
     <app-header></app-header>
 
     <main id="main-content">
-      <div id="coffee-detail" class="detail theme-transition"></div>
+      <div id="coffee-detail" class="detail theme-transition">
+        <!-- Fallback until the coffee is rendered by coffee-detail.js -->
+        <div class="detail__container">
+          <h1 class="detail__title">Detalle del café</h1>
+          <noscript>
+            <p class="detail__tagline">
+              Necesitas JavaScript para ver los detalles de este café.
+            </p>
+            <a href="/#cafes" class="detail__back-link">Volver a Cafés</a>
+          </noscript>
+        </div>
+      </div>
     </main>
 
     <app-footer></app-footer>

@@ -75,10 +75,12 @@ class SectionNavigation extends HTMLElement {
 
   syncHeaderHeight() {
     const attach = (header) => {
+      // A constructed stylesheet avoids writing an inline style attribute
+      const sheet = new CSSStyleSheet();
+      document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
       this.headerObserver = new ResizeObserver(() => {
-        document.documentElement.style.setProperty(
-          "--header-height",
-          `${header.offsetHeight}px`,
+        sheet.replaceSync(
+          `:root { --header-height: ${header.offsetHeight}px; }`,
         );
       });
       this.headerObserver.observe(header);

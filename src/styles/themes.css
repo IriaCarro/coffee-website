@@ -221,7 +221,7 @@
     --accent: var(--color-turtle-green-900);
     --accent-hover: var(--color-turtle-green-400);
     --accent-contrast: var(--color-turtle-green-400);
-    --surface-home-overlay: var(--color-turtle-green-950);
+    --surface-home-overlay: var(--color-graphite);
     --border-subtle: var(--color-turtle-green-200);
     --border-strong: var(--color-turtle-green-400);
     --focus-ring: var(--color-turtle-green-800);
@@ -305,7 +305,7 @@
     --accent: var(--color-midnight-800);
     --accent-hover: var(--color-midnight-200);
     --accent-contrast: var(--color-midnight-500);
-    --surface-home-overlay: var(--color-midnight-950);
+    --surface-home-overlay: var(--color-graphite);
     --border-subtle: var(--color-midnight-200);
     --border-strong: var(--color-midnight-400);
     --focus-ring: var(--color-midnight-600);
@@ -347,7 +347,7 @@
     --accent: var(--color-revolver-700);
     --accent-hover: var(--color-revolver-200);
     --accent-contrast: var(--color-revolver-500);
-    --surface-home-overlay: var(--color-revolver-950);
+    --surface-home-overlay: var(--color-graphite);
     --border-subtle: var(--color-revolver-200);
     --border-strong: var(--color-revolver-400);
     --focus-ring: var(--color-revolver-600);

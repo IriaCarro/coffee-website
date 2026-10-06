@@ -34,9 +34,14 @@ function initSubscriptionWizard() {
       }
     });
 
-    const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+    // Width comes from the --step-N modifiers in subscription.css
     if (progressBar) {
-      progressBar.style.width = `${progress}%`;
+      for (let step = 1; step <= totalSteps; step++) {
+        progressBar.classList.toggle(
+          `wizard__progress-bar--step-${step}`,
+          step === currentStep,
+        );
+      }
     }
     if (progressTrack) {
       progressTrack.setAttribute("aria-valuemax", String(totalSteps));
@@ -60,18 +65,47 @@ function initSubscriptionWizard() {
     }
   };
 
+  // Move focus to the new step's legend so screen readers announce the change
+  const focusCurrentStep = () => {
+    const legend = form.querySelector(
+      `.wizard__step[data-step="${currentStep}"] legend`,
+    );
+    if (!legend) return;
+    legend.tabIndex = -1;
+    legend.focus();
+  };
+
   const goToStep = (step) => {
     if (step < 1 || step > totalSteps) return;
     currentStep = step;
     updateUI();
+    focusCurrentStep();
+  };
+
+  const showConfirmation = (email) => {
+    const wizard = document.getElementById("wizard");
+    const confirmation = document.getElementById("subscription-confirmation");
+    const emailLabel = document.getElementById(
+      "subscription-confirmation-email",
+    );
+    if (!wizard || !confirmation) return;
+
+    if (email && emailLabel) emailLabel.textContent = email;
+    wizard
+      .querySelectorAll(":scope > :not(#subscription-confirmation)")
+      .forEach((el) => el.classList.add("hidden"));
+    confirmation.classList.remove("hidden");
+    document.getElementById("subscription-confirmation-title")?.focus();
   };
 
   // There is no backend yet: log the data instead of sending it
   const submitForm = () => {
+    const data = Object.fromEntries(new FormData(form));
     console.info(
       "[Suscripción] Aún no se gestiona el envío del formulario. Datos recogidos:",
-      Object.fromEntries(new FormData(form)),
+      data,
     );
+    showConfirmation(data.email);
   };
 
   const nextStep = () => {

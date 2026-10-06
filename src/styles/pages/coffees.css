@@ -1,0 +1,70 @@
+@layer components {
+  .coffees-page {
+    @apply bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
+  }
+
+  .coffees-page__container {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .coffees-page__back {
+    @apply mb-8;
+  }
+
+  .coffees-page__back-link {
+    @apply inline-flex items-center gap-2 text-(--text-primary) transition-colors hover:underline;
+  }
+
+  .coffees-page__header {
+    @apply mb-12 text-center;
+  }
+
+  .coffees-page__title {
+    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
+  }
+
+  .coffees-page__subtitle {
+    @apply text-lg text-(--text-primary);
+  }
+
+  .coffees-page__grid {
+    @apply grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3;
+  }
+
+  .coffee-card__link {
+    @apply block text-inherit no-underline transition-transform duration-300;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--focus-ring);
+  }
+
+  .coffee-card__link:hover {
+    @apply -translate-y-2;
+  }
+
+  .coffee-card__link:hover .coffee-card__image {
+    @apply scale-105;
+  }
+
+  .coffee-card__media {
+    @apply aspect-[4/5] overflow-hidden;
+  }
+
+  .coffee-card__image {
+    @apply h-full w-full object-contain transition-transform duration-300;
+  }
+
+  .coffee-card__content {
+    @apply p-5;
+  }
+
+  .coffee-card__title {
+    @apply mb-2 text-xl font-bold text-(--text-primary);
+  }
+
+  .coffee-card__description {
+    @apply mb-4 text-sm text-(--text-secondary);
+  }
+
+  .coffee-card__price {
+    @apply text-lg font-bold text-(--accent);
+  }
+}

@@ -100,4 +100,8 @@
   .icon--cherry {
     --icon: url("/icons/ui/cherry.svg");
   }
+
+  .icon--mail {
+    --icon: url("/icons/ui/mail.svg");
+  }
 }

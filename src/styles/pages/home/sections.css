@@ -103,18 +103,6 @@
     @apply inline-flex items-center gap-3 rounded-xl px-8 py-4 font-bold transition-all duration-300;
   }
 
-  .home__coffee-link {
-    @apply block text-inherit no-underline;
-  }
-
-  .home__coffee-link:hover .coffee-card__package-image {
-    @apply scale-105;
-  }
-
-  .home__grid {
-    @apply mx-auto grid max-w-4xl gap-6 px-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10;
-  }
-
   .home-location__grid {
     @apply grid items-center gap-8 md:grid-cols-2 md:gap-12;
   }
@@ -200,28 +188,24 @@
     @apply text-(--text-on-image-muted);
   }
 
-  .coffee-card__package {
-    @apply flex h-40 items-center justify-center bg-(--surface-container) p-4;
+  .home-steps__list {
+    @apply mb-10 flex flex-col gap-10 md:flex-row md:gap-8;
   }
 
-  .coffee-card__package-image {
-    @apply h-full max-w-full object-contain transition-transform duration-300;
+  .home-steps__item {
+    @apply flex flex-1 flex-col items-center text-center;
   }
 
-  .coffee-card__content {
-    @apply p-5;
+  .home-steps__number {
+    @apply mb-4 flex size-14 items-center justify-center rounded-full border-2 border-(--text-on-image-accent) text-2xl font-bold text-(--text-on-image-accent);
   }
 
-  .coffee-card__title {
-    @apply mb-2 text-xl font-bold text-(--text-primary);
+  .home-steps__title {
+    @apply mb-2;
   }
 
-  .coffee-card__description {
-    @apply mb-4 text-sm text-(--text-secondary);
-  }
-
-  .coffee-card__price {
-    @apply text-lg font-bold text-(--accent);
+  .home-steps__action {
+    @apply mx-auto flex w-fit;
   }
 
   .home-about__header {

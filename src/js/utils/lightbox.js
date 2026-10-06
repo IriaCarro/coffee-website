@@ -33,24 +33,21 @@ function initLightbox(selector = "[data-gallery] figure") {
     caption.textContent = text ? `${title} — ${text}` : title;
   };
 
+  // The image becomes a real <button>; the caption stays outside it so its
+  // heading and paragraph keep their semantics
   figures.forEach((figure, index) => {
-    figure.classList.add("gallery__figure--zoomable");
-    figure.tabIndex = 0;
-    figure.setAttribute("role", "button");
-    figure.setAttribute(
-      "aria-label",
-      `Ampliar: ${figure.querySelector("img").alt}`,
-    );
-    const open = () => {
+    const image = figure.querySelector("img");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "gallery__zoom";
+    button.setAttribute("aria-label", `Ampliar: ${image.alt}`);
+    button.setAttribute("aria-haspopup", "dialog");
+    image.replaceWith(button);
+    button.append(image);
+
+    button.addEventListener("click", () => {
       show(index);
       dialog.showModal();
-    };
-    figure.addEventListener("click", open);
-    figure.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        open();
-      }
     });
   });
 

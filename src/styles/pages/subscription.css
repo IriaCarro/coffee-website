@@ -17,7 +17,15 @@
   }
 
   .wizard__progress-bar {
-    @apply h-full w-[16.66%] rounded-full bg-(--accent) transition-all duration-500;
+    @apply h-full w-0 rounded-full bg-(--accent) transition-all duration-500;
+  }
+
+  .wizard__progress-bar--step-2 {
+    @apply w-1/2;
+  }
+
+  .wizard__progress-bar--step-3 {
+    @apply w-full;
   }
 
   .wizard__progress-steps {
@@ -67,6 +75,30 @@
 
   .wizard__option-price {
     @apply font-bold text-(--accent);
+  }
+
+  .wizard__confirmation {
+    @apply flex flex-col items-center text-center;
+  }
+
+  .wizard__confirmation-icon {
+    @apply mb-4 text-6xl text-(--accent);
+  }
+
+  .wizard__confirmation-title {
+    @apply mb-3 text-2xl font-bold text-(--text-primary);
+  }
+
+  .wizard__confirmation-text {
+    @apply mb-6 max-w-md text-(--text-secondary);
+  }
+
+  .wizard__confirmation-text strong {
+    @apply font-bold break-all text-(--text-primary);
+  }
+
+  .wizard__confirmation-action {
+    @apply inline-block no-underline;
   }
 
   .step-indicator {
