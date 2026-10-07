@@ -17,7 +17,7 @@
   }
 
   .wizard__progress-bar {
-    @apply h-full w-0 rounded-full bg-(--accent) transition-all duration-500;
+    @apply h-full w-0 rounded-full bg-(--accent) motion-safe:transition-all motion-safe:duration-500;
   }
 
   .wizard__progress-bar--step-2 {

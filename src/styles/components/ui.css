@@ -43,7 +43,7 @@
   }
 
   .card:hover {
-    @apply -translate-y-2 shadow-xl;
+    @apply shadow-xl motion-safe:-translate-y-2;
   }
 
   .form-label {
@@ -61,5 +61,17 @@
 
   .form-error {
     @apply mt-1 hidden text-sm font-medium text-(--text-error) peer-aria-invalid:block;
+  }
+
+  .enter-fade-up {
+    @apply motion-safe:animate-fade-up;
+  }
+
+  .hover-zoom__target {
+    @apply motion-safe:transition-transform motion-safe:duration-300;
+  }
+
+  .hover-zoom:hover .hover-zoom__target {
+    @apply motion-safe:scale-105;
   }
 }

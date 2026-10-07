@@ -9,6 +9,16 @@
   --font-display: "Playfair Display", ui-serif, Georgia, serif;
   --font-marker: "Permanent Marker", cursive;
 
+  /* Animations */
+  --animate-fade-up: fade-up 0.6s ease-out backwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+  }
+
   /* Coffee palette */
   --color-coffee-50: #f7f1e8;
   --color-coffee-100: #ead9c3;

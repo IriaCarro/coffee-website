@@ -1,49 +1,64 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Carta de desayunos y bollería de Café Rico: napolitanas, croissants, rollos y batidos naturales."
+    />
+    <title>Menú - Café Rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/utils/menu-items.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Carta de desayunos y bollería de Café Rico: napolitanas, croissants, rollos y batidos naturales." />
-  <title>Menú - Café Rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png" />
-  <script src="/theme-init.js"></script>
-  <link rel="stylesheet" href="/src/styles/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/utils/menu-items.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
 
-<body>
-  <app-header></app-header>
+    <main id="main-content">
+      <section class="menu-page theme-transition" aria-labelledby="menu-title">
+        <div class="menu-page__container">
+          <nav class="menu-page__back" aria-label="Volver">
+            <a href="/" class="menu-page__back-link">
+              <span aria-hidden="true">&larr;</span>
+              <span>Volver al inicio</span>
+            </a>
+          </nav>
 
-  <main id="main-content">
-    <section class="menu-page theme-transition" aria-labelledby="menu-title">
-      <div class="menu-page__container">
-        <nav class="menu-page__back" aria-label="Migas de pan">
-          <a href="/" class="menu-page__back-link">
-            <span aria-hidden="true">&larr;</span>
-            <span>Volver al inicio</span>
-          </a>
-        </nav>
+          <header class="menu-page__header enter-fade-up">
+            <h1 class="menu-page__title" id="menu-title">
+              Menú de desayunos y bollería
+            </h1>
+            <p class="menu-page__subtitle">
+              Bollería recién horneada y desayunos para acompañar tu café
+            </p>
+          </header>
 
-        <header class="menu-page__header">
-          <h1 class="menu-page__title" id="menu-title">
-            Menú de desayunos y bollería
-          </h1>
-          <p class="menu-page__subtitle">
-            Bollería recién horneada y desayunos para acompañar tu café
-          </p>
-        </header>
+          <ul id="menu-list" class="menu-page__grid enter-fade-up"></ul>
+        </div>
+      </section>
+    </main>
 
-        <ul id="menu-list" class="menu-page__grid"></ul>
-      </div>
-    </section>
-  </main>
-
-  <app-footer></app-footer>
-</body>
-
+    <app-footer></app-footer>
+  </body>
 </html>

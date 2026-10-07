@@ -157,11 +157,7 @@
   }
 
   .home-highlights__icon {
-    @apply mb-4 block text-5xl transition-transform duration-300;
-  }
-
-  .home-highlights__item:hover .home-highlights__icon {
-    @apply scale-110;
+    @apply mb-4 block text-5xl;
   }
 
   .home-highlights__title {
@@ -225,11 +221,7 @@
   }
 
   .home-about__icon {
-    @apply mb-6 block text-7xl transition-transform duration-300;
-  }
-
-  .home-about__point:hover .home-about__icon {
-    @apply scale-110;
+    @apply mb-6 block text-7xl;
   }
 
   .home-about__point-title {
@@ -238,5 +230,21 @@
 
   .home-about__action {
     @apply mx-auto flex w-fit;
+  }
+
+  /* Reveal on scroll as progressive enhancement: browsers without
+     scroll-driven animations just show the content. The fade-up keyframes
+     are defined in tokens.css. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .home--snap
+        main
+        > section:not(.hero)
+        > :is(.home__content, .breakfast__content) {
+        animation: fade-up linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 40%;
+      }
+    }
   }
 }

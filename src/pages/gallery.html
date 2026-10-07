@@ -1,60 +1,79 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Galería de imágenes de nuestros cafés premium."
+    />
+    <title>Galería - Café Rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/utils/gallery-items.js"></script>
+    <script type="module" src="/src/js/utils/gallery-lightbox.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Galería de imágenes de nuestros cafés premium." />
-  <title>Galería - Café Rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png" />
-  <script src="/theme-init.js"></script>
-  <link rel="stylesheet" href="/src/styles/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/utils/gallery-items.js"></script>
-  <script type="module" src="/src/js/utils/gallery-lightbox.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
 
-<body>
-  <app-header></app-header>
+    <main id="main-content">
+      <section class="gallery" aria-labelledby="gallery-title">
+        <div class="gallery__container">
+          <nav class="gallery__back-wrap" aria-label="Volver">
+            <a href="/" class="gallery__back-link">
+              <span aria-hidden="true">&larr;</span>
+              <span>Volver al inicio</span>
+            </a>
+          </nav>
 
-  <main id="main-content">
-    <section class="gallery" aria-labelledby="gallery-title">
-      <div class="gallery__container">
-        <nav class="gallery__back-wrap" aria-label="Migas de pan">
-          <a href="/" class="gallery__back-link">
-            <span aria-hidden="true">&larr;</span>
-            <span>Volver al inicio</span>
-          </a>
-        </nav>
+          <header class="gallery__header enter-fade-up">
+            <h1 class="gallery__title" id="gallery-title">Galería de Café</h1>
+            <p class="gallery__subtitle">
+              Explora nuestra colección de cafés premium de origen único
+            </p>
+          </header>
 
-        <header class="gallery__header">
-          <h1 class="gallery__title" id="gallery-title">Galería de Café</h1>
-          <p class="gallery__subtitle">
-            Explora nuestra colección de cafés premium de origen único
-          </p>
-        </header>
+          <!-- Gallery Grid (rendered from gallery.json) -->
+          <ul data-gallery class="gallery__grid" role="list"></ul>
 
-        <!-- Gallery Grid (rendered from gallery.json) -->
-        <ul data-gallery class="gallery__grid" role="list"></ul>
+          <section class="gallery__cta" aria-labelledby="gallery-cta-title">
+            <h2 class="gallery__cta-title" id="gallery-cta-title">
+              ¿Te gustaría probar nuestros cafés?
+            </h2>
+            <p class="gallery__cta-text">
+              Suscríbete y recibe café premium cada mes
+            </p>
+            <a
+              href="/src/pages/subscription.html"
+              class="btn btn--primary gallery__cta-btn"
+            >
+              Comenzar Suscripción
+            </a>
+          </section>
+        </div>
+      </section>
+    </main>
 
-        <section class="gallery__cta" aria-labelledby="gallery-cta-title">
-          <h2 class="gallery__cta-title" id="gallery-cta-title">
-            ¿Te gustaría probar nuestros cafés?
-          </h2>
-          <p class="gallery__cta-text">
-            Suscríbete y recibe café premium cada mes
-          </p>
-          <a href="/src/pages/subscription.html" class="btn btn--primary gallery__cta-btn">
-            Comenzar Suscripción
-          </a>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <app-footer></app-footer>
-</body>
-
+    <app-footer></app-footer>
+  </body>
 </html>

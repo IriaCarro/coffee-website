@@ -37,11 +37,7 @@
   }
 
   .coffee-card__link:hover {
-    @apply -translate-y-2;
-  }
-
-  .coffee-card__link:hover .coffee-card__image {
-    @apply scale-105;
+    @apply motion-safe:-translate-y-2;
   }
 
   .coffee-card__media {
@@ -49,7 +45,7 @@
   }
 
   .coffee-card__image {
-    @apply h-full w-full object-contain transition-transform duration-300;
+    @apply h-full w-full object-contain;
   }
 
   .coffee-card__content {

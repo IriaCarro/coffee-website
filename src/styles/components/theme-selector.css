@@ -13,7 +13,7 @@
   }
 
   .theme-selector__toggle-chevron {
-    @apply h-4 w-4 transition-transform duration-200;
+    @apply h-4 w-4 motion-safe:transition-transform motion-safe:duration-200;
   }
 
   .theme-selector__toggle[aria-expanded="true"]

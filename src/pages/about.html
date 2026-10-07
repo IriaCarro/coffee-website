@@ -1,178 +1,215 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conoce la historia de Café Rico y nuestra pasión por el café de especialidad."
+    />
+    <title>Nuestra Historia - Café Rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Conoce la historia de Café Rico y nuestra pasión por el café de especialidad." />
-  <title>Nuestra Historia - Café Rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png" />
-  <script src="/theme-init.js"></script>
-  <link rel="stylesheet" href="/src/styles/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
 
-<body>
-  <app-header></app-header>
+    <main id="main-content">
+      <section class="about theme-transition" aria-labelledby="about-title">
+        <div class="about__container">
+          <nav class="about__back" aria-label="Volver">
+            <a href="/" class="about__back-link">
+              <span aria-hidden="true">&larr;</span>
+              <span>Volver al inicio</span>
+            </a>
+          </nav>
 
-  <main id="main-content">
-    <section class="about theme-transition" aria-labelledby="about-title">
-      <div class="about__container">
-        <nav class="about__back" aria-label="Migas de pan">
-          <a href="/" class="about__back-link">
-            <span aria-hidden="true">&larr;</span>
-            <span>Volver al inicio</span>
-          </a>
-        </nav>
-
-        <header class="about__header">
-          <h1 class="about__title" id="about-title">Nuestra Historia</h1>
-          <p class="about__subtitle">
-            Descubre cómo Café Rico nació de una pasión por el café de
-            especialidad
-          </p>
-        </header>
-
-        <section class="about__story" aria-labelledby="about-story-1">
-          <div>
-            <h2 class="about__story-title" id="about-story-1">El Comienzo</h2>
-            <p class="about__text about__text--spaced">
-              Café Rico comenzó en 2018 cuando un grupo de amigos apasionados
-              por el café decidieron compartir su amor por esta bebida
-              milenaria. Lo que comenzó como un hobby en una pequeña cocina,
-              pronto se convirtió en una misión: traer los mejores cafés de
-              origen único directamente a las casas de los amantes del café.
+          <header class="about__header">
+            <h1 class="about__title" id="about-title">Nuestra Historia</h1>
+            <p class="about__subtitle">
+              Descubre cómo Café Rico nació de una pasión por el café de
+              especialidad
             </p>
-            <p class="about__text">
-              Nos dimos cuenta de que la mayoría de las personas no tenía
-              acceso a cafés de calidad premium sin pagar precios
-              exorbitantes. Así que decidimos cambiar eso, estableciendo
-              relaciones directas con productores en diferentes partes del
-              mundo.
-            </p>
-          </div>
-          <figure class="about__figure">
-            <img src="/photos/initial-1.png" alt="Granos de café y una taza en una finca al amanecer" />
-          </figure>
-        </section>
+          </header>
 
-        <section class="about__story" aria-labelledby="about-story-2">
-          <figure class="about__figure about__order-last">
-            <img src="/photos/initial-2.png" alt="Interior cálido de una cafetería" />
-          </figure>
-          <div class="about__order-first">
-            <h2 class="about__story-title" id="about-story-2">
-              Nuestro Viaje Global
+          <section class="about__story" aria-labelledby="about-story-1">
+            <div>
+              <h2 class="about__story-title" id="about-story-1">El Comienzo</h2>
+              <p class="about__text about__text--spaced">
+                Café Rico comenzó en 2018 cuando un grupo de amigos apasionados
+                por el café decidieron compartir su amor por esta bebida
+                milenaria. Lo que comenzó como un hobby en una pequeña cocina,
+                pronto se convirtió en una misión: traer los mejores cafés de
+                origen único directamente a las casas de los amantes del café.
+              </p>
+              <p class="about__text">
+                Nos dimos cuenta de que la mayoría de las personas no tenía
+                acceso a cafés de calidad premium sin pagar precios
+                exorbitantes. Así que decidimos cambiar eso, estableciendo
+                relaciones directas con productores en diferentes partes del
+                mundo.
+              </p>
+            </div>
+            <figure class="about__figure">
+              <img
+                src="/photos/initial-1.png"
+                alt="Granos de café y una taza en una finca al amanecer"
+              />
+            </figure>
+          </section>
+
+          <section class="about__story" aria-labelledby="about-story-2">
+            <figure class="about__figure about__order-last">
+              <img
+                src="/photos/initial-2.png"
+                alt="Interior cálido de una cafetería"
+              />
+            </figure>
+            <div class="about__order-first">
+              <h2 class="about__story-title" id="about-story-2">
+                Nuestro Viaje Global
+              </h2>
+              <p class="about__text about__text--spaced">
+                A lo largo de los años, hemos viajado a las principales regiones
+                productoras de café del mundo: Etiopía, Colombia, Kenia y muchos
+                otros países. Hemos conocido a los agricultores, entendido sus
+                desafíos y aprendido sobre las técnicas tradicionales que hacen
+                que cada café sea único.
+              </p>
+              <p class="about__text">
+                Estos viajes no solo nos permitieron seleccionar los mejores
+                granos, sino también establecer relaciones duraderas basadas en
+                el respeto, la sostenibilidad y el comercio justo.
+              </p>
+            </div>
+          </section>
+
+          <section class="about__story" aria-labelledby="about-story-3">
+            <div>
+              <h2 class="about__story-title" id="about-story-3">
+                Nuestra Misión Hoy
+              </h2>
+              <p class="about__text about__text--spaced">
+                Hoy, Café Rico es más que una empresa de suscripción de café.
+                Somos una comunidad de amantes del café comprometidos con traer
+                sostenibilidad, calidad y educación al mundo del café de
+                especialidad.
+              </p>
+              <p class="about__text about__text--spaced">
+                Cada mes, seleccionamos cuidadosamente tres variedades de
+                nuestros proveedores favoritos, las tostamos a la perfección en
+                nuestras instalaciones, y las enviamos directamente a tu puerta.
+                Queremos que disfrutes de café recién tostado con la máxima
+                frescura.
+              </p>
+              <p class="about__text">
+                Creemos que el café es más que una bebida; es una experiencia,
+                una conexión con culturas distantes y una oportunidad para hacer
+                una diferencia en la vida de los productores.
+              </p>
+            </div>
+            <figure class="about__figure">
+              <img
+                src="/photos/initial-3.png"
+                alt="Barista preparando café espresso"
+              />
+            </figure>
+          </section>
+
+          <section class="about__block" aria-labelledby="about-values-title">
+            <h2 class="about__block-title" id="about-values-title">
+              Nuestros Valores
             </h2>
-            <p class="about__text about__text--spaced">
-              A lo largo de los años, hemos viajado a las principales regiones
-              productoras de café del mundo: Etiopía, Colombia, Kenia y muchos
-              otros países. Hemos conocido a los agricultores, entendido sus
-              desafíos y aprendido sobre las técnicas tradicionales que hacen
-              que cada café sea único.
-            </p>
-            <p class="about__text">
-              Estos viajes no solo nos permitieron seleccionar los mejores
-              granos, sino también establecer relaciones duraderas basadas en
-              el respeto, la sostenibilidad y el comercio justo.
-            </p>
-          </div>
-        </section>
+            <ul class="about__values-grid" role="list">
+              <li class="about__value-card">
+                <span
+                  class="about__value-icon icon icon--sparkles"
+                  aria-hidden="true"
+                ></span>
+                <h3 class="about__value-title">Calidad</h3>
+                <p class="about__value-text">
+                  Seleccionamos solo los mejores granos y los tostamos con
+                  precisión para garantizar la máxima calidad en cada taza.
+                </p>
+              </li>
 
-        <section class="about__story" aria-labelledby="about-story-3">
-          <div>
-            <h2 class="about__story-title" id="about-story-3">
-              Nuestra Misión Hoy
+              <li class="about__value-card">
+                <span
+                  class="about__value-icon icon icon--sprout"
+                  aria-hidden="true"
+                ></span>
+                <h3 class="about__value-title">Sostenibilidad</h3>
+                <p class="about__value-text">
+                  Trabajamos directamente con productores que practican la
+                  agricultura sostenible y el comercio justo.
+                </p>
+              </li>
+
+              <li class="about__value-card">
+                <span
+                  class="about__value-icon icon icon--graduation-cap"
+                  aria-hidden="true"
+                ></span>
+                <h3 class="about__value-title">Educación</h3>
+                <p class="about__value-text">
+                  Nos encanta compartir el conocimiento sobre el café: su
+                  origen, sabor y los mejores métodos de preparación.
+                </p>
+              </li>
+            </ul>
+          </section>
+
+          <section class="about__block" aria-labelledby="about-team-title">
+            <h2 class="about__block-title" id="about-team-title">
+              Nuestro Equipo
             </h2>
-            <p class="about__text about__text--spaced">
-              Hoy, Café Rico es más que una empresa de suscripción de café.
-              Somos una comunidad de amantes del café comprometidos con traer
-              sostenibilidad, calidad y educación al mundo del café de
-              especialidad.
+            <p class="about__team-text">
+              Somos un equipo pequeño pero apasionado de expertos en café,
+              tostadores, y amantes de esta bebida milenaria. Cada miembro de
+              nuestro equipo trae una perspectiva única y un compromiso
+              inquebrantable con la excelencia.
             </p>
-            <p class="about__text about__text--spaced">
-              Cada mes, seleccionamos cuidadosamente tres variedades de
-              nuestros proveedores favoritos, las tostamos a la perfección en
-              nuestras instalaciones, y las enviamos directamente a tu puerta.
-              Queremos que disfrutes de café recién tostado con la máxima
-              frescura.
+          </section>
+
+          <section class="about__cta" aria-labelledby="about-cta-title">
+            <h2 class="about__cta-title" id="about-cta-title">
+              Únete a Nuestra Comunidad
+            </h2>
+            <p class="about__cta-text">
+              Sé parte de nuestra historia y descubre el mundo del café de
+              especialidad
             </p>
-            <p class="about__text">
-              Creemos que el café es más que una bebida; es una experiencia,
-              una conexión con culturas distantes y una oportunidad para hacer
-              una diferencia en la vida de los productores.
-            </p>
-          </div>
-          <figure class="about__figure">
-            <img src="/photos/initial-3.png" alt="Barista preparando café espresso" />
-          </figure>
-        </section>
+            <a
+              href="/src/pages/subscription.html"
+              class="btn btn--primary about__cta-button"
+            >
+              Comienza tu Suscripción
+            </a>
+          </section>
+        </div>
+      </section>
+    </main>
 
-        <section class="about__block" aria-labelledby="about-values-title">
-          <h2 class="about__block-title" id="about-values-title">
-            Nuestros Valores
-          </h2>
-          <ul class="about__values-grid" role="list">
-            <li class="about__value-card">
-              <span class="about__value-icon icon icon--sparkles" aria-hidden="true"></span>
-              <h3 class="about__value-title">Calidad</h3>
-              <p class="about__value-text">
-                Seleccionamos solo los mejores granos y los tostamos con
-                precisión para garantizar la máxima calidad en cada taza.
-              </p>
-            </li>
-
-            <li class="about__value-card">
-              <span class="about__value-icon icon icon--sprout" aria-hidden="true"></span>
-              <h3 class="about__value-title">Sostenibilidad</h3>
-              <p class="about__value-text">
-                Trabajamos directamente con productores que practican la
-                agricultura sostenible y el comercio justo.
-              </p>
-            </li>
-
-            <li class="about__value-card">
-              <span class="about__value-icon icon icon--graduation-cap" aria-hidden="true"></span>
-              <h3 class="about__value-title">Educación</h3>
-              <p class="about__value-text">
-                Nos encanta compartir el conocimiento sobre el café: su
-                origen, sabor y los mejores métodos de preparación.
-              </p>
-            </li>
-          </ul>
-        </section>
-
-        <section class="about__block" aria-labelledby="about-team-title">
-          <h2 class="about__block-title" id="about-team-title">
-            Nuestro Equipo
-          </h2>
-          <p class="about__team-text">
-            Somos un equipo pequeño pero apasionado de expertos en café,
-            tostadores, y amantes de esta bebida milenaria. Cada miembro de
-            nuestro equipo trae una perspectiva única y un compromiso
-            inquebrantable con la excelencia.
-          </p>
-        </section>
-
-        <section class="about__cta" aria-labelledby="about-cta-title">
-          <h2 class="about__cta-title" id="about-cta-title">
-            Únete a Nuestra Comunidad
-          </h2>
-          <p class="about__cta-text">
-            Sé parte de nuestra historia y descubre el mundo del café de
-            especialidad
-          </p>
-          <a href="/src/pages/subscription.html" class="btn btn--primary about__cta-button">
-            Comienza tu Suscripción
-          </a>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <app-footer></app-footer>
-</body>
-
+    <app-footer></app-footer>
+  </body>
 </html>

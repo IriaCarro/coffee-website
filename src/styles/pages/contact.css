@@ -76,7 +76,7 @@
   }
 
   .contact__social-link:hover {
-    @apply scale-110;
+    @apply motion-safe:scale-110;
   }
 
   .contact__block {

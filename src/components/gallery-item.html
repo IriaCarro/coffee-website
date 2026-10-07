@@ -1,4 +1,4 @@
-<li class="gallery__item{{modifier}}">
+<li class="gallery__item hover-zoom{{modifier}}">
   <figure class="gallery__figure">
     <button
       type="button"
@@ -6,7 +6,11 @@
       aria-label="Ampliar: {{title}}"
       aria-haspopup="dialog"
     >
-      <img src="{{image}}" alt="{{alt}}" class="gallery__img" />
+      <img
+        src="{{image}}"
+        alt="{{alt}}"
+        class="gallery__img hover-zoom__target"
+      />
     </button>
     <figcaption class="gallery__caption-overlay gallery__caption">
       <h3 class="gallery__caption-title">{{title}}</h3>

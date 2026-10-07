@@ -18,7 +18,7 @@
 
   .section-nav__dot {
     @apply h-2.5 w-2.5 rounded-full border-2 border-(--text-primary);
-    @apply transition-all duration-300 ease-in-out;
+    @apply motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-in-out;
   }
 
   .section-nav__link[aria-current="location"] .section-nav__dot {

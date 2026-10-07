@@ -1,39 +1,52 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Detalle del café seleccionado." />
+    <title>Detalle del Café - Café Rico</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icons/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/icons/favicon-96.png"
+    />
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/utils/coffee-detail.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Detalle del café seleccionado." />
-  <title>Detalle del Café - Café Rico</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png" />
-  <script src="/theme-init.js"></script>
-  <link rel="stylesheet" href="/src/styles/index.css" />
-  <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/utils/coffee-detail.js"></script>
-</head>
+  <body>
+    <app-header></app-header>
 
-<body>
-  <app-header></app-header>
-
-  <main id="main-content">
-    <div id="coffee-detail" class="detail theme-transition">
-      <!-- Fallback until the coffee is rendered by coffee-detail.js -->
-      <div class="detail__container">
-        <h1 class="detail__title">Detalle del café</h1>
-        <noscript>
-          <p class="detail__tagline">
-            Necesitas JavaScript para ver los detalles de este café.
-          </p>
-          <a href="/#cafes" class="detail__back-link">Volver a Cafés</a>
-        </noscript>
+    <main id="main-content">
+      <div id="coffee-detail" class="detail theme-transition">
+        <!-- Fallback until the coffee is rendered by coffee-detail.js -->
+        <div class="detail__container">
+          <h1 class="detail__title">Detalle del café</h1>
+          <noscript>
+            <p class="detail__tagline">
+              Necesitas JavaScript para ver los detalles de este café.
+            </p>
+            <a href="/#cafes" class="detail__back-link">Volver a Cafés</a>
+          </noscript>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <app-footer></app-footer>
-</body>
-
+    <app-footer></app-footer>
+  </body>
 </html>
