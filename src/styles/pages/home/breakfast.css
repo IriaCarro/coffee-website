@@ -110,7 +110,7 @@
   }
 
   .breakfast__bottom {
-    @apply flex max-w-3xl items-end justify-between gap-8;
+    @apply flex items-end justify-between gap-8;
     margin-top: -1rem;
   }
 
@@ -176,7 +176,7 @@
 
     .breakfast__headline {
       display: block;
-      font-size: clamp(4.5rem, 20vw, 9rem);
+      font-size: clamp(3.5rem, 16.5vw, 9rem);
       line-height: 0.78;
       white-space: normal;
     }
@@ -203,7 +203,12 @@
 
     .breakfast__bottom {
       display: grid;
+      justify-content: stretch;
       margin-top: 0;
+    }
+
+    .breakfast__button {
+      justify-self: end;
     }
   }
 

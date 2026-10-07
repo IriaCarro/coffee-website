@@ -14,12 +14,27 @@
     box-shadow: var(--shadow-header);
   }
 
+  /* Popover menu on mobile (opens and closes without JS); always visible from lg */
   .site-header__nav {
-    @apply order-3 w-full overflow-x-auto md:order-none md:w-auto md:overflow-visible;
+    @apply fixed inset-x-0 top-[calc(var(--brand-logo-size)+1rem)] bottom-auto m-0 h-auto w-auto border-0 border-b border-(--border-subtle) p-4 sm:top-(--header-height);
+    @apply bg-(--surface-page) text-(--text-primary);
+    @apply lg:static lg:block lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0;
   }
 
   .site-header__nav-list {
-    @apply flex w-max items-center gap-5 py-2 sm:gap-8 md:w-auto md:py-0;
+    @apply flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-8;
+  }
+
+  .site-header__nav-list .site-header__link {
+    @apply block py-3 lg:py-0;
+  }
+
+  .site-header__start {
+    @apply flex items-center gap-2;
+  }
+
+  .site-header__menu-button {
+    @apply flex size-11 items-center justify-center rounded-lg text-2xl text-(--text-primary) transition-colors duration-200 hover:opacity-75 lg:hidden;
   }
 
   /* Shared by the header nav and the footer link lists */

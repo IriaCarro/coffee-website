@@ -1,6 +1,6 @@
 @layer components {
   .section-nav {
-    @apply fixed top-1/2 right-1 z-40 hidden -translate-y-1/2 sm:right-4 sm:block;
+    @apply fixed top-1/2 right-1 z-40 hidden -translate-y-1/2 lg:right-4 lg:block;
   }
 
   section-navigation {

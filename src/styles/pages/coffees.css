@@ -41,11 +41,15 @@
   }
 
   .coffee-card__media {
-    @apply aspect-[4/5] overflow-hidden;
+    @apply relative aspect-video overflow-hidden;
+  }
+
+  .coffee-card__backdrop {
+    @apply absolute inset-0 h-full w-full scale-150 object-cover opacity-80 blur-2xl;
   }
 
   .coffee-card__image {
-    @apply h-full w-full object-contain;
+    @apply relative h-full w-full object-contain py-3 drop-shadow-xl;
   }
 
   .coffee-card__content {

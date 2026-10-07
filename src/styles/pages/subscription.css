@@ -148,7 +148,7 @@
   }
 
   .subscription__header {
-    @apply mb-12 text-center;
+    @apply mb-8 text-center sm:mb-12;
   }
 
   .subscription__title {
@@ -160,7 +160,7 @@
   }
 
   .subscription__wizard {
-    @apply px-0 py-8 sm:px-4 sm:py-12 lg:px-8;
+    @apply px-0 py-4 sm:px-4 sm:py-12 lg:px-8;
   }
 
   .subscription__progress {
@@ -188,11 +188,15 @@
   }
 
   .subscription__nav {
-    @apply flex items-center justify-between gap-4 pt-6;
+    @apply flex flex-wrap items-center justify-between gap-x-2 gap-y-4 pt-6 sm:gap-x-4;
+  }
+
+  .subscription__nav .btn {
+    @apply px-4 whitespace-nowrap sm:px-6;
   }
 
   .subscription__nav-status {
-    @apply text-sm font-medium;
+    @apply order-first w-full text-center text-sm font-medium;
   }
 
   .subscription__btn-prev:disabled {

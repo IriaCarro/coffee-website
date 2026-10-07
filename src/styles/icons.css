@@ -104,4 +104,8 @@
   .icon--mail {
     --icon: url("/icons/ui/mail.svg");
   }
+
+  .icon--menu {
+    --icon: url("/icons/ui/menu.svg");
+  }
 }

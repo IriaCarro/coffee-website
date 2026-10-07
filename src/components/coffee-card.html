@@ -1,10 +1,13 @@
 <li>
-  <a
-    href="/src/pages/coffee-detail.html?id={{id}}"
-    class="coffee-card__link hover-zoom"
-  >
+  <a href="/coffees/{{id}}/" class="coffee-card__link hover-zoom">
     <article>
       <div class="coffee-card__media">
+        <img
+          class="coffee-card__backdrop"
+          src="{{packImage}}"
+          alt=""
+          aria-hidden="true"
+        />
         <img
           class="coffee-card__image hover-zoom__target"
           src="{{packImage}}"
