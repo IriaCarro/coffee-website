@@ -50,4 +50,16 @@
     @apply mb-1 block text-sm font-medium transition-colors duration-300;
     @apply text-(--text-primary);
   }
+
+  :is(input[type="text"], input[type="email"], textarea):focus {
+    @apply border-(--focus-ring) ring-2 ring-(--focus-ring)/30;
+  }
+
+  :is(input, textarea)[aria-invalid="true"] {
+    @apply border-(--border-error);
+  }
+
+  .form-error {
+    @apply mt-1 hidden text-sm font-medium text-(--text-error) peer-aria-invalid:block;
+  }
 }

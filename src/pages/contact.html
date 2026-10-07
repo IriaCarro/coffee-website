@@ -26,8 +26,11 @@
       sizes="96x96"
       href="/icons/favicon-96.png"
     />
-    <link rel="stylesheet" href="/src/index.css" />
+    <script src="/theme-init.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
     <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/utils/form-validation.js"></script>
+    <script type="module" src="/src/js/utils/contact-form.js"></script>
   </head>
 
   <body>
@@ -51,7 +54,6 @@
           </header>
 
           <div class="contact__grid">
-            <!-- Location Card -->
             <section
               class="contact__card"
               aria-labelledby="contact-location-title"
@@ -83,7 +85,6 @@
               </dl>
             </section>
 
-            <!-- Contact Card -->
             <section class="contact__card" aria-labelledby="contact-info-title">
               <h2 class="contact__card-title" id="contact-info-title">
                 <span
@@ -157,7 +158,6 @@
             </section>
           </div>
 
-          <!-- Map Section -->
           <section class="contact__block" aria-labelledby="contact-map-title">
             <h2 class="contact__block-title" id="contact-map-title">
               Nuestra Ubicación
@@ -176,12 +176,16 @@
             </figure>
           </section>
 
-          <!-- Contact Form -->
           <section class="contact__block" aria-labelledby="contact-form-title">
             <h2 class="contact__block-title" id="contact-form-title">
               Envíanos un Mensaje
             </h2>
-            <form class="contact__form" aria-describedby="contact-form-note">
+            <form
+              class="contact__form"
+              aria-describedby="contact-form-note"
+              novalidate
+              data-validated
+            >
               <p
                 class="contact__text-note contact__text-note--full"
                 id="contact-form-note"
@@ -195,10 +199,13 @@
                   id="name"
                   name="name"
                   placeholder="Tu nombre"
-                  class="contact__input"
+                  class="contact__input peer"
                   autocomplete="name"
                   required
                 />
+                <span class="form-error" id="name-error"
+                  >Introduce tu nombre.</span
+                >
               </label>
               <label for="email" class="contact__field">
                 <span class="form-label">Email</span>
@@ -207,10 +214,14 @@
                   id="email"
                   name="email"
                   placeholder="tu@email.com"
-                  class="contact__input"
+                  class="contact__input peer"
                   autocomplete="email"
                   required
                 />
+                <span class="form-error" id="email-error"
+                  >Introduce un email válido, por ejemplo
+                  nombre@email.com.</span
+                >
               </label>
               <label for="subject" class="contact__field contact__field--full">
                 <span class="form-label">Asunto</span>
@@ -219,9 +230,12 @@
                   id="subject"
                   name="subject"
                   placeholder="¿En qué podemos ayudarte?"
-                  class="contact__input"
+                  class="contact__input peer"
                   required
                 />
+                <span class="form-error" id="subject-error"
+                  >Indica el asunto del mensaje.</span
+                >
               </label>
               <label for="message" class="contact__field contact__field--full">
                 <span class="form-label">Mensaje</span>
@@ -230,9 +244,12 @@
                   name="message"
                   rows="5"
                   placeholder="Tu mensaje..."
-                  class="contact__input contact__textarea"
+                  class="contact__input contact__textarea peer"
                   required
                 ></textarea>
+                <span class="form-error" id="message-error"
+                  >Escribe tu mensaje.</span
+                >
               </label>
               <button
                 type="submit"
@@ -249,7 +266,6 @@
             </form>
           </section>
 
-          <!-- FAQ Link -->
           <section class="contact__faq" aria-labelledby="contact-faq-title">
             <h2 class="contact__faq-title" id="contact-faq-title">
               ¿Tienes Preguntas?

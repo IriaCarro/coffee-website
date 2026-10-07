@@ -1,0 +1,39 @@
+[
+  {
+    "featured": true,
+    "image": "/photos/cafe-1.jpg",
+    "title": "Desayuno de cafetería",
+    "alt": "Café con leche con dibujo de hoja en la espuma, junto a un croissant sobre una tabla de madera",
+    "description": "Un café con leche con arte latte y un croissant recién horneado"
+  },
+  {
+    "image": "/photos/cafe-2.jpeg",
+    "title": "Latte con arte",
+    "alt": "Taza de cerámica con un latte decorado con un corazón de espuma, sobre una mesa a la luz del sol",
+    "description": "Espuma sedosa dibujada con un corazón, a la luz de la tarde"
+  },
+  {
+    "image": "/photos/cafe-3.jpeg",
+    "title": "Granos recién tostados",
+    "alt": "Granos de café tostados saliendo de un saco de yute sobre una mesa de madera",
+    "description": "Granos de tueste intenso derramados de un saco de yute"
+  },
+  {
+    "image": "/photos/cafe-4.jpeg",
+    "title": "Café frío con leche",
+    "alt": "Vaso de cristal con café frío, hielo y leche en capas",
+    "description": "Café con hielo y leche, servido en capas"
+  },
+  {
+    "image": "/photos/cafe-5.jpeg",
+    "title": "Nuestro rincón",
+    "alt": "Interior luminoso de una cafetería con mesas y sillas de madera y plantas junto a las ventanas",
+    "description": "Mesas de madera, plantas y mucha luz natural para quedarse un rato"
+  },
+  {
+    "image": "/photos/cafe-6.jpeg",
+    "title": "Bollo de avellanas",
+    "alt": "Bollo en espiral glaseado con avellanas troceadas sobre un plato de cerámica",
+    "description": "Un bollo en espiral con caramelo y avellanas para acompañar el café"
+  }
+]

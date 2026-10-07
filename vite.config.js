@@ -13,6 +13,7 @@ export default defineConfig({
         "src/pages/contact.html",
         "src/pages/faq.html",
         "src/pages/gallery.html",
+        "src/pages/menu.html",
         "src/pages/subscription.html",
       ],
     },

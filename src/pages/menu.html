@@ -4,40 +4,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Descubre los cafés de especialidad del mes de Café Rico." />
-  <title>Cafés del Mes - Café Rico</title>
+  <meta name="description"
+    content="Carta de desayunos y bollería de Café Rico: napolitanas, croissants, rollos y batidos naturales." />
+  <title>Menú - Café Rico</title>
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png" />
   <script src="/theme-init.js"></script>
   <link rel="stylesheet" href="/src/styles/index.css" />
   <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/utils/home-coffees.js"></script>
+  <script type="module" src="/src/js/utils/menu-items.js"></script>
 </head>
 
 <body>
   <app-header></app-header>
 
   <main id="main-content">
-    <section class="coffees-page theme-transition" aria-labelledby="coffees-title">
-      <div class="coffees-page__container">
-        <nav class="coffees-page__back" aria-label="Migas de pan">
-          <a href="/" class="coffees-page__back-link">
+    <section class="menu-page theme-transition" aria-labelledby="menu-title">
+      <div class="menu-page__container">
+        <nav class="menu-page__back" aria-label="Migas de pan">
+          <a href="/" class="menu-page__back-link">
             <span aria-hidden="true">&larr;</span>
             <span>Volver al inicio</span>
           </a>
         </nav>
 
-        <header class="coffees-page__header">
-          <h1 class="coffees-page__title" id="coffees-title">
-            Cafés del Mes
+        <header class="menu-page__header">
+          <h1 class="menu-page__title" id="menu-title">
+            Menú de desayunos y bollería
           </h1>
-          <p class="coffees-page__subtitle">
-            Selecciona tu favorito y comienza tu viaje de sabor
+          <p class="menu-page__subtitle">
+            Bollería recién horneada y desayunos para acompañar tu café
           </p>
         </header>
 
-        <ul id="coffee-grid" class="coffees-page__grid"></ul>
+        <ul id="menu-list" class="menu-page__grid"></ul>
       </div>
     </section>
   </main>

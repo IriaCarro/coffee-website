@@ -100,6 +100,8 @@
     --text-on-accent: var(--color-coffee-50);
     --text-on-accent-hover: var(--color-coffee-950);
     --border-input: var(--color-coffee-600);
+    --text-error: var(--color-error-700);
+    --border-error: var(--color-error-700);
   }
 
   /* Dark mode from the OS preference when no theme is stored. Same values as
@@ -146,6 +148,8 @@
       --text-on-accent: var(--color-mine-shaft-950);
       --text-on-accent-hover: var(--color-mine-shaft-950);
       --border-input: var(--color-mine-shaft-500);
+      --text-error: var(--color-error-300);
+      --border-error: var(--color-error-300);
     }
   }
 
@@ -190,6 +194,8 @@
     --text-on-accent: var(--color-mine-shaft-950);
     --text-on-accent-hover: var(--color-mine-shaft-950);
     --border-input: var(--color-mine-shaft-500);
+    --text-error: var(--color-error-300);
+    --border-error: var(--color-error-300);
   }
 
   [data-theme="matcha"] {
@@ -233,6 +239,8 @@
     --text-on-accent: var(--color-turtle-green-50);
     --text-on-accent-hover: var(--color-turtle-green-950);
     --border-input: var(--color-turtle-green-800);
+    --text-error: var(--color-error-700);
+    --border-error: var(--color-error-700);
   }
 
   [data-theme="cafe"] {
@@ -275,6 +283,8 @@
     --text-on-accent: var(--color-coffee-950);
     --text-on-accent-hover: var(--color-coffee-950);
     --border-input: var(--color-coffee-400);
+    --text-error: var(--color-error-300);
+    --border-error: var(--color-error-300);
   }
 
   [data-theme="blue"] {
@@ -317,6 +327,8 @@
     --text-on-accent: var(--color-midnight-50);
     --text-on-accent-hover: var(--color-midnight-950);
     --border-input: var(--color-midnight-700);
+    --text-error: var(--color-error-700);
+    --border-error: var(--color-error-700);
   }
 
   [data-theme="violet"] {
@@ -359,5 +371,7 @@
     --text-on-accent: var(--color-revolver-50);
     --text-on-accent-hover: var(--color-revolver-950);
     --border-input: var(--color-revolver-600);
+    --text-error: var(--color-error-700);
+    --border-error: var(--color-error-700);
   }
 }

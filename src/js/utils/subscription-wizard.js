@@ -1,3 +1,24 @@
+import coffees from "../../data/coffees.json";
+import coffeeOptionTemplate from "../../components/subscription-coffee-option.html?raw";
+import { renderTemplate } from "./template.js";
+import { validateFields } from "./form-validation.js";
+
+const formatPrice = (price) => `${price.toFixed(2).replace(".", ",")} €`;
+
+const renderCoffeeOptions = () => {
+  const list = document.getElementById("subscription-coffee-options");
+  if (!list) return;
+  list.innerHTML = coffees
+    .map((coffee, index) =>
+      renderTemplate(coffeeOptionTemplate, {
+        ...coffee,
+        formattedPrice: formatPrice(coffee.price),
+        checked: index === 0 ? "checked" : "",
+      }),
+    )
+    .join("");
+};
+
 function initSubscriptionWizard() {
   const form = document.getElementById("subscription-wizard-form");
   if (!form) return;
@@ -108,7 +129,13 @@ function initSubscriptionWizard() {
     showConfirmation(data.email);
   };
 
+  const isCurrentStepValid = () =>
+    validateFields(
+      form.querySelector(`.wizard__step[data-step="${currentStep}"]`),
+    );
+
   const nextStep = () => {
+    if (!isCurrentStepValid()) return;
     if (currentStep < totalSteps) {
       goToStep(currentStep + 1);
     } else {
@@ -132,4 +159,23 @@ function initSubscriptionWizard() {
   updateUI();
 }
 
+const updatePlanPrices = (form) => {
+  const coffee = coffees.find(({ id }) => id === form.coffee.value);
+  if (!coffee) return;
+  form.querySelectorAll("[data-plan-price]").forEach((el) => {
+    el.textContent = formatPrice(coffee.price * Number(el.dataset.planPrice));
+  });
+};
+
+const initPlanPrices = () => {
+  const form = document.getElementById("subscription-wizard-form");
+  if (!form) return;
+  form.addEventListener("change", (event) => {
+    if (event.target.name === "coffee") updatePlanPrices(form);
+  });
+  updatePlanPrices(form);
+};
+
+renderCoffeeOptions();
+initPlanPrices();
 initSubscriptionWizard();

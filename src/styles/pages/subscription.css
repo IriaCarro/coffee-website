@@ -53,8 +53,16 @@
   }
 
   .wizard__radio-label {
-    @apply flex cursor-pointer items-center rounded-lg border-2 p-4 transition-all duration-300;
+    @apply relative flex cursor-pointer items-center rounded-lg border-2 p-4 transition-all duration-300;
     @apply border-(--border-input) bg-(--surface-transparent);
+  }
+
+  .wizard__radio-label--featured {
+    @apply border-(--accent) shadow-md;
+  }
+
+  .wizard__badge {
+    @apply absolute -top-3 right-4 rounded-full bg-(--accent) px-3 py-0.5 text-xs font-bold text-(--text-on-accent);
   }
 
   .wizard__radio-label:hover {
@@ -175,8 +183,8 @@
     @apply sm:col-span-2;
   }
 
-  .subscription__option-icon {
-    @apply text-2xl text-(--accent);
+  .subscription__option-image {
+    @apply ml-3 h-20 w-16 shrink-0 object-contain sm:ml-4;
   }
 
   .subscription__nav {

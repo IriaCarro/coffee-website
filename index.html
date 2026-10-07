@@ -9,7 +9,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png" />
-  <link rel="stylesheet" href="/src/index.css" />
+  <script src="/theme-init.js"></script>
+  <link rel="stylesheet" href="/src/styles/index.css" />
   <script type="module" src="/src/js/main.js"></script>
   <script type="module" src="/src/js/utils/section-navigation.js"></script>
 </head>
@@ -18,10 +19,8 @@
   <app-header></app-header>
   <section-navigation></section-navigation>
   <main id="main-content">
-    <!-- Section 1: Hero with Background Image -->
 
     <section id="hero" aria-labelledby="hero-title" class="home__section hero theme-transition">
-      <!-- Content -->
       <div class="hero__textbox">
         <h1 id="hero-title">
           <span>Buen</span>
@@ -57,9 +56,9 @@
             <span aria-hidden="true">DESA</span><span aria-hidden="true">Y</span><span aria-hidden="true">UNOS</span>
           </h2>
 
-          <img class="breakfast__flake breakfast__flake--one" src="/flake-01.png" alt="" aria-hidden="true" />
-          <img class="breakfast__flake breakfast__flake--two" src="/flake-02.png" alt="" aria-hidden="true" />
-          <img class="breakfast__croissant" src="/croissant.png" alt="" aria-hidden="true" />
+          <img class="breakfast__flake breakfast__flake--one" src="/photos/flake-01.png" alt="" aria-hidden="true" />
+          <img class="breakfast__flake breakfast__flake--two" src="/photos/flake-02.png" alt="" aria-hidden="true" />
+          <img class="breakfast__croissant" src="/photos/croissant.png" alt="" aria-hidden="true" />
         </div>
 
         <div class="breakfast__bottom">
@@ -67,16 +66,13 @@
             Empieza el día con café recién hecho, bollería artesanal y algo
             rico.
           </p>
-          <a class="breakfast__button" href="/src/pages/coffees.html">VER CAFÉS <span aria-hidden="true">↗</span></a>
+          <a class="breakfast__button" href="/src/pages/menu.html">VER MENÚ <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
-    <!-- Section 2: Location - Hero with Background Image -->
     <section id="location" aria-labelledby="location-title" class="home__section home__section--photo theme-transition">
-      <!-- Content -->
       <div class="home__content">
         <div class="home-location__grid">
-          <!-- Left: Main Content in Card -->
           <div class="home-location__card">
             <h2 id="location-title" class="home-location__title">
               Un lugar para disfrutar
@@ -86,7 +82,6 @@
               Buen café, buena compañía y un ambiente único en la ciudad.
             </p>
 
-            <!-- Location Info Card -->
             <section class="home-info" aria-labelledby="info-address-title">
               <h3 class="home-info__title" id="info-address-title">
                 <span class="icon icon--pin" aria-hidden="true"></span>
@@ -98,7 +93,6 @@
               </address>
             </section>
 
-            <!-- Hours Card -->
             <section class="home-info" aria-labelledby="info-hours-title">
               <h3 class="home-info__title" id="info-hours-title">
                 <span class="icon icon--clock" aria-hidden="true"></span>
@@ -128,7 +122,6 @@
             </a>
           </div>
 
-          <!-- Right: Info Highlights -->
           <ul class="home-highlights" role="list">
             <li class="home-highlights__item">
               <span class="home-highlights__icon icon icon--coffee" aria-hidden="true"></span>
@@ -157,11 +150,9 @@
         </div>
       </div>
     </section>
-    <!-- Section 3: Call to Action - Menu & Subscription -->
     <section id="cta" aria-labelledby="cta-title" class="home__section home__section--overlay theme-transition">
-      <!-- Content -->
       <div class="home__content">
-        <h2 class="home__title" id="cta-title">Tucafé, donde quieras</h2>
+        <h2 class="home__title" id="cta-title">Tu café, donde quieras</h2>
 
         <p class="home__lead">
           Disfruta de nuestro menú en el local o haz tu pedido online para
@@ -184,7 +175,6 @@
         </ul>
       </div>
     </section>
-    <!-- Section 5: How the subscription works -->
     <section id="steps" aria-labelledby="steps-title" class="home__section home__section--overlay theme-transition">
       <div class="home__content">
         <h2 class="home__title" id="steps-title">
@@ -229,9 +219,7 @@
         </a>
       </div>
     </section>
-    <!-- Section 6: About - More Than Coffee -->
     <section id="about" aria-labelledby="about-title" class="home__section home__section--photo theme-transition">
-      <!-- Content -->
       <div class="home__content">
         <header class="home-about__header">
           <h2 id="about-title" class="home__title">Más que Café</h2>
@@ -243,7 +231,6 @@
           </p>
         </header>
 
-        <!-- Three Point Cards -->
         <ul class="home-about__grid" role="list">
           <li class="home-about__point">
             <span class="home-about__icon icon icon--globe" aria-hidden="true"></span>
@@ -279,7 +266,6 @@
           </li>
         </ul>
 
-        <!-- CTA Button -->
         <a href="/src/pages/about.html" class="home__btn home-about__action btn btn--secondary btn--on-image">
           <span class="icon icon--book-open" aria-hidden="true"></span>
           <span>Nuestra Historia</span>

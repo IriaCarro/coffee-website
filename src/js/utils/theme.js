@@ -71,11 +71,6 @@ class ThemeSelector extends HTMLElement {
     document.documentElement.dataset.theme = theme;
     this.querySelector("[data-theme-icon]").src = themeData.icon;
     this.querySelector("[data-theme-label]").textContent = themeData.label;
-    // Accessible name must include the visible label (WCAG 2.5.3)
-    this.toggle.setAttribute(
-      "aria-label",
-      `Cambiar tema, actual: ${themeData.label}`,
-    );
 
     this.querySelectorAll("[data-theme-menu] [data-theme]").forEach(
       (option) => {

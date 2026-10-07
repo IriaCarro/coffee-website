@@ -26,6 +26,10 @@
   --color-black: #000000;
   --color-graphite: #434343;
 
+  /* Error palette */
+  --color-error-700: #9b1c1c;
+  --color-error-300: #ffb4ab;
+
   /* Neutral palette */
   --color-neutral-50: #f9fafb;
 
