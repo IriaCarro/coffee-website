@@ -56,13 +56,3 @@
     @apply h-4 w-4;
   }
 }
-
-@layer utilities {
-  .page-gutter {
-    @apply px-4 sm:px-6 lg:px-8;
-  }
-
-  .theme-transition {
-    @apply transition-colors duration-300;
-  }
-}

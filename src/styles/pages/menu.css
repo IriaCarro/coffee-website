@@ -1,6 +1,6 @@
 @layer components {
   .menu-page {
-    @apply bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
+    @apply bg-(--surface-page) px-4 py-8 sm:px-6 sm:py-12 lg:px-8;
   }
 
   .menu-page__container {
@@ -16,7 +16,7 @@
   }
 
   .menu-page__header {
-    @apply mb-12 text-center;
+    @apply mb-8 text-center sm:mb-12;
   }
 
   .menu-page__title {
@@ -32,11 +32,11 @@
   }
 
   .menu-card {
-    @apply h-full overflow-hidden rounded-lg border border-(--border-subtle) bg-(--surface-container) shadow-lg transition-colors duration-300;
+    @apply grid h-full grid-cols-[7.5rem_1fr] items-center overflow-hidden rounded-lg border border-(--border-subtle) bg-(--surface-container) shadow-lg transition-colors duration-300 sm:block;
   }
 
   .menu-card__media {
-    @apply aspect-[4/3] overflow-hidden;
+    @apply aspect-square overflow-hidden sm:aspect-[4/3];
   }
 
   .menu-card__image {
@@ -44,15 +44,15 @@
   }
 
   .menu-card__content {
-    @apply p-5;
+    @apply p-4 sm:p-5;
   }
 
   .menu-card__title {
-    @apply mb-2 text-xl font-bold text-(--text-primary);
+    @apply mb-1 text-lg font-bold text-(--text-primary) sm:mb-2 sm:text-xl;
   }
 
   .menu-card__description {
-    @apply mb-4 text-sm text-(--text-secondary);
+    @apply mb-2 text-sm text-(--text-secondary) sm:mb-4;
   }
 
   .menu-card__price {

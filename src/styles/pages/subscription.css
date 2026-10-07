@@ -132,7 +132,7 @@
   }
 
   .subscription {
-    @apply min-h-screen bg-(--surface-page) px-4 py-12 sm:px-6 lg:px-8;
+    @apply min-h-screen bg-(--surface-page) px-4 py-8 sm:px-6 sm:py-12 lg:px-8;
   }
 
   .subscription__container {

@@ -210,6 +210,10 @@
     .breakfast__button {
       justify-self: end;
     }
+
+    .breakfast__grain {
+      display: none;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

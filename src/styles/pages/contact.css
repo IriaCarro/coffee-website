@@ -1,6 +1,6 @@
 @layer components {
   .contact {
-    @apply bg-(--surface-page) px-4 py-12 transition-colors duration-300 sm:px-6 lg:px-8;
+    @apply bg-(--surface-page) px-4 py-8 transition-colors duration-300 sm:px-6 sm:py-12 lg:px-8;
   }
 
   .contact__container {
@@ -24,7 +24,7 @@
   }
 
   .contact__header {
-    @apply mb-12 text-center;
+    @apply mb-8 text-center sm:mb-12;
   }
 
   .contact__title {
@@ -36,7 +36,7 @@
   }
 
   .contact__grid {
-    @apply mb-12 grid gap-5 sm:gap-8 md:grid-cols-2;
+    @apply mb-8 grid gap-5 sm:mb-12 sm:gap-8 md:grid-cols-2;
   }
 
   .contact__card {
@@ -80,7 +80,7 @@
   }
 
   .contact__block {
-    @apply mb-12;
+    @apply mb-8 sm:mb-12;
   }
 
   .contact__block-title {

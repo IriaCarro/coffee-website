@@ -1,0 +1,18 @@
+/* ============================================================================
+   UTILITIES
+   Custom Tailwind utilities (@utility). Unlike plain classes they accept
+   variants (md:page-gutter, hover:enter-fade-up...) and are sorted with the
+   rest of the utilities.
+   ============================================================================ */
+
+@utility page-gutter {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+@utility theme-transition {
+  @apply transition-colors duration-300;
+}
+
+@utility enter-fade-up {
+  @apply motion-safe:animate-fade-up;
+}

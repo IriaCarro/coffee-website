@@ -63,10 +63,6 @@
     @apply mt-1 hidden text-sm font-medium text-(--text-error) peer-aria-invalid:block;
   }
 
-  .enter-fade-up {
-    @apply motion-safe:animate-fade-up;
-  }
-
   .hover-zoom__target {
     @apply motion-safe:transition-transform motion-safe:duration-300;
   }

@@ -1,6 +1,6 @@
 @layer components {
   .gallery {
-    @apply bg-(--surface-page) px-4 py-12 transition-colors duration-300 sm:px-6 lg:px-8;
+    @apply bg-(--surface-page) px-4 py-8 transition-colors duration-300 sm:px-6 sm:py-12 lg:px-8;
   }
 
   .gallery__container {
@@ -16,7 +16,7 @@
   }
 
   .gallery__header {
-    @apply mb-12 text-center;
+    @apply mb-8 text-center sm:mb-12;
   }
 
   .gallery__title {
@@ -28,7 +28,7 @@
   }
 
   .gallery__grid {
-    @apply mb-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:auto-rows-[15rem] lg:grid-cols-3;
+    @apply mb-8 grid grid-cols-1 gap-6 sm:mb-12 md:grid-cols-2 lg:auto-rows-[15rem] lg:grid-cols-3;
   }
 
   .gallery__item {

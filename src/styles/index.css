@@ -14,6 +14,7 @@
 @import "./tokens.css";
 @import "./themes.css";
 @import "./base.css";
+@import "./utilities.css";
 
 @import "./components/header.css";
 @import "./components/theme-selector.css";
