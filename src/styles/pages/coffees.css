@@ -31,6 +31,12 @@
     @apply grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3;
   }
 
+  /* Container query: the card lays out by the width of its own column, not the
+     viewport. Narrow column = vertical, wide column (@xs, 20rem) = horizontal. */
+  .coffee-card {
+    @apply @container;
+  }
+
   .coffee-card__link {
     @apply block text-inherit no-underline transition-transform duration-300;
     @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--focus-ring);
@@ -41,11 +47,11 @@
   }
 
   .coffee-card__link article {
-    @apply grid grid-cols-[7.5rem_1fr] items-center sm:block;
+    @apply block @xs:grid @xs:grid-cols-[10rem_1fr] @xs:items-center;
   }
 
   .coffee-card__media {
-    @apply relative aspect-square overflow-hidden sm:aspect-video;
+    @apply relative aspect-video overflow-hidden @xs:aspect-square;
   }
 
   .coffee-card__backdrop {
@@ -57,15 +63,15 @@
   }
 
   .coffee-card__content {
-    @apply p-4 sm:p-5;
+    @apply p-5 @xs:p-4;
   }
 
   .coffee-card__title {
-    @apply mb-1 text-lg font-bold text-(--text-primary) sm:mb-2 sm:text-xl;
+    @apply mb-2 text-xl font-bold text-(--text-primary) @xs:mb-1 @xs:text-lg;
   }
 
   .coffee-card__description {
-    @apply mb-2 text-sm text-(--text-secondary) sm:mb-4;
+    @apply mb-4 text-sm text-(--text-secondary) @xs:mb-2;
   }
 
   .coffee-card__price {

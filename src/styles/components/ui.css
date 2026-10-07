@@ -38,14 +38,6 @@
     @apply bg-(--text-on-image-accent) text-(--surface-home-overlay);
   }
 
-  .card {
-    @apply overflow-hidden rounded-lg shadow-lg transition-all duration-300;
-  }
-
-  .card:hover {
-    @apply shadow-xl motion-safe:-translate-y-2;
-  }
-
   .form-label {
     @apply mb-1 block text-sm font-medium transition-colors duration-300;
     @apply text-(--text-primary);

@@ -89,18 +89,6 @@
     --icon: url("/icons/ui/twitter.svg");
   }
 
-  .icon--flower {
-    --icon: url("/icons/ui/flower.svg");
-  }
-
-  .icon--chocolate {
-    --icon: url("/icons/ui/chocolate.svg");
-  }
-
-  .icon--cherry {
-    --icon: url("/icons/ui/cherry.svg");
-  }
-
   .icon--mail {
     --icon: url("/icons/ui/mail.svg");
   }

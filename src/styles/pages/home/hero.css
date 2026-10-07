@@ -1,6 +1,6 @@
 @layer components {
   .hero {
-    @apply relative flex flex-col items-center justify-center gap-8 px-4 py-12 sm:px-6 md:flex-row lg:px-16 xl:px-20;
+    @apply relative flex flex-col items-center justify-end gap-8 px-6 py-12 sm:px-8 md:flex-row md:justify-center lg:px-16 xl:px-20;
     isolation: isolate;
     background-image: url("/photos/cafe-3.webp");
     background-size: cover;
@@ -21,13 +21,24 @@
     inset: 0;
     z-index: 0;
     background-image: linear-gradient(
-      to right,
+      to top,
       color-mix(in srgb, var(--surface-home-overlay) 85%, transparent),
       color-mix(in srgb, var(--surface-home-overlay) 70%, transparent) 50%,
       color-mix(in srgb, var(--surface-home-overlay) 35%, transparent) 75%,
       transparent
     );
     pointer-events: none;
+
+    /* Text sits at the bottom on small screens; side-to-side from md */
+    @media (min-width: 48rem) {
+      background-image: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--surface-home-overlay) 85%, transparent),
+        color-mix(in srgb, var(--surface-home-overlay) 70%, transparent) 50%,
+        color-mix(in srgb, var(--surface-home-overlay) 35%, transparent) 75%,
+        transparent
+      );
+    }
   }
 
   .hero__textbox {
@@ -49,10 +60,6 @@
 
   .hero__textbox p {
     @apply mb-8 text-lg text-(--text-on-image-muted);
-  }
-
-  .hero__image {
-    @apply relative z-10 h-auto w-48 shrink-0 object-contain drop-shadow-2xl sm:w-60 md:w-72 lg:w-96;
   }
 
   .hero__textbox .hero__accent {

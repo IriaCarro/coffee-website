@@ -1,6 +1,8 @@
 @layer components {
+  /* Proximity on small screens (tall stacked sections must scroll freely),
+     mandatory from md up */
   html.home--snap {
-    scroll-snap-type: y mandatory;
+    @apply snap-y snap-proximity md:snap-mandatory;
   }
 
   /* Scroll Snap Layout (mandatory: scrolling always settles on a section;
@@ -25,8 +27,10 @@
   }
 
   .home__section {
-    @apply flex items-center justify-center px-4 py-10 sm:px-6 sm:py-12 lg:px-16 xl:px-20;
+    @apply flex items-center justify-center px-6 py-12 sm:px-8 lg:px-16 xl:px-20;
     min-height: calc(100vh - var(--header-height));
+    /* Small viewport height: ignores the mobile address bar that 100vh counts */
+    min-height: calc(100svh - var(--header-height));
     scroll-margin-top: var(--header-height);
     @apply relative;
   }
@@ -92,7 +96,11 @@
   }
 
   .home__hero-actions li {
-    @apply mb-4;
+    @apply mb-4 w-full sm:w-auto;
+  }
+
+  .home__hero-actions .btn {
+    @apply block text-center sm:inline-block;
   }
 
   .home__cta-actions {
@@ -166,26 +174,6 @@
 
   .home-highlights__title {
     @apply mb-2;
-  }
-
-  .section-heading {
-    @apply mb-8 text-center sm:mb-12;
-  }
-
-  .section-heading__title {
-    @apply mb-4 text-3xl font-bold text-(--text-primary) sm:text-4xl;
-  }
-
-  .section-heading--on-image .section-heading__title {
-    @apply text-(--text-on-image);
-  }
-
-  .section-heading__description {
-    @apply text-lg text-(--text-secondary);
-  }
-
-  .section-heading--on-image .section-heading__description {
-    @apply text-(--text-on-image-muted);
   }
 
   .home-steps__list {
