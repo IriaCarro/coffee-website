@@ -2,7 +2,7 @@
   .hero {
     @apply relative flex flex-col items-center justify-center gap-8 px-4 py-12 sm:px-6 md:flex-row lg:px-16 xl:px-20;
     isolation: isolate;
-    background-image: url("/photos/cafe-3.jpeg");
+    background-image: url("/photos/cafe-3.webp");
     background-size: cover;
     background-position: center;
   }

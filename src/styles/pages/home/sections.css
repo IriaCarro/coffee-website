@@ -33,7 +33,7 @@
 
   .home__section--photo {
     isolation: isolate;
-    background-image: url("/photos/cafe-1.jpg");
+    background-image: url("/photos/cafe-1.webp");
     background-size: cover;
     background-position: center;
   }

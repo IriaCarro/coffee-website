@@ -1,4 +1,9 @@
 @layer components {
+  /* Reserve the footer's space until the component fills it (avoids layout shift) */
+  app-footer:empty {
+    @apply block min-h-160 sm:min-h-120 lg:min-h-96;
+  }
+
   .footer {
     @apply border-t border-(--border-subtle) bg-(--surface-footer) py-12 sm:py-16 lg:py-20;
   }

@@ -1,4 +1,9 @@
 @layer components {
+  /* Reserve the header's space until the component fills it (avoids layout shift) */
+  app-header:empty {
+    @apply block min-h-(--header-height);
+  }
+
   .skip-link {
     @apply fixed top-2 left-2 z-60 -translate-y-24 rounded-lg px-4 py-2 font-medium;
     @apply border-2 border-(--focus-ring) bg-(--surface-container) text-(--text-primary);

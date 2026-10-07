@@ -4,7 +4,7 @@
     "name": "Napolitana de chocolate",
     "description": "Hojaldre de mantequilla crujiente relleno de chocolate negro",
     "price": 2.4,
-    "image": "/photos/croissant.png",
+    "image": "/photos/croissant.webp",
     "alt": "Napolitana de hojaldre dorado con barras de chocolate negro asomando por los extremos"
   },
   {
@@ -12,7 +12,7 @@
     "name": "Croissant de mantequilla",
     "description": "Recién horneado, ligero y mantecoso. Perfecto con un café con leche",
     "price": 2.2,
-    "image": "/photos/cafe-1.jpg",
+    "image": "/photos/cafe-1.webp",
     "alt": "Croissant dorado junto a un café con leche con arte latte sobre una tabla de madera"
   },
   {
@@ -20,7 +20,7 @@
     "name": "Rollo de avellanas",
     "description": "Bollo en espiral con caramelo y avellanas troceadas",
     "price": 3.2,
-    "image": "/photos/cafe-6.jpeg",
+    "image": "/photos/cafe-6.webp",
     "alt": "Bollo en espiral glaseado con avellanas troceadas sobre un plato de cerámica"
   },
   {
@@ -28,7 +28,7 @@
     "name": "Desayuno completo",
     "description": "Huevos fritos, pan con queso y mermelada, fruta fresca y café de filtro",
     "price": 8.9,
-    "image": "/photos/pexels-davegarcia-32655066.jpg",
+    "image": "/photos/pexels-davegarcia-32655066.webp",
     "alt": "Dos huevos fritos con pan tostado y mermelada, un plato de fruta y una taza de café"
   },
   {
@@ -36,7 +36,7 @@
     "name": "Batidos naturales",
     "description": "Verde, fresa, mango o remolacha, preparados al momento",
     "price": 4.5,
-    "image": "/photos/pexels-kindelmedia-8181545.jpg",
+    "image": "/photos/pexels-kindelmedia-8181545.webp",
     "alt": "Cuatro vasos de cristal con batidos de colores y pajitas"
   }
 ]
