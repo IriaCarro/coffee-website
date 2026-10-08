@@ -1,6 +1,6 @@
 import coffees from "../../data/coffees.json";
 import coffeeOptionTemplate from "../../components/subscription-coffee-option.html?raw";
-import { renderTemplate } from "./template.js";
+import { imageVariant, renderTemplate } from "./template.js";
 import { validateFields } from "./form-validation.js";
 
 const formatPrice = (price) => `${price.toFixed(2).replace(".", ",")} €`;
@@ -12,6 +12,7 @@ const renderCoffeeOptions = () => {
     .map((coffee, index) =>
       renderTemplate(coffeeOptionTemplate, {
         ...coffee,
+        packImage400: imageVariant(coffee.packImage, 400),
         formattedPrice: formatPrice(coffee.price),
         checked: index === 0 ? "checked" : "",
       }),

@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { renderTemplate } from "../src/js/utils/template.js";
+import { imageVariant, renderTemplate } from "../src/js/utils/template.js";
 
 const escapeAttribute = (text) =>
   text.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
@@ -24,6 +24,7 @@ export default function coffeePages() {
       .join("");
     const detail = renderTemplate(read("src/components/coffee-detail.html"), {
       ...coffee,
+      packImage400: imageVariant(coffee.packImage, 400),
       formattedPrice: coffee.price.toFixed(2).replace(".", ","),
       stars: "★".repeat(coffee.rating),
       flavorProfileHtml,

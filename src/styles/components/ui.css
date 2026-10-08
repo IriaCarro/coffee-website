@@ -47,8 +47,27 @@
     @apply border-(--focus-ring) ring-2 ring-(--focus-ring)/30;
   }
 
+  /* Invalid state, two ways. aria-invalid is set by form-validation.js and
+     also covers "Next" and submit on fields the user never visited. The
+     native :user-invalid (after the user has touched the field) works without
+     JS. It sits in @supports because one unsupported selector would drop its
+     whole rule. */
   :is(input, textarea)[aria-invalid="true"] {
     @apply border-(--border-error);
+  }
+
+  @supports selector(:user-invalid) {
+    :is(input, textarea):user-invalid {
+      @apply border-(--border-error);
+    }
+
+    .form-error {
+      @apply peer-user-invalid:block;
+    }
+  }
+
+  :is(input, textarea):disabled {
+    @apply cursor-not-allowed opacity-60;
   }
 
   .form-error {

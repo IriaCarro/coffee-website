@@ -5,12 +5,16 @@
         <img
           class="coffee-card__backdrop"
           src="{{packImage}}"
+          srcset="{{packImage400}} 400w, {{packImage}} 800w"
+          sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
           alt=""
           aria-hidden="true"
         />
         <img
           class="coffee-card__image hover-zoom__target"
           src="{{packImage}}"
+          srcset="{{packImage400}} 400w, {{packImage}} 800w"
+          sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
           alt="Pack de café {{name}}, {{production}}"
         />
       </div>

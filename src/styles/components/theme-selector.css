@@ -40,6 +40,6 @@
   }
 
   .theme-selector__menu-option[aria-pressed="true"] {
-    @apply bg-(--accent)/10 font-semibold;
+    @apply bg-(--accent)/10 font-bold;
   }
 }

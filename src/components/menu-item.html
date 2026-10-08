@@ -3,9 +3,12 @@
     <div class="menu-card__media">
       <img
         class="menu-card__image hover-zoom__target"
-        src="{{image}}"
+        src="{{image800}}"
+        srcset="{{image400}} 400w, {{image800}} 800w"
+        sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
         alt="{{alt}}"
         loading="lazy"
+        decoding="async"
       />
     </div>
     <div class="menu-card__content">

@@ -4,8 +4,8 @@
     "name": "Napolitana de chocolate",
     "description": "Hojaldre de mantequilla crujiente relleno de chocolate negro",
     "price": 2.4,
-    "image": "/photos/croissant.webp",
-    "alt": "Napolitana de hojaldre dorado con barras de chocolate negro asomando por los extremos"
+    "image": "/photos/napolitana.webp",
+    "alt": "Napolitana de hojaldre dorado con virutas de chocolate y relleno de chocolate negro, sobre un plato de cerámica junto a un café"
   },
   {
     "id": "croissant-mantequilla",
@@ -38,5 +38,13 @@
     "price": 4.5,
     "image": "/photos/pexels-kindelmedia-8181545.webp",
     "alt": "Cuatro vasos de cristal con batidos de colores y pajitas"
+  },
+  {
+    "id": "tarta-queso",
+    "name": "Tarta de queso",
+    "description": "Tarta de queso al horno, con la superficie caramelizada y el interior cremoso",
+    "price": 4.2,
+    "image": "/photos/tarta-queso.webp",
+    "alt": "Tarta de queso al horno con la superficie tostada y una porción cortada que deja ver el interior cremoso, sobre un plato blanco"
   }
 ]

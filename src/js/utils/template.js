@@ -5,3 +5,7 @@ export const renderTemplate = (template, data) =>
     (_, path) =>
       path.split(".").reduce((value, key) => value?.[key], data) ?? "",
   );
+
+// Photos ship next to their resized copies: pack.webp, pack-400.webp...
+export const imageVariant = (src, width) =>
+  src.replace(".webp", `-${width}.webp`);

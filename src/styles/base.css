@@ -55,4 +55,26 @@
   input[type="checkbox"] {
     @apply h-4 w-4;
   }
+
+  /* Lists filled by JS start empty. What sits below them stays invisible until
+     they have content: invisible elements don't count as layout shift when the
+     list pushes them down. */
+  :is(
+      #menu-list,
+      [data-gallery],
+      #coffee-grid,
+      #subscription-coffee-options
+    ):empty
+    ~ *,
+  body:has(
+      :is(
+        #menu-list,
+        [data-gallery],
+        #coffee-grid,
+        #subscription-coffee-options
+      ):empty
+    )
+    :is(app-footer, .subscription__nav) {
+    @apply invisible;
+  }
 }

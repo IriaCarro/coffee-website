@@ -2,9 +2,14 @@
   .hero {
     @apply relative flex flex-col items-center justify-end gap-8 px-6 py-12 sm:px-8 md:flex-row md:justify-center lg:px-16 xl:px-20;
     isolation: isolate;
-    background-image: url("/photos/cafe-3.webp");
+    background-image: url("/photos/cafe-3-800.webp");
     background-size: cover;
     background-position: center;
+
+    /* Full-size photo only where the screen needs it */
+    @media (min-width: 48rem) {
+      background-image: url("/photos/cafe-3.webp");
+    }
   }
 
   .hero::before {

@@ -91,6 +91,10 @@
     @apply flex h-72 flex-col items-center justify-center overflow-hidden rounded-lg bg-(--surface-container) p-4 text-center sm:h-96;
   }
 
+  .contact__map-frame {
+    @apply w-full max-w-full border-0;
+  }
+
   .contact__map-icon {
     @apply mb-4 text-6xl text-(--accent);
   }

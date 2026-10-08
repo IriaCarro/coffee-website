@@ -10,6 +10,11 @@
     <div class="detail__image-wrap">
       <img
         src="{{packImage}}"
+        srcset="{{packImage400}} 400w, {{packImage}} 800w"
+        sizes="(min-width: 640px) 384px, 192px"
+        width="800"
+        height="1200"
+        fetchpriority="high"
         alt="Pack de café {{name}}"
         class="detail__image"
       />

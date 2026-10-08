@@ -54,7 +54,39 @@
             </p>
           </header>
 
+          <h2 class="sr-only">Carta</h2>
           <ul id="menu-list" class="menu-page__grid enter-fade-up"></ul>
+
+          <section class="menu-special" aria-labelledby="menu-special-title">
+            <figure class="menu-special__figure">
+              <img
+                class="menu-special__image"
+                src="/photos/tortitas-800.webp"
+                srcset="
+                  /photos/tortitas-400.webp   400w,
+                  /photos/tortitas-800.webp   800w,
+                  /photos/tortitas-1200.webp 1200w
+                "
+                sizes="(min-width: 1152px) 560px, (min-width: 640px) 50vw, 100vw"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                alt="Pila de tortitas con sirope, frutos rojos y azúcar glas junto a un café con leche"
+              />
+            </figure>
+            <div class="menu-special__content">
+              <p class="menu-special__eyebrow">Especial de la casa</p>
+              <h2 class="menu-special__title" id="menu-special-title">
+                Tortitas con frutos rojos
+              </h2>
+              <p class="menu-special__description">
+                Tortitas esponjosas con sirope, fresas, frambuesas, arándanos,
+                menta fresca y azúcar glas. Ideales con un café con leche.
+              </p>
+              <p class="menu-special__price">7,50 €</p>
+            </div>
+          </section>
         </div>
       </section>
     </main>

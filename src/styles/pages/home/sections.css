@@ -37,9 +37,13 @@
 
   .home__section--photo {
     isolation: isolate;
-    background-image: url("/photos/cafe-1.webp");
+    background-image: url("/photos/cafe-1-800.webp");
     background-size: cover;
     background-position: center;
+
+    @media (min-width: 48rem) {
+      background-image: url("/photos/cafe-1.webp");
+    }
   }
 
   .home__section--photo::before {
@@ -213,7 +217,7 @@
   }
 
   .home-about__icon {
-    @apply mb-6 block text-7xl;
+    @apply mb-6 block text-7xl text-(--text-on-image-accent);
   }
 
   .home-about__point-title {
