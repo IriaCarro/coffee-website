@@ -1,4 +1,4 @@
-import themeSelectorTemplate from "../../components/theme-selector.html?raw";
+import themeSelectorTemplate from "../../components/layout/theme-selector.html?raw";
 const THEME_KEY = "theme-preference";
 
 function getStoredTheme() {

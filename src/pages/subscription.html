@@ -59,7 +59,7 @@
               <h2 id="subscription__wizard-title" class="sr-only">
                 Pasos de la suscripción
               </h2>
-              <p class="text-lg text-(--text-secondary)">
+              <p class="text-text-secondary text-lg">
                 Completa los siguientes pasos para empezar a recibir tu café
                 favorito
               </p>
@@ -67,7 +67,7 @@
 
             <div
               id="subscription__progress-track"
-              class="theme-transition relative mb-6 h-2 rounded-full bg-(--surface-muted)"
+              class="theme-transition bg-surface-muted relative mb-6 h-2 rounded-full"
               role="progressbar"
               aria-label="Progreso de la suscripción"
               aria-valuemin="1"
@@ -77,7 +77,7 @@
             >
               <div
                 id="subscription__progress-bar"
-                class="h-full w-0 rounded-full bg-(--accent) data-[step=2]:w-1/2 data-[step=3]:w-full motion-safe:transition-all motion-safe:duration-500"
+                class="bg-accent h-full w-0 rounded-full data-[step=2]:w-1/2 data-[step=3]:w-full motion-safe:transition-all motion-safe:duration-500"
                 aria-hidden="true"
               ></div>
             </div>
@@ -88,35 +88,35 @@
             >
               <li class="flex flex-col items-center">
                 <span
-                  class="mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-(--accent) bg-(--surface-accent) font-bold text-(--accent) transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:bg-(--accent) aria-[current=step]:text-(--text-on-accent) aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2 aria-[current=step]:outline-(--accent) data-completed:bg-(--accent) data-completed:text-(--text-on-accent)"
+                  class="border-accent bg-surface-accent text-accent aria-[current=step]:bg-accent aria-[current=step]:text-text-on-accent aria-[current=step]:outline-accent data-completed:bg-accent data-completed:text-text-on-accent mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 font-bold transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2"
                   data-step="1"
                   aria-current="step"
                 >
                   1
                 </span>
-                <span class="text-sm font-medium text-(--text-secondary)">
+                <span class="text-text-secondary text-sm font-medium">
                   Tu café
                 </span>
               </li>
               <li class="flex flex-col items-center">
                 <span
-                  class="mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-(--accent) bg-(--surface-accent) font-bold text-(--accent) transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:bg-(--accent) aria-[current=step]:text-(--text-on-accent) aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2 aria-[current=step]:outline-(--accent) data-completed:bg-(--accent) data-completed:text-(--text-on-accent)"
+                  class="border-accent bg-surface-accent text-accent aria-[current=step]:bg-accent aria-[current=step]:text-text-on-accent aria-[current=step]:outline-accent data-completed:bg-accent data-completed:text-text-on-accent mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 font-bold transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2"
                   data-step="2"
                 >
                   2
                 </span>
-                <span class="text-sm font-medium text-(--text-secondary)">
+                <span class="text-text-secondary text-sm font-medium">
                   Tu plan
                 </span>
               </li>
               <li class="flex flex-col items-center">
                 <span
-                  class="mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-(--accent) bg-(--surface-accent) font-bold text-(--accent) transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:bg-(--accent) aria-[current=step]:text-(--text-on-accent) aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2 aria-[current=step]:outline-(--accent) data-completed:bg-(--accent) data-completed:text-(--text-on-accent)"
+                  class="border-accent bg-surface-accent text-accent aria-[current=step]:bg-accent aria-[current=step]:text-text-on-accent aria-[current=step]:outline-accent data-completed:bg-accent data-completed:text-text-on-accent mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 font-bold transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2"
                   data-step="3"
                 >
                   3
                 </span>
-                <span class="text-sm font-medium text-(--text-secondary)">
+                <span class="text-text-secondary text-sm font-medium">
                   Entrega
                 </span>
               </li>
@@ -124,7 +124,7 @@
 
             <form
               id="subscription__form"
-              class="space-y-6 rounded-lg border border-(--border-subtle) bg-(--surface-container) p-4 shadow-lg transition-colors duration-300 sm:p-6 md:p-8"
+              class="border-border-subtle bg-surface-container space-y-6 rounded-lg border p-4 shadow-lg transition-colors duration-300 sm:p-6 md:p-8"
               novalidate
               data-validated
             >
@@ -132,7 +132,7 @@
                 <legend class="heading heading--item mb-2">
                   ¿Qué café prefieres?
                 </legend>
-                <p class="mb-6 text-(--text-secondary)">
+                <p class="text-text-secondary mb-6">
                   Selecciona tu café favorito para empezar
                 </p>
                 <div class="space-y-3" id="subscription__coffee-options"></div>
@@ -142,63 +142,11 @@
                 <legend class="heading heading--item mb-2">
                   Elige tu plan
                 </legend>
-                <p class="mb-6 text-(--text-secondary)">
+                <p class="text-text-secondary mb-6">
                   Selecciona la frecuencia y cantidad
                 </p>
                 <div class="space-y-3">
-                  <label
-                    class="relative flex cursor-pointer items-center rounded-lg border-2 border-(--accent) border-(--border-input) bg-(--surface-transparent) p-4 shadow-md transition-all duration-300 hover:bg-(--accent)/10"
-                  >
-                    <span
-                      class="absolute -top-3 right-4 rounded-full bg-(--accent) px-3 py-0.5 text-xs font-bold text-(--text-on-accent)"
-                    >
-                      Más popular
-                    </span>
-                    <input type="radio" name="plan" value="monthly" checked />
-                    <span class="ml-3 flex min-w-0 flex-1 flex-col sm:ml-4">
-                      <strong class="font-medium text-(--text-primary)">
-                        Plan Mensual
-                      </strong>
-                      <span class="text-sm text-(--text-secondary)">
-                        1 bolsa de 250g cada mes
-                      </span>
-                    </span>
-                    <span class="font-bold text-(--accent)" data-plan-price="1">
-                      14,90 €
-                    </span>
-                  </label>
-                  <label
-                    class="relative flex cursor-pointer items-center rounded-lg border-2 border-(--border-input) bg-(--surface-transparent) p-4 transition-all duration-300 hover:bg-(--accent)/10"
-                  >
-                    <input type="radio" name="plan" value="biweekly" />
-                    <span class="ml-3 flex min-w-0 flex-1 flex-col sm:ml-4">
-                      <strong class="font-medium text-(--text-primary)">
-                        Plan Quincenal
-                      </strong>
-                      <span class="text-sm text-(--text-secondary)">
-                        1 bolsa de 250g cada 15 días
-                      </span>
-                    </span>
-                    <span class="font-bold text-(--accent)" data-plan-price="2">
-                      29,80 €
-                    </span>
-                  </label>
-                  <label
-                    class="relative flex cursor-pointer items-center rounded-lg border-2 border-(--border-input) bg-(--surface-transparent) p-4 transition-all duration-300 hover:bg-(--accent)/10"
-                  >
-                    <input type="radio" name="plan" value="weekly" />
-                    <span class="ml-3 flex min-w-0 flex-1 flex-col sm:ml-4">
-                      <strong class="font-medium text-(--text-primary)">
-                        Plan Semanal
-                      </strong>
-                      <span class="text-sm text-(--text-secondary)">
-                        1 bolsa de 250g cada semana
-                      </span>
-                    </span>
-                    <span class="font-bold text-(--accent)" data-plan-price="4">
-                      59,60 €
-                    </span>
-                  </label>
+                  <repeat data="plans" component="plan-option"></repeat>
                 </div>
               </fieldset>
 
@@ -206,7 +154,7 @@
                 <legend class="heading heading--item mb-2">
                   Datos de entrega
                 </legend>
-                <p class="mb-6 text-(--text-secondary)">
+                <p class="text-text-secondary mb-6">
                   ¿Dónde te enviamos tu café?
                 </p>
                 <div class="grid gap-4 sm:grid-cols-2">
@@ -296,11 +244,11 @@
             <!-- Confirmation (shown after finishing the wizard) -->
             <section
               id="subscription__confirmation"
-              class="flex hidden flex-col items-center rounded-lg border border-(--border-subtle) bg-(--surface-container) p-4 text-center shadow-lg transition-colors duration-300 sm:p-6 md:p-8"
+              class="border-border-subtle bg-surface-container flex hidden flex-col items-center rounded-lg border p-4 text-center shadow-lg transition-colors duration-300 sm:p-6 md:p-8"
               aria-labelledby="subscription__confirmation-title"
             >
               <span
-                class="icon mb-4 mask-[url(/icons/ui/mail.svg)] text-6xl text-(--accent)"
+                class="icon text-accent mb-4 mask-[url(/icons/ui/mail.svg)] text-6xl"
                 aria-hidden="true"
               ></span>
               <h2
@@ -311,7 +259,7 @@
                 Revisa tu correo
               </h2>
               <p
-                class="mb-6 max-w-md text-(--text-secondary) [&_strong]:font-bold [&_strong]:break-all [&_strong]:text-(--text-primary)"
+                class="text-text-secondary [&_strong]:text-text-primary mb-6 max-w-md [&_strong]:font-bold [&_strong]:break-all"
               >
                 Para continuar con tu suscripción, abre el mensaje que te
                 enviaremos a

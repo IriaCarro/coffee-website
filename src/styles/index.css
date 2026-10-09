@@ -7,7 +7,14 @@
 @import "@fontsource/playfair-display/latin-700.css";
 @import "@fontsource/permanent-marker/latin-400.css";
 
-@import "tailwindcss";
+/* Scan only the files whose class names ship: docs, README and CLAUDE.md
+   mention classes in prose and would add unused utilities. */
+@import "tailwindcss" source(none);
+@source "../../index.html";
+@source "../pages";
+@source "../components";
+@source "../js";
+@source "../../vite-plugins";
 
 @import "./tokens.css";
 @import "./themes.css";

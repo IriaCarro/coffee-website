@@ -20,6 +20,8 @@ export const imageVariants = (src) => ({
 // Fields every coffee card, option and detail page derives from coffees.json
 export const coffeeFields = (coffee) => ({
   ...coffee,
+  packImage200: imageVariant(coffee.packImage, 200),
+  packImage300: imageVariant(coffee.packImage, 300),
   packImage400: imageVariant(coffee.packImage, 400),
   formattedPrice: formatPrice(coffee.price),
 });

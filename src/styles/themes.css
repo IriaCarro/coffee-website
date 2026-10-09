@@ -7,10 +7,17 @@
   :root {
     --brand-logo-size: 2.5rem;
     --header-padding-y: 1rem;
-    /* Single-row height (logo + vertical padding). When the nav wraps on small
-       screens the real height is larger: section-navigation.js measures the
-       header and overwrites this variable on <html>. */
-    --header-height: calc(var(--brand-logo-size) + 2 * var(--header-padding-y));
+    --header-padding-y-compact: 0.5rem;
+    --header-button-size: 2.75rem;
+    --header-height-compact: calc(
+      var(--header-button-size) + 2 * var(--header-padding-y-compact)
+    );
+    --header-height-medium: calc(
+      var(--header-button-size) + 2 * var(--header-padding-y)
+    );
+    --header-height-wide: calc(
+      var(--brand-logo-size) + 2 * var(--header-padding-y)
+    );
     --surface-transparent: transparent;
     --surface-header: color-mix(in srgb, var(--surface-page) 85%, transparent);
     --surface-gallery-overlay: color-mix(

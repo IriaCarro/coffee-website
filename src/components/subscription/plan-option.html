@@ -1,0 +1,18 @@
+<label
+  data-featured="{{featured}}"
+  class="group border-border-input bg-surface-transparent hover:bg-accent/10 data-[featured=true]:border-accent relative flex cursor-pointer items-center rounded-lg border-2 p-4 transition-all duration-300 data-[featured=true]:shadow-md"
+>
+  <span
+    class="bg-accent text-text-on-accent absolute -top-3 right-4 hidden rounded-full px-3 py-0.5 text-xs font-bold group-data-[featured=true]:block"
+  >
+    Más popular
+  </span>
+  <input type="radio" name="plan" value="{{id}}" {{checked}} />
+  <span class="ml-3 flex min-w-0 flex-1 flex-col sm:ml-4">
+    <strong class="text-text-primary font-medium">{{name}}</strong>
+    <span class="text-text-secondary text-sm">{{description}}</span>
+  </span>
+  <span class="text-accent font-bold" data-plan-price="{{bags}}">
+    {{defaultPrice}}
+  </span>
+</label>

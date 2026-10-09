@@ -1,6 +1,5 @@
-import sectionNavigationTemplate from "../../components/section-navigation.html?raw";
+import sectionNavigationTemplate from "../../components/layout/section-navigation.html?raw";
 import { setAttributeOrRemove } from "../lib/aria.js";
-import { getHeaderHeight, syncHeaderHeight } from "./header-height.js";
 
 // The active section is the last one whose top passed a probe line placed
 // this fraction of the way down the area below the header
@@ -26,8 +25,6 @@ class SectionNavigation extends HTMLElement {
       .map((link) => document.querySelector(link.getAttribute("href")))
       .filter(Boolean);
 
-    this.stopHeaderSync = syncHeaderHeight();
-
     window.addEventListener("scroll", this.scheduleUpdate, { passive: true });
     window.addEventListener("resize", this.scheduleUpdate);
     this.updateCurrent();
@@ -45,7 +42,8 @@ class SectionNavigation extends HTMLElement {
   // result right after instant jumps, where a section that merely touches
   // the viewport edge used to be picked.
   updateCurrent() {
-    const headerHeight = getHeaderHeight();
+    const headerHeight =
+      document.querySelector("[data-site-header]")?.offsetHeight ?? 0;
     const probe =
       headerHeight + (window.innerHeight - headerHeight) * PROBE_RATIO;
     const atBottom =
@@ -73,7 +71,6 @@ class SectionNavigation extends HTMLElement {
     window.removeEventListener("scroll", this.scheduleUpdate);
     window.removeEventListener("resize", this.scheduleUpdate);
     cancelAnimationFrame(this.frame);
-    this.stopHeaderSync?.();
   }
 
   handleLinkClick(event) {

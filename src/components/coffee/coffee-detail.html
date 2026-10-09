@@ -20,7 +20,7 @@
 
       <div class="mb-6">
         <p class="lead mb-2">{{description}}</p>
-        <p class="text-3xl font-bold text-(--text-primary)">
+        <p class="text-text-primary text-3xl font-bold">
           {{formattedPrice}}
           <span class="text-lg">/mes</span>
         </p>
@@ -34,7 +34,7 @@
         >
           <span class="text-xl" aria-hidden="true">{{stars}}</span>
         </div>
-        <p class="text-(--text-primary)">{{reviews}} reseñas</p>
+        <p class="text-text-primary">{{reviews}} reseñas</p>
       </div>
     </div>
   </header>
@@ -49,25 +49,13 @@
   <section aria-labelledby="detail__specs-title">
     <h2 id="detail__specs-title" class="sr-only">Ficha técnica</h2>
     <dl class="mb-8 grid grid-cols-2 gap-3 sm:mb-12 sm:gap-6 lg:grid-cols-4">
-      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
-        <dt class="mb-2 font-bold text-(--text-primary)">Origen</dt>
-        <dd class="text-(--text-primary)">{{origin}}</dd>
-      </div>
+      <spec-item term="Origen">{{origin}}</spec-item>
 
-      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
-        <dt class="mb-2 font-bold text-(--text-primary)">Tueste</dt>
-        <dd class="text-(--text-primary)">{{roast}}</dd>
-      </div>
+      <spec-item term="Tueste">{{roast}}</spec-item>
 
-      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
-        <dt class="mb-2 font-bold text-(--text-primary)">Altitud</dt>
-        <dd class="text-(--text-primary)">{{altitude}}</dd>
-      </div>
+      <spec-item term="Altitud">{{altitude}}</spec-item>
 
-      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
-        <dt class="mb-2 font-bold text-(--text-primary)">Producción</dt>
-        <dd class="text-(--text-primary)">{{production}}</dd>
-      </div>
+      <spec-item term="Producción">{{production}}</spec-item>
     </dl>
   </section>
 
@@ -83,32 +71,18 @@
       Recomendaciones de Preparación
     </h2>
     <dl class="space-y-4">
-      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
-        <dt class="mb-2 font-bold text-(--text-primary)">Temperatura</dt>
-        <dd class="text-(--text-primary)">{{brewing.temperature}}</dd>
-      </div>
+      <spec-item term="Temperatura">{{brewing.temperature}}</spec-item>
 
-      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
-        <dt class="mb-2 font-bold text-(--text-primary)">Molienda</dt>
-        <dd class="text-(--text-primary)">{{brewing.grind}}</dd>
-      </div>
+      <spec-item term="Molienda">{{brewing.grind}}</spec-item>
 
-      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
-        <dt class="mb-2 font-bold text-(--text-primary)">Proporción</dt>
-        <dd class="text-(--text-primary)">{{brewing.ratio}}</dd>
-      </div>
+      <spec-item term="Proporción">{{brewing.ratio}}</spec-item>
 
-      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
-        <dt class="mb-2 font-bold text-(--text-primary)">
-          Métodos Recomendados
-        </dt>
-        <dd class="text-(--text-primary)">{{brewing.methods}}</dd>
-      </div>
+      <spec-item term="Métodos Recomendados">{{brewing.methods}}</spec-item>
     </dl>
   </section>
 
   <aside
-    class="rounded-lg bg-(--surface-container) p-5 text-center sm:p-8"
+    class="bg-surface-container rounded-lg p-5 text-center sm:p-8"
     aria-labelledby="detail__cta-title"
   >
     <h2 id="detail__cta-title" class="heading heading--section mb-4">

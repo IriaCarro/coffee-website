@@ -1,8 +1,8 @@
 <footer
-  class="page-gutter theme-transition border-t border-(--border-subtle) bg-(--surface-footer) py-12 sm:py-16 lg:py-20 {{class}}"
+  class="page-gutter theme-transition border-t border-border-subtle bg-surface-footer py-12 sm:py-16 lg:py-20 {{class}}"
 >
   <div
-    class="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4 lg:gap-16"
+    class="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-16"
   >
     <section aria-labelledby="footer__brand-heading" class="space-y-6">
       <a href="/" class="flex items-center gap-3 text-inherit no-underline">
@@ -18,39 +18,11 @@
           Café Rico
         </span>
       </a>
-      <p class="max-w-xs text-sm leading-relaxed text-(--text-primary)">
+      <p class="text-text-primary max-w-xs text-sm leading-relaxed">
         Café de especialidad recién tostado, seleccionado con respeto por el
         origen y entregado en tu puerta cada mes.
       </p>
-    </section>
-
-    <section id="footer__faq" aria-labelledby="footer__faq-heading">
-      <h2 id="footer__faq-heading" class="heading heading--section mb-6">
-        Preguntas Frecuentes
-      </h2>
-      <div class="space-y-6">
-        <article
-          class="rounded-lg border-l-4 border-(--accent) bg-(--surface-transparent) px-4 py-3 transition-colors duration-300"
-        >
-          <h3 class="mb-2 font-bold text-(--text-primary)">
-            ¿Puedo cancelar mi suscripción?
-          </h3>
-          <p class="text-sm text-(--text-primary)">
-            Sí, puedes cancelar tu suscripción en cualquier momento sin
-            penalización.
-          </p>
-        </article>
-        <article
-          class="rounded-lg border-l-4 border-(--accent) bg-(--surface-transparent) px-4 py-3 transition-colors duration-300"
-        >
-          <h3 class="mb-2 font-bold text-(--text-primary)">
-            ¿Molido o en grano?
-          </h3>
-          <p class="text-sm text-(--text-primary)">
-            Puedes elegir entre granos enteros o café molido en tu suscripción.
-          </p>
-        </article>
-      </div>
+      <social-links></social-links>
     </section>
 
     <section aria-labelledby="footer__links-heading">
@@ -58,11 +30,11 @@
         Enlaces
       </h2>
       <nav aria-label="Enlaces del pie">
-        <ul class="space-y-4 text-(--text-primary) not-italic">
+        <ul class="text-text-primary space-y-4 not-italic">
           <li>
             <a
               href="/"
-              class="font-medium text-(--text-primary) transition-colors duration-200 hover:opacity-75"
+              class="text-text-primary font-medium transition-colors duration-200 hover:opacity-75"
             >
               Inicio
             </a>
@@ -70,7 +42,7 @@
           <li>
             <a
               href="/src/pages/coffees.html"
-              class="font-medium text-(--text-primary) transition-colors duration-200 hover:opacity-75"
+              class="text-text-primary font-medium transition-colors duration-200 hover:opacity-75"
             >
               Cafés
             </a>
@@ -78,7 +50,7 @@
           <li>
             <a
               href="/src/pages/faq.html"
-              class="font-medium text-(--text-primary) transition-colors duration-200 hover:opacity-75"
+              class="text-text-primary font-medium transition-colors duration-200 hover:opacity-75"
             >
               Preguntas Frecuentes
             </a>
@@ -86,7 +58,7 @@
           <li>
             <a
               href="/src/pages/contact.html"
-              class="font-medium text-(--text-primary) transition-colors duration-200 hover:opacity-75"
+              class="text-text-primary font-medium transition-colors duration-200 hover:opacity-75"
             >
               Contacto
             </a>
@@ -94,7 +66,7 @@
           <li>
             <a
               href="/src/pages/about.html"
-              class="font-medium text-(--text-primary) transition-colors duration-200 hover:opacity-75"
+              class="text-text-primary font-medium transition-colors duration-200 hover:opacity-75"
             >
               Nuestra Historia
             </a>
@@ -102,7 +74,7 @@
           <li>
             <a
               href="/src/pages/gallery.html"
-              class="font-medium text-(--text-primary) transition-colors duration-200 hover:opacity-75"
+              class="text-text-primary font-medium transition-colors duration-200 hover:opacity-75"
             >
               Galería
             </a>
@@ -115,7 +87,7 @@
       <h2 id="footer__visit-heading" class="heading heading--section mb-6">
         Visítanos
       </h2>
-      <address class="space-y-4 text-(--text-primary) not-italic">
+      <address class="text-text-primary space-y-4 not-italic">
         <p>
           <span
             class="icon me-[0.35em] mask-[url(/icons/ui/pin.svg)]"
@@ -141,7 +113,7 @@
             href="https://maps.google.com/?q=Calle+del+Caf%C3%A9+42+Madrid"
             target="_blank"
             rel="noopener noreferrer"
-            class="font-medium text-(--accent) transition-colors duration-200 hover:opacity-75"
+            class="text-accent font-medium transition-colors duration-200 hover:opacity-75"
           >
             Cómo llegar
           </a>
@@ -149,18 +121,54 @@
       </address>
     </section>
   </div>
-  <hr class="my-12 h-px" />
-
-  <div
-    class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center"
+  <section
+    aria-labelledby="footer__newsletter-heading"
+    class="border-border-subtle mt-12 grid items-start gap-6 border-t pt-8 md:grid-cols-2 md:gap-12"
   >
-    <small class="text-sm font-medium text-(--text-primary)">
+    <div>
+      <h2 id="footer__newsletter-heading" class="heading heading--section mb-2">
+        Newsletter
+      </h2>
+      <p class="text-text-primary">
+        Recibe novedades, nuevos orígenes y ofertas de suscripción. Sin spam.
+      </p>
+    </div>
+    <form
+      id="newsletter__form"
+      class="flex flex-col gap-3 sm:flex-row sm:items-start"
+      novalidate
+      data-validated
+    >
+      <form-field
+        id="newsletter__email"
+        name="email"
+        label="Email"
+        type="email"
+        placeholder="tu@email.com"
+        autocomplete="email"
+        error="Introduce un email válido, por ejemplo nombre@email.com."
+        class="flex-1"
+      ></form-field>
+      <button type="submit" class="btn btn--primary sm:mt-6">
+        Suscribirme
+      </button>
+      <p
+        role="status"
+        id="newsletter__status"
+        class="text-text-primary text-sm sm:col-span-2"
+      ></p>
+    </form>
+  </section>
+  <div
+    class="border-border-subtle mt-8 flex flex-col items-start justify-between gap-4 border-t pt-8 sm:flex-row sm:items-center"
+  >
+    <small class="text-text-primary text-sm font-medium">
       &copy; {{year}} Café Rico. Todos los derechos reservados.
     </small>
     <address class="not-italic">
       <a
         href="mailto:caferico@correo.com"
-        class="font-medium text-(--accent) transition-colors duration-200 hover:opacity-75"
+        class="text-accent font-medium transition-colors duration-200 hover:opacity-75"
       >
         Contacta con nosotros
       </a>

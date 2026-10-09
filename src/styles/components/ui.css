@@ -1,14 +1,14 @@
 @layer components {
   .gallery-lightbox__control {
-    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--surface-control-overlay) text-2xl text-(--text-on-image) transition-colors duration-200 hover:bg-(--surface-control-overlay-hover) sm:h-12 sm:w-12 sm:text-3xl;
+    @apply bg-surface-control-overlay text-text-on-image hover:bg-surface-control-overlay-hover flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-2xl transition-colors duration-200 sm:h-12 sm:w-12 sm:text-3xl;
   }
 
   .page {
-    @apply theme-transition bg-(--surface-page) px-4 py-8 sm:px-6 sm:py-12 lg:px-8;
+    @apply theme-transition bg-surface-page px-4 py-8 sm:px-6 sm:py-12 lg:px-8;
   }
 
   .heading {
-    @apply font-bold text-(--text-primary);
+    @apply text-text-primary font-bold;
   }
 
   .heading--section {
@@ -20,7 +20,7 @@
   }
 
   .lead {
-    @apply text-lg text-(--text-primary);
+    @apply text-text-primary text-lg;
   }
 
   /* SVG used as a mask so it takes currentColor and follows the theme. Size
@@ -34,69 +34,36 @@
   }
 
   .btn--primary {
-    @apply bg-(--surface-button-primary) text-(--text-inverse);
-  }
-
-  .btn--primary:hover {
-    @apply bg-(--surface-button-primary-hover) text-(--text-on-accent-hover);
+    @apply bg-surface-button-primary text-text-inverse hover:bg-surface-button-primary-hover hover:text-text-on-accent-hover;
   }
 
   .btn--secondary {
-    @apply border-2;
-    @apply border-(--border-button-secondary) bg-(--surface-button-secondary) text-(--text-button-secondary);
-  }
-
-  .btn--secondary:hover {
-    @apply bg-(--surface-button-secondary-hover);
+    @apply border-border-button-secondary bg-surface-button-secondary text-text-button-secondary hover:bg-surface-button-secondary-hover border-2;
   }
 
   /* Buttons placed over a photo/dark overlay: themed button colors are tuned
   for the page surface, so they switch to the on-image palette here */
   .btn--secondary.btn--on-image {
-    @apply border-(--text-on-image) text-(--text-on-image);
-  }
-
-  .btn--secondary.btn--on-image:hover {
-    @apply bg-(--surface-glass);
+    @apply border-text-on-image text-text-on-image hover:bg-surface-glass;
   }
 
   .btn--primary.btn--on-image {
-    @apply bg-(--text-on-image) text-(--surface-home-overlay);
-  }
-
-  .btn--primary.btn--on-image:hover {
-    @apply bg-(--text-on-image-accent) text-(--surface-home-overlay);
+    @apply bg-text-on-image text-surface-home-overlay hover:bg-text-on-image-accent hover:text-surface-home-overlay;
   }
 
   .form__label {
     @apply mb-1 block text-sm font-medium transition-colors duration-300;
-    @apply text-(--text-primary);
-  }
-
-  :is(input[type="text"], input[type="email"], textarea):focus {
-    @apply border-(--focus-ring) ring-2 ring-(--focus-ring)/30;
-  }
-
-  :is(input, textarea)[aria-invalid="true"] {
-    @apply border-(--border-error);
-  }
-
-  @supports selector(:user-invalid) {
-    :is(input, textarea):user-invalid {
-      @apply border-(--border-error);
-    }
-
-    .form__error {
-      @apply peer-user-invalid:block;
-    }
-  }
-
-  :is(input, textarea):disabled {
-    @apply cursor-not-allowed opacity-60;
+    @apply text-text-primary;
   }
 
   .form__error {
-    @apply mt-1 hidden text-sm font-medium text-(--text-error) peer-aria-invalid:block;
+    @apply text-text-error mt-1 hidden text-sm font-medium peer-aria-invalid:block;
+  }
+
+  @supports selector(:user-invalid) {
+    .form__error {
+      @apply peer-user-invalid:block;
+    }
   }
 
   .hover-zoom__target {

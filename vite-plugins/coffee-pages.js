@@ -20,16 +20,19 @@ export default function coffeePages() {
     const flavorProfileHtml = coffee.flavorProfile
       .map((flavor) =>
         renderTemplate(
-          read("src/components/coffee-detail-flavor.html"),
+          read("src/components/coffee/coffee-detail-flavor.html"),
           flavor,
         ),
       )
       .join("");
-    const detail = renderTemplate(read("src/components/coffee-detail.html"), {
-      ...coffeeFields(coffee),
-      stars: "★".repeat(coffee.rating),
-      flavorProfileHtml,
-    });
+    const detail = renderTemplate(
+      read("src/components/coffee/coffee-detail.html"),
+      {
+        ...coffeeFields(coffee),
+        stars: "★".repeat(coffee.rating),
+        flavorProfileHtml,
+      },
+    );
     return renderTemplate(read("src/pages/coffee-page.html"), {
       name: coffee.name,
       metaDescription: escapeAttribute(
@@ -82,7 +85,7 @@ export default function coffeePages() {
     handleHotUpdate({ file, server }) {
       coffees = undefined;
       if (
-        /src\/(pages\/coffee-page|components\/coffee-detail[^/]*|data\/coffees\.json)/.test(
+        /src\/(pages\/coffee-page|components\/coffee\/|data\/coffees\.json)/.test(
           file,
         )
       ) {

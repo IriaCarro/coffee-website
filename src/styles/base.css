@@ -5,21 +5,22 @@
 
 @layer base {
   html {
-    @apply motion-safe:scroll-smooth;
+    @apply [--header-height:var(--header-height-compact)] motion-safe:scroll-smooth sm:[--header-height:var(--header-height-medium)] lg:[--header-height:var(--header-height-wide)];
   }
 
   body {
-    @apply box-border bg-(--surface-page) font-sans text-(--text-primary);
+    @apply bg-surface-page text-text-primary box-border font-sans;
   }
 
   h1,
-  h2 {
+  h2,
+  h3 {
     @apply font-display;
   }
 
   /* Keyboard focus for links, buttons and anything else focusable */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-(--focus-ring);
+    @apply outline-focus-ring outline-2 outline-offset-2;
   }
 
   label {
@@ -30,7 +31,25 @@
   input[type="email"],
   textarea {
     @apply w-full rounded-lg border-2 px-4 py-2 transition-all duration-300;
-    @apply border-(--border-input) bg-(--surface-container) text-(--text-primary);
+    @apply border-border-input bg-surface-container text-text-primary;
+  }
+
+  :is(input[type="text"], input[type="email"], textarea):focus {
+    @apply border-focus-ring ring-focus-ring/30 ring-2;
+  }
+
+  :is(input, textarea)[aria-invalid="true"] {
+    @apply border-border-error;
+  }
+
+  @supports selector(:user-invalid) {
+    :is(input, textarea):user-invalid {
+      @apply border-border-error;
+    }
+  }
+
+  :is(input, textarea):disabled {
+    @apply cursor-not-allowed opacity-60;
   }
 
   input[type="radio"],

@@ -1,5 +1,5 @@
 import coffees from "../../data/coffees.json";
-import coffeeOptionTemplate from "../../components/subscription-coffee-option.html?raw";
+import coffeeOptionTemplate from "../../components/subscription/subscription-coffee-option.html?raw";
 import { coffeeFields, formatPrice, renderTemplate } from "../lib/template.js";
 
 const renderCoffeeOptions = () => {
@@ -32,7 +32,19 @@ const initPlanPrices = () => {
   updatePlanPrices(form);
 };
 
+// /src/pages/subscription.html?plan=weekly pre-selects that plan (the plan
+// cards on the home page link here)
+const preselectPlan = () => {
+  const plan = new URLSearchParams(window.location.search).get("plan");
+  if (!plan) return;
+  const form = document.getElementById("subscription__form");
+  form
+    ?.querySelector(`input[name="plan"][value="${CSS.escape(plan)}"]`)
+    ?.click();
+};
+
 export const initSubscriptionOptions = () => {
   renderCoffeeOptions();
   initPlanPrices();
+  preselectPlan();
 };

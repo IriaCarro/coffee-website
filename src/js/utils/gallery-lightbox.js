@@ -1,4 +1,4 @@
-import galleryLightboxTemplate from "../../components/gallery-lightbox.html?raw";
+import galleryLightboxTemplate from "../../components/content/gallery-lightbox.html?raw";
 
 function initGalleryLightbox() {
   const gallery = document.querySelector("[data-gallery]");

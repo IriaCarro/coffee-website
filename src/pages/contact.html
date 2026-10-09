@@ -38,21 +38,21 @@
 
     <main id="main-content">
       <section
-        class="bg-(--surface-page) px-4 py-8 transition-colors duration-300 sm:px-6 sm:py-12 lg:px-8"
+        class="bg-surface-page px-4 py-8 transition-colors duration-300 sm:px-6 sm:py-12 lg:px-8"
         aria-labelledby="contact__title"
       >
         <div class="mx-auto max-w-4xl">
           <back-link></back-link>
 
           <page-header heading-id="contact__title" heading="Cómo Llegar">
-            <p class="text-xl text-(--text-primary)">
+            <p class="text-text-primary text-xl">
               Visítanos o contacta directamente con nuestro equipo
             </p>
           </page-header>
 
           <div class="mb-8 grid gap-5 sm:mb-12 sm:gap-8 md:grid-cols-2">
             <section
-              class="rounded-lg bg-(--surface-container) p-5 sm:p-8"
+              class="bg-surface-container rounded-lg p-5 sm:p-8"
               aria-labelledby="contact__location-title"
             >
               <h2
@@ -60,7 +60,7 @@
                 id="contact__location-title"
               >
                 <span
-                  class="icon mask-[url(/icons/ui/pin.svg)] text-3xl text-(--accent)"
+                  class="icon text-accent mask-[url(/icons/ui/pin.svg)] text-3xl"
                   aria-hidden="true"
                 ></span>
                 Ubicación
@@ -68,7 +68,7 @@
               <dl>
                 <contact-item term="Oficina Principal">
                   <dd>
-                    <address class="text-(--text-primary) not-italic">
+                    <address class="text-text-primary not-italic">
                       Calle del Café, 42
                       <br />
                       28001 Madrid, España
@@ -76,17 +76,17 @@
                   </dd>
                 </contact-item>
                 <contact-item term="Horario">
-                  <dd class="text-(--text-primary)">
+                  <dd class="text-text-primary">
                     Lunes - Viernes: 9:00 - 18:00
                   </dd>
-                  <dd class="text-(--text-primary)">Sábado: 10:00 - 14:00</dd>
-                  <dd class="text-(--text-primary)">Domingo: Cerrado</dd>
+                  <dd class="text-text-primary">Sábado: 10:00 - 14:00</dd>
+                  <dd class="text-text-primary">Domingo: Cerrado</dd>
                 </contact-item>
                 <contact-item term="Transporte Público">
-                  <dd class="text-(--text-primary)">
+                  <dd class="text-text-primary">
                     Metro: Línea 3, Estación Centro
                   </dd>
-                  <dd class="text-(--text-primary)">
+                  <dd class="text-text-primary">
                     Autobús: Línea 27, Parada Café Rico
                   </dd>
                 </contact-item>
@@ -94,7 +94,7 @@
             </section>
 
             <section
-              class="rounded-lg bg-(--surface-container) p-5 sm:p-8"
+              class="bg-surface-container rounded-lg p-5 sm:p-8"
               aria-labelledby="contact__info-title"
             >
               <h2
@@ -102,7 +102,7 @@
                 id="contact__info-title"
               >
                 <span
-                  class="icon mask-[url(/icons/ui/phone.svg)] text-3xl text-(--accent)"
+                  class="icon text-accent mask-[url(/icons/ui/phone.svg)] text-3xl"
                   aria-hidden="true"
                 ></span>
                 Contacto
@@ -112,7 +112,7 @@
                   <dd>
                     <a
                       href="tel:+34912345678"
-                      class="text-(--text-primary) transition-colors hover:text-(--accent)"
+                      class="text-text-primary hover:text-accent transition-colors"
                     >
                       +34 91 234 5678
                     </a>
@@ -122,7 +122,7 @@
                   <dd>
                     <a
                       href="mailto:caferico@correo.com"
-                      class="text-(--text-primary) transition-colors hover:text-(--accent)"
+                      class="text-text-primary hover:text-accent transition-colors"
                     >
                       caferico@correo.com
                     </a>
@@ -132,55 +132,18 @@
                   <dd>
                     <a
                       href="mailto:soporte@caferico.com"
-                      class="text-(--text-primary) transition-colors hover:text-(--accent)"
+                      class="text-text-primary hover:text-accent transition-colors"
                     >
                       soporte@caferico.com
                     </a>
-                    <p class="mt-2 text-sm text-(--text-primary)">
+                    <p class="text-text-primary mt-2 text-sm">
                       Respuesta en 24 horas
                     </p>
                   </dd>
                 </contact-item>
                 <contact-item term="Redes Sociales">
                   <dd>
-                    <ul class="flex gap-3" role="list">
-                      <li>
-                        <a
-                          href="#"
-                          class="text-2xl transition-transform hover:motion-safe:scale-110"
-                          aria-label="Facebook"
-                        >
-                          <span
-                            class="icon mask-[url(/icons/ui/facebook.svg)]"
-                            aria-hidden="true"
-                          ></span>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="text-2xl transition-transform hover:motion-safe:scale-110"
-                          aria-label="Instagram"
-                        >
-                          <span
-                            class="icon mask-[url(/icons/ui/instagram.svg)]"
-                            aria-hidden="true"
-                          ></span>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="text-2xl transition-transform hover:motion-safe:scale-110"
-                          aria-label="Twitter"
-                        >
-                          <span
-                            class="icon mask-[url(/icons/ui/twitter.svg)]"
-                            aria-hidden="true"
-                          ></span>
-                        </a>
-                      </li>
-                    </ul>
+                    <social-links></social-links>
                   </dd>
                 </contact-item>
               </dl>
@@ -192,10 +155,10 @@
               Nuestra Ubicación
             </h2>
             <figure
-              class="flex h-72 flex-col items-center justify-center overflow-hidden rounded-lg bg-(--surface-container) p-4 text-center sm:h-96"
+              class="bg-surface-container flex h-72 flex-col items-center justify-center overflow-hidden rounded-lg p-4 text-center sm:h-96"
             >
               <span
-                class="icon mb-4 mask-[url(/icons/ui/map.svg)] text-6xl text-(--accent)"
+                class="icon text-accent mb-4 mask-[url(/icons/ui/map.svg)] text-6xl"
                 aria-hidden="true"
               ></span>
               <iframe
@@ -208,7 +171,7 @@
                 loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
-              <figcaption class="mt-2 text-sm text-(--text-primary)">
+              <figcaption class="text-text-primary mt-2 text-sm">
                 Calle del Café, 42 - Madrid
               </figcaption>
             </figure>
@@ -220,13 +183,13 @@
             </h2>
             <form
               id="contact__form"
-              class="grid gap-6 rounded-lg bg-(--surface-container) p-5 sm:grid-cols-2 sm:p-8"
+              class="bg-surface-container grid gap-6 rounded-lg p-5 sm:grid-cols-2 sm:p-8"
               aria-describedby="contact__note"
               novalidate
               data-validated
             >
               <p
-                class="mt-2 text-sm text-(--text-primary) sm:col-span-2"
+                class="text-text-primary mt-2 text-sm sm:col-span-2"
                 id="contact__note"
               >
                 Todos los campos son obligatorios.
@@ -269,13 +232,13 @@
               ></form-textarea>
               <button
                 type="submit"
-                class="w-full rounded-lg bg-(--accent) px-6 py-3 font-medium text-(--text-on-accent) transition-colors duration-200 hover:bg-(--accent-hover) hover:text-(--text-on-accent-hover) sm:col-span-2"
+                class="bg-accent text-text-on-accent hover:bg-accent-hover hover:text-text-on-accent-hover w-full rounded-lg px-6 py-3 font-medium transition-colors duration-200 sm:col-span-2"
               >
                 Enviar Mensaje
               </button>
               <p
                 role="status"
-                class="mt-2 text-sm text-(--text-primary) sm:col-span-2"
+                class="text-text-primary mt-2 text-sm sm:col-span-2"
                 id="contact__status"
               ></p>
             </form>

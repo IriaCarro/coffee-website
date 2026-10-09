@@ -9,6 +9,16 @@
   --font-display: "Playfair Display", ui-serif, Georgia, serif;
   --font-marker: "Permanent Marker", cursive;
 
+  /* Breakpoint where the hero composition switches (max-hero:) */
+  --breakpoint-hero: 800px;
+
+  /* Hero type sizes */
+  --text-hero-mark: clamp(5rem, 15vw, 14rem);
+  --text-hero-mark-compact: clamp(3.5rem, 16.5vw, 9rem);
+  --text-hero-sub: clamp(1rem, 1.6vw, 1.25rem);
+
+  --ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
+
   /* Animations */
   --animate-fade-up: fade-up 0.6s ease-out backwards;
 
@@ -98,4 +108,55 @@
   --color-turtle-green-800: #667d06;
   --color-turtle-green-900: #596a0b;
   --color-turtle-green-950: #2b3401;
+}
+
+/* Semantic colors: aliases of the per-theme variables in themes.css, so
+   utilities such as bg-surface-page or text-text-primary follow the active
+   theme without touching the markup */
+@theme inline {
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-hover: var(--accent-hover);
+  --color-border-button-secondary: var(--border-button-secondary);
+  --color-border-button-tertiary: var(--border-button-tertiary);
+  --color-border-error: var(--border-error);
+  --color-border-glass: var(--border-glass);
+  --color-border-input: var(--border-input);
+  --color-border-strong: var(--border-strong);
+  --color-border-subtle: var(--border-subtle);
+  --color-focus-ring: var(--focus-ring);
+  --color-surface-accent: var(--surface-accent);
+  --color-surface-button-primary: var(--surface-button-primary);
+  --color-surface-button-primary-hover: var(--surface-button-primary-hover);
+  --color-surface-button-secondary: var(--surface-button-secondary);
+  --color-surface-button-secondary-hover: var(--surface-button-secondary-hover);
+  --color-surface-button-tertiary: var(--surface-button-tertiary);
+  --color-surface-button-tertiary-hover: var(--surface-button-tertiary-hover);
+  --color-surface-container: var(--surface-container);
+  --color-surface-control-overlay: var(--surface-control-overlay);
+  --color-surface-control-overlay-hover: var(--surface-control-overlay-hover);
+  --color-surface-footer: var(--surface-footer);
+  --color-surface-gallery-overlay: var(--surface-gallery-overlay);
+  --color-surface-glass: var(--surface-glass);
+  --color-surface-glass-hover: var(--surface-glass-hover);
+  --color-surface-header: var(--surface-header);
+  --color-surface-home-overlay: var(--surface-home-overlay);
+  --color-surface-modal-overlay: var(--surface-modal-overlay);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-page: var(--surface-page);
+  --color-surface-transparent: var(--surface-transparent);
+  --color-text-button-secondary: var(--text-button-secondary);
+  --color-text-button-tertiary: var(--text-button-tertiary);
+  --color-text-button-tertiary-hover: var(--text-button-tertiary-hover);
+  --color-text-error: var(--text-error);
+  --color-text-inverse: var(--text-inverse);
+  --color-text-on-accent: var(--text-on-accent);
+  --color-text-on-accent-hover: var(--text-on-accent-hover);
+  --color-text-on-image: var(--text-on-image);
+  --color-text-on-image-accent: var(--text-on-image-accent);
+  --color-text-on-image-muted: var(--text-on-image-muted);
+  --color-text-on-image-subtitle: var(--text-on-image-subtitle);
+  --color-text-on-image-title: var(--text-on-image-title);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
 }

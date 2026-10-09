@@ -1,0 +1,23 @@
+[
+  {
+    "id": "monthly",
+    "name": "Plan Mensual",
+    "description": "1 bolsa de 250g cada mes",
+    "bags": 1,
+    "featured": true
+  },
+  {
+    "id": "biweekly",
+    "name": "Plan Quincenal",
+    "description": "1 bolsa de 250g cada 15 días",
+    "bags": 2,
+    "featured": false
+  },
+  {
+    "id": "weekly",
+    "name": "Plan Semanal",
+    "description": "1 bolsa de 250g cada semana",
+    "bags": 4,
+    "featured": false
+  }
+]

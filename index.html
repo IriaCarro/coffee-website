@@ -53,24 +53,24 @@
       <home-section
         id="hero"
         heading-id="hero__title"
-        class="isolate flex-col gap-8 bg-[url(/photos/cafe-3-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-[linear-gradient(to_top,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_70%,transparent)_50%,color-mix(in_srgb,var(--surface-home-overlay)_35%,transparent)_75%,transparent)] after:content-[''] md:flex-row md:bg-[url(/photos/cafe-3.webp)] md:after:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_70%,transparent)_50%,color-mix(in_srgb,var(--surface-home-overlay)_35%,transparent)_75%,transparent)] [&_:focus-visible]:outline-(--text-on-image)"
+        class="[&_:focus-visible]:outline-text-on-image before:from-surface-home-overlay/85 before:via-surface-home-overlay/80 before:to-surface-home-overlay/85 after:from-surface-home-overlay/85 after:via-surface-home-overlay/70 md:after:from-surface-home-overlay/85 md:after:via-surface-home-overlay/70 isolate flex-col gap-8 bg-[url(/photos/cafe-3-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-linear-to-r before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-linear-to-t after:to-transparent after:content-[''] md:flex-row md:bg-[url(/photos/cafe-3.webp)] md:after:bg-linear-to-r md:after:to-transparent"
       >
-        <div class="enter-fade-up relative z-10">
+        <div class="enter-fade-up relative z-10 md:w-1/2">
           <h1
             id="hero__title"
-            class="text-6xl leading-[0.9] font-bold text-(--text-on-image-title) sm:text-7xl lg:text-9xl"
+            class="text-text-on-image-title text-6xl leading-[0.9] font-bold sm:text-7xl lg:text-8xl xl:text-9xl"
           >
             <span class="block">Buen</span>
-            <span class="block text-(--text-on-image-accent)">café,</span>
+            <span class="text-text-on-image-accent block">café,</span>
             <span class="block">mejores</span>
             <span class="block">días</span>
           </h1>
           <h2
-            class="mt-6 mb-4 text-lg leading-tight font-bold text-(--text-on-image-subtitle) sm:mt-8 sm:mb-6 sm:text-xl"
+            class="text-text-on-image-subtitle mt-6 mb-4 text-lg leading-tight font-bold sm:mt-8 sm:mb-6 sm:text-xl"
           >
             Café recién tostado, en tu puerta cada mes.
           </h2>
-          <p class="mb-8 text-lg text-(--text-on-image-muted)">
+          <p class="text-text-on-image-muted mb-8 max-w-prose text-lg">
             Tostamos en pequeños lotes granos de origen único y te los llevamos
             frescos a casa. Descubre nuestras selecciones premium.
           </p>
@@ -80,7 +80,7 @@
                 href="/src/pages/subscription.html"
                 class="btn btn--primary btn--on-image block text-center sm:inline-block"
               >
-                Subscríbete Ahora
+                Suscríbete ahora
               </a>
             </li>
             <li class="mb-4 w-full sm:w-auto">
@@ -93,52 +93,63 @@
             </li>
           </ul>
         </div>
+        <figure class="relative z-10 flex justify-center md:w-1/2">
+          <img
+            src="/photos/pack_etiopia.webp"
+            srcset="
+              /photos/pack_etiopia-400.webp 400w,
+              /photos/pack_etiopia-600.webp 600w,
+              /photos/pack_etiopia.webp     800w
+            "
+            sizes="(min-width: 1024px) 336px, (min-width: 768px) 280px, 200px"
+            width="800"
+            height="1200"
+            alt="Bolsa de café Etiopía Floral, notas florales y cítricas"
+            fetchpriority="low"
+            decoding="async"
+            class="max-h-72 w-auto object-contain drop-shadow-2xl md:max-h-[28rem] lg:max-h-[34rem]"
+          />
+        </figure>
       </home-section>
 
       <home-section
         id="breakfast"
         heading-id="breakfast__title"
-        class="isolate overflow-hidden bg-(--surface-page) bg-[radial-gradient(circle_at_70%_35%,color-mix(in_srgb,var(--accent-contrast)_14%,transparent),transparent_28rem)] before:pointer-events-none before:absolute before:inset-0 before:-z-1 before:bg-[radial-gradient(var(--text-primary)_0.7px,transparent_0.7px)] before:bg-size-[7px_7px] before:opacity-16 before:content-['']"
+        class="bg-surface-page isolate overflow-hidden bg-[radial-gradient(circle_at_70%_35%,color-mix(in_srgb,var(--accent-contrast)_14%,transparent),transparent_28rem)] before:pointer-events-none before:absolute before:inset-0 before:-z-1 before:bg-[radial-gradient(var(--text-primary)_0.7px,transparent_0.7px)] before:bg-size-[7px_7px] before:opacity-16 before:content-['']"
       >
         <div
-          class="absolute top-[18%] right-[7%] -z-10 h-[30px] w-[18px] rotate-[35deg] rounded-[50%] bg-(--accent) opacity-90 after:absolute after:top-[4px] after:left-[8px] after:h-[22px] after:w-[2px] after:rounded-[50%] after:bg-(--accent-contrast) after:content-[''] max-[800px]:hidden"
+          class="bg-accent after:bg-accent-contrast max-hero:hidden absolute top-[18%] right-[7%] -z-10 h-7.5 w-4.5 rotate-35 rounded-[50%] opacity-90 after:absolute after:top-1 after:left-2 after:h-5.5 after:w-0.5 after:rounded-[50%] after:content-['']"
           aria-hidden="true"
         ></div>
         <div
-          class="absolute bottom-[22%] left-[7%] -z-10 h-[30px] w-[18px] scale-[0.7] rotate-[-25deg] rounded-[50%] bg-(--accent) opacity-90 after:absolute after:top-[4px] after:left-[8px] after:h-[22px] after:w-[2px] after:rounded-[50%] after:bg-(--accent-contrast) after:content-[''] max-[800px]:hidden"
+          class="bg-accent after:bg-accent-contrast max-hero:hidden absolute bottom-[22%] left-[7%] -z-10 h-7.5 w-4.5 scale-70 -rotate-25 rounded-[50%] opacity-90 after:absolute after:top-1 after:left-2 after:h-5.5 after:w-0.5 after:rounded-[50%] after:content-['']"
           aria-hidden="true"
         ></div>
 
-        <div
-          class="relative z-10 w-full max-w-[1250px] supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
-        >
-          <p
-            class="mb-4 text-sm font-bold tracking-[0.16em] text-(--text-primary)"
-          >
+        <section-body class="max-w-[1250px]">
+          <p class="text-text-primary mb-4 text-sm font-bold tracking-[0.16em]">
             CAFÉ RICO · MAÑANAS
           </p>
 
           <div
-            class="group/wrap relative flex min-h-[clamp(300px,45vw,570px)] w-full items-center max-[800px]:min-h-[430px] max-[800px]:items-start"
+            class="group/wrap max-hero:min-h-[430px] max-hero:items-start relative flex min-h-[clamp(300px,45vw,570px)] w-full items-center"
           >
             <h2
               id="breakfast__title"
-              class="font-marker relative z-10 m-0 flex w-full rotate-[-3deg] items-center text-[length:clamp(5rem,15vw,14rem)] leading-[0.75] tracking-[-0.07em] whitespace-nowrap text-(--text-primary) select-none max-[800px]:block max-[800px]:text-[length:clamp(3.5rem,16.5vw,9rem)] max-[800px]:leading-[0.78] max-[800px]:whitespace-normal"
+              class="font-marker text-text-primary text-hero-mark max-hero:block max-hero:text-hero-mark-compact max-hero:leading-[0.78] max-hero:whitespace-normal relative z-10 m-0 flex w-full -rotate-3 items-center leading-[0.75] tracking-[-0.07em] whitespace-nowrap select-none"
               aria-label="Desayunos"
             >
-              <span class="relative max-[800px]:inline" aria-hidden="true">
+              <span class="max-hero:inline relative" aria-hidden="true">
                 DESA
               </span>
-              <span class="relative max-[800px]:inline" aria-hidden="true">
-                Y
-              </span>
-              <span class="relative max-[800px]:inline" aria-hidden="true">
+              <span class="max-hero:inline relative" aria-hidden="true">Y</span>
+              <span class="max-hero:inline relative" aria-hidden="true">
                 UNOS
               </span>
             </h2>
 
             <img
-              class="pointer-events-none absolute top-[17%] right-[42%] z-20 w-[clamp(90px,12vw,190px)] rotate-[-18deg] [filter:drop-shadow(0_14px_12px_color-mix(in_srgb,var(--text-primary)_18%,transparent))_drop-shadow(0_3px_3px_color-mix(in_srgb,var(--text-primary)_12%,transparent))] transition-transform duration-[550ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover/wrap:translate-x-[-8px] group-hover/wrap:translate-y-[-12px] group-hover/wrap:rotate-[-12deg] motion-reduce:transition-none max-[800px]:top-[30%] max-[800px]:right-[48%]"
+              class="ease-snappy max-hero:top-[30%] max-hero:right-[48%] pointer-events-none absolute top-[17%] right-[42%] z-20 w-[clamp(90px,12vw,190px)] -rotate-18 [filter:drop-shadow(0_14px_12px_color-mix(in_srgb,var(--text-primary)_18%,transparent))_drop-shadow(0_3px_3px_color-mix(in_srgb,var(--text-primary)_12%,transparent))] transition-transform duration-550 group-hover/wrap:-translate-x-2 group-hover/wrap:-translate-y-3 group-hover/wrap:-rotate-12 motion-reduce:transition-none"
               src="/photos/flake-01.webp"
               width="520"
               height="347"
@@ -148,7 +159,7 @@
               aria-hidden="true"
             />
             <img
-              class="pointer-events-none absolute right-[18%] bottom-[13%] z-30 w-[clamp(120px,17vw,260px)] rotate-[12deg] [filter:drop-shadow(0_14px_12px_color-mix(in_srgb,var(--text-primary)_18%,transparent))_drop-shadow(0_3px_3px_color-mix(in_srgb,var(--text-primary)_12%,transparent))] transition-transform duration-[550ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover/wrap:translate-x-[10px] group-hover/wrap:translate-y-[8px] group-hover/wrap:rotate-[18deg] motion-reduce:transition-none max-[800px]:right-[4%] max-[800px]:bottom-[20%]"
+              class="ease-snappy max-hero:right-[4%] max-hero:bottom-[20%] pointer-events-none absolute right-[18%] bottom-[13%] z-30 w-[clamp(120px,17vw,260px)] rotate-12 [filter:drop-shadow(0_14px_12px_color-mix(in_srgb,var(--text-primary)_18%,transparent))_drop-shadow(0_3px_3px_color-mix(in_srgb,var(--text-primary)_12%,transparent))] transition-transform duration-550 group-hover/wrap:translate-x-2.5 group-hover/wrap:translate-y-2 group-hover/wrap:rotate-18 motion-reduce:transition-none"
               src="/photos/flake-02.webp"
               width="520"
               height="347"
@@ -158,7 +169,7 @@
               aria-hidden="true"
             />
             <img
-              class="pointer-events-none absolute top-1/2 right-[3%] z-0 w-[clamp(300px,42vw,650px)] -translate-y-1/2 rotate-[-8deg] [filter:drop-shadow(0_25px_18px_color-mix(in_srgb,var(--text-primary)_22%,transparent))_drop-shadow(0_5px_4px_color-mix(in_srgb,var(--text-primary)_15%,transparent))] transition-transform duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover/wrap:translate-y-[calc(-50%-8px)] group-hover/wrap:scale-[1.025] group-hover/wrap:rotate-[-5deg] motion-reduce:transition-none max-[800px]:top-[57%] max-[800px]:-right-[12%] max-[800px]:w-[min(105vw,520px)]"
+              class="ease-snappy max-hero:top-[57%] max-hero:-right-[12%] max-hero:w-[min(105vw,520px)] pointer-events-none absolute top-1/2 right-[3%] z-0 w-[clamp(300px,42vw,650px)] -translate-y-1/2 -rotate-8 [filter:drop-shadow(0_25px_18px_color-mix(in_srgb,var(--text-primary)_22%,transparent))_drop-shadow(0_5px_4px_color-mix(in_srgb,var(--text-primary)_15%,transparent))] transition-transform duration-500 group-hover/wrap:translate-y-[calc(-50%-8px)] group-hover/wrap:scale-103 group-hover/wrap:-rotate-5 motion-reduce:transition-none"
               src="/photos/croissant.webp"
               width="900"
               height="600"
@@ -170,35 +181,33 @@
           </div>
 
           <div
-            class="-mt-4 flex items-end justify-between gap-8 max-[800px]:mt-0 max-[800px]:grid max-[800px]:justify-stretch"
+            class="max-hero:mt-0 max-hero:grid max-hero:justify-stretch -mt-4 flex items-end justify-between gap-8"
           >
             <p
-              class="max-w-[390px] text-[length:clamp(1rem,1.6vw,1.25rem)] leading-[1.45] text-(--text-secondary)"
+              class="text-text-secondary text-hero-sub max-w-[390px] leading-[1.45]"
             >
               Empieza el día con café recién hecho, bollería artesanal y algo
               rico.
             </p>
             <a
-              class="inline-flex items-center gap-3 rounded-full border-2 border-(--border-button-tertiary) bg-(--surface-button-tertiary) px-5 py-4 font-bold whitespace-nowrap text-(--text-button-tertiary) no-underline transition-[translate,background-color,color] duration-200 ease-[ease] hover:translate-y-[-3px] hover:bg-(--surface-button-tertiary-hover) hover:text-(--text-button-tertiary-hover) motion-reduce:transition-none max-[800px]:justify-self-end"
+              class="border-border-button-tertiary bg-surface-button-tertiary text-text-button-tertiary hover:bg-surface-button-tertiary-hover hover:text-text-button-tertiary-hover max-hero:justify-self-end inline-flex items-center gap-3 rounded-full border-2 px-5 py-4 font-bold whitespace-nowrap no-underline transition-[translate,background-color,color] duration-200 ease-[ease] hover:-translate-y-0.75 motion-reduce:transition-none"
               href="/src/pages/menu.html"
             >
               VER MENÚ
               <span aria-hidden="true">↗</span>
             </a>
           </div>
-        </div>
+        </section-body>
       </home-section>
       <home-section
         id="location"
         heading-id="location__title"
-        class="isolate bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] md:bg-[url(/photos/cafe-1.webp)] [&_:focus-visible]:outline-(--text-on-image)"
+        class="[&_:focus-visible]:outline-text-on-image before:from-surface-home-overlay/85 before:via-surface-home-overlay/80 before:to-surface-home-overlay/85 isolate bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-linear-to-r before:content-[''] md:bg-[url(/photos/cafe-1.webp)]"
       >
-        <div
-          class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
-        >
+        <section-body class="max-w-6xl">
           <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
             <div
-              class="rounded-2xl bg-(--surface-muted) p-5 shadow-2xl backdrop-blur-sm sm:p-8 lg:p-10"
+              class="bg-surface-muted rounded-2xl p-5 shadow-2xl backdrop-blur-sm sm:p-8 lg:p-10"
             >
               <h2
                 id="location__title"
@@ -208,46 +217,46 @@
               </h2>
 
               <p
-                class="mb-6 text-lg leading-relaxed text-(--text-secondary) sm:mb-8 sm:text-xl"
+                class="text-text-secondary mb-6 text-lg leading-relaxed sm:mb-8 sm:text-xl"
               >
                 Buen café, buena compañía y un ambiente único en la ciudad.
               </p>
 
               <section
-                class="mb-6 rounded-xl border-l-4 border-(--accent) bg-(--surface-container) p-6"
+                class="border-accent bg-surface-container mb-6 rounded-xl border-l-4 p-6"
                 aria-labelledby="info__address-title"
               >
                 <h3
-                  class="mb-3 flex items-center gap-3 font-bold text-(--text-primary)"
+                  class="text-text-primary mb-3 flex items-center gap-3 font-bold"
                   id="info__address-title"
                 >
                   <span
-                    class="icon mask-[url(/icons/ui/pin.svg)] text-(--accent)"
+                    class="icon text-accent mask-[url(/icons/ui/pin.svg)]"
                     aria-hidden="true"
                   ></span>
                   <span class="text-lg">Ubicación</span>
                 </h3>
-                <address class="space-y-1 text-(--text-secondary) not-italic">
+                <address class="text-text-secondary space-y-1 not-italic">
                   <strong>Calle del Café, 42</strong>
                   <p>28003 Madrid, España</p>
                 </address>
               </section>
 
               <section
-                class="mb-6 rounded-xl border-l-4 border-(--accent) bg-(--surface-container) p-6"
+                class="border-accent bg-surface-container mb-6 rounded-xl border-l-4 p-6"
                 aria-labelledby="info__hours-title"
               >
                 <h3
-                  class="mb-3 flex items-center gap-3 font-bold text-(--text-primary)"
+                  class="text-text-primary mb-3 flex items-center gap-3 font-bold"
                   id="info__hours-title"
                 >
                   <span
-                    class="icon mask-[url(/icons/ui/clock.svg)] text-(--accent)"
+                    class="icon text-accent mask-[url(/icons/ui/clock.svg)]"
                     aria-hidden="true"
                   ></span>
                   <span class="text-lg">Horario</span>
                 </h3>
-                <ul class="space-y-2 text-(--text-secondary)">
+                <ul class="text-text-secondary space-y-2">
                   <li class="flex justify-between">
                     <p>Lunes - Viernes:</p>
                     <strong>9:00 - 18:00</strong>
@@ -256,7 +265,7 @@
                     <p>Sábado:</p>
                     <strong>10:00 - 14:00</strong>
                   </li>
-                  <li class="flex justify-between text-(--accent)">
+                  <li class="text-accent flex justify-between">
                     <p>Domingo:</p>
                     <strong>Cerrado</strong>
                   </li>
@@ -280,66 +289,64 @@
               </a>
             </div>
 
-            <ul class="space-y-6 text-(--text-on-image)" role="list">
+            <ul class="text-text-on-image space-y-6">
               <li
-                class="hover-zoom rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8"
+                class="hover-zoom border-border-glass bg-surface-glass hover:bg-surface-glass-hover rounded-2xl border p-5 backdrop-blur-sm transition-all duration-300 sm:p-8"
               >
                 <span
                   class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/coffee.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
                 <h3 class="mb-2">Café Artesanal</h3>
-                <p class="text-(--text-on-image-muted)">
+                <p class="text-text-on-image-muted">
                   Seleccionado y tostado a la perfección
                 </p>
               </li>
 
               <li
-                class="hover-zoom rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8"
+                class="hover-zoom border-border-glass bg-surface-glass hover:bg-surface-glass-hover rounded-2xl border p-5 backdrop-blur-sm transition-all duration-300 sm:p-8"
               >
                 <span
                   class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/music.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
                 <h3 class="mb-2">Ambiente Único</h3>
-                <p class="text-(--text-on-image-muted)">
+                <p class="text-text-on-image-muted">
                   Música y buena compañía garantizadas
                 </p>
               </li>
 
               <li
-                class="hover-zoom rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8"
+                class="hover-zoom border-border-glass bg-surface-glass hover:bg-surface-glass-hover rounded-2xl border p-5 backdrop-blur-sm transition-all duration-300 sm:p-8"
               >
                 <span
                   class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/users.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
                 <h3 class="mb-2">Comunidad</h3>
-                <p class="text-(--text-on-image-muted)">
+                <p class="text-text-on-image-muted">
                   Conecta con otros amantes del café
                 </p>
               </li>
             </ul>
           </div>
-        </div>
+        </section-body>
       </home-section>
       <home-section
         id="cta"
         heading-id="cta__title"
-        class="bg-(--surface-home-overlay)"
+        class="bg-surface-home-overlay"
       >
-        <div
-          class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
-        >
+        <section-body class="max-w-6xl">
           <h2
-            class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
+            class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             id="cta__title"
           >
             Tu café, donde quieras
           </h2>
 
           <p
-            class="text-center text-xl leading-relaxed text-(--text-on-image-muted) md:text-2xl"
+            class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
           >
             Disfruta de nuestro menú en el local o haz tu pedido online para
             llevar.
@@ -347,7 +354,6 @@
 
           <ul
             class="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row"
-            role="list"
           >
             <li>
               <a
@@ -374,75 +380,106 @@
               </a>
             </li>
           </ul>
-        </div>
+        </section-body>
+      </home-section>
+      <home-section
+        id="coffees"
+        heading-id="coffees__title"
+        class="bg-surface-home-overlay"
+      >
+        <section-body class="max-w-6xl">
+          <h2
+            class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
+            id="coffees__title"
+          >
+            Cafés del mes
+          </h2>
+          <p
+            class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
+          >
+            Orígenes de especialidad, tostados cada semana en pequeños lotes.
+          </p>
+          <ul class="mt-8 mb-8 grid gap-6 md:grid-cols-3">
+            <repeat
+              data="coffees"
+              component="coffee-card"
+              limit="3"
+              lcp="false"
+            ></repeat>
+          </ul>
+          <p class="text-center">
+            <a
+              href="/src/pages/coffees.html"
+              class="btn btn--secondary btn--on-image inline-block no-underline"
+            >
+              Ver todos los cafés
+            </a>
+          </p>
+        </section-body>
       </home-section>
       <home-section
         id="steps"
         heading-id="steps__title"
-        class="bg-(--surface-home-overlay)"
+        class="bg-surface-home-overlay"
       >
-        <div
-          class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
-        >
+        <section-body class="max-w-6xl">
           <h2
-            class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
+            class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             id="steps__title"
           >
             Así funciona tu suscripción
           </h2>
 
           <p
-            class="text-center text-xl leading-relaxed text-(--text-on-image-muted) md:text-2xl"
+            class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
           >
             Tres pasos y tu café favorito llega a casa cada mes.
           </p>
 
-          <ol
-            class="mt-8 mb-10 flex flex-col gap-10 md:flex-row md:gap-8"
-            role="list"
-          >
+          <ol class="mt-8 mb-10 flex flex-col gap-10 md:flex-row md:gap-8">
             <li class="flex flex-1 flex-col items-center text-center">
               <span
-                class="mb-4 flex size-14 items-center justify-center rounded-full border-2 border-(--text-on-image-accent) text-2xl font-bold text-(--text-on-image-accent)"
+                class="border-text-on-image-accent text-text-on-image-accent mb-4 flex size-14 items-center justify-center rounded-full border-2 text-2xl font-bold"
                 aria-hidden="true"
               >
                 1
               </span>
-              <h3 class="mb-2 text-2xl font-bold text-(--text-on-image)">
-                Elige tu café
+              <h3 class="text-text-on-image mb-2 text-2xl font-bold">
+                Elige tu café y tu plan
               </h3>
-              <p class="text-(--text-on-image-muted)">
-                Selecciona entre nuestros orígenes el que más te guste.
+              <p class="text-text-on-image-muted">
+                Escoge el origen que más te guste y cada cuánto lo quieres:
+                mensual, quincenal o semanal.
               </p>
             </li>
 
             <li class="flex flex-1 flex-col items-center text-center">
               <span
-                class="mb-4 flex size-14 items-center justify-center rounded-full border-2 border-(--text-on-image-accent) text-2xl font-bold text-(--text-on-image-accent)"
+                class="border-text-on-image-accent text-text-on-image-accent mb-4 flex size-14 items-center justify-center rounded-full border-2 text-2xl font-bold"
                 aria-hidden="true"
               >
                 2
               </span>
-              <h3 class="mb-2 text-2xl font-bold text-(--text-on-image)">
-                Elige tu plan
+              <h3 class="text-text-on-image mb-2 text-2xl font-bold">
+                Lo tostamos
               </h3>
-              <p class="text-(--text-on-image-muted)">
-                Mensual, quincenal o semanal: tú decides cada cuánto lo recibes.
+              <p class="text-text-on-image-muted">
+                Tostado en pequeños lotes, justo antes de enviarlo.
               </p>
             </li>
 
             <li class="flex flex-1 flex-col items-center text-center">
               <span
-                class="mb-4 flex size-14 items-center justify-center rounded-full border-2 border-(--text-on-image-accent) text-2xl font-bold text-(--text-on-image-accent)"
+                class="border-text-on-image-accent text-text-on-image-accent mb-4 flex size-14 items-center justify-center rounded-full border-2 text-2xl font-bold"
                 aria-hidden="true"
               >
                 3
               </span>
-              <h3 class="mb-2 text-2xl font-bold text-(--text-on-image)">
-                Recíbelo en casa
+              <h3 class="text-text-on-image mb-2 text-2xl font-bold">
+                Te llega a casa
               </h3>
-              <p class="text-(--text-on-image-muted)">
-                Tostado en pequeños lotes y enviado directamente a tu puerta.
+              <p class="text-text-on-image-muted">
+                Enviado directamente a tu puerta, fresco y listo para preparar.
               </p>
             </li>
           </ol>
@@ -457,26 +494,77 @@
             ></span>
             <span>Empezar mi suscripción</span>
           </a>
-        </div>
+        </section-body>
+      </home-section>
+      <home-section
+        id="plans"
+        heading-id="plans__title"
+        class="bg-surface-home-overlay"
+      >
+        <section-body class="max-w-6xl">
+          <h2
+            class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
+            id="plans__title"
+          >
+            Elige tu plan
+          </h2>
+          <p
+            class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
+          >
+            El mismo café, con la frecuencia que prefieras. Cancela cuando
+            quieras.
+          </p>
+          <ul class="mt-10 grid gap-8 md:grid-cols-3">
+            <repeat data="plans" component="plan-card"></repeat>
+          </ul>
+        </section-body>
+      </home-section>
+      <home-section
+        id="faq"
+        heading-id="faq__title"
+        class="bg-surface-home-overlay"
+      >
+        <section-body class="max-w-6xl">
+          <h2
+            class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
+            id="faq__title"
+          >
+            Preguntas frecuentes
+          </h2>
+          <p
+            class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
+          >
+            Lo que más nos preguntan antes de suscribirse.
+          </p>
+          <ul class="mx-auto mt-8 mb-8 max-w-3xl space-y-4">
+            <repeat data="faq" component="faq-item" limit="4"></repeat>
+          </ul>
+          <p class="text-center">
+            <a
+              href="/src/pages/faq.html"
+              class="btn btn--secondary btn--on-image inline-block no-underline"
+            >
+              Ver todas las preguntas
+            </a>
+          </p>
+        </section-body>
       </home-section>
       <home-section
         id="about"
         heading-id="about__title"
-        class="isolate bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] md:bg-[url(/photos/cafe-1.webp)] [&_:focus-visible]:outline-(--text-on-image)"
+        class="[&_:focus-visible]:outline-text-on-image before:from-surface-home-overlay/85 before:via-surface-home-overlay/80 before:to-surface-home-overlay/85 isolate bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-linear-to-r before:content-[''] md:bg-[url(/photos/cafe-1.webp)]"
       >
-        <div
-          class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
-        >
+        <section-body class="max-w-6xl">
           <header class="mb-16 text-center">
             <h2
               id="about__title"
-              class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
+              class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             >
               Más que Café
             </h2>
 
             <p
-              class="mx-auto max-w-3xl text-center text-xl leading-relaxed text-(--text-on-image-muted) md:text-2xl"
+              class="text-text-on-image-muted mx-auto max-w-3xl text-center text-xl leading-relaxed md:text-2xl"
             >
               Selección de granos, tueste artesanal y un profundo respeto por el
               origen. Trabajamos con productores que comparten nuestra visión de
@@ -484,16 +572,16 @@
             </p>
           </header>
 
-          <ul class="mb-12 grid gap-8 md:grid-cols-3" role="list">
+          <ul class="mb-12 grid gap-8 md:grid-cols-3">
             <li class="hover-zoom flex flex-col items-center text-center">
               <span
-                class="hover-zoom__target icon mb-6 block mask-[url(/icons/ui/globe.svg)] text-7xl text-(--text-on-image-accent)"
+                class="hover-zoom__target icon text-text-on-image-accent mb-6 block mask-[url(/icons/ui/globe.svg)] text-7xl"
                 aria-hidden="true"
               ></span>
-              <h3 class="mb-3 text-2xl font-bold text-(--text-on-image)">
+              <h3 class="text-text-on-image mb-3 text-2xl font-bold">
                 Origen Responsable
               </h3>
-              <p class="text-(--text-on-image-muted)">
+              <p class="text-text-on-image-muted">
                 Relaciones directas con productores locales que respetan el
                 medio ambiente
               </p>
@@ -501,13 +589,13 @@
 
             <li class="hover-zoom flex flex-col items-center text-center">
               <span
-                class="hover-zoom__target icon mb-6 block mask-[url(/icons/ui/flame.svg)] text-7xl text-(--text-on-image-accent)"
+                class="hover-zoom__target icon text-text-on-image-accent mb-6 block mask-[url(/icons/ui/flame.svg)] text-7xl"
                 aria-hidden="true"
               ></span>
-              <h3 class="mb-3 text-2xl font-bold text-(--text-on-image)">
+              <h3 class="text-text-on-image mb-3 text-2xl font-bold">
                 Tueste Artesanal
               </h3>
-              <p class="text-(--text-on-image-muted)">
+              <p class="text-text-on-image-muted">
                 Tostado a pequeños lotes para garantizar la máxima calidad y
                 frescura
               </p>
@@ -515,13 +603,13 @@
 
             <li class="hover-zoom flex flex-col items-center text-center">
               <span
-                class="hover-zoom__target icon mb-6 block mask-[url(/icons/ui/recycle.svg)] text-7xl text-(--text-on-image-accent)"
+                class="hover-zoom__target icon text-text-on-image-accent mb-6 block mask-[url(/icons/ui/recycle.svg)] text-7xl"
                 aria-hidden="true"
               ></span>
-              <h3 class="mb-3 text-2xl font-bold text-(--text-on-image)">
+              <h3 class="text-text-on-image mb-3 text-2xl font-bold">
                 Café Consciente
               </h3>
-              <p class="text-(--text-on-image-muted)">
+              <p class="text-text-on-image-muted">
                 Envases sostenibles y prácticas responsables en cada paso del
                 proceso
               </p>
@@ -538,7 +626,7 @@
             ></span>
             <span>Nuestra Historia</span>
           </a>
-        </div>
+        </section-body>
       </home-section>
     </main>
     <app-footer class="snap-end"></app-footer>
