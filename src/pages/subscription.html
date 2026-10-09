@@ -37,12 +37,12 @@
     <app-header></app-header>
 
     <main id="main-content">
-      <section class="page min-h-screen" aria-labelledby="sub-title">
+      <section class="page min-h-screen" aria-labelledby="subscription__title">
         <div class="mx-auto max-w-2xl">
           <back-link></back-link>
 
           <page-header
-            heading-id="sub-title"
+            heading-id="subscription__title"
             heading="Configura tu Suscripción"
           >
             <p class="lead">
@@ -51,12 +51,12 @@
           </page-header>
 
           <section
-            id="wizard"
-            aria-labelledby="subscription-wizard-title"
+            id="subscription__wizard"
+            aria-labelledby="subscription__wizard-title"
             class="px-0 py-4 sm:px-4 sm:py-12 lg:px-8"
           >
             <header class="mb-8 text-center">
-              <h2 id="subscription-wizard-title" class="sr-only">
+              <h2 id="subscription__wizard-title" class="sr-only">
                 Pasos de la suscripción
               </h2>
               <p class="text-lg text-(--text-secondary)">
@@ -128,7 +128,7 @@
               novalidate
               data-validated
             >
-              <fieldset class="wizard__step wizard__step--active" data-step="1">
+              <fieldset class="wizard__step" data-step="1">
                 <legend class="heading heading--item mb-2">
                   ¿Qué café prefieres?
                 </legend>
@@ -211,7 +211,7 @@
                 </p>
                 <div class="grid gap-4 sm:grid-cols-2">
                   <form-field
-                    id="subscription-name"
+                    id="subscription__name"
                     name="name"
                     label="Nombre completo"
                     type="text"
@@ -221,7 +221,7 @@
                     class="sm:col-span-2"
                   ></form-field>
                   <form-field
-                    id="subscription-email"
+                    id="subscription__email"
                     name="email"
                     label="Email"
                     type="email"
@@ -231,7 +231,7 @@
                     class="sm:col-span-2"
                   ></form-field>
                   <form-field
-                    id="subscription-address"
+                    id="subscription__address"
                     name="address"
                     label="Dirección de envío"
                     type="text"
@@ -241,7 +241,7 @@
                     class="sm:col-span-2"
                   ></form-field>
                   <form-field
-                    id="subscription-city"
+                    id="subscription__city"
                     name="city"
                     label="Ciudad"
                     type="text"
@@ -250,7 +250,7 @@
                     error="Introduce tu ciudad."
                   ></form-field>
                   <form-field
-                    id="subscription-zip"
+                    id="subscription__zip"
                     name="zip"
                     label="Código postal"
                     type="text"

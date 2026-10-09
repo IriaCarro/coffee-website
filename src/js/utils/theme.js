@@ -1,15 +1,6 @@
 import themeSelectorTemplate from "../../components/theme-selector.html?raw";
 const THEME_KEY = "theme-preference";
 
-const THEMES = {
-  light: { label: "Claro", icon: "/icons/theme/sun.svg" },
-  dark: { label: "Oscuro", icon: "/icons/theme/moon.svg" },
-  matcha: { label: "Matcha", icon: "/icons/theme/matcha.svg" },
-  cafe: { label: "Café", icon: "/icons/theme/coffee.svg" },
-  blue: { label: "Azul", icon: "/icons/theme/blue.svg" },
-  violet: { label: "Violeta", icon: "/icons/theme/violet.svg" },
-};
-
 function getStoredTheme() {
   return localStorage.getItem(THEME_KEY);
 }
@@ -40,14 +31,9 @@ class ThemeSelector extends HTMLElement {
 
     this.toggle = this.querySelector("[data-theme-toggle]");
     this.menu = this.querySelector("[data-theme-menu]");
-    this.chevron = this.querySelector("[data-theme-chevron]");
-    this.chevron.src = "/icons/theme/chevron-down.svg";
-    this.querySelectorAll("[data-theme-icon-option]").forEach((icon) => {
-      icon.src = THEMES[icon.dataset.themeIconOption].icon;
-    });
 
     const stored = getStoredTheme();
-    this.applyTheme(stored && THEMES[stored] ? stored : getSystemTheme());
+    this.applyTheme(this.hasTheme(stored) ? stored : getSystemTheme());
 
     this.toggle.addEventListener("click", this.handleToggle);
     this.addEventListener("click", this.handleOptionClick);
@@ -66,11 +52,24 @@ class ThemeSelector extends HTMLElement {
     this.innerHTML = themeSelectorTemplate;
   }
 
+  optionFor(theme) {
+    return this.querySelector(
+      `[data-theme-menu] [data-theme="${CSS.escape(theme)}"]`,
+    );
+  }
+
+  // The menu options in theme-selector.html are the list of valid themes
+  hasTheme(theme) {
+    return Boolean(theme) && this.optionFor(theme) !== null;
+  }
+
   applyTheme(theme) {
-    const themeData = THEMES[theme];
+    const option = this.optionFor(theme);
     document.documentElement.dataset.theme = theme;
-    this.querySelector("[data-theme-icon]").src = themeData.icon;
-    this.querySelector("[data-theme-label]").textContent = themeData.label;
+    this.querySelector("[data-theme-icon]").src =
+      option.querySelector("img").src;
+    this.querySelector("[data-theme-label]").textContent =
+      option.querySelector("span").textContent;
 
     this.querySelectorAll("[data-theme-menu] [data-theme]").forEach(
       (option) => {
@@ -97,7 +96,7 @@ class ThemeSelector extends HTMLElement {
     if (!option || !this.contains(option)) return;
 
     const selected = option.dataset.theme;
-    if (!THEMES[selected]) return;
+    if (!this.hasTheme(selected)) return;
 
     storeTheme(selected);
     this.applyTheme(selected);

@@ -1,30 +1,36 @@
-<button
-  type="button"
-  class="gallery-lightbox__close absolute top-4 right-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--surface-control-overlay) text-2xl text-(--text-on-image) transition-colors duration-200 hover:bg-(--surface-control-overlay-hover) sm:h-12 sm:w-12 sm:text-3xl"
-  aria-label="Cerrar"
+<dialog
+  id="gallery__lightbox"
+  aria-label="Imagen ampliada"
+  class="m-auto h-screen max-h-none w-screen max-w-none bg-(--surface-transparent) p-2 backdrop:bg-(--surface-modal-overlay) backdrop:backdrop-blur-[4px] open:flex open:items-center open:justify-center open:gap-2 sm:p-4 sm:open:gap-4"
 >
-  &times;
-</button>
-<button
-  type="button"
-  class="gallery-lightbox__prev flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--surface-control-overlay) text-2xl text-(--text-on-image) transition-colors duration-200 hover:bg-(--surface-control-overlay-hover) sm:h-12 sm:w-12 sm:text-3xl"
-  aria-label="Anterior"
->
-  &#8249;
-</button>
-<figure class="flex max-h-full min-w-0 flex-col items-center gap-4">
-  <img
-    class="max-h-[80vh] max-w-full rounded-lg object-contain shadow-2xl"
-    alt=""
-  />
-  <figcaption
-    class="text-center text-sm text-(--text-on-image-muted)"
-  ></figcaption>
-</figure>
-<button
-  type="button"
-  class="gallery-lightbox__next flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--surface-control-overlay) text-2xl text-(--text-on-image) transition-colors duration-200 hover:bg-(--surface-control-overlay-hover) sm:h-12 sm:w-12 sm:text-3xl"
-  aria-label="Siguiente"
->
-  &#8250;
-</button>
+  <button
+    type="button"
+    class="gallery-lightbox__control gallery-lightbox__close absolute top-4 right-4"
+    aria-label="Cerrar"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <button
+    type="button"
+    class="gallery-lightbox__control gallery-lightbox__prev"
+    aria-label="Anterior"
+  >
+    <span aria-hidden="true">&#8249;</span>
+  </button>
+  <figure class="flex max-h-full min-w-0 flex-col items-center gap-4">
+    <img
+      class="max-h-[80vh] max-w-full rounded-lg object-contain shadow-2xl"
+      alt=""
+    />
+    <figcaption
+      class="text-center text-sm text-(--text-on-image-muted)"
+    ></figcaption>
+  </figure>
+  <button
+    type="button"
+    class="gallery-lightbox__control gallery-lightbox__next"
+    aria-label="Siguiente"
+  >
+    <span aria-hidden="true">&#8250;</span>
+  </button>
+</dialog>

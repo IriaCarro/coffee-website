@@ -1,0 +1,49 @@
+import { setAttributeOrRemove } from "../lib/aria.js";
+
+const renderIndicators = (currentStep) => {
+  document
+    .querySelectorAll("#subscription__progress-steps [data-step]")
+    .forEach((indicator) => {
+      const stepNumber = Number(indicator.dataset.step);
+      indicator.toggleAttribute("data-completed", stepNumber < currentStep);
+      setAttributeOrRemove(
+        indicator,
+        "aria-current",
+        stepNumber === currentStep ? "step" : null,
+      );
+    });
+};
+
+const renderBar = (currentStep, totalSteps) => {
+  // Width comes from the data-[step=N]: utilities on the bar
+  const bar = document.getElementById("subscription__progress-bar");
+  if (bar) bar.dataset.step = String(currentStep);
+
+  const track = document.getElementById("subscription__progress-track");
+  if (!track) return;
+  track.setAttribute("aria-valuemax", String(totalSteps));
+  track.setAttribute("aria-valuenow", String(currentStep));
+  track.setAttribute("aria-valuetext", `Paso ${currentStep} de ${totalSteps}`);
+};
+
+const renderControls = (currentStep, totalSteps) => {
+  const previous = document.getElementById("subscription__btn-prev");
+  const next = document.getElementById("subscription__btn-next");
+  const label = document.getElementById("subscription__current-step");
+  if (previous) previous.disabled = currentStep === 1;
+  if (next) {
+    next.textContent = currentStep === totalSteps ? "Finalizar" : "Siguiente";
+  }
+  if (label) label.textContent = currentStep;
+};
+
+// Shows the fieldset of the current step and syncs the progress UI with it
+export const renderProgress = (steps, currentStep) => {
+  const totalSteps = steps.length;
+  steps.forEach((step) => {
+    step.classList.toggle("hidden", Number(step.dataset.step) !== currentStep);
+  });
+  renderIndicators(currentStep);
+  renderBar(currentStep, totalSteps);
+  renderControls(currentStep, totalSteps);
+};

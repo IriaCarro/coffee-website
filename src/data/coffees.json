@@ -1,7 +1,6 @@
 [
   {
     "id": "etiopia",
-    "emoji": "🌸",
     "name": "Etiopía Floral",
     "description": "Notas florales, cítricas y dulces",
     "price": 14.9,
@@ -37,7 +36,6 @@
   },
   {
     "id": "colombia",
-    "emoji": "🍫",
     "name": "Colombia Caramelo",
     "description": "Caramelo, chocolate y frutos secos",
     "price": 12.9,
@@ -73,7 +71,6 @@
   },
   {
     "id": "kenia",
-    "emoji": "🫐",
     "name": "Kenia Frutos Rojos",
     "description": "Frutos rojos, acidez brillante",
     "price": 15.5,
@@ -109,7 +106,6 @@
   },
   {
     "id": "brasil",
-    "emoji": "🥜",
     "name": "Brasil Avellana",
     "description": "Avellana, cacao y cuerpo cremoso",
     "price": 11.9,
@@ -145,7 +141,6 @@
   },
   {
     "id": "guatemala",
-    "emoji": "🍊",
     "name": "Guatemala Cítrico",
     "description": "Naranja, panela y especias suaves",
     "price": 13.5,
@@ -181,7 +176,6 @@
   },
   {
     "id": "costa-rica",
-    "emoji": "🍑",
     "name": "Costa Rica Melocotón",
     "description": "Melocotón, miel y té blanco",
     "price": 16.9,

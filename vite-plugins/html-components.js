@@ -1,59 +1,59 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
+  coffeeFields,
   formatPrice,
-  imageVariant,
+  imageVariants,
+  lcpPriority,
   renderTemplate,
-} from "../src/js/utils/template.js";
+} from "../src/js/lib/template.js";
 
 // Build-time components: <name attr="...">slot</name> is replaced by
 // src/components/<name>.html, so pages ship as plain static HTML.
 // Attributes fill {{attr}} placeholders and the inner HTML fills {{slot}}.
-const COMPONENTS = {
+const COMPONENTS = [
+  "app-footer",
+  "app-header",
+  "back-link",
+  "contact-item",
+  "cta-card",
+  "faq-item",
+  "form-field",
+  "form-textarea",
+  "home-section",
+  "page-header",
+];
+
+// Attribute values used when a page leaves them out
+const DEFAULTS = {
+  "app-footer": { class: "", year: String(new Date().getFullYear()) },
   "back-link": { href: "/", label: "Volver al inicio" },
-  "page-header": { class: "mb-8 text-center sm:mb-12" },
-  "cta-card": {},
-  "contact-item": {},
-  "faq-item": {},
-  "form-field": {
-    type: "text",
-    autocomplete: "off",
-    class: "",
-    extra: "",
-  },
+  "form-field": { type: "text", autocomplete: "off", class: "", extra: "" },
   "form-textarea": { rows: "5", class: "" },
-  "app-header": {},
-  "app-footer": { class: "" },
+  "home-section": { class: "" },
+  "page-header": { class: "mb-8 text-center sm:mb-12" },
 };
 
 // <repeat data="menu" component="menu-item"></repeat> renders the component
 // once per item of src/data/<data>.json; COLLECTIONS adds the derived fields.
 const COLLECTIONS = {
   coffees: (item, index) => ({
-    ...item,
-    // The first pack is the LCP element: load it right away
-    loading: index === 0 ? "eager" : "lazy",
-    priority: index === 0 ? "high" : "auto",
-    packImage400: imageVariant(item.packImage, 400),
-    formattedPrice: formatPrice(item.price),
+    ...coffeeFields(item),
+    ...lcpPriority(index),
   }),
   menu: (item) => ({
     ...item,
-    image400: imageVariant(item.image, 400),
-    image800: imageVariant(item.image, 800),
+    ...imageVariants(item.image),
     formattedPrice: formatPrice(item.price),
   }),
   gallery: (item, index) => ({
     ...item,
-    image400: imageVariant(item.image, 400),
-    image800: imageVariant(item.image, 800),
+    ...imageVariants(item.image),
+    ...lcpPriority(index),
     sizes: item.featured
       ? "(min-width: 1024px) 66vw, (min-width: 640px) 50vw, 100vw"
       : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
-    // The first photo is the LCP element: load it right away
-    loading: index === 0 ? "eager" : "lazy",
-    priority: index === 0 ? "high" : "auto",
-    modifier: item.featured ? "lg:col-span-2 lg:row-span-2" : "",
+    layout: item.featured ? "lg:col-span-2 lg:row-span-2" : "",
   }),
 };
 
@@ -68,7 +68,7 @@ export default function htmlComponents() {
   let root = process.cwd();
   const repeatPattern = /<repeat\b([^>]*)>\s*<\/repeat>/g;
   const pattern = new RegExp(
-    `<(${Object.keys(COMPONENTS).join("|")})\\b([^>]*)>([\\s\\S]*?)<\\/\\1\\s*>`,
+    `<(${COMPONENTS.join("|")})\\b([^>]*)>([\\s\\S]*?)<\\/\\1\\s*>`,
     "g",
   );
 
@@ -97,7 +97,7 @@ export default function htmlComponents() {
   const expand = (html) =>
     repeat(html).replace(pattern, (_, name, attributes, slot) =>
       renderTemplate(readComponent(name), {
-        ...COMPONENTS[name],
+        ...DEFAULTS[name],
         ...parseAttributes(attributes),
         slot,
       }),

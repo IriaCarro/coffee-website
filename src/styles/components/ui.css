@@ -1,25 +1,6 @@
 @layer components {
-  /* Reserve the header/footer space until the component fills it (avoids
-     layout shift) */
-  .faq-accordion {
-    @apply overflow-hidden rounded-lg border border-l-4 border-(--border-subtle) bg-(--surface-container) transition-colors duration-300;
-  }
-
-  .faq-accordion__summary {
-    @apply flex cursor-pointer list-none items-center justify-between gap-3 p-4 sm:gap-4 sm:p-6 [&::-webkit-details-marker]:hidden;
-    @apply focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-(--focus-ring);
-  }
-
-  .faq-accordion__question {
-    @apply text-base font-bold text-(--text-primary) sm:text-xl;
-  }
-
-  .faq-accordion__icon {
-    @apply h-3 w-3 shrink-0 rotate-45 border-r-2 border-b-2 border-(--text-primary) motion-safe:transition-transform motion-safe:duration-300 [.faq-accordion[open]>summary_&]:-rotate-[135deg];
-  }
-
-  .faq-accordion__answer {
-    @apply px-4 pb-4 leading-relaxed text-(--text-secondary) sm:px-6 sm:pb-6;
+  .gallery-lightbox__control {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--surface-control-overlay) text-2xl text-(--text-on-image) transition-colors duration-200 hover:bg-(--surface-control-overlay-hover) sm:h-12 sm:w-12 sm:text-3xl;
   }
 
   .page {

@@ -5,12 +5,8 @@ function initGalleryLightbox() {
   const figures = [...(gallery?.querySelectorAll("figure") ?? [])];
   if (!figures.length) return;
 
-  const dialog = document.createElement("dialog");
-  dialog.className =
-    "m-auto h-screen max-h-none w-screen max-w-none bg-(--surface-transparent) p-2 backdrop:bg-(--surface-modal-overlay) backdrop:backdrop-blur-[4px] open:flex open:items-center open:justify-center open:gap-2 sm:p-4 sm:open:gap-4";
-  dialog.setAttribute("aria-label", "Imagen ampliada");
-  dialog.innerHTML = galleryLightboxTemplate;
-  document.body.append(dialog);
+  document.body.insertAdjacentHTML("beforeend", galleryLightboxTemplate);
+  const dialog = document.getElementById("gallery__lightbox");
 
   const img = dialog.querySelector("img");
   const caption = dialog.querySelector("figcaption");

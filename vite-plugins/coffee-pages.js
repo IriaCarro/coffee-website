@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { imageVariant, renderTemplate } from "../src/js/utils/template.js";
+import { coffeeFields, renderTemplate } from "../src/js/lib/template.js";
 
 const escapeAttribute = (text) =>
   text.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
@@ -10,7 +10,10 @@ export default function coffeePages() {
   let root = process.cwd();
 
   const read = (file) => fs.readFileSync(path.resolve(root, file), "utf-8");
-  const getCoffees = () => JSON.parse(read("src/data/coffees.json"));
+  // Parsed once per build and again after coffees.json changes in dev
+  let coffees;
+  const getCoffees = () =>
+    (coffees ??= JSON.parse(read("src/data/coffees.json")));
   const pageFile = (id) => path.resolve(root, "coffees", id, "index.html");
 
   const renderPage = (coffee) => {
@@ -23,9 +26,7 @@ export default function coffeePages() {
       )
       .join("");
     const detail = renderTemplate(read("src/components/coffee-detail.html"), {
-      ...coffee,
-      packImage400: imageVariant(coffee.packImage, 400),
-      formattedPrice: coffee.price.toFixed(2).replace(".", ","),
+      ...coffeeFields(coffee),
       stars: "★".repeat(coffee.rating),
       flavorProfileHtml,
     });
@@ -79,6 +80,7 @@ export default function coffeePages() {
     },
 
     handleHotUpdate({ file, server }) {
+      coffees = undefined;
       if (
         /src\/(pages\/coffee-page|components\/coffee-detail[^/]*|data\/coffees\.json)/.test(
           file,

@@ -39,12 +39,12 @@
     <main id="main-content">
       <section
         class="bg-(--surface-page) px-4 py-8 transition-colors duration-300 sm:px-6 sm:py-12 lg:px-8"
-        aria-labelledby="contact-title"
+        aria-labelledby="contact__title"
       >
         <div class="mx-auto max-w-4xl">
           <back-link></back-link>
 
-          <page-header heading-id="contact-title" heading="Cómo Llegar">
+          <page-header heading-id="contact__title" heading="Cómo Llegar">
             <p class="text-xl text-(--text-primary)">
               Visítanos o contacta directamente con nuestro equipo
             </p>
@@ -53,11 +53,11 @@
           <div class="mb-8 grid gap-5 sm:mb-12 sm:gap-8 md:grid-cols-2">
             <section
               class="rounded-lg bg-(--surface-container) p-5 sm:p-8"
-              aria-labelledby="contact-location-title"
+              aria-labelledby="contact__location-title"
             >
               <h2
                 class="heading heading--section mb-6 flex items-center gap-3"
-                id="contact-location-title"
+                id="contact__location-title"
               >
                 <span
                   class="icon mask-[url(/icons/ui/pin.svg)] text-3xl text-(--accent)"
@@ -95,11 +95,11 @@
 
             <section
               class="rounded-lg bg-(--surface-container) p-5 sm:p-8"
-              aria-labelledby="contact-info-title"
+              aria-labelledby="contact__info-title"
             >
               <h2
                 class="heading heading--section mb-6 flex items-center gap-3"
-                id="contact-info-title"
+                id="contact__info-title"
               >
                 <span
                   class="icon mask-[url(/icons/ui/phone.svg)] text-3xl text-(--accent)"
@@ -187,8 +187,8 @@
             </section>
           </div>
 
-          <section class="mb-8 sm:mb-12" aria-labelledby="contact-map-title">
-            <h2 class="heading heading--section mb-6" id="contact-map-title">
+          <section class="mb-8 sm:mb-12" aria-labelledby="contact__map-title">
+            <h2 class="heading heading--section mb-6" id="contact__map-title">
               Nuestra Ubicación
             </h2>
             <figure
@@ -214,8 +214,8 @@
             </figure>
           </section>
 
-          <section class="mb-8 sm:mb-12" aria-labelledby="contact-form-title">
-            <h2 class="heading heading--section mb-6" id="contact-form-title">
+          <section class="mb-8 sm:mb-12" aria-labelledby="contact__form-title">
+            <h2 class="heading heading--section mb-6" id="contact__form-title">
               Envíanos un Mensaje
             </h2>
             <form
@@ -232,7 +232,7 @@
                 Todos los campos son obligatorios.
               </p>
               <form-field
-                id="name"
+                id="contact__name"
                 name="name"
                 label="Nombre Completo"
                 type="text"
@@ -241,7 +241,7 @@
                 error="Introduce tu nombre."
               ></form-field>
               <form-field
-                id="email"
+                id="contact__email"
                 name="email"
                 label="Email"
                 type="email"
@@ -250,7 +250,7 @@
                 error="Introduce un email válido, por ejemplo nombre@email.com."
               ></form-field>
               <form-field
-                id="subject"
+                id="contact__subject"
                 name="subject"
                 label="Asunto"
                 type="text"
@@ -259,7 +259,7 @@
                 class="sm:col-span-2"
               ></form-field>
               <form-textarea
-                id="message"
+                id="contact__message"
                 name="message"
                 label="Mensaje"
                 rows="5"
@@ -282,7 +282,7 @@
           </section>
 
           <cta-card
-            heading-id="contact-faq-title"
+            heading-id="contact__faq-title"
             heading="¿Tienes Preguntas?"
             href="/src/pages/faq.html"
             label="Ver FAQ"

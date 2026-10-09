@@ -50,14 +50,14 @@
     <app-header></app-header>
     <section-navigation class="contents"></section-navigation>
     <main id="main-content">
-      <section
+      <home-section
         id="hero"
-        aria-labelledby="hero-title"
-        class="theme-transition relative isolate flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) flex-col items-center justify-center gap-8 bg-[url(/photos/cafe-3-800.webp)] bg-cover bg-center px-6 py-12 before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-[linear-gradient(to_top,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_70%,transparent)_50%,color-mix(in_srgb,var(--surface-home-overlay)_35%,transparent)_75%,transparent)] after:content-[''] supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 md:flex-row md:bg-[url(/photos/cafe-3.webp)] md:after:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_70%,transparent)_50%,color-mix(in_srgb,var(--surface-home-overlay)_35%,transparent)_75%,transparent)] lg:px-16 xl:px-20 [&_:focus-visible]:outline-(--text-on-image)"
+        heading-id="hero__title"
+        class="isolate flex-col gap-8 bg-[url(/photos/cafe-3-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-[linear-gradient(to_top,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_70%,transparent)_50%,color-mix(in_srgb,var(--surface-home-overlay)_35%,transparent)_75%,transparent)] after:content-[''] md:flex-row md:bg-[url(/photos/cafe-3.webp)] md:after:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_70%,transparent)_50%,color-mix(in_srgb,var(--surface-home-overlay)_35%,transparent)_75%,transparent)] [&_:focus-visible]:outline-(--text-on-image)"
       >
         <div class="enter-fade-up relative z-10">
           <h1
-            id="hero-title"
+            id="hero__title"
             class="text-6xl leading-[0.9] font-bold text-(--text-on-image-title) sm:text-7xl lg:text-9xl"
           >
             <span class="block">Buen</span>
@@ -93,12 +93,12 @@
             </li>
           </ul>
         </div>
-      </section>
+      </home-section>
 
-      <section
+      <home-section
         id="breakfast"
-        aria-labelledby="breakfast-title"
-        class="theme-transition relative isolate flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center overflow-hidden bg-(--surface-page) bg-[radial-gradient(circle_at_70%_35%,color-mix(in_srgb,var(--accent-contrast)_14%,transparent),transparent_28rem)] px-6 py-12 before:pointer-events-none before:absolute before:inset-0 before:-z-1 before:bg-[radial-gradient(var(--text-primary)_0.7px,transparent_0.7px)] before:bg-size-[7px_7px] before:opacity-16 before:content-[''] supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 lg:px-16 xl:px-20"
+        heading-id="breakfast__title"
+        class="isolate overflow-hidden bg-(--surface-page) bg-[radial-gradient(circle_at_70%_35%,color-mix(in_srgb,var(--accent-contrast)_14%,transparent),transparent_28rem)] before:pointer-events-none before:absolute before:inset-0 before:-z-1 before:bg-[radial-gradient(var(--text-primary)_0.7px,transparent_0.7px)] before:bg-size-[7px_7px] before:opacity-16 before:content-['']"
       >
         <div
           class="absolute top-[18%] right-[7%] -z-10 h-[30px] w-[18px] rotate-[35deg] rounded-[50%] bg-(--accent) opacity-90 after:absolute after:top-[4px] after:left-[8px] after:h-[22px] after:w-[2px] after:rounded-[50%] after:bg-(--accent-contrast) after:content-[''] max-[800px]:hidden"
@@ -122,7 +122,7 @@
             class="group/wrap relative flex min-h-[clamp(300px,45vw,570px)] w-full items-center max-[800px]:min-h-[430px] max-[800px]:items-start"
           >
             <h2
-              id="breakfast-title"
+              id="breakfast__title"
               class="font-marker relative z-10 m-0 flex w-full rotate-[-3deg] items-center text-[length:clamp(5rem,15vw,14rem)] leading-[0.75] tracking-[-0.07em] whitespace-nowrap text-(--text-primary) select-none max-[800px]:block max-[800px]:text-[length:clamp(3.5rem,16.5vw,9rem)] max-[800px]:leading-[0.78] max-[800px]:whitespace-normal"
               aria-label="Desayunos"
             >
@@ -187,11 +187,11 @@
             </a>
           </div>
         </div>
-      </section>
-      <section
+      </home-section>
+      <home-section
         id="location"
-        aria-labelledby="location-title"
-        class="theme-transition relative isolate flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center px-6 py-12 before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 md:bg-[url(/photos/cafe-1.webp)] lg:px-16 xl:px-20 [&_:focus-visible]:outline-(--text-on-image)"
+        heading-id="location__title"
+        class="isolate bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] md:bg-[url(/photos/cafe-1.webp)] [&_:focus-visible]:outline-(--text-on-image)"
       >
         <div
           class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
@@ -200,7 +200,10 @@
             <div
               class="rounded-2xl bg-(--surface-muted) p-5 shadow-2xl backdrop-blur-sm sm:p-8 lg:p-10"
             >
-              <h2 id="location-title" class="heading heading--page md:text-5xl">
+              <h2
+                id="location__title"
+                class="heading heading--section md:text-5xl"
+              >
                 Un lugar para disfrutar
               </h2>
 
@@ -212,11 +215,11 @@
 
               <section
                 class="mb-6 rounded-xl border-l-4 border-(--accent) bg-(--surface-container) p-6"
-                aria-labelledby="info-address-title"
+                aria-labelledby="info__address-title"
               >
                 <h3
                   class="mb-3 flex items-center gap-3 font-bold text-(--text-primary)"
-                  id="info-address-title"
+                  id="info__address-title"
                 >
                   <span
                     class="icon mask-[url(/icons/ui/pin.svg)] text-(--accent)"
@@ -232,11 +235,11 @@
 
               <section
                 class="mb-6 rounded-xl border-l-4 border-(--accent) bg-(--surface-container) p-6"
-                aria-labelledby="info-hours-title"
+                aria-labelledby="info__hours-title"
               >
                 <h3
                   class="mb-3 flex items-center gap-3 font-bold text-(--text-primary)"
-                  id="info-hours-title"
+                  id="info__hours-title"
                 >
                   <span
                     class="icon mask-[url(/icons/ui/clock.svg)] text-(--accent)"
@@ -319,18 +322,18 @@
             </ul>
           </div>
         </div>
-      </section>
-      <section
+      </home-section>
+      <home-section
         id="cta"
-        aria-labelledby="cta-title"
-        class="theme-transition relative flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center bg-(--surface-home-overlay) px-6 py-12 supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 lg:px-16 xl:px-20"
+        heading-id="cta__title"
+        class="bg-(--surface-home-overlay)"
       >
         <div
           class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
         >
           <h2
             class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
-            id="cta-title"
+            id="cta__title"
           >
             Tu café, donde quieras
           </h2>
@@ -372,18 +375,18 @@
             </li>
           </ul>
         </div>
-      </section>
-      <section
+      </home-section>
+      <home-section
         id="steps"
-        aria-labelledby="steps-title"
-        class="theme-transition relative flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center bg-(--surface-home-overlay) px-6 py-12 supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 lg:px-16 xl:px-20"
+        heading-id="steps__title"
+        class="bg-(--surface-home-overlay)"
       >
         <div
           class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
         >
           <h2
             class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
-            id="steps-title"
+            id="steps__title"
           >
             Así funciona tu suscripción
           </h2>
@@ -455,18 +458,18 @@
             <span>Empezar mi suscripción</span>
           </a>
         </div>
-      </section>
-      <section
+      </home-section>
+      <home-section
         id="about"
-        aria-labelledby="about-title"
-        class="theme-transition relative isolate flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center px-6 py-12 before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 md:bg-[url(/photos/cafe-1.webp)] lg:px-16 xl:px-20 [&_:focus-visible]:outline-(--text-on-image)"
+        heading-id="about__title"
+        class="isolate bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] md:bg-[url(/photos/cafe-1.webp)] [&_:focus-visible]:outline-(--text-on-image)"
       >
         <div
           class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
         >
           <header class="mb-16 text-center">
             <h2
-              id="about-title"
+              id="about__title"
               class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
             >
               Más que Café
@@ -536,7 +539,7 @@
             <span>Nuestra Historia</span>
           </a>
         </div>
-      </section>
+      </home-section>
     </main>
     <app-footer class="snap-end"></app-footer>
   </body>
