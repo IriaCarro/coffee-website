@@ -14,22 +14,4 @@
 @import "./base.css";
 @import "./utilities.css";
 
-@import "./components/header.css";
-@import "./components/theme-selector.css";
-@import "./components/footer.css";
 @import "./components/ui.css";
-@import "./components/section-nav.css";
-
-@import "./icons.css";
-
-@import "./pages/home/hero.css";
-@import "./pages/home/breakfast.css";
-@import "./pages/home/sections.css";
-@import "./pages/about.css";
-@import "./pages/coffee-detail.css";
-@import "./pages/coffees.css";
-@import "./pages/contact.css";
-@import "./pages/faq.css";
-@import "./pages/gallery.css";
-@import "./pages/menu.css";
-@import "./pages/subscription.css";

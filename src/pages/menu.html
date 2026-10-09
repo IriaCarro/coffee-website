@@ -29,38 +29,41 @@
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
     <script type="module" src="/src/js/main.js"></script>
-    <script type="module" src="/src/js/utils/menu-items.js"></script>
   </head>
 
   <body>
     <app-header></app-header>
 
     <main id="main-content">
-      <section class="menu-page theme-transition" aria-labelledby="menu-title">
-        <div class="menu-page__container">
-          <nav class="menu-page__back" aria-label="Volver">
-            <a href="/" class="menu-page__back-link">
-              <span aria-hidden="true">&larr;</span>
-              <span>Volver al inicio</span>
-            </a>
-          </nav>
+      <section class="page" aria-labelledby="menu-title">
+        <div class="mx-auto max-w-6xl">
+          <back-link></back-link>
 
-          <header class="menu-page__header enter-fade-up">
-            <h1 class="menu-page__title" id="menu-title">
-              Menú de desayunos y bollería
-            </h1>
-            <p class="menu-page__subtitle">
+          <page-header
+            heading-id="menu-title"
+            heading="Menú de desayunos y bollería"
+            class="enter-fade-up mb-8 text-center sm:mb-12"
+          >
+            <p class="lead">
               Bollería recién horneada y desayunos para acompañar tu café
             </p>
-          </header>
+          </page-header>
 
           <h2 class="sr-only">Carta</h2>
-          <ul id="menu-list" class="menu-page__grid enter-fade-up"></ul>
+          <ul
+            id="menu__list"
+            class="enter-fade-up grid auto-rows-fr gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
+          >
+            <repeat data="menu" component="menu-item"></repeat>
+          </ul>
 
-          <section class="menu-special" aria-labelledby="menu-special-title">
-            <figure class="menu-special__figure">
+          <section
+            class="mt-12 grid items-center gap-6 sm:mt-16 md:grid-cols-2 md:gap-10"
+            aria-labelledby="menu-special-title"
+          >
+            <figure class="overflow-hidden rounded-lg shadow-lg">
               <img
-                class="menu-special__image"
+                class="aspect-3/2 h-auto w-full object-cover"
                 src="/photos/tortitas-800.webp"
                 srcset="
                   /photos/tortitas-400.webp   400w,
@@ -76,15 +79,22 @@
               />
             </figure>
             <div class="menu-special__content">
-              <p class="menu-special__eyebrow">Especial de la casa</p>
-              <h2 class="menu-special__title" id="menu-special-title">
+              <p
+                class="mb-2 text-sm font-bold tracking-[0.16em] text-(--accent) uppercase"
+              >
+                Especial de la casa
+              </p>
+              <h2
+                class="mb-3 text-3xl font-bold text-(--text-primary) sm:text-4xl"
+                id="menu-special-title"
+              >
                 Tortitas con frutos rojos
               </h2>
-              <p class="menu-special__description">
+              <p class="mb-4 text-lg text-(--text-secondary)">
                 Tortitas esponjosas con sirope, fresas, frambuesas, arándanos,
                 menta fresca y azúcar glas. Ideales con un café con leche.
               </p>
-              <p class="menu-special__price">7,50 €</p>
+              <p class="text-2xl font-bold text-(--accent)">7,50 €</p>
             </div>
           </section>
         </div>

@@ -1,8 +1,10 @@
-<li class="menu-item">
-  <article class="menu-card hover-zoom">
-    <div class="menu-card__media">
+<li class="@container">
+  <article
+    class="hover-zoom block h-full overflow-hidden rounded-lg border border-(--border-subtle) bg-(--surface-container) shadow-lg transition-colors duration-300 @xs:grid @xs:grid-cols-[10rem_1fr]"
+  >
+    <div class="relative aspect-[4/3] overflow-hidden @xs:aspect-auto">
       <img
-        class="menu-card__image hover-zoom__target"
+        class="hover-zoom__target absolute inset-0 h-full w-full object-cover"
         src="{{image800}}"
         srcset="{{image400}} 400w, {{image800}} 800w"
         sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
@@ -11,10 +13,12 @@
         decoding="async"
       />
     </div>
-    <div class="menu-card__content">
-      <h3 class="menu-card__title">{{name}}</h3>
-      <p class="menu-card__description">{{description}}</p>
-      <p class="menu-card__price">{{formattedPrice}}</p>
+    <div class="self-center p-5 @xs:p-4">
+      <h3 class="heading heading--item mb-2 @xs:mb-1 @xs:text-lg">{{name}}</h3>
+      <p class="mb-4 text-sm text-(--text-secondary) @xs:mb-2">
+        {{description}}
+      </p>
+      <p class="text-lg font-bold text-(--accent)">{{formattedPrice}}</p>
     </div>
   </article>
 </li>

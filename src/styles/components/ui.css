@@ -1,4 +1,53 @@
 @layer components {
+  /* Reserve the header/footer space until the component fills it (avoids
+     layout shift) */
+  .faq-accordion {
+    @apply overflow-hidden rounded-lg border border-l-4 border-(--border-subtle) bg-(--surface-container) transition-colors duration-300;
+  }
+
+  .faq-accordion__summary {
+    @apply flex cursor-pointer list-none items-center justify-between gap-3 p-4 sm:gap-4 sm:p-6 [&::-webkit-details-marker]:hidden;
+    @apply focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-(--focus-ring);
+  }
+
+  .faq-accordion__question {
+    @apply text-base font-bold text-(--text-primary) sm:text-xl;
+  }
+
+  .faq-accordion__icon {
+    @apply h-3 w-3 shrink-0 rotate-45 border-r-2 border-b-2 border-(--text-primary) motion-safe:transition-transform motion-safe:duration-300 [.faq-accordion[open]>summary_&]:-rotate-[135deg];
+  }
+
+  .faq-accordion__answer {
+    @apply px-4 pb-4 leading-relaxed text-(--text-secondary) sm:px-6 sm:pb-6;
+  }
+
+  .page {
+    @apply theme-transition bg-(--surface-page) px-4 py-8 sm:px-6 sm:py-12 lg:px-8;
+  }
+
+  .heading {
+    @apply font-bold text-(--text-primary);
+  }
+
+  .heading--section {
+    @apply text-2xl;
+  }
+
+  .heading--item {
+    @apply text-xl;
+  }
+
+  .lead {
+    @apply text-lg text-(--text-primary);
+  }
+
+  /* SVG used as a mask so it takes currentColor and follows the theme. Size
+     it with font-size; pick the glyph with mask-[url(/icons/ui/<name>.svg)] */
+  .icon {
+    @apply inline-block size-[1em] shrink-0 bg-current mask-contain mask-center mask-no-repeat align-[-0.125em];
+  }
+
   .btn {
     @apply rounded-lg px-6 py-3 font-medium transition-colors duration-200;
   }
@@ -38,7 +87,7 @@
     @apply bg-(--text-on-image-accent) text-(--surface-home-overlay);
   }
 
-  .form-label {
+  .form__label {
     @apply mb-1 block text-sm font-medium transition-colors duration-300;
     @apply text-(--text-primary);
   }
@@ -47,11 +96,6 @@
     @apply border-(--focus-ring) ring-2 ring-(--focus-ring)/30;
   }
 
-  /* Invalid state, two ways. aria-invalid is set by form-validation.js and
-     also covers "Next" and submit on fields the user never visited. The
-     native :user-invalid (after the user has touched the field) works without
-     JS. It sits in @supports because one unsupported selector would drop its
-     whole rule. */
   :is(input, textarea)[aria-invalid="true"] {
     @apply border-(--border-error);
   }
@@ -61,7 +105,7 @@
       @apply border-(--border-error);
     }
 
-    .form-error {
+    .form__error {
       @apply peer-user-invalid:block;
     }
   }
@@ -70,7 +114,7 @@
     @apply cursor-not-allowed opacity-60;
   }
 
-  .form-error {
+  .form__error {
     @apply mt-1 hidden text-sm font-medium text-(--text-error) peer-aria-invalid:block;
   }
 

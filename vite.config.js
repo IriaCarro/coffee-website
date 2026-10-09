@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import coffeePages from "./vite-plugins/coffee-pages.js";
+import htmlComponents from "./vite-plugins/html-components.js";
 
 export default defineConfig({
-  plugins: [tailwindcss(), coffeePages()],
+  plugins: [tailwindcss(), htmlComponents(), coffeePages()],
   build: {
     rollupOptions: {
       input: [

@@ -29,7 +29,7 @@ export default function coffeePages() {
       stars: "★".repeat(coffee.rating),
       flavorProfileHtml,
     });
-    return renderTemplate(read("src/templates/coffee-page.html"), {
+    return renderTemplate(read("src/pages/coffee-page.html"), {
       name: coffee.name,
       metaDescription: escapeAttribute(
         `${coffee.name}: ${coffee.description}. ${coffee.origin}, ${coffee.roast}.`,
@@ -80,7 +80,7 @@ export default function coffeePages() {
 
     handleHotUpdate({ file, server }) {
       if (
-        /src\/(templates\/coffee-page|components\/coffee-detail[^/]*|data\/coffees\.json)/.test(
+        /src\/(pages\/coffee-page|components\/coffee-detail[^/]*|data\/coffees\.json)/.test(
           file,
         )
       ) {

@@ -37,134 +37,165 @@
     <app-header></app-header>
 
     <main id="main-content">
-      <section class="contact" aria-labelledby="contact-title">
-        <div class="contact__container">
-          <nav class="contact__back" aria-label="Volver">
-            <a href="/" class="contact__back-link contact__link">
-              <span aria-hidden="true">&larr;</span>
-              <span>Volver al inicio</span>
-            </a>
-          </nav>
+      <section
+        class="bg-(--surface-page) px-4 py-8 transition-colors duration-300 sm:px-6 sm:py-12 lg:px-8"
+        aria-labelledby="contact-title"
+      >
+        <div class="mx-auto max-w-4xl">
+          <back-link></back-link>
 
-          <header class="contact__header">
-            <h1 class="contact__title" id="contact-title">Cómo Llegar</h1>
-            <p class="contact__subtitle">
+          <page-header heading-id="contact-title" heading="Cómo Llegar">
+            <p class="text-xl text-(--text-primary)">
               Visítanos o contacta directamente con nuestro equipo
             </p>
-          </header>
+          </page-header>
 
-          <div class="contact__grid">
+          <div class="mb-8 grid gap-5 sm:mb-12 sm:gap-8 md:grid-cols-2">
             <section
-              class="contact__card"
+              class="rounded-lg bg-(--surface-container) p-5 sm:p-8"
               aria-labelledby="contact-location-title"
             >
-              <h2 class="contact__card-title" id="contact-location-title">
+              <h2
+                class="heading heading--section mb-6 flex items-center gap-3"
+                id="contact-location-title"
+              >
                 <span
-                  class="contact__card-icon icon icon--pin"
+                  class="icon mask-[url(/icons/ui/pin.svg)] text-3xl text-(--accent)"
                   aria-hidden="true"
                 ></span>
                 Ubicación
               </h2>
               <dl>
-                <dt class="contact__item-title">Oficina Principal</dt>
-                <dd>
-                  <address class="contact__text contact__address">
-                    Calle del Café, 42<br />
-                    28001 Madrid, España
-                  </address>
-                </dd>
-                <dt class="contact__item-title">Horario</dt>
-                <dd class="contact__text">Lunes - Viernes: 9:00 - 18:00</dd>
-                <dd class="contact__text">Sábado: 10:00 - 14:00</dd>
-                <dd class="contact__text">Domingo: Cerrado</dd>
-                <dt class="contact__item-title">Transporte Público</dt>
-                <dd class="contact__text">Metro: Línea 3, Estación Centro</dd>
-                <dd class="contact__text">
-                  Autobús: Línea 27, Parada Café Rico
-                </dd>
+                <contact-item term="Oficina Principal">
+                  <dd>
+                    <address class="text-(--text-primary) not-italic">
+                      Calle del Café, 42
+                      <br />
+                      28001 Madrid, España
+                    </address>
+                  </dd>
+                </contact-item>
+                <contact-item term="Horario">
+                  <dd class="text-(--text-primary)">
+                    Lunes - Viernes: 9:00 - 18:00
+                  </dd>
+                  <dd class="text-(--text-primary)">Sábado: 10:00 - 14:00</dd>
+                  <dd class="text-(--text-primary)">Domingo: Cerrado</dd>
+                </contact-item>
+                <contact-item term="Transporte Público">
+                  <dd class="text-(--text-primary)">
+                    Metro: Línea 3, Estación Centro
+                  </dd>
+                  <dd class="text-(--text-primary)">
+                    Autobús: Línea 27, Parada Café Rico
+                  </dd>
+                </contact-item>
               </dl>
             </section>
 
-            <section class="contact__card" aria-labelledby="contact-info-title">
-              <h2 class="contact__card-title" id="contact-info-title">
+            <section
+              class="rounded-lg bg-(--surface-container) p-5 sm:p-8"
+              aria-labelledby="contact-info-title"
+            >
+              <h2
+                class="heading heading--section mb-6 flex items-center gap-3"
+                id="contact-info-title"
+              >
                 <span
-                  class="contact__card-icon icon icon--phone"
+                  class="icon mask-[url(/icons/ui/phone.svg)] text-3xl text-(--accent)"
                   aria-hidden="true"
                 ></span>
                 Contacto
               </h2>
               <dl>
-                <dt class="contact__item-title">Teléfono</dt>
-                <dd>
-                  <a href="tel:+34912345678" class="contact__link"
-                    >+34 91 234 5678</a
-                  >
-                </dd>
-                <dt class="contact__item-title">Email</dt>
-                <dd>
-                  <a href="mailto:caferico@correo.com" class="contact__link"
-                    >caferico@correo.com</a
-                  >
-                </dd>
-                <dt class="contact__item-title">Atención al Cliente</dt>
-                <dd>
-                  <a href="mailto:soporte@caferico.com" class="contact__link"
-                    >soporte@caferico.com</a
-                  >
-                  <p class="contact__text-note">Respuesta en 24 horas</p>
-                </dd>
-                <dt class="contact__item-title">Redes Sociales</dt>
-                <dd>
-                  <ul class="contact__social" role="list">
-                    <li>
-                      <a
-                        href="#"
-                        class="contact__social-link"
-                        aria-label="Facebook"
-                      >
-                        <span
-                          class="icon icon--facebook"
-                          aria-hidden="true"
-                        ></span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="contact__social-link"
-                        aria-label="Instagram"
-                      >
-                        <span
-                          class="icon icon--instagram"
-                          aria-hidden="true"
-                        ></span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="contact__social-link"
-                        aria-label="Twitter"
-                      >
-                        <span
-                          class="icon icon--twitter"
-                          aria-hidden="true"
-                        ></span>
-                      </a>
-                    </li>
-                  </ul>
-                </dd>
+                <contact-item term="Teléfono">
+                  <dd>
+                    <a
+                      href="tel:+34912345678"
+                      class="text-(--text-primary) transition-colors hover:text-(--accent)"
+                    >
+                      +34 91 234 5678
+                    </a>
+                  </dd>
+                </contact-item>
+                <contact-item term="Email">
+                  <dd>
+                    <a
+                      href="mailto:caferico@correo.com"
+                      class="text-(--text-primary) transition-colors hover:text-(--accent)"
+                    >
+                      caferico@correo.com
+                    </a>
+                  </dd>
+                </contact-item>
+                <contact-item term="Atención al Cliente">
+                  <dd>
+                    <a
+                      href="mailto:soporte@caferico.com"
+                      class="text-(--text-primary) transition-colors hover:text-(--accent)"
+                    >
+                      soporte@caferico.com
+                    </a>
+                    <p class="mt-2 text-sm text-(--text-primary)">
+                      Respuesta en 24 horas
+                    </p>
+                  </dd>
+                </contact-item>
+                <contact-item term="Redes Sociales">
+                  <dd>
+                    <ul class="flex gap-3" role="list">
+                      <li>
+                        <a
+                          href="#"
+                          class="text-2xl transition-transform hover:motion-safe:scale-110"
+                          aria-label="Facebook"
+                        >
+                          <span
+                            class="icon mask-[url(/icons/ui/facebook.svg)]"
+                            aria-hidden="true"
+                          ></span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="text-2xl transition-transform hover:motion-safe:scale-110"
+                          aria-label="Instagram"
+                        >
+                          <span
+                            class="icon mask-[url(/icons/ui/instagram.svg)]"
+                            aria-hidden="true"
+                          ></span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="text-2xl transition-transform hover:motion-safe:scale-110"
+                          aria-label="Twitter"
+                        >
+                          <span
+                            class="icon mask-[url(/icons/ui/twitter.svg)]"
+                            aria-hidden="true"
+                          ></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </dd>
+                </contact-item>
               </dl>
             </section>
           </div>
 
-          <section class="contact__block" aria-labelledby="contact-map-title">
-            <h2 class="contact__block-title" id="contact-map-title">
+          <section class="mb-8 sm:mb-12" aria-labelledby="contact-map-title">
+            <h2 class="heading heading--section mb-6" id="contact-map-title">
               Nuestra Ubicación
             </h2>
-            <figure class="contact__map">
+            <figure
+              class="flex h-72 flex-col items-center justify-center overflow-hidden rounded-lg bg-(--surface-container) p-4 text-center sm:h-96"
+            >
               <span
-                class="contact__map-icon icon icon--map"
+                class="icon mb-4 mask-[url(/icons/ui/map.svg)] text-6xl text-(--accent)"
                 aria-hidden="true"
               ></span>
               <iframe
@@ -172,120 +203,92 @@
                 width="850"
                 height="288"
                 title="Mapa de la ubicación de Café Rico"
-                class="contact__map-frame"
+                class="w-full max-w-full border-0"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
-              <figcaption class="contact__text-note">
+              <figcaption class="mt-2 text-sm text-(--text-primary)">
                 Calle del Café, 42 - Madrid
               </figcaption>
             </figure>
           </section>
 
-          <section class="contact__block" aria-labelledby="contact-form-title">
-            <h2 class="contact__block-title" id="contact-form-title">
+          <section class="mb-8 sm:mb-12" aria-labelledby="contact-form-title">
+            <h2 class="heading heading--section mb-6" id="contact-form-title">
               Envíanos un Mensaje
             </h2>
             <form
-              class="contact__form"
-              aria-describedby="contact-form-note"
+              id="contact__form"
+              class="grid gap-6 rounded-lg bg-(--surface-container) p-5 sm:grid-cols-2 sm:p-8"
+              aria-describedby="contact__note"
               novalidate
               data-validated
             >
               <p
-                class="contact__text-note contact__text-note--full"
-                id="contact-form-note"
+                class="mt-2 text-sm text-(--text-primary) sm:col-span-2"
+                id="contact__note"
               >
                 Todos los campos son obligatorios.
               </p>
-              <label for="name" class="contact__field">
-                <span class="form-label">Nombre Completo</span>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Tu nombre"
-                  class="contact__input peer"
-                  autocomplete="name"
-                  required
-                />
-                <span class="form-error" id="name-error"
-                  >Introduce tu nombre.</span
-                >
-              </label>
-              <label for="email" class="contact__field">
-                <span class="form-label">Email</span>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="tu@email.com"
-                  class="contact__input peer"
-                  autocomplete="email"
-                  required
-                />
-                <span class="form-error" id="email-error"
-                  >Introduce un email válido, por ejemplo
-                  nombre@email.com.</span
-                >
-              </label>
-              <label for="subject" class="contact__field contact__field--full">
-                <span class="form-label">Asunto</span>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  placeholder="¿En qué podemos ayudarte?"
-                  class="contact__input peer"
-                  required
-                />
-                <span class="form-error" id="subject-error"
-                  >Indica el asunto del mensaje.</span
-                >
-              </label>
-              <label for="message" class="contact__field contact__field--full">
-                <span class="form-label">Mensaje</span>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  placeholder="Tu mensaje..."
-                  class="contact__input contact__textarea peer"
-                  required
-                ></textarea>
-                <span class="form-error" id="message-error"
-                  >Escribe tu mensaje.</span
-                >
-              </label>
+              <form-field
+                id="name"
+                name="name"
+                label="Nombre Completo"
+                type="text"
+                placeholder="Tu nombre"
+                autocomplete="name"
+                error="Introduce tu nombre."
+              ></form-field>
+              <form-field
+                id="email"
+                name="email"
+                label="Email"
+                type="email"
+                placeholder="tu@email.com"
+                autocomplete="email"
+                error="Introduce un email válido, por ejemplo nombre@email.com."
+              ></form-field>
+              <form-field
+                id="subject"
+                name="subject"
+                label="Asunto"
+                type="text"
+                placeholder="¿En qué podemos ayudarte?"
+                error="Indica el asunto del mensaje."
+                class="sm:col-span-2"
+              ></form-field>
+              <form-textarea
+                id="message"
+                name="message"
+                label="Mensaje"
+                rows="5"
+                placeholder="Tu mensaje..."
+                error="Escribe tu mensaje."
+                class="sm:col-span-2"
+              ></form-textarea>
               <button
                 type="submit"
-                class="contact__action contact__submit contact__submit--full"
+                class="w-full rounded-lg bg-(--accent) px-6 py-3 font-medium text-(--text-on-accent) transition-colors duration-200 hover:bg-(--accent-hover) hover:text-(--text-on-accent-hover) sm:col-span-2"
               >
                 Enviar Mensaje
               </button>
               <p
                 role="status"
-                class="contact__text-note contact__text-note--full"
-                id="contact-form-status"
+                class="mt-2 text-sm text-(--text-primary) sm:col-span-2"
+                id="contact__status"
               ></p>
             </form>
           </section>
 
-          <section class="contact__faq" aria-labelledby="contact-faq-title">
-            <h2 class="contact__faq-title" id="contact-faq-title">
-              ¿Tienes Preguntas?
-            </h2>
-            <p class="contact__faq-text">
-              Consulta nuestras preguntas frecuentes para respuestas rápidas
-            </p>
-            <a
-              href="/src/pages/faq.html"
-              class="contact__action contact__faq-button"
-            >
-              Ver FAQ
-            </a>
-          </section>
+          <cta-card
+            heading-id="contact-faq-title"
+            heading="¿Tienes Preguntas?"
+            href="/src/pages/faq.html"
+            label="Ver FAQ"
+          >
+            Consulta nuestras preguntas frecuentes para respuestas rápidas
+          </cta-card>
         </div>
       </section>
     </main>

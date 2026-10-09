@@ -6,13 +6,14 @@ function initGalleryLightbox() {
   if (!figures.length) return;
 
   const dialog = document.createElement("dialog");
-  dialog.className = "gallery-lightbox";
+  dialog.className =
+    "m-auto h-screen max-h-none w-screen max-w-none bg-(--surface-transparent) p-2 backdrop:bg-(--surface-modal-overlay) backdrop:backdrop-blur-[4px] open:flex open:items-center open:justify-center open:gap-2 sm:p-4 sm:open:gap-4";
   dialog.setAttribute("aria-label", "Imagen ampliada");
   dialog.innerHTML = galleryLightboxTemplate;
   document.body.append(dialog);
 
-  const img = dialog.querySelector(".gallery-lightbox__img");
-  const caption = dialog.querySelector(".gallery-lightbox__caption");
+  const img = dialog.querySelector("img");
+  const caption = dialog.querySelector("figcaption");
   let current = 0;
 
   const show = (index) => {
@@ -27,7 +28,9 @@ function initGalleryLightbox() {
   };
 
   gallery.addEventListener("click", (e) => {
-    const figure = e.target.closest(".gallery__zoom")?.closest("figure");
+    const figure = e.target
+      .closest("button[aria-haspopup=dialog]")
+      ?.closest("figure");
     if (!figure) return;
     show(figures.indexOf(figure));
     dialog.showModal();

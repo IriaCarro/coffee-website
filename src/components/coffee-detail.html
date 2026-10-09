@@ -1,13 +1,8 @@
-<div class="detail__container">
-  <nav class="detail__back" aria-label="Volver">
-    <a href="/src/pages/coffees.html" class="detail__back-link">
-      <span aria-hidden="true">&larr;</span>
-      <span>Volver a Cafés</span>
-    </a>
-  </nav>
+<div class="mx-auto max-w-4xl">
+  <back-link href="/src/pages/coffees.html" label="Volver a Cafés"></back-link>
 
-  <header class="detail__header">
-    <div class="detail__image-wrap">
+  <header class="mb-8 grid gap-8 sm:mb-12 md:grid-cols-2">
+    <div class="flex items-center justify-center">
       <img
         src="{{packImage}}"
         srcset="{{packImage400}} 400w, {{packImage}} 800w"
@@ -16,115 +11,113 @@
         height="1200"
         fetchpriority="high"
         alt="Pack de café {{name}}"
-        class="detail__image"
+        class="max-h-72 w-full object-contain sm:max-h-[36rem]"
       />
     </div>
 
-    <div class="detail__info">
-      <h1 class="detail__title">{{name}}</h1>
+    <div class="flex flex-col justify-center">
+      <h1 class="heading mb-4 text-3xl sm:text-4xl">{{name}}</h1>
 
-      <div class="detail__summary">
-        <p class="detail__tagline">{{description}}</p>
-        <p class="detail__price">
-          {{formattedPrice}} € <span class="detail__price-unit">/mes</span>
+      <div class="mb-6">
+        <p class="lead mb-2">{{description}}</p>
+        <p class="text-3xl font-bold text-(--text-primary)">
+          {{formattedPrice}} €
+          <span class="text-lg">/mes</span>
         </p>
       </div>
 
-      <div class="detail__rating">
+      <div class="mb-6">
         <div
-          class="detail__stars"
+          class="mb-2 flex gap-1"
           role="img"
           aria-label="Valoración: {{rating}} de 5"
         >
-          <span class="detail__stars-text" aria-hidden="true">{{stars}}</span>
+          <span class="text-xl" aria-hidden="true">{{stars}}</span>
         </div>
-        <p class="detail__reviews">{{reviews}} reseñas</p>
+        <p class="text-(--text-primary)">{{reviews}} reseñas</p>
       </div>
     </div>
   </header>
 
-  <section class="detail__block" aria-labelledby="detail-description-title">
-    <h2 id="detail-description-title" class="detail__block-title">
+  <section class="mb-8 sm:mb-12" aria-labelledby="detail-description-title">
+    <h2 id="detail-description-title" class="heading heading--section mb-4">
       Descripción
     </h2>
-    <p class="detail__paragraph">{{detailedDescription}}</p>
+    <p class="lead">{{detailedDescription}}</p>
   </section>
 
   <section aria-labelledby="detail-specs-title">
     <h2 id="detail-specs-title" class="sr-only">Ficha técnica</h2>
-    <dl class="detail__specs">
-      <div class="detail__spec-card">
-        <dt class="detail__spec-title">Origen</dt>
-        <dd class="detail__spec-text">{{origin}}</dd>
+    <dl class="mb-8 grid grid-cols-2 gap-3 sm:mb-12 sm:gap-6 lg:grid-cols-4">
+      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
+        <dt class="mb-2 font-bold text-(--text-primary)">Origen</dt>
+        <dd class="text-(--text-primary)">{{origin}}</dd>
       </div>
 
-      <div class="detail__spec-card">
-        <dt class="detail__spec-title">Tueste</dt>
-        <dd class="detail__spec-text">{{roast}}</dd>
+      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
+        <dt class="mb-2 font-bold text-(--text-primary)">Tueste</dt>
+        <dd class="text-(--text-primary)">{{roast}}</dd>
       </div>
 
-      <div class="detail__spec-card">
-        <dt class="detail__spec-title">Altitud</dt>
-        <dd class="detail__spec-text">{{altitude}}</dd>
+      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
+        <dt class="mb-2 font-bold text-(--text-primary)">Altitud</dt>
+        <dd class="text-(--text-primary)">{{altitude}}</dd>
       </div>
 
-      <div class="detail__spec-card">
-        <dt class="detail__spec-title">Producción</dt>
-        <dd class="detail__spec-text">{{production}}</dd>
+      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
+        <dt class="mb-2 font-bold text-(--text-primary)">Producción</dt>
+        <dd class="text-(--text-primary)">{{production}}</dd>
       </div>
     </dl>
   </section>
 
-  <section class="detail__block" aria-labelledby="detail-flavor-title">
-    <h2
-      id="detail-flavor-title"
-      class="detail__block-title detail__block-title--lg"
-    >
+  <section class="mb-8 sm:mb-12" aria-labelledby="detail-flavor-title">
+    <h2 id="detail-flavor-title" class="heading heading--section mb-6">
       Perfil de Sabor
     </h2>
-    <dl class="detail__list">{{flavorProfileHtml}}</dl>
+    <dl class="space-y-4">{{flavorProfileHtml}}</dl>
   </section>
 
-  <section class="detail__block" aria-labelledby="detail-brewing-title">
-    <h2
-      id="detail-brewing-title"
-      class="detail__block-title detail__block-title--lg"
-    >
+  <section class="mb-8 sm:mb-12" aria-labelledby="detail-brewing-title">
+    <h2 id="detail-brewing-title" class="heading heading--section mb-6">
       Recomendaciones de Preparación
     </h2>
-    <dl class="detail__list">
-      <div class="detail__spec-card">
-        <dt class="detail__spec-title">Temperatura</dt>
-        <dd class="detail__spec-text">{{brewing.temperature}}</dd>
+    <dl class="space-y-4">
+      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
+        <dt class="mb-2 font-bold text-(--text-primary)">Temperatura</dt>
+        <dd class="text-(--text-primary)">{{brewing.temperature}}</dd>
       </div>
 
-      <div class="detail__spec-card">
-        <dt class="detail__spec-title">Molienda</dt>
-        <dd class="detail__spec-text">{{brewing.grind}}</dd>
+      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
+        <dt class="mb-2 font-bold text-(--text-primary)">Molienda</dt>
+        <dd class="text-(--text-primary)">{{brewing.grind}}</dd>
       </div>
 
-      <div class="detail__spec-card">
-        <dt class="detail__spec-title">Proporción</dt>
-        <dd class="detail__spec-text">{{brewing.ratio}}</dd>
+      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
+        <dt class="mb-2 font-bold text-(--text-primary)">Proporción</dt>
+        <dd class="text-(--text-primary)">{{brewing.ratio}}</dd>
       </div>
 
-      <div class="detail__spec-card">
-        <dt class="detail__spec-title">Métodos Recomendados</dt>
-        <dd class="detail__spec-text">{{brewing.methods}}</dd>
+      <div class="rounded-lg bg-(--surface-container) p-4 sm:p-6">
+        <dt class="mb-2 font-bold text-(--text-primary)">
+          Métodos Recomendados
+        </dt>
+        <dd class="text-(--text-primary)">{{brewing.methods}}</dd>
       </div>
     </dl>
   </section>
 
-  <aside class="detail__cta" aria-labelledby="detail-cta-title">
-    <h2 id="detail-cta-title" class="detail__block-title">
+  <aside
+    class="rounded-lg bg-(--surface-container) p-5 text-center sm:p-8"
+    aria-labelledby="detail-cta-title"
+  >
+    <h2 id="detail-cta-title" class="heading heading--section mb-4">
       ¿Te gustaría probarlo?
     </h2>
-    <p class="detail__cta-text">
-      Suscríbete y recibe este café premium cada mes
-    </p>
+    <p class="lead mb-6">Suscríbete y recibe este café premium cada mes</p>
     <a
       href="/src/pages/subscription.html#wizard"
-      class="btn btn--primary detail__cta-button"
+      class="btn btn--primary inline-block"
     >
       Comenzar Suscripción
     </a>

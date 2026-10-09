@@ -1,7 +1,7 @@
 import { validateFields } from "./form-validation.js";
 
-const form = document.querySelector(".contact__form");
-const status = document.getElementById("contact-form-status");
+const form = document.getElementById("contact__form");
+const status = document.getElementById("contact__status");
 
 // There is no backend yet: log the data instead of sending it
 form?.addEventListener("submit", (event) => {

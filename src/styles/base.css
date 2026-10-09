@@ -3,32 +3,23 @@
    Reset, HTML/body, native elements and utility classes
    ============================================================================ */
 
-@layer reset {
-  * {
-    box-sizing: border-box;
-  }
-}
-
 @layer base {
   html {
     @apply motion-safe:scroll-smooth;
   }
 
   body {
-    font-family: var(--font-sans);
-    background-color: var(--surface-page);
-    color: var(--text-primary);
+    @apply box-border bg-(--surface-page) font-sans text-(--text-primary);
   }
 
   h1,
   h2 {
-    font-family: var(--font-display);
+    @apply font-display;
   }
 
   /* Keyboard focus for links, buttons and anything else focusable */
   :focus-visible {
-    outline: 2px solid var(--focus-ring);
-    outline-offset: 2px;
+    @apply outline-2 outline-offset-2 outline-(--focus-ring);
   }
 
   label {
@@ -42,15 +33,6 @@
     @apply border-(--border-input) bg-(--surface-container) text-(--text-primary);
   }
 
-  input[type="text"]:focus-visible,
-  input[type="email"]:focus-visible,
-  textarea:focus-visible,
-  input[type="radio"]:focus-visible,
-  input[type="checkbox"]:focus-visible {
-    outline: 2px solid var(--focus-ring);
-    outline-offset: 2px;
-  }
-
   input[type="radio"],
   input[type="checkbox"] {
     @apply h-4 w-4;
@@ -59,22 +41,9 @@
   /* Lists filled by JS start empty. What sits below them stays invisible until
      they have content: invisible elements don't count as layout shift when the
      list pushes them down. */
-  :is(
-      #menu-list,
-      [data-gallery],
-      #coffee-grid,
-      #subscription-coffee-options
-    ):empty
-    ~ *,
-  body:has(
-      :is(
-        #menu-list,
-        [data-gallery],
-        #coffee-grid,
-        #subscription-coffee-options
-      ):empty
-    )
-    :is(app-footer, .subscription__nav) {
+  #subscription__coffee-options:empty ~ *,
+  body:has(#subscription__coffee-options:empty)
+    :is(body > footer, .subscription__nav) {
     @apply invisible;
   }
 }

@@ -1,8 +1,10 @@
-<li class="gallery__item hover-zoom{{modifier}}">
-  <figure class="gallery__figure">
+<li
+  class="group hover-zoom relative overflow-hidden rounded-lg shadow-lg transition-shadow hover:shadow-xl {{modifier}}"
+>
+  <figure class="relative h-64 overflow-hidden sm:h-72 lg:h-full">
     <button
       type="button"
-      class="gallery__zoom"
+      class="block h-full w-full cursor-zoom-in focus-visible:outline-offset-[-4px]"
       aria-label="Ampliar: {{title}}"
       aria-haspopup="dialog"
     >
@@ -14,12 +16,14 @@
         fetchpriority="{{priority}}"
         decoding="async"
         alt="{{alt}}"
-        class="gallery__img hover-zoom__target"
+        class="hover-zoom__target h-full w-full object-cover"
       />
     </button>
-    <figcaption class="gallery__caption-overlay gallery__caption">
-      <h3 class="gallery__caption-title">{{title}}</h3>
-      <p class="gallery__caption-text">{{description}}</p>
+    <figcaption
+      class="pointer-events-none absolute inset-0 flex flex-col justify-end bg-[linear-gradient(to_top,var(--surface-gallery-overlay),var(--surface-transparent))] p-4 opacity-100 transition-opacity duration-300 sm:p-6 md:opacity-0 md:group-focus-within:opacity-100 md:group-hover:opacity-100"
+    >
+      <h3 class="mb-2 text-xl font-bold text-(--text-on-image)">{{title}}</h3>
+      <p class="text-sm text-(--text-on-image-muted)">{{description}}</p>
     </figcaption>
   </figure>
 </li>

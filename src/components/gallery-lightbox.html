@@ -1,24 +1,29 @@
 <button
   type="button"
-  class="gallery-lightbox__btn gallery-lightbox__close"
+  class="gallery-lightbox__close absolute top-4 right-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--surface-control-overlay) text-2xl text-(--text-on-image) transition-colors duration-200 hover:bg-(--surface-control-overlay-hover) sm:h-12 sm:w-12 sm:text-3xl"
   aria-label="Cerrar"
 >
   &times;
 </button>
 <button
   type="button"
-  class="gallery-lightbox__btn gallery-lightbox__prev"
+  class="gallery-lightbox__prev flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--surface-control-overlay) text-2xl text-(--text-on-image) transition-colors duration-200 hover:bg-(--surface-control-overlay-hover) sm:h-12 sm:w-12 sm:text-3xl"
   aria-label="Anterior"
 >
   &#8249;
 </button>
-<figure class="gallery-lightbox__figure">
-  <img class="gallery-lightbox__img" alt="" />
-  <figcaption class="gallery-lightbox__caption"></figcaption>
+<figure class="flex max-h-full min-w-0 flex-col items-center gap-4">
+  <img
+    class="max-h-[80vh] max-w-full rounded-lg object-contain shadow-2xl"
+    alt=""
+  />
+  <figcaption
+    class="text-center text-sm text-(--text-on-image-muted)"
+  ></figcaption>
 </figure>
 <button
   type="button"
-  class="gallery-lightbox__btn gallery-lightbox__next"
+  class="gallery-lightbox__next flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--surface-control-overlay) text-2xl text-(--text-on-image) transition-colors duration-200 hover:bg-(--surface-control-overlay-hover) sm:h-12 sm:w-12 sm:text-3xl"
   aria-label="Siguiente"
 >
   &#8250;

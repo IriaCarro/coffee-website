@@ -8,11 +8,11 @@ class SectionNavigation extends HTMLElement {
   }
 
   connectedCallback() {
-    if (!this.querySelector(".section-nav__link")) {
+    if (!this.querySelector("[data-section-link]")) {
       this.innerHTML = sectionNavigationTemplate;
     }
 
-    this.links = this.querySelectorAll(".section-nav__link");
+    this.links = this.querySelectorAll("[data-section-link]");
     this.addEventListener("click", this.handleLinkClick);
     this.sections = [...this.links]
       .map((link) => document.querySelector(link.getAttribute("href")))
@@ -62,7 +62,7 @@ class SectionNavigation extends HTMLElement {
   }
 
   getHeaderHeight() {
-    const header = document.querySelector(".site-header");
+    const header = document.querySelector("[data-site-header]");
     if (header) return header.offsetHeight;
     return (
       parseFloat(
@@ -86,11 +86,11 @@ class SectionNavigation extends HTMLElement {
       this.headerObserver.observe(header);
     };
 
-    const header = document.querySelector(".site-header");
+    const header = document.querySelector("[data-site-header]");
     if (header) return attach(header);
 
     this.headerWatcher = new MutationObserver(() => {
-      const found = document.querySelector(".site-header");
+      const found = document.querySelector("[data-site-header]");
       if (!found) return;
       this.headerWatcher.disconnect();
       attach(found);
@@ -111,7 +111,7 @@ class SectionNavigation extends HTMLElement {
   }
 
   handleLinkClick(event) {
-    const link = event.target.closest(".section-nav__link");
+    const link = event.target.closest("[data-section-link]");
     if (
       !link ||
       event.button !== 0 ||

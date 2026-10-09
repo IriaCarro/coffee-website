@@ -37,45 +37,37 @@
     <app-header></app-header>
 
     <main id="main-content">
-      <section
-        class="subscription theme-transition"
-        aria-labelledby="sub-title"
-      >
-        <div class="subscription__container">
-          <nav class="subscription__back" aria-label="Volver">
-            <a href="/" class="subscription__back-link">
-              <span aria-hidden="true">&larr;</span>
-              <span>Volver al inicio</span>
-            </a>
-          </nav>
+      <section class="page min-h-screen" aria-labelledby="sub-title">
+        <div class="mx-auto max-w-2xl">
+          <back-link></back-link>
 
-          <header class="subscription__header">
-            <h1 class="subscription__title" id="sub-title">
-              Configura tu Suscripción
-            </h1>
-            <p class="subscription__subtitle">
+          <page-header
+            heading-id="sub-title"
+            heading="Configura tu Suscripción"
+          >
+            <p class="lead">
               Elige tu café favorito y recíbelo cada mes en tu puerta
             </p>
-          </header>
+          </page-header>
 
           <section
             id="wizard"
             aria-labelledby="subscription-wizard-title"
-            class="subscription__wizard"
+            class="px-0 py-4 sm:px-4 sm:py-12 lg:px-8"
           >
-            <header class="wizard__heading">
+            <header class="mb-8 text-center">
               <h2 id="subscription-wizard-title" class="sr-only">
                 Pasos de la suscripción
               </h2>
-              <p class="wizard__heading-description">
+              <p class="text-lg text-(--text-secondary)">
                 Completa los siguientes pasos para empezar a recibir tu café
                 favorito
               </p>
             </header>
 
             <div
-              id="subscription-progress-track"
-              class="wizard__progress-track theme-transition"
+              id="subscription__progress-track"
+              class="theme-transition relative mb-6 h-2 rounded-full bg-(--surface-muted)"
               role="progressbar"
               aria-label="Progreso de la suscripción"
               aria-valuemin="1"
@@ -84,221 +76,217 @@
               aria-valuetext="Paso 1 de 3"
             >
               <div
-                id="subscription-progress-bar"
-                class="wizard__progress-bar"
+                id="subscription__progress-bar"
+                class="h-full w-0 rounded-full bg-(--accent) data-[step=2]:w-1/2 data-[step=3]:w-full motion-safe:transition-all motion-safe:duration-500"
                 aria-hidden="true"
               ></div>
             </div>
             <ol
-              class="wizard__progress-steps subscription__progress"
+              id="subscription__progress-steps"
+              class="mb-8 grid grid-cols-3 gap-4"
               aria-label="Pasos de la suscripción"
             >
-              <li class="wizard__progress-step">
+              <li class="flex flex-col items-center">
                 <span
-                  class="step-indicator subscription__step-indicator step-indicator--active"
+                  class="mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-(--accent) bg-(--surface-accent) font-bold text-(--accent) transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:bg-(--accent) aria-[current=step]:text-(--text-on-accent) aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2 aria-[current=step]:outline-(--accent) data-completed:bg-(--accent) data-completed:text-(--text-on-accent)"
                   data-step="1"
                   aria-current="step"
-                  >1</span
                 >
-                <span class="wizard__progress-label">Tu café</span>
+                  1
+                </span>
+                <span class="text-sm font-medium text-(--text-secondary)">
+                  Tu café
+                </span>
               </li>
-              <li class="wizard__progress-step">
+              <li class="flex flex-col items-center">
                 <span
-                  class="step-indicator subscription__step-indicator"
+                  class="mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-(--accent) bg-(--surface-accent) font-bold text-(--accent) transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:bg-(--accent) aria-[current=step]:text-(--text-on-accent) aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2 aria-[current=step]:outline-(--accent) data-completed:bg-(--accent) data-completed:text-(--text-on-accent)"
                   data-step="2"
-                  >2</span
                 >
-                <span class="wizard__progress-label">Tu plan</span>
+                  2
+                </span>
+                <span class="text-sm font-medium text-(--text-secondary)">
+                  Tu plan
+                </span>
               </li>
-              <li class="wizard__progress-step">
+              <li class="flex flex-col items-center">
                 <span
-                  class="step-indicator subscription__step-indicator"
+                  class="mb-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-(--accent) bg-(--surface-accent) font-bold text-(--accent) transition-all duration-300 aria-[current=step]:border-0 aria-[current=step]:bg-(--accent) aria-[current=step]:text-(--text-on-accent) aria-[current=step]:outline-2 aria-[current=step]:outline-offset-2 aria-[current=step]:outline-(--accent) data-completed:bg-(--accent) data-completed:text-(--text-on-accent)"
                   data-step="3"
-                  >3</span
                 >
-                <span class="wizard__progress-label">Entrega</span>
+                  3
+                </span>
+                <span class="text-sm font-medium text-(--text-secondary)">
+                  Entrega
+                </span>
               </li>
             </ol>
 
             <form
-              id="subscription-wizard-form"
-              class="wizard__card subscription__form"
+              id="subscription__form"
+              class="space-y-6 rounded-lg border border-(--border-subtle) bg-(--surface-container) p-4 shadow-lg transition-colors duration-300 sm:p-6 md:p-8"
               novalidate
               data-validated
             >
               <fieldset class="wizard__step wizard__step--active" data-step="1">
-                <legend class="wizard__step-title">¿Qué café prefieres?</legend>
-                <p class="wizard__step-description">
+                <legend class="heading heading--item mb-2">
+                  ¿Qué café prefieres?
+                </legend>
+                <p class="mb-6 text-(--text-secondary)">
                   Selecciona tu café favorito para empezar
                 </p>
-                <div
-                  class="wizard__option-list"
-                  id="subscription-coffee-options"
-                ></div>
+                <div class="space-y-3" id="subscription__coffee-options"></div>
               </fieldset>
 
               <fieldset class="wizard__step hidden" data-step="2">
-                <legend class="wizard__step-title">Elige tu plan</legend>
-                <p class="wizard__step-description">
+                <legend class="heading heading--item mb-2">
+                  Elige tu plan
+                </legend>
+                <p class="mb-6 text-(--text-secondary)">
                   Selecciona la frecuencia y cantidad
                 </p>
-                <div class="wizard__option-list">
+                <div class="space-y-3">
                   <label
-                    class="wizard__radio-label wizard__radio-label--featured"
+                    class="relative flex cursor-pointer items-center rounded-lg border-2 border-(--accent) border-(--border-input) bg-(--surface-transparent) p-4 shadow-md transition-all duration-300 hover:bg-(--accent)/10"
                   >
-                    <span class="wizard__badge">Más popular</span>
+                    <span
+                      class="absolute -top-3 right-4 rounded-full bg-(--accent) px-3 py-0.5 text-xs font-bold text-(--text-on-accent)"
+                    >
+                      Más popular
+                    </span>
                     <input type="radio" name="plan" value="monthly" checked />
-                    <span class="wizard__option-content">
-                      <strong class="wizard__option-title">Plan Mensual</strong>
-                      <span class="wizard__option-description"
-                        >1 bolsa de 250g cada mes</span
-                      >
+                    <span class="ml-3 flex min-w-0 flex-1 flex-col sm:ml-4">
+                      <strong class="font-medium text-(--text-primary)">
+                        Plan Mensual
+                      </strong>
+                      <span class="text-sm text-(--text-secondary)">
+                        1 bolsa de 250g cada mes
+                      </span>
                     </span>
-                    <span class="wizard__option-price" data-plan-price="1"
-                      >14,90 €</span
-                    >
+                    <span class="font-bold text-(--accent)" data-plan-price="1">
+                      14,90 €
+                    </span>
                   </label>
-                  <label class="wizard__radio-label">
+                  <label
+                    class="relative flex cursor-pointer items-center rounded-lg border-2 border-(--border-input) bg-(--surface-transparent) p-4 transition-all duration-300 hover:bg-(--accent)/10"
+                  >
                     <input type="radio" name="plan" value="biweekly" />
-                    <span class="wizard__option-content">
-                      <strong class="wizard__option-title"
-                        >Plan Quincenal</strong
-                      >
-                      <span class="wizard__option-description"
-                        >1 bolsa de 250g cada 15 días</span
-                      >
+                    <span class="ml-3 flex min-w-0 flex-1 flex-col sm:ml-4">
+                      <strong class="font-medium text-(--text-primary)">
+                        Plan Quincenal
+                      </strong>
+                      <span class="text-sm text-(--text-secondary)">
+                        1 bolsa de 250g cada 15 días
+                      </span>
                     </span>
-                    <span class="wizard__option-price" data-plan-price="2"
-                      >29,80 €</span
-                    >
+                    <span class="font-bold text-(--accent)" data-plan-price="2">
+                      29,80 €
+                    </span>
                   </label>
-                  <label class="wizard__radio-label">
+                  <label
+                    class="relative flex cursor-pointer items-center rounded-lg border-2 border-(--border-input) bg-(--surface-transparent) p-4 transition-all duration-300 hover:bg-(--accent)/10"
+                  >
                     <input type="radio" name="plan" value="weekly" />
-                    <span class="wizard__option-content">
-                      <strong class="wizard__option-title">Plan Semanal</strong>
-                      <span class="wizard__option-description"
-                        >1 bolsa de 250g cada semana</span
-                      >
+                    <span class="ml-3 flex min-w-0 flex-1 flex-col sm:ml-4">
+                      <strong class="font-medium text-(--text-primary)">
+                        Plan Semanal
+                      </strong>
+                      <span class="text-sm text-(--text-secondary)">
+                        1 bolsa de 250g cada semana
+                      </span>
                     </span>
-                    <span class="wizard__option-price" data-plan-price="4"
-                      >59,60 €</span
-                    >
+                    <span class="font-bold text-(--accent)" data-plan-price="4">
+                      59,60 €
+                    </span>
                   </label>
                 </div>
               </fieldset>
 
               <fieldset class="wizard__step hidden" data-step="3">
-                <legend class="wizard__step-title">Datos de entrega</legend>
-                <p class="wizard__step-description">
+                <legend class="heading heading--item mb-2">
+                  Datos de entrega
+                </legend>
+                <p class="mb-6 text-(--text-secondary)">
                   ¿Dónde te enviamos tu café?
                 </p>
-                <div class="subscription__fields">
-                  <label
-                    for="subscription-name"
-                    class="subscription__field subscription__field--full"
-                  >
-                    <span class="form-label">Nombre completo</span>
-                    <input
-                      type="text"
-                      id="subscription-name"
-                      name="name"
-                      placeholder="Tu nombre"
-                      autocomplete="name"
-                      class="peer"
-                      required
-                    />
-                    <span class="form-error" id="subscription-name-error"
-                      >Introduce tu nombre.</span
-                    >
-                  </label>
-                  <label
-                    for="subscription-email"
-                    class="subscription__field subscription__field--full"
-                  >
-                    <span class="form-label">Email</span>
-                    <input
-                      type="email"
-                      id="subscription-email"
-                      name="email"
-                      placeholder="tu@email.com"
-                      autocomplete="email"
-                      class="peer"
-                      required
-                    />
-                    <span class="form-error" id="subscription-email-error"
-                      >Introduce un email válido, por ejemplo
-                      nombre@email.com.</span
-                    >
-                  </label>
-                  <label
-                    for="subscription-address"
-                    class="subscription__field subscription__field--full"
-                  >
-                    <span class="form-label">Dirección de envío</span>
-                    <input
-                      type="text"
-                      id="subscription-address"
-                      name="address"
-                      placeholder="Calle, número, piso..."
-                      autocomplete="street-address"
-                      class="peer"
-                      required
-                    />
-                    <span class="form-error" id="subscription-address-error"
-                      >Introduce tu dirección de envío.</span
-                    >
-                  </label>
-                  <label for="subscription-city" class="subscription__field">
-                    <span class="form-label">Ciudad</span>
-                    <input
-                      type="text"
-                      id="subscription-city"
-                      name="city"
-                      placeholder="Madrid"
-                      autocomplete="address-level2"
-                      class="peer"
-                      required
-                    />
-                    <span class="form-error" id="subscription-city-error"
-                      >Introduce tu ciudad.</span
-                    >
-                  </label>
-                  <label for="subscription-zip" class="subscription__field">
-                    <span class="form-label">Código postal</span>
-                    <input
-                      type="text"
-                      id="subscription-zip"
-                      name="zip"
-                      placeholder="28001"
-                      autocomplete="postal-code"
-                      class="peer"
-                      pattern="[0-9]{5}"
-                      inputmode="numeric"
-                      required
-                    />
-                    <span class="form-error" id="subscription-zip-error"
-                      >Introduce un código postal de 5 dígitos.</span
-                    >
-                  </label>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <form-field
+                    id="subscription-name"
+                    name="name"
+                    label="Nombre completo"
+                    type="text"
+                    placeholder="Tu nombre"
+                    autocomplete="name"
+                    error="Introduce tu nombre."
+                    class="sm:col-span-2"
+                  ></form-field>
+                  <form-field
+                    id="subscription-email"
+                    name="email"
+                    label="Email"
+                    type="email"
+                    placeholder="tu@email.com"
+                    autocomplete="email"
+                    error="Introduce un email válido, por ejemplo nombre@email.com."
+                    class="sm:col-span-2"
+                  ></form-field>
+                  <form-field
+                    id="subscription-address"
+                    name="address"
+                    label="Dirección de envío"
+                    type="text"
+                    placeholder="Calle, número, piso..."
+                    autocomplete="street-address"
+                    error="Introduce tu dirección de envío."
+                    class="sm:col-span-2"
+                  ></form-field>
+                  <form-field
+                    id="subscription-city"
+                    name="city"
+                    label="Ciudad"
+                    type="text"
+                    placeholder="Madrid"
+                    autocomplete="address-level2"
+                    error="Introduce tu ciudad."
+                  ></form-field>
+                  <form-field
+                    id="subscription-zip"
+                    name="zip"
+                    label="Código postal"
+                    type="text"
+                    placeholder="28001"
+                    autocomplete="postal-code"
+                    error="Introduce un código postal de 5 dígitos."
+                    extra='pattern="[0-9]{5}" inputmode="numeric"'
+                  ></form-field>
                 </div>
               </fieldset>
 
-              <nav aria-label="Navegación de pasos" class="subscription__nav">
+              <nav
+                aria-label="Navegación de pasos"
+                class="subscription__nav flex flex-wrap items-center justify-between gap-x-2 gap-y-4 pt-6 sm:gap-x-4"
+              >
                 <button
                   type="button"
-                  id="subscription-btn-prev"
+                  id="subscription__btn-prev"
                   disabled
-                  class="btn btn--primary subscription__btn-prev"
+                  class="btn btn--primary px-4 whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-50 sm:px-6"
                 >
-                  <span aria-hidden="true">&larr;</span> Anterior
+                  <span aria-hidden="true">&larr;</span>
+                  Anterior
                 </button>
-                <span class="subscription__nav-status" aria-live="polite"
-                  >Paso <span id="subscription-current-step">1</span> de 3</span
+                <span
+                  class="order-first w-full text-center text-sm font-medium"
+                  aria-live="polite"
                 >
+                  Paso
+                  <span id="subscription__current-step">1</span>
+                  de 3
+                </span>
                 <button
                   type="button"
-                  id="subscription-btn-next"
-                  class="btn btn--primary"
+                  id="subscription__btn-next"
+                  class="btn btn--primary px-4 whitespace-nowrap sm:px-6"
                 >
                   Siguiente &rarr;
                 </button>
@@ -307,30 +295,32 @@
 
             <!-- Confirmation (shown after finishing the wizard) -->
             <section
-              id="subscription-confirmation"
-              class="wizard__card wizard__confirmation hidden"
-              aria-labelledby="subscription-confirmation-title"
+              id="subscription__confirmation"
+              class="flex hidden flex-col items-center rounded-lg border border-(--border-subtle) bg-(--surface-container) p-4 text-center shadow-lg transition-colors duration-300 sm:p-6 md:p-8"
+              aria-labelledby="subscription__confirmation-title"
             >
               <span
-                class="icon icon--mail wizard__confirmation-icon"
+                class="icon mb-4 mask-[url(/icons/ui/mail.svg)] text-6xl text-(--accent)"
                 aria-hidden="true"
               ></span>
               <h2
-                id="subscription-confirmation-title"
-                class="wizard__confirmation-title"
+                id="subscription__confirmation-title"
+                class="heading heading--section mb-3"
                 tabindex="-1"
               >
                 Revisa tu correo
               </h2>
-              <p class="wizard__confirmation-text">
+              <p
+                class="mb-6 max-w-md text-(--text-secondary) [&_strong]:font-bold [&_strong]:break-all [&_strong]:text-(--text-primary)"
+              >
                 Para continuar con tu suscripción, abre el mensaje que te
                 enviaremos a
-                <strong id="subscription-confirmation-email">tu correo</strong>
+                <strong id="subscription__confirmation-email">tu correo</strong>
                 y confirma tus datos.
               </p>
-              <a href="/" class="btn btn--secondary wizard__confirmation-action"
-                >Volver al inicio</a
-              >
+              <a href="/" class="btn btn--secondary inline-block no-underline">
+                Volver al inicio
+              </a>
             </section>
           </section>
         </div>

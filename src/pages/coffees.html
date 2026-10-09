@@ -29,36 +29,33 @@
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
     <script type="module" src="/src/js/main.js"></script>
-    <script type="module" src="/src/js/utils/home-coffees.js"></script>
   </head>
 
   <body>
     <app-header></app-header>
 
     <main id="main-content">
-      <section
-        class="coffees-page theme-transition"
-        aria-labelledby="coffees-title"
-      >
-        <div class="coffees-page__container">
-          <nav class="coffees-page__back" aria-label="Volver">
-            <a href="/" class="coffees-page__back-link">
-              <span aria-hidden="true">&larr;</span>
-              <span>Volver al inicio</span>
-            </a>
-          </nav>
+      <section class="page" aria-labelledby="coffees-title">
+        <div class="mx-auto max-w-6xl">
+          <back-link></back-link>
 
-          <header class="coffees-page__header enter-fade-up">
-            <h1 class="coffees-page__title" id="coffees-title">
-              Cafés del Mes
-            </h1>
-            <p class="coffees-page__subtitle">
+          <page-header
+            heading-id="coffees-title"
+            heading="Cafés del Mes"
+            class="enter-fade-up mb-8 text-center sm:mb-12"
+          >
+            <p class="lead">
               Selecciona tu favorito y comienza tu viaje de sabor
             </p>
-          </header>
+          </page-header>
 
           <h2 class="sr-only">Todos los cafés</h2>
-          <ul id="coffee-grid" class="coffees-page__grid enter-fade-up"></ul>
+          <ul
+            id="coffees__grid"
+            class="enter-fade-up grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
+          >
+            <repeat data="coffees" component="coffee-card"></repeat>
+          </ul>
         </div>
       </section>
     </main>

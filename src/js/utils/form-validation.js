@@ -1,7 +1,7 @@
 const FIELD_SELECTOR = "input:not([type=radio]):not([type=checkbox]), textarea";
 
 const getError = (field) =>
-  field.closest("label")?.querySelector(".form-error") ?? null;
+  field.closest("label")?.querySelector(".form__error") ?? null;
 
 // aria-invalid drives the error styles and the message (see ui.css); the
 // message is only linked to the field while it is shown

@@ -1,27 +1,39 @@
-<li class="coffee-card">
-  <a href="/coffees/{{id}}/" class="coffee-card__link hover-zoom">
-    <article>
-      <div class="coffee-card__media">
+<li class="@container">
+  <a
+    href="/coffees/{{id}}/"
+    class="hover-zoom block text-inherit no-underline transition-transform duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--focus-ring) hover:motion-safe:-translate-y-2"
+  >
+    <article class="block @xs:grid @xs:grid-cols-[10rem_1fr] @xs:items-center">
+      <div class="relative aspect-video overflow-hidden @xs:aspect-square">
         <img
-          class="coffee-card__backdrop"
+          class="absolute inset-0 h-full w-full scale-150 object-cover opacity-80 blur-2xl"
           src="{{packImage}}"
           srcset="{{packImage400}} 400w, {{packImage}} 800w"
           sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
           alt=""
           aria-hidden="true"
+          loading="{{loading}}"
+          decoding="async"
         />
         <img
-          class="coffee-card__image hover-zoom__target"
+          class="hover-zoom__target relative h-full w-full object-contain py-3 drop-shadow-xl"
           src="{{packImage}}"
           srcset="{{packImage400}} 400w, {{packImage}} 800w"
           sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
           alt="Pack de café {{name}}, {{production}}"
+          loading="{{loading}}"
+          fetchpriority="{{priority}}"
+          decoding="async"
         />
       </div>
-      <div class="coffee-card__content">
-        <h3 class="coffee-card__title">{{name}}</h3>
-        <p class="coffee-card__description">{{description}}</p>
-        <p class="coffee-card__price">{{formattedPrice}}</p>
+      <div class="p-5 @xs:p-4">
+        <h3 class="heading heading--item mb-2 @xs:mb-1 @xs:text-lg">
+          {{name}}
+        </h3>
+        <p class="mb-4 text-sm text-(--text-secondary) @xs:mb-2">
+          {{description}}
+        </p>
+        <p class="text-lg font-bold text-(--accent)">{{formattedPrice}}</p>
       </div>
     </article>
   </a>

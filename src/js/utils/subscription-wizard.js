@@ -1,12 +1,10 @@
 import coffees from "../../data/coffees.json";
 import coffeeOptionTemplate from "../../components/subscription-coffee-option.html?raw";
-import { imageVariant, renderTemplate } from "./template.js";
+import { formatPrice, imageVariant, renderTemplate } from "./template.js";
 import { validateFields } from "./form-validation.js";
 
-const formatPrice = (price) => `${price.toFixed(2).replace(".", ",")} €`;
-
 const renderCoffeeOptions = () => {
-  const list = document.getElementById("subscription-coffee-options");
+  const list = document.getElementById("subscription__coffee-options");
   if (!list) return;
   list.innerHTML = coffees
     .map((coffee, index) =>
@@ -21,16 +19,20 @@ const renderCoffeeOptions = () => {
 };
 
 function initSubscriptionWizard() {
-  const form = document.getElementById("subscription-wizard-form");
+  const form = document.getElementById("subscription__form");
   if (!form) return;
 
   const steps = form.querySelectorAll(".wizard__step");
-  const indicators = document.querySelectorAll(".step-indicator");
-  const progressBar = document.getElementById("subscription-progress-bar");
-  const progressTrack = document.getElementById("subscription-progress-track");
-  const btnPrev = document.getElementById("subscription-btn-prev");
-  const btnNext = document.getElementById("subscription-btn-next");
-  const currentStepLabel = document.getElementById("subscription-current-step");
+  const indicators = document.querySelectorAll(
+    "#subscription__progress-steps [data-step]",
+  );
+  const progressBar = document.getElementById("subscription__progress-bar");
+  const progressTrack = document.getElementById("subscription__progress-track");
+  const btnPrev = document.getElementById("subscription__btn-prev");
+  const btnNext = document.getElementById("subscription__btn-next");
+  const currentStepLabel = document.getElementById(
+    "subscription__current-step",
+  );
 
   let currentStep = 1;
   const totalSteps = steps.length;
@@ -47,8 +49,7 @@ function initSubscriptionWizard() {
       const isActive = stepNum === currentStep;
       const isCompleted = stepNum < currentStep;
 
-      indicator.classList.toggle("step-indicator--active", isActive);
-      indicator.classList.toggle("step-indicator--completed", isCompleted);
+      indicator.toggleAttribute("data-completed", isCompleted);
       if (isActive) {
         indicator.setAttribute("aria-current", "step");
       } else {
@@ -56,15 +57,8 @@ function initSubscriptionWizard() {
       }
     });
 
-    // Width comes from the --step-N modifiers in subscription.css
-    if (progressBar) {
-      for (let step = 1; step <= totalSteps; step++) {
-        progressBar.classList.toggle(
-          `wizard__progress-bar--step-${step}`,
-          step === currentStep,
-        );
-      }
-    }
+    // Width comes from the data-[step=N]: utilities on the bar
+    if (progressBar) progressBar.dataset.step = String(currentStep);
     if (progressTrack) {
       progressTrack.setAttribute("aria-valuemax", String(totalSteps));
       progressTrack.setAttribute("aria-valuenow", String(currentStep));
@@ -106,18 +100,18 @@ function initSubscriptionWizard() {
 
   const showConfirmation = (email) => {
     const wizard = document.getElementById("wizard");
-    const confirmation = document.getElementById("subscription-confirmation");
+    const confirmation = document.getElementById("subscription__confirmation");
     const emailLabel = document.getElementById(
-      "subscription-confirmation-email",
+      "subscription__confirmation-email",
     );
     if (!wizard || !confirmation) return;
 
     if (email && emailLabel) emailLabel.textContent = email;
     wizard
-      .querySelectorAll(":scope > :not(#subscription-confirmation)")
+      .querySelectorAll(":scope > :not(#subscription__confirmation)")
       .forEach((el) => el.classList.add("hidden"));
     confirmation.classList.remove("hidden");
-    document.getElementById("subscription-confirmation-title")?.focus();
+    document.getElementById("subscription__confirmation-title")?.focus();
   };
 
   // There is no backend yet: log the data instead of sending it
@@ -169,7 +163,7 @@ const updatePlanPrices = (form) => {
 };
 
 const initPlanPrices = () => {
-  const form = document.getElementById("subscription-wizard-form");
+  const form = document.getElementById("subscription__form");
   if (!form) return;
   form.addEventListener("change", (event) => {
     if (event.target.name === "coffee") updatePlanPrices(form);

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" class="home home--snap">
+<html lang="es" class="snap-y snap-proximity md:snap-mandatory">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,39 +48,48 @@
 
   <body>
     <app-header></app-header>
-    <section-navigation></section-navigation>
+    <section-navigation class="contents"></section-navigation>
     <main id="main-content">
       <section
         id="hero"
         aria-labelledby="hero-title"
-        class="home__section hero theme-transition"
+        class="theme-transition relative isolate flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) flex-col items-center justify-center gap-8 bg-[url(/photos/cafe-3-800.webp)] bg-cover bg-center px-6 py-12 before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-[linear-gradient(to_top,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_70%,transparent)_50%,color-mix(in_srgb,var(--surface-home-overlay)_35%,transparent)_75%,transparent)] after:content-[''] supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 md:flex-row md:bg-[url(/photos/cafe-3.webp)] md:after:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_70%,transparent)_50%,color-mix(in_srgb,var(--surface-home-overlay)_35%,transparent)_75%,transparent)] lg:px-16 xl:px-20 [&_:focus-visible]:outline-(--text-on-image)"
       >
-        <div class="hero__textbox enter-fade-up">
-          <h1 id="hero-title">
-            <span>Buen</span>
-            <span class="hero__accent">café,</span>
-            <span>mejores</span>
-            <span>días</span>
+        <div class="enter-fade-up relative z-10">
+          <h1
+            id="hero-title"
+            class="text-6xl leading-[0.9] font-bold text-(--text-on-image-title) sm:text-7xl lg:text-9xl"
+          >
+            <span class="block">Buen</span>
+            <span class="block text-(--text-on-image-accent)">café,</span>
+            <span class="block">mejores</span>
+            <span class="block">días</span>
           </h1>
-          <h2>Café recién tostado, en tu puerta cada mes.</h2>
-          <p>
+          <h2
+            class="mt-6 mb-4 text-lg leading-tight font-bold text-(--text-on-image-subtitle) sm:mt-8 sm:mb-6 sm:text-xl"
+          >
+            Café recién tostado, en tu puerta cada mes.
+          </h2>
+          <p class="mb-8 text-lg text-(--text-on-image-muted)">
             Tostamos en pequeños lotes granos de origen único y te los llevamos
             frescos a casa. Descubre nuestras selecciones premium.
           </p>
-          <ul class="home__hero-actions">
-            <li>
+          <ul class="flex flex-wrap gap-4">
+            <li class="mb-4 w-full sm:w-auto">
               <a
                 href="/src/pages/subscription.html"
-                class="btn btn--primary btn--on-image"
-                >Subscríbete Ahora</a
+                class="btn btn--primary btn--on-image block text-center sm:inline-block"
               >
+                Subscríbete Ahora
+              </a>
             </li>
-            <li>
+            <li class="mb-4 w-full sm:w-auto">
               <a
                 href="/src/pages/coffees.html"
-                class="btn btn--secondary btn--on-image"
-                >Ver Cafés</a
+                class="btn btn--secondary btn--on-image block text-center sm:inline-block"
               >
+                Ver Cafés
+              </a>
             </li>
           </ul>
         </div>
@@ -89,33 +98,47 @@
       <section
         id="breakfast"
         aria-labelledby="breakfast-title"
-        class="home__section breakfast theme-transition"
+        class="theme-transition relative isolate flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center overflow-hidden bg-(--surface-page) bg-[radial-gradient(circle_at_70%_35%,color-mix(in_srgb,var(--accent-contrast)_14%,transparent),transparent_28rem)] px-6 py-12 before:pointer-events-none before:absolute before:inset-0 before:-z-1 before:bg-[radial-gradient(var(--text-primary)_0.7px,transparent_0.7px)] before:bg-size-[7px_7px] before:opacity-16 before:content-[''] supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 lg:px-16 xl:px-20"
       >
         <div
-          class="breakfast__grain breakfast__grain--one"
+          class="absolute top-[18%] right-[7%] -z-10 h-[30px] w-[18px] rotate-[35deg] rounded-[50%] bg-(--accent) opacity-90 after:absolute after:top-[4px] after:left-[8px] after:h-[22px] after:w-[2px] after:rounded-[50%] after:bg-(--accent-contrast) after:content-[''] max-[800px]:hidden"
           aria-hidden="true"
         ></div>
         <div
-          class="breakfast__grain breakfast__grain--two"
+          class="absolute bottom-[22%] left-[7%] -z-10 h-[30px] w-[18px] scale-[0.7] rotate-[-25deg] rounded-[50%] bg-(--accent) opacity-90 after:absolute after:top-[4px] after:left-[8px] after:h-[22px] after:w-[2px] after:rounded-[50%] after:bg-(--accent-contrast) after:content-[''] max-[800px]:hidden"
           aria-hidden="true"
         ></div>
 
-        <div class="breakfast__content">
-          <p class="breakfast__eyebrow">CAFÉ RICO · MAÑANAS</p>
+        <div
+          class="relative z-10 w-full max-w-[1250px] supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
+        >
+          <p
+            class="mb-4 text-sm font-bold tracking-[0.16em] text-(--text-primary)"
+          >
+            CAFÉ RICO · MAÑANAS
+          </p>
 
-          <div class="breakfast__headline-wrap">
+          <div
+            class="group/wrap relative flex min-h-[clamp(300px,45vw,570px)] w-full items-center max-[800px]:min-h-[430px] max-[800px]:items-start"
+          >
             <h2
               id="breakfast-title"
-              class="breakfast__headline"
+              class="font-marker relative z-10 m-0 flex w-full rotate-[-3deg] items-center text-[length:clamp(5rem,15vw,14rem)] leading-[0.75] tracking-[-0.07em] whitespace-nowrap text-(--text-primary) select-none max-[800px]:block max-[800px]:text-[length:clamp(3.5rem,16.5vw,9rem)] max-[800px]:leading-[0.78] max-[800px]:whitespace-normal"
               aria-label="Desayunos"
             >
-              <span aria-hidden="true">DESA</span
-              ><span aria-hidden="true">Y</span
-              ><span aria-hidden="true">UNOS</span>
+              <span class="relative max-[800px]:inline" aria-hidden="true">
+                DESA
+              </span>
+              <span class="relative max-[800px]:inline" aria-hidden="true">
+                Y
+              </span>
+              <span class="relative max-[800px]:inline" aria-hidden="true">
+                UNOS
+              </span>
             </h2>
 
             <img
-              class="breakfast__flake breakfast__flake--one"
+              class="pointer-events-none absolute top-[17%] right-[42%] z-20 w-[clamp(90px,12vw,190px)] rotate-[-18deg] [filter:drop-shadow(0_14px_12px_color-mix(in_srgb,var(--text-primary)_18%,transparent))_drop-shadow(0_3px_3px_color-mix(in_srgb,var(--text-primary)_12%,transparent))] transition-transform duration-[550ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover/wrap:translate-x-[-8px] group-hover/wrap:translate-y-[-12px] group-hover/wrap:rotate-[-12deg] motion-reduce:transition-none max-[800px]:top-[30%] max-[800px]:right-[48%]"
               src="/photos/flake-01.webp"
               width="520"
               height="347"
@@ -125,7 +148,7 @@
               aria-hidden="true"
             />
             <img
-              class="breakfast__flake breakfast__flake--two"
+              class="pointer-events-none absolute right-[18%] bottom-[13%] z-30 w-[clamp(120px,17vw,260px)] rotate-[12deg] [filter:drop-shadow(0_14px_12px_color-mix(in_srgb,var(--text-primary)_18%,transparent))_drop-shadow(0_3px_3px_color-mix(in_srgb,var(--text-primary)_12%,transparent))] transition-transform duration-[550ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover/wrap:translate-x-[10px] group-hover/wrap:translate-y-[8px] group-hover/wrap:rotate-[18deg] motion-reduce:transition-none max-[800px]:right-[4%] max-[800px]:bottom-[20%]"
               src="/photos/flake-02.webp"
               width="520"
               height="347"
@@ -135,7 +158,7 @@
               aria-hidden="true"
             />
             <img
-              class="breakfast__croissant"
+              class="pointer-events-none absolute top-1/2 right-[3%] z-0 w-[clamp(300px,42vw,650px)] -translate-y-1/2 rotate-[-8deg] [filter:drop-shadow(0_25px_18px_color-mix(in_srgb,var(--text-primary)_22%,transparent))_drop-shadow(0_5px_4px_color-mix(in_srgb,var(--text-primary)_15%,transparent))] transition-transform duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover/wrap:translate-y-[calc(-50%-8px)] group-hover/wrap:scale-[1.025] group-hover/wrap:rotate-[-5deg] motion-reduce:transition-none max-[800px]:top-[57%] max-[800px]:-right-[12%] max-[800px]:w-[min(105vw,520px)]"
               src="/photos/croissant.webp"
               width="900"
               height="600"
@@ -146,59 +169,91 @@
             />
           </div>
 
-          <div class="breakfast__bottom">
-            <p>
+          <div
+            class="-mt-4 flex items-end justify-between gap-8 max-[800px]:mt-0 max-[800px]:grid max-[800px]:justify-stretch"
+          >
+            <p
+              class="max-w-[390px] text-[length:clamp(1rem,1.6vw,1.25rem)] leading-[1.45] text-(--text-secondary)"
+            >
               Empieza el día con café recién hecho, bollería artesanal y algo
               rico.
             </p>
-            <a class="breakfast__button" href="/src/pages/menu.html"
-              >VER MENÚ <span aria-hidden="true">↗</span></a
+            <a
+              class="inline-flex items-center gap-3 rounded-full border-2 border-(--border-button-tertiary) bg-(--surface-button-tertiary) px-5 py-4 font-bold whitespace-nowrap text-(--text-button-tertiary) no-underline transition-[translate,background-color,color] duration-200 ease-[ease] hover:translate-y-[-3px] hover:bg-(--surface-button-tertiary-hover) hover:text-(--text-button-tertiary-hover) motion-reduce:transition-none max-[800px]:justify-self-end"
+              href="/src/pages/menu.html"
             >
+              VER MENÚ
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </section>
       <section
         id="location"
         aria-labelledby="location-title"
-        class="home__section home__section--photo theme-transition"
+        class="theme-transition relative isolate flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center px-6 py-12 before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 md:bg-[url(/photos/cafe-1.webp)] lg:px-16 xl:px-20 [&_:focus-visible]:outline-(--text-on-image)"
       >
-        <div class="home__content">
-          <div class="home-location__grid">
-            <div class="home-location__card">
-              <h2 id="location-title" class="home-location__title">
+        <div
+          class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
+        >
+          <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+            <div
+              class="rounded-2xl bg-(--surface-muted) p-5 shadow-2xl backdrop-blur-sm sm:p-8 lg:p-10"
+            >
+              <h2 id="location-title" class="heading heading--page md:text-5xl">
                 Un lugar para disfrutar
               </h2>
 
-              <p class="home-location__lead">
+              <p
+                class="mb-6 text-lg leading-relaxed text-(--text-secondary) sm:mb-8 sm:text-xl"
+              >
                 Buen café, buena compañía y un ambiente único en la ciudad.
               </p>
 
-              <section class="home-info" aria-labelledby="info-address-title">
-                <h3 class="home-info__title" id="info-address-title">
-                  <span class="icon icon--pin" aria-hidden="true"></span>
-                  <span class="home-info__label">Ubicación</span>
+              <section
+                class="mb-6 rounded-xl border-l-4 border-(--accent) bg-(--surface-container) p-6"
+                aria-labelledby="info-address-title"
+              >
+                <h3
+                  class="mb-3 flex items-center gap-3 font-bold text-(--text-primary)"
+                  id="info-address-title"
+                >
+                  <span
+                    class="icon mask-[url(/icons/ui/pin.svg)] text-(--accent)"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="text-lg">Ubicación</span>
                 </h3>
-                <address class="home__address">
+                <address class="space-y-1 text-(--text-secondary) not-italic">
                   <strong>Calle del Café, 42</strong>
                   <p>28003 Madrid, España</p>
                 </address>
               </section>
 
-              <section class="home-info" aria-labelledby="info-hours-title">
-                <h3 class="home-info__title" id="info-hours-title">
-                  <span class="icon icon--clock" aria-hidden="true"></span>
-                  <span class="home-info__label">Horario</span>
+              <section
+                class="mb-6 rounded-xl border-l-4 border-(--accent) bg-(--surface-container) p-6"
+                aria-labelledby="info-hours-title"
+              >
+                <h3
+                  class="mb-3 flex items-center gap-3 font-bold text-(--text-primary)"
+                  id="info-hours-title"
+                >
+                  <span
+                    class="icon mask-[url(/icons/ui/clock.svg)] text-(--accent)"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="text-lg">Horario</span>
                 </h3>
-                <ul class="home-hours">
-                  <li class="home-hours__row">
+                <ul class="space-y-2 text-(--text-secondary)">
+                  <li class="flex justify-between">
                     <p>Lunes - Viernes:</p>
                     <strong>9:00 - 18:00</strong>
                   </li>
-                  <li class="home-hours__row">
+                  <li class="flex justify-between">
                     <p>Sábado:</p>
                     <strong>10:00 - 14:00</strong>
                   </li>
-                  <li class="home-hours__row home-hours__row--closed">
+                  <li class="flex justify-between text-(--accent)">
                     <p>Domingo:</p>
                     <strong>Cerrado</strong>
                   </li>
@@ -209,47 +264,55 @@
                 href="https://maps.google.com/?q=Calle+del+Caf%C3%A9+42+Madrid"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn--secondary home__btn"
+                class="btn btn--secondary inline-flex items-center gap-3 rounded-xl px-8 py-4 font-bold transition-all duration-300"
               >
-                <span class="icon icon--map" aria-hidden="true"></span>
                 <span
-                  >Cómo Llegar en Google Maps<span class="sr-only">
-                    (se abre en una pestaña nueva)</span
-                  ></span
-                >
+                  class="icon mask-[url(/icons/ui/map.svg)]"
+                  aria-hidden="true"
+                ></span>
+                <span>
+                  Cómo Llegar en Google Maps
+                  <span class="sr-only">(se abre en una pestaña nueva)</span>
+                </span>
               </a>
             </div>
 
-            <ul class="home-highlights" role="list">
-              <li class="home-highlights__item hover-zoom">
+            <ul class="space-y-6 text-(--text-on-image)" role="list">
+              <li
+                class="hover-zoom rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8"
+              >
                 <span
-                  class="home-highlights__icon hover-zoom__target icon icon--coffee"
+                  class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/coffee.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
-                <h3 class="home-highlights__title">Café Artesanal</h3>
-                <p class="home__text-muted">
+                <h3 class="mb-2">Café Artesanal</h3>
+                <p class="text-(--text-on-image-muted)">
                   Seleccionado y tostado a la perfección
                 </p>
               </li>
 
-              <li class="home-highlights__item hover-zoom">
+              <li
+                class="hover-zoom rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8"
+              >
                 <span
-                  class="home-highlights__icon hover-zoom__target icon icon--music"
+                  class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/music.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
-                <h3 class="home-highlights__title">Ambiente Único</h3>
-                <p class="home__text-muted">
+                <h3 class="mb-2">Ambiente Único</h3>
+                <p class="text-(--text-on-image-muted)">
                   Música y buena compañía garantizadas
                 </p>
               </li>
 
-              <li class="home-highlights__item hover-zoom">
+              <li
+                class="hover-zoom rounded-2xl border border-(--border-glass) bg-(--surface-glass) p-5 backdrop-blur-sm transition-all duration-300 hover:bg-(--surface-glass-hover) sm:p-8"
+              >
                 <span
-                  class="home-highlights__icon hover-zoom__target icon icon--users"
+                  class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/users.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
-                <h3 class="home-highlights__title">Comunidad</h3>
-                <p class="home__text-muted">
+                <h3 class="mb-2">Comunidad</h3>
+                <p class="text-(--text-on-image-muted)">
                   Conecta con otros amantes del café
                 </p>
               </li>
@@ -260,32 +323,50 @@
       <section
         id="cta"
         aria-labelledby="cta-title"
-        class="home__section home__section--overlay theme-transition"
+        class="theme-transition relative flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center bg-(--surface-home-overlay) px-6 py-12 supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 lg:px-16 xl:px-20"
       >
-        <div class="home__content">
-          <h2 class="home__title" id="cta-title">Tu café, donde quieras</h2>
+        <div
+          class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
+        >
+          <h2
+            class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
+            id="cta-title"
+          >
+            Tu café, donde quieras
+          </h2>
 
-          <p class="home__lead">
+          <p
+            class="text-center text-xl leading-relaxed text-(--text-on-image-muted) md:text-2xl"
+          >
             Disfruta de nuestro menú en el local o haz tu pedido online para
             llevar.
           </p>
 
-          <ul class="home__cta-actions" role="list">
+          <ul
+            class="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row"
+            role="list"
+          >
             <li>
               <a
                 href="/src/pages/coffees.html"
-                class="home__btn btn btn--secondary btn--on-image"
+                class="btn btn--secondary btn--on-image inline-flex items-center gap-3 rounded-xl px-8 py-4 font-bold transition-all duration-300"
               >
-                <span class="icon icon--clipboard" aria-hidden="true"></span>
+                <span
+                  class="icon mask-[url(/icons/ui/clipboard.svg)]"
+                  aria-hidden="true"
+                ></span>
                 <span>Ver Menú</span>
               </a>
             </li>
             <li>
               <a
                 href="/src/pages/subscription.html"
-                class="home__btn btn btn--secondary btn--on-image"
+                class="btn btn--secondary btn--on-image inline-flex items-center gap-3 rounded-xl px-8 py-4 font-bold transition-all duration-300"
               >
-                <span class="icon icon--coffee" aria-hidden="true"></span>
+                <span
+                  class="icon mask-[url(/icons/ui/coffee.svg)]"
+                  aria-hidden="true"
+                ></span>
                 <span>Suscribirse</span>
               </a>
             </li>
@@ -295,40 +376,69 @@
       <section
         id="steps"
         aria-labelledby="steps-title"
-        class="home__section home__section--overlay theme-transition"
+        class="theme-transition relative flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center bg-(--surface-home-overlay) px-6 py-12 supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 lg:px-16 xl:px-20"
       >
-        <div class="home__content">
-          <h2 class="home__title" id="steps-title">
+        <div
+          class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
+        >
+          <h2
+            class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
+            id="steps-title"
+          >
             Así funciona tu suscripción
           </h2>
 
-          <p class="home__lead">
+          <p
+            class="text-center text-xl leading-relaxed text-(--text-on-image-muted) md:text-2xl"
+          >
             Tres pasos y tu café favorito llega a casa cada mes.
           </p>
 
-          <ol class="home-steps__list" role="list">
-            <li class="home-steps__item">
-              <span class="home-steps__number" aria-hidden="true">1</span>
-              <h3 class="home__card-title home-steps__title">Elige tu café</h3>
-              <p class="home__text-muted">
+          <ol
+            class="mt-8 mb-10 flex flex-col gap-10 md:flex-row md:gap-8"
+            role="list"
+          >
+            <li class="flex flex-1 flex-col items-center text-center">
+              <span
+                class="mb-4 flex size-14 items-center justify-center rounded-full border-2 border-(--text-on-image-accent) text-2xl font-bold text-(--text-on-image-accent)"
+                aria-hidden="true"
+              >
+                1
+              </span>
+              <h3 class="mb-2 text-2xl font-bold text-(--text-on-image)">
+                Elige tu café
+              </h3>
+              <p class="text-(--text-on-image-muted)">
                 Selecciona entre nuestros orígenes el que más te guste.
               </p>
             </li>
 
-            <li class="home-steps__item">
-              <span class="home-steps__number" aria-hidden="true">2</span>
-              <h3 class="home__card-title home-steps__title">Elige tu plan</h3>
-              <p class="home__text-muted">
+            <li class="flex flex-1 flex-col items-center text-center">
+              <span
+                class="mb-4 flex size-14 items-center justify-center rounded-full border-2 border-(--text-on-image-accent) text-2xl font-bold text-(--text-on-image-accent)"
+                aria-hidden="true"
+              >
+                2
+              </span>
+              <h3 class="mb-2 text-2xl font-bold text-(--text-on-image)">
+                Elige tu plan
+              </h3>
+              <p class="text-(--text-on-image-muted)">
                 Mensual, quincenal o semanal: tú decides cada cuánto lo recibes.
               </p>
             </li>
 
-            <li class="home-steps__item">
-              <span class="home-steps__number" aria-hidden="true">3</span>
-              <h3 class="home__card-title home-steps__title">
+            <li class="flex flex-1 flex-col items-center text-center">
+              <span
+                class="mb-4 flex size-14 items-center justify-center rounded-full border-2 border-(--text-on-image-accent) text-2xl font-bold text-(--text-on-image-accent)"
+                aria-hidden="true"
+              >
+                3
+              </span>
+              <h3 class="mb-2 text-2xl font-bold text-(--text-on-image)">
                 Recíbelo en casa
               </h3>
-              <p class="home__text-muted">
+              <p class="text-(--text-on-image-muted)">
                 Tostado en pequeños lotes y enviado directamente a tu puerta.
               </p>
             </li>
@@ -336,9 +446,12 @@
 
           <a
             href="/src/pages/subscription.html"
-            class="home__btn home-steps__action btn btn--primary btn--on-image"
+            class="btn btn--primary btn--on-image mx-auto flex w-fit items-center gap-3 rounded-xl px-8 py-4 font-bold transition-all duration-300"
           >
-            <span class="icon icon--coffee" aria-hidden="true"></span>
+            <span
+              class="icon mask-[url(/icons/ui/coffee.svg)]"
+              aria-hidden="true"
+            ></span>
             <span>Empezar mi suscripción</span>
           </a>
         </div>
@@ -346,57 +459,66 @@
       <section
         id="about"
         aria-labelledby="about-title"
-        class="home__section home__section--photo theme-transition"
+        class="theme-transition relative isolate flex min-h-[calc(100vh-var(--header-height))] snap-start scroll-mt-(--header-height) items-center justify-center bg-[url(/photos/cafe-1-800.webp)] bg-cover bg-center px-6 py-12 before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[linear-gradient(to_right,color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_80%,transparent),color-mix(in_srgb,var(--surface-home-overlay)_85%,transparent))] before:content-[''] supports-[height:100svh]:min-h-[calc(100svh-var(--header-height))] sm:px-8 md:bg-[url(/photos/cafe-1.webp)] lg:px-16 xl:px-20 [&_:focus-visible]:outline-(--text-on-image)"
       >
-        <div class="home__content">
-          <header class="home-about__header">
-            <h2 id="about-title" class="home__title">Más que Café</h2>
+        <div
+          class="relative z-10 w-full max-w-6xl supports-[animation-timeline:view()]:motion-safe:animate-[fade-up_linear_both] supports-[animation-timeline:view()]:motion-safe:[animation-range:entry_0%_entry_40%] supports-[animation-timeline:view()]:motion-safe:[animation-timeline:view()]"
+        >
+          <header class="mb-16 text-center">
+            <h2
+              id="about-title"
+              class="mb-6 text-center text-5xl font-bold text-(--text-on-image) md:text-6xl"
+            >
+              Más que Café
+            </h2>
 
-            <p class="home__lead home-about__lead">
+            <p
+              class="mx-auto max-w-3xl text-center text-xl leading-relaxed text-(--text-on-image-muted) md:text-2xl"
+            >
               Selección de granos, tueste artesanal y un profundo respeto por el
               origen. Trabajamos con productores que comparten nuestra visión de
               un café más consciente y sostenible.
             </p>
           </header>
 
-          <ul class="home-about__grid" role="list">
-            <li class="home-about__point hover-zoom">
+          <ul class="mb-12 grid gap-8 md:grid-cols-3" role="list">
+            <li class="hover-zoom flex flex-col items-center text-center">
               <span
-                class="home-about__icon hover-zoom__target icon icon--globe"
+                class="hover-zoom__target icon mb-6 block mask-[url(/icons/ui/globe.svg)] text-7xl text-(--text-on-image-accent)"
                 aria-hidden="true"
               ></span>
-              <h3 class="home__card-title home-about__point-title">
+              <h3 class="mb-3 text-2xl font-bold text-(--text-on-image)">
                 Origen Responsable
               </h3>
-              <p class="home__text-muted">
+              <p class="text-(--text-on-image-muted)">
                 Relaciones directas con productores locales que respetan el
                 medio ambiente
               </p>
             </li>
 
-            <li class="home-about__point hover-zoom">
+            <li class="hover-zoom flex flex-col items-center text-center">
               <span
-                class="home-about__icon hover-zoom__target icon icon--flame"
+                class="hover-zoom__target icon mb-6 block mask-[url(/icons/ui/flame.svg)] text-7xl text-(--text-on-image-accent)"
                 aria-hidden="true"
               ></span>
-              <h3 class="home__card-title home-about__point-title">
+              <h3 class="mb-3 text-2xl font-bold text-(--text-on-image)">
                 Tueste Artesanal
               </h3>
-              <p class="home__text-muted">
+              <p class="text-(--text-on-image-muted)">
                 Tostado a pequeños lotes para garantizar la máxima calidad y
                 frescura
               </p>
             </li>
 
-            <li class="home-about__point hover-zoom">
+            <li class="hover-zoom flex flex-col items-center text-center">
               <span
-                class="home-about__icon hover-zoom__target icon icon--recycle"
+                class="hover-zoom__target icon mb-6 block mask-[url(/icons/ui/recycle.svg)] text-7xl text-(--text-on-image-accent)"
                 aria-hidden="true"
               ></span>
-              <h3 class="home__card-title home-about__point-title">
+              <h3 class="mb-3 text-2xl font-bold text-(--text-on-image)">
                 Café Consciente
               </h3>
-              <p class="home__text-muted">
+              <p class="text-(--text-on-image-muted)">
                 Envases sostenibles y prácticas responsables en cada paso del
                 proceso
               </p>
@@ -405,14 +527,17 @@
 
           <a
             href="/src/pages/about.html"
-            class="home__btn home-about__action btn btn--secondary btn--on-image"
+            class="btn btn--secondary btn--on-image mx-auto flex w-fit items-center gap-3 rounded-xl px-8 py-4 font-bold transition-all duration-300"
           >
-            <span class="icon icon--book-open" aria-hidden="true"></span>
+            <span
+              class="icon mask-[url(/icons/ui/book-open.svg)]"
+              aria-hidden="true"
+            ></span>
             <span>Nuestra Historia</span>
           </a>
         </div>
       </section>
     </main>
-    <app-footer></app-footer>
+    <app-footer class="snap-end"></app-footer>
   </body>
 </html>
