@@ -209,7 +209,8 @@
   },
   "coffees": {
     "card": {
-      "details": "Ver detalles"
+      "details": "Ver detalles",
+      "detailsOf": "do café"
     },
     "meta": {
       "description": "Descubre os cafés de especialidade do mes de Café Rico.",
@@ -249,6 +250,7 @@
     "title": "Galería de Café",
     "lead": "Explora a nosa colección de cafés premium de orixe única",
     "listTitle": "Fotos",
+    "zoom": "Ampliar",
     "cta": {
       "title": "Gustaríache probar os nosos cafés?",
       "button": "Comezar Subscrición",

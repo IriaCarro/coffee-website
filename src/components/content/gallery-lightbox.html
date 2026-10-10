@@ -8,14 +8,17 @@
     class="gallery-lightbox__control gallery-lightbox__close absolute top-4 right-4"
     aria-label="{{t:gallery.lightbox.close}}"
   >
-    <span aria-hidden="true">&times;</span>
+    <span class="icon mask-[url(/icons/ui/x.svg)]" aria-hidden="true"></span>
   </button>
   <button
     type="button"
     class="gallery-lightbox__control gallery-lightbox__prev"
     aria-label="{{t:gallery.lightbox.previous}}"
   >
-    <span aria-hidden="true">&#8249;</span>
+    <span
+      class="icon mask-[url(/icons/ui/arrow-left.svg)]"
+      aria-hidden="true"
+    ></span>
   </button>
   <figure class="flex max-h-full min-w-0 flex-col items-center gap-4">
     <img
@@ -31,6 +34,9 @@
     class="gallery-lightbox__control gallery-lightbox__next"
     aria-label="{{t:gallery.lightbox.next}}"
   >
-    <span aria-hidden="true">&#8250;</span>
+    <span
+      class="icon mask-[url(/icons/ui/arrow-right.svg)]"
+      aria-hidden="true"
+    ></span>
   </button>
 </dialog>

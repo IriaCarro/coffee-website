@@ -42,11 +42,11 @@ La web está en castellano, gallego y catalán: el castellano en la raíz (`/`) 
 
 ### Opción de integración de Tailwind
 
-| Método elegido | Por qué                                                                                                                                                                                                                              |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Vite plugin    | Es la opción más sencilla y no necesito procesar el CSS por mi cuenta: Tailwind v4 ya añade los prefijos de navegador y baja la sintaxis nueva con Lightning CSS, así que PostCSS y Autoprefixer no aportarían nada que me interese. |
+| Método elegido | Por qué                                                                                                                                                                                                                                |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vite plugin    | Es la opción más sencilla y no necesito procesar el CSS por mi cuenta: Tailwind v4 ya añade los prefijos de navegador y baja la sintaxis nueva con Lightning CSS, así que PostCSS\* y Autoprefixer no aportarían nada que me interese. |
 
-*En una configuración estándar de Tailwind v4 con Vite suelen ser innecesarios, pero PostCSS sigue siendo útil si necesitas otros plugins o transformaciones específicas.
+\*En una configuración estándar de Tailwind v4 con Vite, PostCSS y Autoprefixer suelen ser innecesarios, pero PostCSS sigue siendo útil si necesitas otros plugins o transformaciones específicas.
 
 ---
 
