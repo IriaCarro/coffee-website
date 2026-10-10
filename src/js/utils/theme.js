@@ -46,9 +46,7 @@ class ThemeSelector extends HTMLElement {
   }
 
   optionFor(theme) {
-    return this.querySelector(
-      `[data-theme-menu] [data-theme="${CSS.escape(theme)}"]`,
-    );
+    return this.querySelector(`[data-theme-option="${CSS.escape(theme)}"]`);
   }
 
   // The menu options in theme-selector-menu.html are the list of valid themes
@@ -64,31 +62,33 @@ class ThemeSelector extends HTMLElement {
     this.querySelector("[data-theme-label]").textContent =
       option.querySelector("span").textContent;
 
-    this.querySelectorAll("[data-theme-menu] [data-theme]").forEach(
-      (option) => {
-        option.setAttribute(
-          "aria-pressed",
-          String(option.dataset.theme === theme),
-        );
-      },
-    );
+    this.querySelectorAll("[data-theme-option]").forEach((option) => {
+      option.setAttribute(
+        "aria-pressed",
+        String(option.dataset.themeOption === theme),
+      );
+    });
+  }
+
+  get isMenuOpen() {
+    return this.toggle.getAttribute("aria-expanded") === "true";
   }
 
   setMenuOpen(isOpen) {
-    this.menu.classList.toggle("hidden", !isOpen);
+    this.menu.hidden = !isOpen;
     this.toggle.setAttribute("aria-expanded", String(isOpen));
   }
 
   handleToggle(event) {
     event.stopPropagation();
-    this.setMenuOpen(this.menu.classList.contains("hidden"));
+    this.setMenuOpen(!this.isMenuOpen);
   }
 
   handleOptionClick(event) {
-    const option = event.target.closest("[data-theme-menu] [data-theme]");
+    const option = event.target.closest("[data-theme-option]");
     if (!option || !this.contains(option)) return;
 
-    const selected = option.dataset.theme;
+    const selected = option.dataset.themeOption;
     if (!this.hasTheme(selected)) return;
 
     storeTheme(selected);
@@ -98,16 +98,13 @@ class ThemeSelector extends HTMLElement {
   }
 
   handleOutsideClick(event) {
-    if (
-      !this.menu.classList.contains("hidden") &&
-      !this.contains(event.target)
-    ) {
+    if (this.isMenuOpen && !this.contains(event.target)) {
       this.setMenuOpen(false);
     }
   }
 
   handleKeydown(event) {
-    if (event.key === "Escape" && !this.menu.classList.contains("hidden")) {
+    if (event.key === "Escape" && this.isMenuOpen) {
       this.setMenuOpen(false);
       this.toggle.focus();
     }

@@ -4,7 +4,7 @@
   }
 
   .page {
-    @apply theme-transition bg-surface-page px-4 py-8 sm:px-6 sm:py-12 lg:px-8;
+    @apply theme-transition page-gutter bg-surface-page py-8 sm:py-12;
   }
 
   .heading {
@@ -52,7 +52,7 @@
   }
 
   .form__label {
-    @apply mb-1 block text-sm font-medium transition-colors duration-300;
+    @apply theme-transition mb-1 block text-sm font-medium;
     @apply text-text-primary;
   }
 

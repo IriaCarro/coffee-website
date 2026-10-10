@@ -1,5 +1,6 @@
 // Runs before first paint so the stored theme is applied without a flash.
-// Keep the key and theme names in sync with src/js/utils/theme.js.
+// Keep the key in sync with src/js/utils/theme.js and the theme names with
+// the options in src/components/layout/theme-selector-menu.html.
 try {
   var theme = localStorage.getItem("theme-preference");
   if (["light", "dark", "matcha", "cafe", "blue", "violet"].includes(theme)) {

@@ -231,7 +231,7 @@
                 aria-labelledby="info__address-title"
               >
                 <h3
-                  class="text-text-primary mb-3 flex items-center gap-3 font-bold"
+                  class="heading mb-3 flex items-center gap-3"
                   id="info__address-title"
                 >
                   <span
@@ -241,8 +241,8 @@
                   <span class="text-lg">{{t:home.location.place}}</span>
                 </h3>
                 <address class="text-text-secondary space-y-1 not-italic">
-                  <strong>Calle del Café, 42</strong>
-                  <p>{{t:home.location.city}}</p>
+                  <strong>{{data:shop.street}}</strong>
+                  <p>{{data:shop.postcode}} {{t:common.city}}</p>
                 </address>
               </section>
 
@@ -251,7 +251,7 @@
                 aria-labelledby="info__hours-title"
               >
                 <h3
-                  class="text-text-primary mb-3 flex items-center gap-3 font-bold"
+                  class="heading mb-3 flex items-center gap-3"
                   id="info__hours-title"
                 >
                   <span
@@ -263,11 +263,11 @@
                 <ul class="text-text-secondary space-y-2">
                   <li class="flex justify-between">
                     <p>{{t:home.location.weekdays}}</p>
-                    <strong>9:00 - 18:00</strong>
+                    <strong>{{data:shop.hours.weekdays}}</strong>
                   </li>
                   <li class="flex justify-between">
                     <p>{{t:home.location.saturday}}</p>
-                    <strong>10:00 - 14:00</strong>
+                    <strong>{{data:shop.hours.saturday}}</strong>
                   </li>
                   <li class="text-accent flex justify-between">
                     <p>{{t:home.location.sunday}}</p>
@@ -277,7 +277,7 @@
               </section>
 
               <a
-                href="https://maps.google.com/?q=Calle+del+Caf%C3%A9+42+Madrid"
+                href="{{data:shop.mapsUrl}}"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn--secondary inline-flex items-center gap-3 rounded-xl px-8 py-4 font-bold transition-all duration-300"

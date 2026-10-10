@@ -19,7 +19,7 @@ const COMPONENTS = {
   "app-header": {},
   "back-link": { href: "/", label: "{{t:common.backHome}}" },
   "contact-item": {},
-  "cta-card": {},
+  "cta-card": { class: "" },
   "form-field": { type: "text", autocomplete: "off", class: "", extra: "" },
   "form-textarea": { rows: "5", class: "" },
   "gallery-lightbox": {},
@@ -135,14 +135,28 @@ export default function htmlComponents() {
       }),
     );
 
+  // {{data:shop.email}} is replaced by that field of src/data/shop.json: for
+  // values that are the same in every locale (address, phone, hours...)
+  const dataPattern = /\{\{\s*data:([\w-]+)\.([\w.]+)\s*\}\}/g;
+  const fillData = (html) =>
+    html.replace(dataPattern, (placeholder, name, field) => {
+      const value = field
+        .split(".")
+        .reduce((data, key) => data?.[key], readCollection(name));
+      if (value === undefined)
+        throw new Error(`${placeholder}: no "${field}" in ${name}.json`);
+      return value;
+    });
+
   // Components may contain other components, so expand until nothing changes
+  // (at most 5 levels deep), then fill the {{data:...}} values
   const expand = (html, locale) => {
     for (let pass = 0; pass < 5; pass += 1) {
       const next = expandOnce(html, locale);
       if (next === html) break;
       html = next;
     }
-    return html;
+    return fillData(html);
   };
 
   return {

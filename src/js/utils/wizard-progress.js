@@ -43,7 +43,7 @@ const renderControls = (currentStep, totalSteps) => {
     next.querySelector("[data-next-label]").textContent = isLast
       ? next.dataset.finishText
       : next.dataset.nextText;
-    next.querySelector("[data-next-icon]").classList.toggle("hidden", isLast);
+    next.querySelector("[data-next-icon]").hidden = isLast;
   }
   if (label) label.textContent = currentStep;
 };
@@ -52,7 +52,7 @@ const renderControls = (currentStep, totalSteps) => {
 export const renderProgress = (steps, currentStep) => {
   const totalSteps = steps.length;
   steps.forEach((step) => {
-    step.classList.toggle("hidden", Number(step.dataset.step) !== currentStep);
+    step.hidden = Number(step.dataset.step) !== currentStep;
   });
   renderIndicators(currentStep);
   renderBar(currentStep, totalSteps);

@@ -64,18 +64,18 @@
                 <contact-item term="{{t:contact.location.office}}">
                   <dd>
                     <address class="text-text-primary not-italic">
-                      Calle del Café, 42
+                      {{data:shop.street}}
                       <br />
-                      {{t:contact.location.city}}
+                      {{data:shop.postcode}} {{t:common.city}}
                     </address>
                   </dd>
                 </contact-item>
                 <contact-item term="{{t:contact.location.hours}}">
                   <dd class="text-text-primary">
-                    {{t:contact.location.weekdays}}
+                    {{t:contact.location.weekdays}} {{data:shop.hours.weekdays}}
                   </dd>
                   <dd class="text-text-primary">
-                    {{t:contact.location.saturday}}
+                    {{t:contact.location.saturday}} {{data:shop.hours.saturday}}
                   </dd>
                   <dd class="text-text-primary">
                     {{t:contact.location.sunday}}
@@ -108,20 +108,20 @@
                 <contact-item term="{{t:contact.info.phone}}">
                   <dd>
                     <a
-                      href="tel:+34912345678"
+                      href="tel:{{data:shop.phoneHref}}"
                       class="text-text-primary hover:text-accent transition-colors"
                     >
-                      +34 91 234 5678
+                      {{data:shop.phone}}
                     </a>
                   </dd>
                 </contact-item>
                 <contact-item term="{{t:contact.info.email}}">
                   <dd>
                     <a
-                      href="mailto:caferico@correo.com"
+                      href="mailto:{{data:shop.email}}"
                       class="text-text-primary hover:text-accent transition-colors"
                     >
-                      caferico@correo.com
+                      {{data:shop.email}}
                     </a>
                   </dd>
                 </contact-item>
@@ -169,7 +169,7 @@
                 referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
               <figcaption class="text-text-primary mt-2 text-sm">
-                {{t:contact.map.address}}
+                {{data:shop.street}}, {{data:shop.postcode}} {{t:common.city}}
               </figcaption>
             </figure>
           </section>
@@ -231,7 +231,7 @@
               ></form-textarea>
               <button
                 type="submit"
-                class="bg-accent text-text-on-accent hover:bg-accent-hover hover:text-text-on-accent-hover w-full rounded-lg px-6 py-3 font-medium transition-colors duration-200 sm:col-span-2"
+                class="btn bg-accent text-text-on-accent hover:bg-accent-hover hover:text-text-on-accent-hover w-full sm:col-span-2"
               >
                 {{t:contact.form.submit}}
               </button>

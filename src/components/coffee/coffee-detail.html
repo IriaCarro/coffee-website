@@ -88,19 +88,12 @@
     </dl>
   </section>
 
-  <aside
-    class="bg-surface-container rounded-lg p-5 text-center sm:p-8"
-    aria-labelledby="detail__cta-title"
+  <cta-card
+    heading-id="detail__cta-title"
+    heading="{{t:coffee.cta.title}}"
+    href="/src/pages/subscription.html#subscription__wizard"
+    label="{{t:coffee.cta.button}}"
   >
-    <h2 id="detail__cta-title" class="heading heading--section mb-4">
-      {{t:coffee.cta.title}}
-    </h2>
-    <p class="lead mb-6">{{t:coffee.cta.text}}</p>
-    <a
-      href="/src/pages/subscription.html#wizard"
-      class="btn btn--primary inline-block"
-    >
-      {{t:coffee.cta.button}}
-    </a>
-  </aside>
+    {{t:coffee.cta.text}}
+  </cta-card>
 </div>

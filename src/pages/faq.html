@@ -45,18 +45,15 @@
             <repeat data="faq" component="faq-item"></repeat>
           </ul>
 
-          <div
-            class="bg-surface-container mt-12 rounded-lg p-5 text-center sm:p-8"
+          <cta-card
+            heading-id="faq__help-title"
+            heading="{{t:faq.help.title}}"
+            href="mailto:{{data:shop.email}}"
+            label="{{t:faq.help.button}}"
+            class="mt-12"
           >
-            <h2 class="heading heading--section mb-4">{{t:faq.help.title}}</h2>
-            <p class="lead mb-6">{{t:faq.help.text}}</p>
-            <a
-              href="mailto:caferico@correo.com"
-              class="btn btn--primary inline-block"
-            >
-              {{t:faq.help.button}}
-            </a>
-          </div>
+            {{t:faq.help.text}}
+          </cta-card>
         </div>
       </section>
     </main>

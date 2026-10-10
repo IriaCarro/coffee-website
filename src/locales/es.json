@@ -3,7 +3,8 @@
     "backHome": "Volver al inicio",
     "languages": "Idioma",
     "newTab": "(se abre en una pestaña nueva)",
-    "back": "Volver"
+    "back": "Volver",
+    "city": "Madrid, España"
   },
   "header": {
     "skipLink": "Saltar al contenido",
@@ -34,8 +35,8 @@
     },
     "visit": {
       "title": "Visítanos",
-      "weekdays": "L-V: 9:00 - 18:00",
-      "saturday": "Sáb: 10:00 - 14:00",
+      "weekdays": "L-V:",
+      "saturday": "Sáb:",
       "sunday": "Dom: Cerrado",
       "directions": "Cómo llegar"
     },
@@ -132,7 +133,6 @@
       "title": "Un lugar para disfrutar",
       "text": "Buen café, buena compañía y un ambiente único en la ciudad.",
       "place": "Ubicación",
-      "city": "28003 Madrid, España",
       "hours": "Horario",
       "weekdays": "Lunes - Viernes:",
       "saturday": "Sábado:",
@@ -287,10 +287,9 @@
     "location": {
       "title": "Ubicación",
       "office": "Oficina Principal",
-      "city": "28001 Madrid, España",
       "hours": "Horario",
-      "weekdays": "Lunes - Viernes: 9:00 - 18:00",
-      "saturday": "Sábado: 10:00 - 14:00",
+      "weekdays": "Lunes - Viernes:",
+      "saturday": "Sábado:",
       "sunday": "Domingo: Cerrado",
       "transport": "Transporte Público",
       "metro": "Metro: Línea 3, Estación Centro",
@@ -306,8 +305,7 @@
     },
     "map": {
       "title": "Nuestra Ubicación",
-      "label": "Mapa de la ubicación de Café Rico",
-      "address": "Calle del Café, 42 - Madrid"
+      "label": "Mapa de la ubicación de Café Rico"
     },
     "form": {
       "title": "Envíanos un Mensaje",

@@ -14,9 +14,9 @@
           height="64"
           loading="lazy"
         />
-        <span id="footer__brand-heading" class="heading heading--section">
+        <h2 id="footer__brand-heading" class="heading heading--section">
           Café Rico
-        </span>
+        </h2>
       </a>
       <p class="text-text-primary max-w-xs text-sm leading-relaxed">
         {{t:footer.tagline}}
@@ -92,24 +92,24 @@
             class="icon me-[0.35em] mask-[url(/icons/ui/pin.svg)]"
             aria-hidden="true"
           ></span>
-          Calle del Café, 42
+          {{data:shop.street}}
           <br />
-          28003 Madrid
+          {{data:shop.postcode}} {{t:common.city}}
         </p>
         <p>
           <span
             class="icon me-[0.35em] mask-[url(/icons/ui/clock.svg)]"
             aria-hidden="true"
           ></span>
-          {{t:footer.visit.weekdays}}
+          {{t:footer.visit.weekdays}} {{data:shop.hours.weekdays}}
           <br />
-          {{t:footer.visit.saturday}}
+          {{t:footer.visit.saturday}} {{data:shop.hours.saturday}}
           <br />
           {{t:footer.visit.sunday}}
         </p>
         <p>
           <a
-            href="https://maps.google.com/?q=Calle+del+Caf%C3%A9+42+Madrid"
+            href="{{data:shop.mapsUrl}}"
             target="_blank"
             rel="noopener noreferrer"
             class="text-accent font-medium transition-colors duration-200 hover:opacity-75"
@@ -203,7 +203,7 @@
     </nav>
     <address class="not-italic">
       <a
-        href="mailto:caferico@correo.com"
+        href="mailto:{{data:shop.email}}"
         class="text-accent font-medium transition-colors duration-200 hover:opacity-75"
       >
         {{t:footer.contact}}

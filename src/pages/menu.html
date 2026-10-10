@@ -73,14 +73,14 @@
                 alt="{{t:menu.special.imageAlt}}"
               />
             </figure>
-            <div class="menu-special__content">
+            <div>
               <p
                 class="text-accent mb-2 text-sm font-bold tracking-[0.16em] uppercase"
               >
                 {{t:menu.special.badge}}
               </p>
               <h2
-                class="text-text-primary mb-3 text-3xl font-bold sm:text-4xl"
+                class="heading mb-3 text-3xl sm:text-4xl"
                 id="menu__special-title"
               >
                 {{t:menu.special.title}}
@@ -88,7 +88,9 @@
               <p class="text-text-secondary mb-4 text-lg">
                 {{t:menu.special.text}}
               </p>
-              <p class="text-accent text-2xl font-bold">7,50 €</p>
+              <p class="text-accent text-2xl font-bold">
+                {{data:shop.specialPrice}}
+              </p>
             </div>
           </section>
         </div>

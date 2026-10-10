@@ -1,0 +1,13 @@
+{
+  "street": "Calle del Café, 42",
+  "postcode": "28003",
+  "phone": "+34 91 234 5678",
+  "phoneHref": "+34912345678",
+  "email": "caferico@correo.com",
+  "mapsUrl": "https://maps.google.com/?q=Calle+del+Caf%C3%A9+42+Madrid",
+  "hours": {
+    "weekdays": "9:00 - 18:00",
+    "saturday": "10:00 - 14:00"
+  },
+  "specialPrice": "7,50 €"
+}

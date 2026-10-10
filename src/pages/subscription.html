@@ -119,7 +119,7 @@
 
             <form
               id="subscription__form"
-              class="border-border-subtle bg-surface-container space-y-6 rounded-lg border p-4 shadow-lg transition-colors duration-300 sm:p-6 md:p-8"
+              class="border-border-subtle bg-surface-container theme-transition space-y-6 rounded-lg border p-4 shadow-lg sm:p-6 md:p-8"
               novalidate
               data-validated
             >
@@ -139,7 +139,7 @@
                 </div>
               </fieldset>
 
-              <fieldset class="wizard__step hidden" data-step="2">
+              <fieldset class="wizard__step" data-step="2" hidden>
                 <legend class="heading heading--item mb-2">
                   {{t:subscription.plan.title}}
                 </legend>
@@ -151,7 +151,7 @@
                 </div>
               </fieldset>
 
-              <fieldset class="wizard__step hidden" data-step="3">
+              <fieldset class="wizard__step" data-step="3" hidden>
                 <legend class="heading heading--item mb-2">
                   {{t:subscription.delivery.title}}
                 </legend>
@@ -213,7 +213,7 @@
 
               <nav
                 aria-label="{{t:subscription.nav.label}}"
-                class="subscription__nav flex flex-wrap items-center justify-between gap-x-2 gap-y-4 pt-6 sm:gap-x-4"
+                class="flex flex-wrap items-center justify-between gap-x-2 gap-y-4 pt-6 sm:gap-x-4"
               >
                 <button
                   type="button"
@@ -255,7 +255,8 @@
             <!-- Confirmation (shown after finishing the wizard) -->
             <section
               id="subscription__confirmation"
-              class="border-border-subtle bg-surface-container flex hidden flex-col items-center rounded-lg border p-4 text-center shadow-lg transition-colors duration-300 sm:p-6 md:p-8"
+              hidden
+              class="border-border-subtle bg-surface-container theme-transition flex flex-col items-center rounded-lg border p-4 text-center shadow-lg sm:p-6 md:p-8"
               aria-labelledby="subscription__confirmation-title"
             >
               <span

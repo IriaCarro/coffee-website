@@ -3,7 +3,8 @@
     "backHome": "Torna a l'inici",
     "languages": "Idioma",
     "newTab": "(s'obre en una pestanya nova)",
-    "back": "Tornar"
+    "back": "Tornar",
+    "city": "Madrid, Espanya"
   },
   "header": {
     "skipLink": "Salta al contingut",
@@ -34,8 +35,8 @@
     },
     "visit": {
       "title": "Visita'ns",
-      "weekdays": "Dl-Dv: 9:00 - 18:00",
-      "saturday": "Ds: 10:00 - 14:00",
+      "weekdays": "Dl-Dv:",
+      "saturday": "Ds:",
       "sunday": "Dg: Tancat",
       "directions": "Com arribar-hi"
     },
@@ -132,7 +133,6 @@
       "title": "Un lloc per gaudir",
       "text": "Bon cafè, bona companyia i un ambient únic a la ciutat.",
       "place": "Ubicació",
-      "city": "28003 Madrid, Espanya",
       "hours": "Horari",
       "weekdays": "Dilluns - Divendres:",
       "saturday": "Dissabte:",
@@ -287,10 +287,9 @@
     "location": {
       "title": "Ubicació",
       "office": "Oficina Principal",
-      "city": "28001 Madrid, Espanya",
       "hours": "Horari",
-      "weekdays": "Dilluns - Divendres: 9:00 - 18:00",
-      "saturday": "Dissabte: 10:00 - 14:00",
+      "weekdays": "Dilluns - Divendres:",
+      "saturday": "Dissabte:",
       "sunday": "Diumenge: Tancat",
       "transport": "Transport Públic",
       "metro": "Metro: Línia 3, Estació Centre",
@@ -306,8 +305,7 @@
     },
     "map": {
       "title": "La Nostra Ubicació",
-      "label": "Mapa de la ubicació de Café Rico",
-      "address": "Calle del Café, 42 - Madrid"
+      "label": "Mapa de la ubicació de Café Rico"
     },
     "form": {
       "title": "Envia'ns un Missatge",

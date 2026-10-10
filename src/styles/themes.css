@@ -68,7 +68,7 @@
   /* Light theme (default) */
   :root,
   [data-theme="light"] {
-    color-scheme: light;
+    @apply scheme-light;
     --surface-page: var(--color-coffee-50);
     --surface-footer: var(--color-neutral-50);
     --surface-container: var(--color-neutral-50);
@@ -116,7 +116,7 @@
      and an attribute selector. Keep both in sync. */
   @media (prefers-color-scheme: dark) {
     html:not([data-theme]) {
-      color-scheme: dark;
+      @apply scheme-dark;
       --surface-page: var(--color-mine-shaft-900);
       --surface-footer: var(--color-mine-shaft-800);
       --surface-container: var(--color-mine-shaft-900);
@@ -162,7 +162,7 @@
 
   /* Dark theme (explicit) */
   [data-theme="dark"] {
-    color-scheme: dark;
+    @apply scheme-dark;
     --surface-page: var(--color-mine-shaft-900);
     --surface-footer: var(--color-mine-shaft-800);
     --surface-container: var(--color-mine-shaft-900);
@@ -206,7 +206,7 @@
   }
 
   [data-theme="matcha"] {
-    color-scheme: light;
+    @apply scheme-light;
     --surface-page: var(--color-turtle-green-200);
     --surface-footer: var(--color-turtle-green-100);
     --surface-container: var(--color-turtle-green-50);
@@ -251,7 +251,7 @@
   }
 
   [data-theme="cafe"] {
-    color-scheme: dark;
+    @apply scheme-dark;
     --surface-page: var(--color-coffee-950);
     --surface-footer: var(--color-coffee-900);
     --surface-container: var(--color-coffee-800);
@@ -295,7 +295,7 @@
   }
 
   [data-theme="blue"] {
-    color-scheme: light;
+    @apply scheme-light;
     --surface-page: var(--color-midnight-50);
     --surface-footer: var(--color-neutral-50);
     --surface-container: var(--color-neutral-50);
@@ -339,7 +339,7 @@
   }
 
   [data-theme="violet"] {
-    color-scheme: light;
+    @apply scheme-light;
     --surface-page: var(--color-revolver-50);
     --surface-footer: var(--color-neutral-50);
     --surface-container: var(--color-neutral-50);

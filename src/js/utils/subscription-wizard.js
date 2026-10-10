@@ -23,8 +23,8 @@ const showConfirmation = (email) => {
   if (email && emailLabel) emailLabel.textContent = email;
   wizard
     .querySelectorAll(":scope > :not(#subscription__confirmation)")
-    .forEach((el) => el.classList.add("hidden"));
-  confirmation.classList.remove("hidden");
+    .forEach((el) => (el.hidden = true));
+  confirmation.hidden = false;
   document.getElementById("subscription__confirmation-title")?.focus();
 };
 
