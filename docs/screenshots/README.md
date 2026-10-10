@@ -1,6 +1,6 @@
 # Capturas
 
-Página completa en cada tema, en escritorio (1440 px) y móvil (390 px). Generadas con Chrome sin movimiento reducido para que las animaciones de entrada no oculten contenido. Nombre: `<tema>/<dispositivo>-<página>.webp`.
+Página completa en cada tema, en escritorio (1440 px) y móvil (390 px), regeneradas el 10 de octubre de 2026 sobre el build de producción (`npm run build` + `npm run preview`). Generadas con Chrome con movimiento reducido (`prefers-reduced-motion: reduce`): las secciones de Inicio entran con animaciones ligadas al scroll y, en una captura de página completa, se quedarían en su estado inicial (invisibles); con movimiento reducido se ve el estado final del contenido. Nombre: `<tema>/<dispositivo>-<página>.webp`.
 
 ## light
 

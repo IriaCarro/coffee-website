@@ -32,7 +32,11 @@ const renderControls = (currentStep, totalSteps) => {
   const label = document.getElementById("subscription__current-step");
   if (previous) previous.disabled = currentStep === 1;
   if (next) {
-    next.textContent = currentStep === totalSteps ? "Finalizar" : "Siguiente";
+    const isLast = currentStep === totalSteps;
+    next.querySelector("[data-next-label]").textContent = isLast
+      ? "Finalizar"
+      : "Siguiente";
+    next.querySelector("[data-next-icon]").classList.toggle("hidden", isLast);
   }
   if (label) label.textContent = currentStep;
 };

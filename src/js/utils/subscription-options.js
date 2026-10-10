@@ -23,9 +23,7 @@ const updatePlanPrices = (form) => {
   });
 };
 
-const initPlanPrices = () => {
-  const form = document.getElementById("subscription__form");
-  if (!form) return;
+const initPlanPrices = (form) => {
   form.addEventListener("change", (event) => {
     if (event.target.name === "coffee") updatePlanPrices(form);
   });
@@ -34,17 +32,18 @@ const initPlanPrices = () => {
 
 // /src/pages/subscription.html?plan=weekly pre-selects that plan (the plan
 // cards on the home page link here)
-const preselectPlan = () => {
+const preselectPlan = (form) => {
   const plan = new URLSearchParams(window.location.search).get("plan");
   if (!plan) return;
-  const form = document.getElementById("subscription__form");
   form
-    ?.querySelector(`input[name="plan"][value="${CSS.escape(plan)}"]`)
+    .querySelector(`input[name="plan"][value="${CSS.escape(plan)}"]`)
     ?.click();
 };
 
 export const initSubscriptionOptions = () => {
   renderCoffeeOptions();
-  initPlanPrices();
-  preselectPlan();
+  const form = document.getElementById("subscription__form");
+  if (!form) return;
+  initPlanPrices(form);
+  preselectPlan(form);
 };

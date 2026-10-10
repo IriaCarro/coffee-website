@@ -11,30 +11,21 @@ import {
 // Build-time components: <name attr="...">slot</name> is replaced by
 // src/components/<group>/<name>.html, so pages ship as plain static HTML.
 // Attributes fill {{attr}} placeholders and the inner HTML fills {{slot}}.
-const COMPONENTS = [
-  "app-footer",
-  "app-header",
-  "back-link",
-  "contact-item",
-  "cta-card",
-  "form-field",
-  "form-textarea",
-  "home-section",
-  "page-header",
-  "section-body",
-  "social-links",
-  "spec-item",
-];
-
-// Attribute values used when a page leaves them out
-const DEFAULTS = {
+// Each entry is a component and the attribute values used when a page leaves
+// them out.
+const COMPONENTS = {
   "app-footer": { class: "", year: String(new Date().getFullYear()) },
+  "app-header": {},
   "back-link": { href: "/", label: "Volver al inicio" },
+  "contact-item": {},
+  "cta-card": {},
   "form-field": { type: "text", autocomplete: "off", class: "", extra: "" },
   "form-textarea": { rows: "5", class: "" },
   "home-section": { class: "" },
-  "section-body": { class: "max-w-6xl" },
   "page-header": { class: "mb-8 text-center sm:mb-12" },
+  "section-body": { class: "max-w-6xl" },
+  "social-links": {},
+  "spec-item": {},
 };
 
 // <repeat data="menu" component="menu-item"></repeat> renders the component
@@ -65,6 +56,8 @@ const COLLECTIONS = {
     ...item,
     ...imageVariants(item.image),
     ...lcpPriority(index),
+    // Rendered width of the tile per breakpoint: the featured tile spans 2 of
+    // the 3 columns from lg (1024px) and 1 of 2 from sm (640px)
     sizes: item.featured
       ? "(min-width: 1024px) 66vw, (min-width: 640px) 50vw, 100vw"
       : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
@@ -83,7 +76,7 @@ export default function htmlComponents() {
   let root = process.cwd();
   const repeatPattern = /<repeat\b([^>]*)>\s*<\/repeat>/g;
   const pattern = new RegExp(
-    `<(${COMPONENTS.join("|")})\\b([^>]*)>([\\s\\S]*?)<\\/\\1\\s*>`,
+    `<(${Object.keys(COMPONENTS).join("|")})\\b([^>]*)>([\\s\\S]*?)<\\/\\1\\s*>`,
     "g",
   );
 
@@ -110,7 +103,8 @@ export default function htmlComponents() {
     );
 
   // limit="3" renders only the first items; lcp="false" keeps their images
-  // lazy when the list sits below the fold
+  // lazy when the list sits below the fold (otherwise the first one loads
+  // eagerly as the page's LCP candidate)
   const repeat = (html) =>
     html.replace(repeatPattern, (_, attributes) => {
       const { data, component, limit, lcp } = parseAttributes(attributes);
@@ -127,7 +121,7 @@ export default function htmlComponents() {
   const expandOnce = (html) =>
     repeat(html).replace(pattern, (_, name, attributes, slot) =>
       renderTemplate(readComponent(name), {
-        ...DEFAULTS[name],
+        ...COMPONENTS[name],
         ...parseAttributes(attributes),
         slot,
       }),

@@ -220,7 +220,10 @@
                   disabled
                   class="btn btn--primary px-4 whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-50 sm:px-6"
                 >
-                  <span aria-hidden="true">&larr;</span>
+                  <span
+                    class="icon mask-[url(/icons/ui/arrow-left.svg)]"
+                    aria-hidden="true"
+                  ></span>
                   Anterior
                 </button>
                 <span
@@ -236,7 +239,12 @@
                   id="subscription__btn-next"
                   class="btn btn--primary px-4 whitespace-nowrap sm:px-6"
                 >
-                  Siguiente &rarr;
+                  <span data-next-label>Siguiente</span>
+                  <span
+                    class="icon mask-[url(/icons/ui/arrow-right.svg)]"
+                    aria-hidden="true"
+                    data-next-icon
+                  ></span>
                 </button>
               </nav>
             </form>

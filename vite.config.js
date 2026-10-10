@@ -3,6 +3,8 @@ import tailwindcss from "@tailwindcss/vite";
 import coffeePages from "./vite-plugins/coffee-pages.js";
 import htmlComponents from "./vite-plugins/html-components.js";
 import inlineThemeScript from "./vite-plugins/inline-theme-script.js";
+import lowPriorityScripts from "./vite-plugins/low-priority-scripts.js";
+import preloadFonts from "./vite-plugins/preload-fonts.js";
 
 export default defineConfig({
   plugins: [
@@ -10,6 +12,8 @@ export default defineConfig({
     htmlComponents(),
     coffeePages(),
     inlineThemeScript(),
+    lowPriorityScripts(),
+    preloadFonts(),
   ],
   build: {
     rollupOptions: {

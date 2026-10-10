@@ -29,7 +29,10 @@ export default function coffeePages() {
       read("src/components/coffee/coffee-detail.html"),
       {
         ...coffeeFields(coffee),
-        stars: "★".repeat(coffee.rating),
+        stars:
+          '<span class="icon mask-[url(/icons/ui/star.svg)]"></span>'.repeat(
+            coffee.rating,
+          ),
         flavorProfileHtml,
       },
     );

@@ -20,13 +20,15 @@ export const imageVariants = (src) => ({
 // Fields every coffee card, option and detail page derives from coffees.json
 export const coffeeFields = (coffee) => ({
   ...coffee,
+  packImage120: imageVariant(coffee.packImage, 120),
   packImage200: imageVariant(coffee.packImage, 200),
   packImage300: imageVariant(coffee.packImage, 300),
   packImage400: imageVariant(coffee.packImage, 400),
   formattedPrice: formatPrice(coffee.price),
 });
 
-// The first image of a list is the LCP element: load it right away
+// The first image of a list is the LCP (largest contentful paint) element:
+// load it right away at high priority and keep the rest lazy
 export const lcpPriority = (index) =>
   index === 0
     ? { loading: "eager", priority: "high" }

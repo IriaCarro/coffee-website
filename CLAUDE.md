@@ -13,9 +13,11 @@ npm install
 npm run dev       # Vite dev server
 npm run build     # outputs to dist/
 npm run preview   # serve the built dist/
+npm run format    # Prettier (+ Tailwind class sorting) on the whole project
+npm run format:check
 ```
 
-There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`, see `.prettierrc`) is installed for formatting only. **After making changes, format the files you touched with Prettier** (e.g. `npx prettier --write <files>`).
+There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`, see `.prettierrc`) is installed for formatting only. **After making changes, format the files you touched with Prettier** (e.g. `npx prettier --write <files>`, or `npm run format` for everything; `npm run format:check` verifies).
 
 ## Architecture
 
@@ -34,6 +36,8 @@ There is no test runner or linter. Prettier (with `prettier-plugin-tailwindcss`,
 **Styling.** `src/styles/index.css` is the single stylesheet, imported by every page. It declares the cascade order `@layer theme, reset, base, components, utilities` and imports Tailwind plus `src/styles/`: `tokens.css` (`@theme`: fonts, coffee color palette, hero sizes and breakpoint, keyframes; `@theme inline`: semantic color aliases of the theme variables), `themes.css` (per-theme variables), `base.css` (`@apply` on native elements: body, headings, focus ring, inputs, and the empty-list rule), `utilities.css` (custom `@utility`: `page-gutter`, `theme-transition`, `enter-fade-up`) and `components/ui.css` (shared `@apply` components: `icon`, `btn`, `form__label`, `form__error`, `hover-zoom`, `gallery-lightbox__control`, and the text/layout patterns repeated 3+ times: `page`, `heading` (`--section`/`--item`), `lead`). There are no per-page or per-component CSS files. All Tailwind utilities live directly in the markup (HTML pages, `src/components/*.html`, HTML strings in JS), as Tailwind recommends, including gradients, pseudo-elements, `url()` backgrounds and scroll-driven animations via arbitrary values and variants. Don't write plain CSS properties anywhere: even `base.css` and `ui.css` use `@apply`. Fonts are bundled with `@fontsource` packages imported in `index.css`. Tailwind scans only the files listed with `@source` in `index.css` (`index.html`, `src/pages`, `src/components`, `src/js`, `vite-plugins`); if class names ever live elsewhere (for example in `src/data`), add that folder or they won't be generated.
 
 **Header height.** `--header-height` (used by `home-section.html` and the menu panel) is derived in `themes.css` from the header's own tokens (`--header-button-size`, `--header-padding-y`, `--header-padding-y-compact`, `--brand-logo-size`) and selected per breakpoint on `html` in `base.css`. No JS measures it, so if `app-header.html` stops using those tokens for its height, update the derivation.
+
+**Build-only performance plugins.** Three small plugins in `vite-plugins/` only touch the built HTML: `inline-theme-script.js` writes `public/theme-init.js` inline in each page, `low-priority-scripts.js` adds `fetchpriority="low"` to the module scripts and Vite's `modulepreload` links, and `preload-fonts.js` preloads the latin files of Playfair Display 700 (headings) and Roboto variable (body text) by their hashed build names. Fonts are only those two plus Permanent Marker (one home title). Roboto is the variable build (`@fontsource-variable/roboto`): one file covers every weight. Don't put arrows, stars or other symbols as text: they fall outside Roboto's latin subset and pull its `symbols`/`math` files (about 60 kB); use a mask icon from `public/icons/ui/` instead (`arrow-left`, `arrow-right`, `arrow-up-right`, `star`...). Adding a font or weight costs mobile Lighthouse points (fonts are requested at high priority before the first paint), and a heading that asks for a weight without its own file (e.g. 400) downloads the nearest one, so keep headings at 700.
 
 **Static assets.** Images/icons are served from `public/` and referenced by absolute paths (`/photos/...`, `/icons/...`), including inside JS data and templates.
 

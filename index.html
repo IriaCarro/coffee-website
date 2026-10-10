@@ -29,7 +29,7 @@
     <link
       rel="preload"
       as="image"
-      href="/photos/cafe-3-800.webp"
+      href="/photos/cafe-3-400.webp"
       media="(max-width: 767px)"
       fetchpriority="high"
     />
@@ -53,7 +53,7 @@
       <home-section
         id="hero"
         heading-id="hero__title"
-        class="[&_:focus-visible]:outline-text-on-image before:from-surface-home-overlay/85 before:via-surface-home-overlay/80 before:to-surface-home-overlay/85 after:from-surface-home-overlay/85 after:via-surface-home-overlay/70 md:after:from-surface-home-overlay/85 md:after:via-surface-home-overlay/70 isolate flex-col gap-8 bg-[url(/photos/cafe-3-800.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-linear-to-r before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-linear-to-t after:to-transparent after:content-[''] md:flex-row md:bg-[url(/photos/cafe-3.webp)] md:after:bg-linear-to-r md:after:to-transparent"
+        class="[&_:focus-visible]:outline-text-on-image before:from-surface-home-overlay/85 before:via-surface-home-overlay/80 before:to-surface-home-overlay/85 after:from-surface-home-overlay/85 after:via-surface-home-overlay/70 md:after:from-surface-home-overlay/85 md:after:via-surface-home-overlay/70 isolate flex-col gap-8 bg-[url(/photos/cafe-3-400.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-linear-to-r before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-linear-to-t after:to-transparent after:content-[''] md:flex-row md:bg-[url(/photos/cafe-3.webp)] md:after:bg-linear-to-r md:after:to-transparent"
       >
         <div class="enter-fade-up relative z-10 md:w-1/2">
           <h1
@@ -194,7 +194,10 @@
               href="/src/pages/menu.html"
             >
               VER MENÚ
-              <span aria-hidden="true">↗</span>
+              <span
+                class="icon mask-[url(/icons/ui/arrow-up-right.svg)]"
+                aria-hidden="true"
+              ></span>
             </a>
           </div>
         </section-body>
