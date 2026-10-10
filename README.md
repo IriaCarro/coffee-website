@@ -160,9 +160,9 @@ Para saber qué frena el móvil se midió Lighthouse 13 (solo rendimiento, móvi
 
 #### Opcionales (P1–P7)
 
-- [x] **P1** — Modo oscuro con toggle (en vez de `dark:` o `@custom-variant`, el tema se guarda en `data-theme` y cada tema define sus variables CSS; sin elección guardada sigue `prefers-color-scheme`)
+- [ ] **P1** — Modo oscuro con toggle (en vez de `dark:` o `@custom-variant`, el tema se guarda en `data-theme` y cada tema define sus variables CSS; sin elección guardada sigue `prefers-color-scheme`)
 - [x] **P2** — Cabecera fija con efecto cristal (`sticky backdrop-blur`)
-- [x] **P3** — Planes con tarjeta destacada: sección `#plans` de la home con 3 tarjetas ([plan-card.html](src/components/subscription/plan-card.html), datos en [plans.json](src/data/plans.json)) y la del plan mensual destacada con borde de acento, más sombra y una insignia «Más popular» con `absolute -top-3` (es la primera tarjeta, no la central, y no es más grande que las otras); el asistente de [suscripción](src/pages/subscription.html) reutiliza los mismos datos
+- [ ] **P3** — Planes con tarjeta destacada: sección `#plans` de la home con 3 tarjetas ([plan-card.html](src/components/subscription/plan-card.html), datos en [plans.json](src/data/plans.json)) y la del plan mensual destacada con borde de acento, más sombra y una insignia «Más popular» con `absolute -top-3` (es la primera tarjeta, no la central, y no es más grande que las otras); el asistente de [suscripción](src/pages/subscription.html) reutiliza los mismos datos
 - [x] **P4** — FAQ plegable sin JavaScript (`<details class="group">` + `group-open:-rotate-[135deg]` en el icono, ver [faq-item.html](src/components/content/faq-item.html))
 - [x] **P5** — Formulario con estados (los estilos de foco, error y deshabilitado de los campos están en [base.css](src/styles/base.css) como selectores de los elementos nativos, `:focus`, `:user-invalid`, `[aria-invalid]` y `:disabled`, no como variantes en el HTML; la variante `disabled:` sí se usa en el botón «Anterior» del asistente. El aviso de error usa `peer-user-invalid:block` y `peer-aria-invalid:block` dentro de `.form__error` en [ui.css](src/styles/components/ui.css), y los campos llevan `peer` en [form-field.html](src/components/forms/form-field.html); `aria-invalid` lo pone [form-validation.js](src/js/lib/form-validation.js) al validar el envío y los pasos)
 - [x] **P6** — Bento grid (`col-span-2 row-span-2`)
@@ -217,7 +217,7 @@ Las utilidades propias están en [utilities.css](src/styles/utilities.css): `pag
 **Cuándo crear una utilidad o un componente y cuándo repetir clases**
 
 - **Repetir clases** cuando es algo pequeño y el elemento aparece pocas veces: es lo más legible, porque el estilo está donde se usa y no hay que saltar a otro archivo.
-- **Crear una utilidad con `@utility`** cuando es un puñado de declaraciones que van siempre juntas, sin estructura, y se repiten en muchos sitios y con variantes. Por ejemplo `theme-transition` está en 7 archivos (seis plantillas HTML y `ui.css`).
+- **Crear una utilidad con `@utility`** cuando es un puñado de declaraciones que van siempre juntas, sin estructura, y se repiten en muchos sitios y con variantes. Por ejemplo `theme-transition` está en 12 archivos (once plantillas HTML y `ui.css`).
 - **Crear un componente** (HTML/JS en `src/components/`) cuando se repite una estructura entera, no solo estilos: la tarjeta de café, el elemento del menú, la cabecera o el pie. Reutilizar clases en markup copiado a mano genera divergencias; con un componente se cambia en un sitio.
 - **Crear una clase semántica en CSS** (`btn btn--primary`) cuando varios elementos comparten un patrón visual que además tiene nombre y significado propio.
 

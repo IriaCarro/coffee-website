@@ -55,22 +55,24 @@
         class="[&_:focus-visible]:outline-text-on-image before:from-surface-home-overlay/85 before:via-surface-home-overlay/80 before:to-surface-home-overlay/85 after:from-surface-home-overlay/85 after:via-surface-home-overlay/70 md:after:from-surface-home-overlay/85 md:after:via-surface-home-overlay/70 isolate flex-col gap-8 bg-[url(/photos/cafe-3-400.webp)] bg-cover bg-center before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-linear-to-r before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-0 after:bg-linear-to-t after:to-transparent after:content-[''] md:flex-row md:bg-[url(/photos/cafe-3.webp)] md:after:bg-linear-to-r md:after:to-transparent"
       >
         <div class="enter-fade-up relative z-10 md:w-1/2">
-          <h1
-            id="hero__title"
-            class="text-text-on-image-title text-6xl leading-[0.9] font-bold sm:text-7xl lg:text-8xl xl:text-9xl"
-          >
-            <span class="block">{{t:home.hero.title1}}</span>
-            <span class="text-text-on-image-accent block">
-              {{t:home.hero.title2}}
-            </span>
-            <span class="block">{{t:home.hero.title3}}</span>
-            <span class="block">{{t:home.hero.title4}}</span>
-          </h1>
-          <h2
-            class="text-text-on-image-subtitle mt-6 mb-4 text-lg leading-tight font-bold sm:mt-8 sm:mb-6 sm:text-xl"
-          >
-            {{t:home.hero.subtitle}}
-          </h2>
+          <hgroup>
+            <h1
+              id="hero__title"
+              class="text-text-on-image-title text-6xl leading-[0.9] font-bold sm:text-7xl lg:text-8xl xl:text-9xl"
+            >
+              <span class="block">{{t:home.hero.title1}}</span>
+              <span class="text-text-on-image-accent block">
+                {{t:home.hero.title2}}
+              </span>
+              <span class="block">{{t:home.hero.title3}}</span>
+              <span class="block">{{t:home.hero.title4}}</span>
+            </h1>
+            <p
+              class="text-text-on-image-subtitle font-display mt-6 mb-4 text-lg leading-tight font-bold sm:mt-8 sm:mb-6 sm:text-xl"
+            >
+              {{t:home.hero.subtitle}}
+            </p>
+          </hgroup>
           <p class="text-text-on-image-muted mb-8 max-w-prose text-lg">
             {{t:home.hero.text}}
           </p>
@@ -211,7 +213,7 @@
         <section-body class="max-w-6xl">
           <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
             <div
-              class="bg-surface-muted rounded-2xl p-5 shadow-2xl backdrop-blur-sm sm:p-8 lg:p-10"
+              class="theme-transition bg-surface-muted rounded-2xl p-5 shadow-2xl backdrop-blur-sm sm:p-8 lg:p-10"
             >
               <h2
                 id="location__title"
@@ -227,7 +229,7 @@
               </p>
 
               <section
-                class="border-accent bg-surface-container mb-6 rounded-xl border-l-4 p-6"
+                class="theme-transition border-accent bg-surface-container mb-6 rounded-xl border-l-4 p-6"
                 aria-labelledby="info__address-title"
               >
                 <h3
@@ -247,7 +249,7 @@
               </section>
 
               <section
-                class="border-accent bg-surface-container mb-6 rounded-xl border-l-4 p-6"
+                class="theme-transition border-accent bg-surface-container mb-6 rounded-xl border-l-4 p-6"
                 aria-labelledby="info__hours-title"
               >
                 <h3
