@@ -1,0 +1,459 @@
+{
+  "common": {
+    "backHome": "Volver al inicio",
+    "languages": "Idioma",
+    "newTab": "(se abre en una pestaña nueva)",
+    "back": "Volver"
+  },
+  "header": {
+    "skipLink": "Saltar al contenido",
+    "menuButton": "Menú",
+    "logoAlt": "Café rico, inicio",
+    "nav": {
+      "label": "Navegación principal",
+      "home": "Inicio",
+      "coffees": "Cafés",
+      "menu": "Menú",
+      "about": "Nuestra Historia",
+      "gallery": "Galería",
+      "subscribe": "Suscríbete"
+    }
+  },
+  "footer": {
+    "logoAlt": "Logo Café Rico",
+    "tagline": "Café de especialidad recién tostado, seleccionado con respeto por el origen y entregado en tu puerta cada mes.",
+    "links": {
+      "title": "Enlaces",
+      "label": "Enlaces del pie",
+      "home": "Inicio",
+      "coffees": "Cafés",
+      "faq": "Preguntas Frecuentes",
+      "contact": "Contacto",
+      "about": "Nuestra Historia",
+      "gallery": "Galería"
+    },
+    "visit": {
+      "title": "Visítanos",
+      "weekdays": "L-V: 9:00 - 18:00",
+      "saturday": "Sáb: 10:00 - 14:00",
+      "sunday": "Dom: Cerrado",
+      "directions": "Cómo llegar"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "text": "Recibe novedades, nuevos orígenes y ofertas de suscripción. Sin spam.",
+      "label": "Email",
+      "placeholder": "tu@email.com",
+      "error": "Introduce un email válido, por ejemplo nombre@email.com.",
+      "submit": "Suscribirme",
+      "invalid": "Revisa el email antes de enviar.",
+      "success": "Gracias, te hemos apuntado a la newsletter."
+    },
+    "rights": "Café Rico. Todos los derechos reservados.",
+    "contact": "Contacta con nosotros"
+  },
+  "about": {
+    "meta": {
+      "title": "Nuestra Historia - Café Rico",
+      "description": "Conoce la historia de Café Rico y nuestra pasión por el café de especialidad."
+    },
+    "title": "Nuestra Historia",
+    "lead": "Descubre cómo Café Rico nació de una pasión por el café de especialidad",
+    "beginning": {
+      "title": "El Comienzo",
+      "p1": "Café Rico comenzó en 2018 cuando un grupo de amigos apasionados por el café decidieron compartir su amor por esta bebida milenaria. Lo que comenzó como un hobby en una pequeña cocina, pronto se convirtió en una misión: traer los mejores cafés de origen único directamente a las casas de los amantes del café.",
+      "p2": "Nos dimos cuenta de que la mayoría de las personas no tenía acceso a cafés de calidad premium sin pagar precios exorbitantes. Así que decidimos cambiar eso, estableciendo relaciones directas con productores en diferentes partes del mundo.",
+      "imageAlt": "Granos de café y una taza en una finca al amanecer"
+    },
+    "journey": {
+      "title": "Nuestro Viaje Global",
+      "p1": "A lo largo de los años, hemos viajado a las principales regiones productoras de café del mundo: Etiopía, Colombia, Kenia y muchos otros países. Hemos conocido a los agricultores, entendido sus desafíos y aprendido sobre las técnicas tradicionales que hacen que cada café sea único.",
+      "p2": "Estos viajes no solo nos permitieron seleccionar los mejores granos, sino también establecer relaciones duraderas basadas en el respeto, la sostenibilidad y el comercio justo.",
+      "imageAlt": "Interior cálido de una cafetería"
+    },
+    "mission": {
+      "title": "Nuestra Misión Hoy",
+      "p1": "Hoy, Café Rico es más que una empresa de suscripción de café. Somos una comunidad de amantes del café comprometidos con traer sostenibilidad, calidad y educación al mundo del café de especialidad.",
+      "p2": "Cada mes, seleccionamos cuidadosamente tres variedades de nuestros proveedores favoritos, las tostamos a la perfección en nuestras instalaciones, y las enviamos directamente a tu puerta. Queremos que disfrutes de café recién tostado con la máxima frescura.",
+      "p3": "Creemos que el café es más que una bebida; es una experiencia, una conexión con culturas distantes y una oportunidad para hacer una diferencia en la vida de los productores.",
+      "imageAlt": "Barista preparando café espresso"
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "quality": {
+        "title": "Calidad",
+        "text": "Seleccionamos solo los mejores granos y los tostamos con precisión para garantizar la máxima calidad en cada taza."
+      },
+      "sustainability": {
+        "title": "Sostenibilidad",
+        "text": "Trabajamos directamente con productores que practican la agricultura sostenible y el comercio justo."
+      },
+      "education": {
+        "title": "Educación",
+        "text": "Nos encanta compartir el conocimiento sobre el café: su origen, sabor y los mejores métodos de preparación."
+      }
+    },
+    "team": {
+      "title": "Nuestro Equipo",
+      "text": "Somos un equipo pequeño pero apasionado de expertos en café, tostadores, y amantes de esta bebida milenaria. Cada miembro de nuestro equipo trae una perspectiva única y un compromiso inquebrantable con la excelencia."
+    },
+    "cta": {
+      "title": "Únete a Nuestra Comunidad",
+      "text": "Sé parte de nuestra historia y descubre el mundo del café de especialidad",
+      "button": "Comienza tu Suscripción"
+    }
+  },
+  "home": {
+    "meta": {
+      "description": "Café de especialidad recién tostado, seleccionado para disfrutar en casa.",
+      "title": "Café rico"
+    },
+    "hero": {
+      "title1": "Buen",
+      "title2": "café,",
+      "title3": "mejores",
+      "title4": "días",
+      "subtitle": "Café recién tostado, en tu puerta cada mes.",
+      "text": "Tostamos en pequeños lotes granos de origen único y te los llevamos frescos a casa. Descubre nuestras selecciones premium.",
+      "subscribe": "Suscríbete ahora",
+      "coffees": "Ver Cafés",
+      "bagAlt": "Bolsa de café Etiopía Floral, notas florales y cítricas"
+    },
+    "breakfast": {
+      "eyebrow": "CAFÉ RICO · MAÑANAS",
+      "title": "Desayunos",
+      "titleStart": "DESA",
+      "titleMiddle": "Y",
+      "titleEnd": "UNOS",
+      "text": "Empieza el día con café recién hecho, bollería artesanal y algo rico.",
+      "button": "VER MENÚ"
+    },
+    "location": {
+      "title": "Un lugar para disfrutar",
+      "text": "Buen café, buena compañía y un ambiente único en la ciudad.",
+      "place": "Ubicación",
+      "city": "28003 Madrid, España",
+      "hours": "Horario",
+      "weekdays": "Lunes - Viernes:",
+      "saturday": "Sábado:",
+      "sunday": "Domingo:",
+      "closed": "Cerrado",
+      "directions": "Cómo Llegar en Google Maps",
+      "craft": {
+        "title": "Café Artesanal",
+        "text": "Seleccionado y tostado a la perfección"
+      },
+      "ambience": {
+        "title": "Ambiente Único",
+        "text": "Música y buena compañía garantizadas"
+      },
+      "community": {
+        "title": "Comunidad",
+        "text": "Conecta con otros amantes del café"
+      }
+    },
+    "cta": {
+      "title": "Tu café, donde quieras",
+      "text": "Disfruta de nuestro menú en el local o haz tu pedido online para llevar.",
+      "menu": "Ver Menú",
+      "subscribe": "Suscribirse"
+    },
+    "coffees": {
+      "title": "Cafés del mes",
+      "text": "Orígenes de especialidad, tostados cada semana en pequeños lotes.",
+      "all": "Ver todos los cafés"
+    },
+    "steps": {
+      "title": "Así funciona tu suscripción",
+      "text": "Tres pasos y tu café favorito llega a casa cada mes.",
+      "choose": {
+        "title": "Elige tu café y tu plan",
+        "text": "Escoge el origen que más te guste y cada cuánto lo quieres: mensual, quincenal o semanal."
+      },
+      "roast": {
+        "title": "Lo tostamos",
+        "text": "Tostado en pequeños lotes, justo antes de enviarlo."
+      },
+      "delivery": {
+        "title": "Te llega a casa",
+        "text": "Enviado directamente a tu puerta, fresco y listo para preparar."
+      },
+      "button": "Empezar mi suscripción"
+    },
+    "plans": {
+      "title": "Elige tu plan",
+      "text": "El mismo café, con la frecuencia que prefieras. Cancela cuando quieras."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "text": "Lo que más nos preguntan antes de suscribirse.",
+      "all": "Ver todas las preguntas"
+    },
+    "about": {
+      "title": "Más que Café",
+      "text": "Selección de granos, tueste artesanal y un profundo respeto por el origen. Trabajamos con productores que comparten nuestra visión de un café más consciente y sostenible.",
+      "origin": {
+        "title": "Origen Responsable",
+        "text": "Relaciones directas con productores locales que respetan el medio ambiente"
+      },
+      "roast": {
+        "title": "Tueste Artesanal",
+        "text": "Tostado a pequeños lotes para garantizar la máxima calidad y frescura"
+      },
+      "conscious": {
+        "title": "Café Consciente",
+        "text": "Envases sostenibles y prácticas responsables en cada paso del proceso"
+      },
+      "button": "Nuestra Historia"
+    }
+  },
+  "coffees": {
+    "card": {
+      "details": "Ver detalles"
+    },
+    "meta": {
+      "description": "Descubre los cafés de especialidad del mes de Café Rico.",
+      "title": "Cafés del Mes - Café Rico"
+    },
+    "title": "Cafés del Mes",
+    "lead": "Selecciona tu favorito y comienza tu viaje de sabor",
+    "listTitle": "Todos los cafés",
+    "packAlt": "Pack de café"
+  },
+  "plans": {
+    "popular": "Más popular",
+    "from": "Desde",
+    "perMonth": "/mes",
+    "choose": "Elegir plan"
+  },
+  "menu": {
+    "meta": {
+      "description": "Carta de desayunos y bollería de Café Rico: napolitanas, croissants, rollos y batidos naturales.",
+      "title": "Menú - Café Rico"
+    },
+    "title": "Menú de desayunos y bollería",
+    "lead": "Bollería recién horneada y desayunos para acompañar tu café",
+    "listTitle": "Carta",
+    "special": {
+      "imageAlt": "Pila de tortitas con sirope, frutos rojos y azúcar glas junto a un café con leche",
+      "badge": "Especial de la casa",
+      "title": "Tortitas con frutos rojos",
+      "text": "Tortitas esponjosas con sirope, fresas, frambuesas, arándanos, menta fresca y azúcar glas. Ideales con un café con leche."
+    }
+  },
+  "gallery": {
+    "meta": {
+      "description": "Galería de imágenes de nuestros cafés premium.",
+      "title": "Galería - Café Rico"
+    },
+    "title": "Galería de Café",
+    "lead": "Explora nuestra colección de cafés premium de origen único",
+    "listTitle": "Fotos",
+    "cta": {
+      "title": "¿Te gustaría probar nuestros cafés?",
+      "button": "Comenzar Suscripción",
+      "text": "Suscríbete y recibe café premium cada mes"
+    },
+    "lightbox": {
+      "label": "Imagen ampliada",
+      "close": "Cerrar",
+      "previous": "Anterior",
+      "next": "Siguiente"
+    }
+  },
+  "faq": {
+    "meta": {
+      "description": "Preguntas frecuentes sobre Café Rico.",
+      "title": "Preguntas Frecuentes - Café Rico"
+    },
+    "title": "Preguntas Frecuentes",
+    "lead": "Encuentra respuestas a las preguntas más comunes sobre nuestros cafés y servicios",
+    "listTitle": "Lista de preguntas",
+    "help": {
+      "title": "¿No encontraste tu respuesta?",
+      "text": "Estamos aquí para ayudarte. Contáctanos directamente:",
+      "button": "Enviar Email"
+    }
+  },
+  "contact": {
+    "meta": {
+      "description": "Contacta con Café Rico y descubre cómo visitarnos.",
+      "title": "Contacto - Café Rico"
+    },
+    "title": "Cómo Llegar",
+    "lead": "Visítanos o contacta directamente con nuestro equipo",
+    "location": {
+      "title": "Ubicación",
+      "office": "Oficina Principal",
+      "city": "28001 Madrid, España",
+      "hours": "Horario",
+      "weekdays": "Lunes - Viernes: 9:00 - 18:00",
+      "saturday": "Sábado: 10:00 - 14:00",
+      "sunday": "Domingo: Cerrado",
+      "transport": "Transporte Público",
+      "metro": "Metro: Línea 3, Estación Centro",
+      "bus": "Autobús: Línea 27, Parada Café Rico"
+    },
+    "info": {
+      "title": "Contacto",
+      "phone": "Teléfono",
+      "email": "Email",
+      "support": "Atención al Cliente",
+      "response": "Respuesta en 24 horas",
+      "social": "Redes Sociales"
+    },
+    "map": {
+      "title": "Nuestra Ubicación",
+      "label": "Mapa de la ubicación de Café Rico",
+      "address": "Calle del Café, 42 - Madrid"
+    },
+    "form": {
+      "title": "Envíanos un Mensaje",
+      "required": "Todos los campos son obligatorios.",
+      "name": {
+        "label": "Nombre Completo"
+      },
+      "subject": {
+        "label": "Asunto",
+        "placeholder": "¿En qué podemos ayudarte?",
+        "error": "Indica el asunto del mensaje."
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Tu mensaje...",
+        "error": "Escribe tu mensaje."
+      },
+      "submit": "Enviar Mensaje",
+      "invalid": "Revisa los campos marcados antes de enviar.",
+      "success": "Gracias, hemos recibido tu mensaje."
+    },
+    "faq": {
+      "title": "¿Tienes Preguntas?",
+      "button": "Ver FAQ",
+      "text": "Consulta nuestras preguntas frecuentes para respuestas rápidas"
+    }
+  },
+  "forms": {
+    "name": {
+      "placeholder": "Tu nombre",
+      "error": "Introduce tu nombre."
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "tu@email.com",
+      "error": "Introduce un email válido, por ejemplo nombre@email.com."
+    }
+  },
+  "subscription": {
+    "meta": {
+      "description": "Configura tu suscripción de café premium.",
+      "title": "Suscripción - Café Rico"
+    },
+    "title": "Configura tu Suscripción",
+    "lead": "Elige tu café favorito y recíbelo cada mes en tu puerta",
+    "steps": {
+      "title": "Pasos de la suscripción",
+      "text": "Completa los siguientes pasos para empezar a recibir tu café favorito",
+      "coffee": "Tu café",
+      "plan": "Tu plan",
+      "delivery": "Entrega"
+    },
+    "progress": {
+      "label": "Progreso de la suscripción",
+      "first": "Paso 1 de 3",
+      "text": "Paso {step} de {total}"
+    },
+    "coffee": {
+      "title": "¿Qué café prefieres?",
+      "text": "Selecciona tu café favorito para empezar"
+    },
+    "plan": {
+      "title": "Elige tu plan",
+      "text": "Selecciona la frecuencia y cantidad"
+    },
+    "delivery": {
+      "title": "Datos de entrega",
+      "text": "¿Dónde te enviamos tu café?"
+    },
+    "form": {
+      "name": "Nombre completo",
+      "address": {
+        "label": "Dirección de envío",
+        "placeholder": "Calle, número, piso...",
+        "error": "Introduce tu dirección de envío."
+      },
+      "city": {
+        "label": "Ciudad",
+        "error": "Introduce tu ciudad."
+      },
+      "zip": {
+        "label": "Código postal",
+        "error": "Introduce un código postal de 5 dígitos."
+      }
+    },
+    "nav": {
+      "label": "Navegación de pasos",
+      "previous": "Anterior",
+      "step": "Paso",
+      "of": "de 3",
+      "next": "Siguiente",
+      "finish": "Finalizar"
+    },
+    "done": {
+      "title": "Revisa tu correo",
+      "textStart": "Para continuar con tu suscripción, abre el mensaje que te enviaremos a",
+      "email": "tu correo",
+      "textEnd": "y confirma tus datos."
+    }
+  },
+  "coffee": {
+    "back": "Volver a Cafés",
+    "ratingPrefix": "Valoración:",
+    "ratingSuffix": "de 5",
+    "reviews": "reseñas",
+    "descriptionTitle": "Descripción",
+    "specsTitle": "Ficha técnica",
+    "specs": {
+      "origin": "Origen",
+      "roast": "Tueste",
+      "altitude": "Altitud",
+      "production": "Producción"
+    },
+    "flavorTitle": "Perfil de Sabor",
+    "brewingTitle": "Recomendaciones de Preparación",
+    "brewing": {
+      "temperature": "Temperatura",
+      "grind": "Molienda",
+      "ratio": "Proporción",
+      "methods": "Métodos Recomendados"
+    },
+    "cta": {
+      "title": "¿Te gustaría probarlo?",
+      "text": "Suscríbete y recibe este café premium cada mes",
+      "button": "Comenzar Suscripción"
+    }
+  },
+  "theme": {
+    "current": "Cambiar tema, actual:",
+    "light": "Claro",
+    "menu": "Seleccionar tema",
+    "dark": "Oscuro",
+    "matcha": "Matcha",
+    "cafe": "Café",
+    "blue": "Azul",
+    "violet": "Violeta"
+  },
+  "sectionNav": {
+    "label": "Accesos complementarios",
+    "nav": "Navegación por secciones",
+    "hero": "Inicio",
+    "breakfast": "Desayuno",
+    "location": "Ubicación",
+    "cta": "Tu café, donde quieras",
+    "coffees": "Cafés del mes",
+    "steps": "Cómo funciona",
+    "plans": "Planes",
+    "faq": "Preguntas frecuentes",
+    "about": "Más que café"
+  }
+}

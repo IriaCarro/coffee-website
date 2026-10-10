@@ -29,6 +29,17 @@ Comandos del proyecto:
 
 ---
 
+### Idiomas
+
+La web está en castellano, gallego y catalán: el castellano en la raíz (`/`) y cada idioma en su carpeta (`/gl/`, `/ca/`), con un selector en el pie. Las traducciones se aplican al construir la web, no en el navegador: cada idioma es HTML estático con su `lang`, su `<title>` y su descripción, sin JavaScript extra ni parpadeo del texto, y con las mismas notas de Lighthouse que el castellano.
+
+- **Textos de la interfaz:** [es.json](src/locales/es.json), [gl.json](src/locales/gl.json) y [ca.json](src/locales/ca.json) (formato JSON anidado de i18next); el marcado usa `{{t:clave}}`.
+- **Datos (cafés, menú, FAQ, galería, planes):** siguen en castellano en `src/data/`; las traducciones van en `gl.json` y `ca.json`, bajo `data`, por `id` de cada elemento.
+- **Cómo se genera:** [i18n.js](vite-plugins/i18n.js) crea las copias `/gl/` y `/ca/` de cada página, traduce las claves, pone el `lang` y mantiene los enlaces en el mismo idioma; [coffee-pages.js](vite-plugins/coffee-pages.js) hace lo mismo con las páginas de cada café.
+- Las traducciones al gallego y al catalán están pendientes de revisión por una persona nativa.
+
+---
+
 ### Opción de integración de Tailwind
 
 | Método elegido | Por qué                                                                                                                                                                                                                              |
@@ -62,21 +73,21 @@ Resto de páginas en el tema claro (página completa, móvil 390 px y escritorio
 
 ### Lighthouse (móvil y escritorio)
 
-Rendimiento / Accesibilidad por página y tema. Medido el 10 de octubre de 2026, después de las mejoras de rendimiento en móvil (ver el análisis más abajo), con Lighthouse 13 sobre el build de producción (`npm run build` + `npm run preview`), con un solo pase por combinación (108 mediciones). El tema se fija en `localStorage` antes de cada medición.
+Rendimiento / Accesibilidad por página y tema. Medido el 10 de octubre de 2026 con Lighthouse 13 sobre el build de producción (`npm run build` + `npm run preview`), un pase por combinación (108 mediciones), cada una en un navegador nuevo (caché vacía, como una primera visita). El tema se fija en `localStorage` antes de cada medición.
 
 #### Móvil
 
 | Página               | Claro     | Oscuro    | Matcha    | Café      | Azul      | Violeta   |
 | -------------------- | --------- | --------- | --------- | --------- | --------- | --------- |
 | Inicio               | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  |
-| Cafés                | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Detalle de café      | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Menú                 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Cafés                | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  |
+| Detalle de café      | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  |
+| Menú                 | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  |
 | Historia             | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Galería              | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Galería              | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  |
 | Preguntas frecuentes | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Contacto             | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
-| Suscripción          | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
+| Contacto             | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 100 / 100 |
+| Suscripción          | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  | 99 / 100  |
 
 #### Escritorio
 
@@ -93,10 +104,11 @@ Rendimiento / Accesibilidad por página y tema. Medido el 10 de octubre de 2026,
 | Suscripción          | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 | 100 / 100 |
 
 - **Accesibilidad:** 100 en las 108 combinaciones (el objetivo era ≥ 90).
-- **Rendimiento:** escritorio da 100 en todo. En móvil, 8 de las 9 páginas dan 100 en los seis temas (antes la nota iba de 93 a 99); solo Inicio da 99. El primer pintado (FCP) en móvil es de 0,8 s en todas las páginas menos Inicio (1,2 s). Medido ya con Roboto como fuente del texto (ver el análisis).
+- **Rendimiento:** escritorio da 100 en todo. En móvil la nota va de 99 a 100 (antes de las mejoras, de 93 a 99): Historia y Preguntas frecuentes dan 100 y el resto 99 (Contacto da 100 en el tema violeta). El primer pintado (FCP) en móvil es de 0,9 s en todas las páginas menos Inicio (1,2 s); lo que separa del 100 es el LCP, de 1,8 a 2,3 s.
 - **Qué se hizo para llegar aquí:** imágenes en WebP con `srcset` y `sizes`, `width` y `height` en las `<img>`, `loading="lazy"` bajo el primer pantallazo y `fetchpriority="high"` en la imagen del LCP, y altura reservada para la cabecera, el pie y las listas que se rellenan con JS (para evitar saltos de diseño), variantes de tamaño para cada uso (las bolsas, por ejemplo, en 120, 200, 300, 400, 600 y 800 px), el script del tema (`theme-init.js`) escrito dentro de cada página en vez de enlazado ([inline-theme-script.js](vite-plugins/inline-theme-script.js)), que quita una petición bloqueante, y las mejoras del análisis de abajo: tres archivos de fuente en vez de seis (Roboto variable, Playfair Display 700 y Permanent Marker, que solo carga Inicio), las fuentes precargadas, el JS con prioridad baja y la foto del hero más ligera en móvil. La bolsa del hero lleva `fetchpriority="low"` porque con `high` competía con la foto de fondo, que es el LCP.
-- **D7 (Lighthouse 100) no está conseguido del todo:** falta un punto en Inicio en móvil. Lo que frena es el LCP (2,0 s): el elemento LCP es siempre una imagen grande del hero (la foto de fondo o, si el fondo se aligera, la bolsa de café), y la simulación de móvil cuenta todo lo que la página pide antes de pintarla. Llegar a 100 exigiría bajar la calidad visible de las dos imágenes del hero, así que se deja en 99 (ver el análisis).
+- **D7 (Lighthouse 100) no está conseguido del todo:** escritorio da 100 en todo, pero en móvil solo dos páginas llegan a 100. En el resto falta un punto por el LCP (alrededor de 2,0 s), en el que pesan las fuentes (Roboto y Playfair Display, unos 64 kB precargados) y las imágenes que se piden antes de pintar. Inicio necesita además la foto del hero, que es su LCP. Llegar a 100 en todas exigiría volver a la fuente del sistema para el texto o bajar la calidad visible de las imágenes.
 - Un solo pase por combinación puede variar un punto entre ejecuciones.
+- **Corrección del método:** una primera versión de estas tablas medía las nueve páginas de cada tema seguidas en el mismo navegador sin vaciar la caché, así que todas menos la primera (Inicio) se beneficiaban del CSS y las fuentes ya descargados y salían a 100. Con la caché vacía, Suscripción baja de 100 a 99 y su LCP de 1,1 a 2,0 s. Las tablas de arriba ya están medidas con la caché vacía; las comparaciones de una sola página del análisis siempre se midieron así.
 
 #### Análisis del rendimiento en móvil (9 y 10 de octubre de 2026)
 
@@ -125,9 +137,9 @@ Para saber qué frena el móvil se midió Lighthouse 13 (solo rendimiento, móvi
 - **Foto de fondo del hero a 400 px en móvil** (19 kB en vez de 49 kB): va detrás de una capa oscura del 80–85 %, así que no se nota la diferencia, e Inicio pasa de 98 a 99.
 - **Miniaturas de 120 px en el asistente de suscripción:** se muestran a 64 px de ancho y cargaban la versión de 200 px (unos 19 kB cada una, seis antes del primer pintado). La de 120 px pesa unos 10 kB y basta para la densidad de pantalla del móvil que simula Lighthouse; los móviles de más densidad siguen eligiendo la de 200 px.
 - **Foto de Historia con prioridad baja:** el elemento LCP de Historia en móvil es un párrafo de texto, pero la foto que tiene al lado se pedía con prioridad media antes de pintarlo y la simulación la contaba. Con `fetchpriority="low"` en esa foto el LCP baja de 2,0 a 1,5 s y Historia pasa de 99 a 100 (escritorio sigue en 100).
-- **Roboto de vuelta, sin perder puntos:** el texto de cuerpo vuelve a ser Roboto, pero en su versión variable (`@fontsource-variable/roboto`): un solo archivo latino de 40 kB con todos los pesos, en lugar de tres archivos estáticos (unos 66 kB). Se precarga junto a Playfair Display. Sin precarga costaba un punto en Inicio, Historia y Suscripción; con ella las notas quedan igual que con la fuente del sistema (tablas de arriba) y sin saltos de layout. Al probarlo apareció un detalle: las flechas `←`, `→`, `↗` y las estrellas `★` escritas como texto caían fuera del subconjunto latino y hacían descargar además los archivos `symbols` y `math` de Roboto (61 kB más). Se cambiaron por iconos SVG con máscara (`arrow-left`, `arrow-right`, `arrow-up-right` y `star` en `public/icons/ui/`), como ya pedía la convención del proyecto, y con eso cada página descarga solo el archivo latino. De paso se corrigió que el botón «Siguiente» del asistente nunca mostraba su flecha: el JS reescribía todo el texto del botón.
+- **Roboto de vuelta:** el texto de cuerpo vuelve a ser Roboto, pero en su versión variable (`@fontsource-variable/roboto`): un solo archivo latino de 40 kB con todos los pesos, en lugar de tres archivos estáticos (unos 66 kB). Se precarga junto a Playfair Display. Sin precarga costaba un punto en Inicio, Historia y Suscripción; con ella Inicio, Historia y FAQ se quedan igual que con la fuente del sistema y sin saltos de layout, pero Suscripción (y, por lo que dan las tablas, la mayoría de páginas con el LCP en un texto) pierde un punto: de 100 a 99, por los 40 kB más que se piden antes de pintar. Al probarlo apareció un detalle: las flechas `←`, `→`, `↗` y las estrellas `★` escritas como texto caían fuera del subconjunto latino y hacían descargar además los archivos `symbols` y `math` de Roboto (61 kB más). Se cambiaron por iconos SVG con máscara (`arrow-left`, `arrow-right`, `arrow-up-right` y `star` en `public/icons/ui/`), como ya pedía la convención del proyecto, y con eso cada página descarga solo el archivo latino. De paso se corrigió que el botón «Siguiente» del asistente nunca mostraba su flecha: el JS reescribía todo el texto del botón.
 - **Probado y descartado:** meter los iconos SVG dentro del CSS como data URI (el CSS crece y la nota no mejora), quitar el `preload` del hero o su `fetchpriority` (sin cambio), recomprimir las fotos de Historia (de 70 a 62 kB, sin efecto), servir a Historia una foto de 400 px (da 100, pero se ve borrosa), `content-visibility: auto` en la sección de desayuno para retrasar Permanent Marker (sin cambio: está justo debajo del hero), un fondo del hero desenfocado de 1,2 kB que Chrome descarta como LCP (cambia el diseño, el LCP pasa a la bolsa y la nota sigue en 99) y dar a la bolsa del hero `fetchpriority="high"` (empeora a 98–99).
-- **Pendiente:** las fotos de la galería sirven 800 px para 384 px en pantalla y las bolsas de Cafés 300 px; Lighthouse lo marca como ahorro posible aunque esas páginas ya dan 100.
+- **Galería y Cafés (las dos peores tras corregir el método):** las seis fotos de 800 px se recodificaron desde los originales con calidad 60 (266 kB en vez de 307 kB, sin diferencia visible a tamaño real) y Galería pasa de 97 a 99 (LCP de 2,6 a 2,3 s). En Cafés, el `sizes` de las tarjetas decía 160 px cuando la bolsa se muestra a unos 91 px en móvil; con un `sizes` real el móvil descarga la variante de 200 px en vez de la de 300, y el fondo desenfocado usa la de 120 px (de unos 55 a 30 kB por tarjeta). Cafés queda en 99 en todos los temas.
 
 ---
 

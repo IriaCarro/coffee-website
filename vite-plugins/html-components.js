@@ -7,6 +7,7 @@ import {
   lcpPriority,
   renderTemplate,
 } from "../src/js/lib/template.js";
+import { localeFromPath, localizeItem } from "./locales.js";
 
 // Build-time components: <name attr="...">slot</name> is replaced by
 // src/components/<group>/<name>.html, so pages ship as plain static HTML.
@@ -16,24 +17,29 @@ import {
 const COMPONENTS = {
   "app-footer": { class: "", year: String(new Date().getFullYear()) },
   "app-header": {},
-  "back-link": { href: "/", label: "Volver al inicio" },
+  "back-link": { href: "/", label: "{{t:common.backHome}}" },
   "contact-item": {},
   "cta-card": {},
   "form-field": { type: "text", autocomplete: "off", class: "", extra: "" },
   "form-textarea": { rows: "5", class: "" },
+  "gallery-lightbox": {},
   "home-section": { class: "" },
   "page-header": { class: "mb-8 text-center sm:mb-12" },
   "section-body": { class: "max-w-6xl" },
+  "section-navigation-links": {},
   "social-links": {},
   "spec-item": {},
+  "theme-selector-menu": {},
 };
 
 // <repeat data="menu" component="menu-item"></repeat> renders the component
 // once per item of src/data/<data>.json; COLLECTIONS adds the derived fields.
 const COLLECTIONS = {
+  // "checked" pre-selects the first coffee of the subscription wizard
   coffees: (item, index, { lcp }) => ({
     ...coffeeFields(item),
     ...(lcp ? lcpPriority(index) : { loading: "lazy", priority: "auto" }),
+    checked: index === 0 ? "checked" : "",
   }),
   faq: (item) => item,
   // Prices follow the coffee: "from" uses the cheapest one, "default" the
@@ -104,22 +110,24 @@ export default function htmlComponents() {
 
   // limit="3" renders only the first items; lcp="false" keeps their images
   // lazy when the list sits below the fold (otherwise the first one loads
-  // eagerly as the page's LCP candidate)
-  const repeat = (html) =>
+  // eagerly as the page's LCP candidate). Items are translated to the page's
+  // locale before the derived fields are added.
+  const repeat = (html, locale) =>
     html.replace(repeatPattern, (_, attributes) => {
       const { data, component, limit, lcp } = parseAttributes(attributes);
       const template = readComponent(component);
       const options = { lcp: lcp !== "false", read: readCollection };
       return readCollection(data)
         .slice(0, limit ? Number(limit) : undefined)
+        .map((item) => localizeItem(root, locale, data, item))
         .map((item, index) =>
           renderTemplate(template, COLLECTIONS[data](item, index, options)),
         )
         .join("");
     });
 
-  const expandOnce = (html) =>
-    repeat(html).replace(pattern, (_, name, attributes, slot) =>
+  const expandOnce = (html, locale) =>
+    repeat(html, locale).replace(pattern, (_, name, attributes, slot) =>
       renderTemplate(readComponent(name), {
         ...COMPONENTS[name],
         ...parseAttributes(attributes),
@@ -128,9 +136,9 @@ export default function htmlComponents() {
     );
 
   // Components may contain other components, so expand until nothing changes
-  const expand = (html) => {
+  const expand = (html, locale) => {
     for (let pass = 0; pass < 5; pass += 1) {
-      const next = expandOnce(html);
+      const next = expandOnce(html, locale);
       if (next === html) break;
       html = next;
     }
@@ -142,6 +150,9 @@ export default function htmlComponents() {
     configResolved(config) {
       root = config.root;
     },
-    transformIndexHtml: { order: "pre", handler: expand },
+    transformIndexHtml: {
+      order: "pre",
+      handler: (html, ctx) => expand(html, localeFromPath(ctx.path)),
+    },
   };
 }

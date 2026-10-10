@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Carta de desayunos y bollería de Café Rico: napolitanas, croissants, rollos y batidos naturales."
-    />
-    <title>Menú - Café Rico</title>
+    <meta name="description" content="{{t:menu.meta.description}}" />
+    <title>{{t:menu.meta.title}}</title>
     <link
       rel="icon"
       type="image/png"
@@ -41,15 +38,13 @@
 
           <page-header
             heading-id="menu__title"
-            heading="Menú de desayunos y bollería"
+            heading="{{t:menu.title}}"
             class="enter-fade-up mb-8 text-center sm:mb-12"
           >
-            <p class="lead">
-              Bollería recién horneada y desayunos para acompañar tu café
-            </p>
+            <p class="lead">{{t:menu.lead}}</p>
           </page-header>
 
-          <h2 class="sr-only">Carta</h2>
+          <h2 class="sr-only">{{t:menu.listTitle}}</h2>
           <ul
             id="menu__list"
             class="enter-fade-up grid auto-rows-fr gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
@@ -75,24 +70,23 @@
                 height="800"
                 loading="lazy"
                 decoding="async"
-                alt="Pila de tortitas con sirope, frutos rojos y azúcar glas junto a un café con leche"
+                alt="{{t:menu.special.imageAlt}}"
               />
             </figure>
             <div class="menu-special__content">
               <p
                 class="text-accent mb-2 text-sm font-bold tracking-[0.16em] uppercase"
               >
-                Especial de la casa
+                {{t:menu.special.badge}}
               </p>
               <h2
                 class="text-text-primary mb-3 text-3xl font-bold sm:text-4xl"
                 id="menu__special-title"
               >
-                Tortitas con frutos rojos
+                {{t:menu.special.title}}
               </h2>
               <p class="text-text-secondary mb-4 text-lg">
-                Tortitas esponjosas con sirope, fresas, frambuesas, arándanos,
-                menta fresca y azúcar glas. Ideales con un café con leche.
+                {{t:menu.special.text}}
               </p>
               <p class="text-accent text-2xl font-bold">7,50 €</p>
             </div>

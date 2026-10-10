@@ -1,4 +1,3 @@
-import themeSelectorTemplate from "../../components/layout/theme-selector.html?raw";
 const THEME_KEY = "theme-preference";
 
 function getStoredTheme() {
@@ -25,10 +24,8 @@ class ThemeSelector extends HTMLElement {
   }
 
   connectedCallback() {
-    if (!this.querySelector("[data-theme-toggle]")) {
-      this.render();
-    }
-
+    // The markup is rendered (and translated) at build time inside the
+    // element: see theme-selector-menu.html
     this.toggle = this.querySelector("[data-theme-toggle]");
     this.menu = this.querySelector("[data-theme-menu]");
 
@@ -48,17 +45,13 @@ class ThemeSelector extends HTMLElement {
     document.removeEventListener("keydown", this.handleKeydown);
   }
 
-  render() {
-    this.innerHTML = themeSelectorTemplate;
-  }
-
   optionFor(theme) {
     return this.querySelector(
       `[data-theme-menu] [data-theme="${CSS.escape(theme)}"]`,
     );
   }
 
-  // The menu options in theme-selector.html are the list of valid themes
+  // The menu options in theme-selector-menu.html are the list of valid themes
   hasTheme(theme) {
     return Boolean(theme) && this.optionFor(theme) !== null;
   }

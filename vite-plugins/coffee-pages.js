@@ -1,11 +1,20 @@
 import fs from "node:fs";
 import path from "node:path";
 import { coffeeFields, renderTemplate } from "../src/js/lib/template.js";
+import {
+  DEFAULT_LOCALE,
+  EXTRA_LOCALES,
+  localizeItem,
+  localizedUrl,
+} from "./locales.js";
+
+const LOCALES = [DEFAULT_LOCALE, ...EXTRA_LOCALES];
 
 const escapeAttribute = (text) =>
   text.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
-// Generates one static page per coffee in coffees.json at /coffees/<id>/
+// Generates one static page per coffee in coffees.json at /coffees/<id>/,
+// plus its translated copies at /<locale>/coffees/<id>/
 export default function coffeePages() {
   let root = process.cwd();
 
@@ -14,9 +23,23 @@ export default function coffeePages() {
   let coffees;
   const getCoffees = () =>
     (coffees ??= JSON.parse(read("src/data/coffees.json")));
-  const pageFile = (id) => path.resolve(root, "coffees", id, "index.html");
+  const pageFile = (locale, id) =>
+    path.resolve(
+      root,
+      ...(locale === DEFAULT_LOCALE ? [] : [locale]),
+      "coffees",
+      id,
+      "index.html",
+    );
+  const pages = () =>
+    LOCALES.flatMap((locale) =>
+      getCoffees().map((coffee) => ({ locale, coffee })),
+    );
+  const findPage = (id) =>
+    pages().find(({ locale, coffee }) => pageFile(locale, coffee.id) === id);
 
-  const renderPage = (coffee) => {
+  const renderPage = (source, locale) => {
+    const coffee = localizeItem(root, locale, "coffees", source);
     const flavorProfileHtml = coffee.flavorProfile
       .map((flavor) =>
         renderTemplate(
@@ -53,32 +76,35 @@ export default function coffeePages() {
       return {
         build: {
           rollupOptions: {
-            input: getCoffees().map(({ id }) => pageFile(id)),
+            input: pages().map(({ locale, coffee }) =>
+              pageFile(locale, coffee.id),
+            ),
           },
         },
       };
     },
 
     resolveId(id) {
-      return getCoffees().some((coffee) => pageFile(coffee.id) === id)
-        ? id
-        : null;
+      return findPage(id) ? id : null;
     },
 
     load(id) {
-      const coffee = getCoffees().find((item) => pageFile(item.id) === id);
-      return coffee ? renderPage(coffee) : null;
+      const page = findPage(id);
+      return page ? renderPage(page.coffee, page.locale) : null;
     },
 
     configureServer(server) {
       server.middlewares.use(async (req, res, next) => {
-        const id = req.url?.match(/^\/coffees\/([^/?#]+)\/?(?:[?#].*)?$/)?.[1];
-        const coffee = getCoffees().find((item) => item.id === id);
-        if (!coffee) return next();
+        const page = pages().find(({ locale, coffee }) =>
+          new RegExp(
+            `^${localizedUrl(`/coffees/${coffee.id}/`, locale)}?(?:[?#].*)?$`,
+          ).test(req.url ?? ""),
+        );
+        if (!page) return next();
 
         const html = await server.transformIndexHtml(
           req.url,
-          renderPage(coffee),
+          renderPage(page.coffee, page.locale),
         );
         res.setHeader("Content-Type", "text/html");
         res.end(html);
@@ -88,7 +114,7 @@ export default function coffeePages() {
     handleHotUpdate({ file, server }) {
       coffees = undefined;
       if (
-        /src\/(pages\/coffee-page|components\/coffee\/|data\/coffees\.json)/.test(
+        /src\/(pages\/coffee-page|components\/coffee\/|data\/coffees\.json|locales\/)/.test(
           file,
         )
       ) {

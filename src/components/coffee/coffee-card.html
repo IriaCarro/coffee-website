@@ -5,7 +5,7 @@
     <div class="relative aspect-video overflow-hidden @xs:aspect-square">
       <img
         class="absolute inset-0 h-full w-full scale-150 object-cover opacity-80 blur-2xl"
-        src="{{packImage200}}"
+        src="{{packImage120}}"
         alt=""
         aria-hidden="true"
         loading="{{loading}}"
@@ -20,8 +20,8 @@
           {{packImage400}} 400w,
           {{packImage}}    800w
         "
-        sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
-        alt="Pack de café {{name}}, {{production}}"
+        sizes="(min-width: 640px) 136px, 96px"
+        alt="{{t:coffees.packAlt}} {{name}}, {{production}}"
         loading="{{loading}}"
         fetchpriority="{{priority}}"
         decoding="async"
@@ -36,7 +36,7 @@
           href="/coffees/{{id}}/"
           class="btn btn--secondary px-3 py-1.5 text-sm no-underline after:absolute after:inset-0 after:content-['']"
         >
-          Ver detalles
+          {{t:coffees.card.details}}
           <span class="sr-only">de {{name}}</span>
         </a>
       </div>

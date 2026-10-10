@@ -1,0 +1,742 @@
+{
+  "common": {
+    "backHome": "Torna a l'inici",
+    "languages": "Idioma",
+    "newTab": "(s'obre en una pestanya nova)",
+    "back": "Tornar"
+  },
+  "header": {
+    "skipLink": "Salta al contingut",
+    "menuButton": "Menú",
+    "logoAlt": "Café Rico, inici",
+    "nav": {
+      "label": "Navegació principal",
+      "home": "Inici",
+      "coffees": "Cafès",
+      "menu": "Carta",
+      "about": "La Nostra Història",
+      "gallery": "Galeria",
+      "subscribe": "Subscriu-te"
+    }
+  },
+  "footer": {
+    "logoAlt": "Logotip de Café Rico",
+    "tagline": "Cafè d'especialitat acabat de torrar, seleccionat amb respecte per l'origen i lliurat a casa teva cada mes.",
+    "links": {
+      "title": "Enllaços",
+      "label": "Enllaços del peu",
+      "home": "Inici",
+      "coffees": "Cafès",
+      "faq": "Preguntes Freqüents",
+      "contact": "Contacte",
+      "about": "La Nostra Història",
+      "gallery": "Galeria"
+    },
+    "visit": {
+      "title": "Visita'ns",
+      "weekdays": "Dl-Dv: 9:00 - 18:00",
+      "saturday": "Ds: 10:00 - 14:00",
+      "sunday": "Dg: Tancat",
+      "directions": "Com arribar-hi"
+    },
+    "newsletter": {
+      "title": "Butlletí",
+      "text": "Rep novetats, nous orígens i ofertes de subscripció. Sense correu brossa.",
+      "label": "Correu electrònic",
+      "placeholder": "el-teu@email.com",
+      "error": "Introdueix un correu vàlid, per exemple nom@email.com.",
+      "submit": "Subscriu-me",
+      "invalid": "Revisa el correu abans d'enviar.",
+      "success": "Gràcies, t'hem apuntat al butlletí."
+    },
+    "rights": "Café Rico. Tots els drets reservats.",
+    "contact": "Contacta amb nosaltres"
+  },
+  "about": {
+    "meta": {
+      "title": "La Nostra Història - Café Rico",
+      "description": "Coneix la història de Café Rico i la nostra passió pel cafè d'especialitat."
+    },
+    "title": "La Nostra Història",
+    "lead": "Descobreix com Café Rico va néixer d'una passió pel cafè d'especialitat",
+    "beginning": {
+      "title": "El Començament",
+      "p1": "Café Rico va començar el 2018 quan un grup d'amics apassionats pel cafè van decidir compartir el seu amor per aquesta beguda mil·lenària. El que va començar com una afició en una petita cuina aviat es va convertir en una missió: portar els millors cafès d'origen únic directament a les cases dels amants del cafè.",
+      "p2": "Ens vam adonar que la majoria de la gent no tenia accés a cafès de qualitat prèmium sense pagar preus desorbitats. Així que vam decidir canviar-ho, establint relacions directes amb productors de diferents parts del món.",
+      "imageAlt": "Grans de cafè i una tassa en una finca a l'alba"
+    },
+    "journey": {
+      "title": "El Nostre Viatge Global",
+      "p1": "Al llarg dels anys, hem viatjat a les principals regions productores de cafè del món: Etiòpia, Colòmbia, Kenya i molts altres països. Hem conegut els agricultors, hem entès els seus reptes i hem après les tècniques tradicionals que fan que cada cafè sigui únic.",
+      "p2": "Aquests viatges no només ens han permès seleccionar els millors grans, sinó també establir relacions duradores basades en el respecte, la sostenibilitat i el comerç just.",
+      "imageAlt": "Interior càlid d'una cafeteria"
+    },
+    "mission": {
+      "title": "La Nostra Missió Avui",
+      "p1": "Avui, Café Rico és més que una empresa de subscripció de cafè. Som una comunitat d'amants del cafè compromesos a portar sostenibilitat, qualitat i educació al món del cafè d'especialitat.",
+      "p2": "Cada mes seleccionem amb cura tres varietats dels nostres proveïdors preferits, les torrem a la perfecció a les nostres instal·lacions i te les enviem directament a casa. Volem que gaudeixis de cafè acabat de torrar amb la màxima frescor.",
+      "p3": "Creiem que el cafè és més que una beguda; és una experiència, una connexió amb cultures llunyanes i una oportunitat per marcar la diferència en la vida dels productors.",
+      "imageAlt": "Barista preparant un cafè exprés"
+    },
+    "values": {
+      "title": "Els Nostres Valors",
+      "quality": {
+        "title": "Qualitat",
+        "text": "Seleccionem només els millors grans i els torrem amb precisió per garantir la màxima qualitat a cada tassa."
+      },
+      "sustainability": {
+        "title": "Sostenibilitat",
+        "text": "Treballem directament amb productors que practiquen l'agricultura sostenible i el comerç just."
+      },
+      "education": {
+        "title": "Educació",
+        "text": "Ens encanta compartir el coneixement sobre el cafè: el seu origen, el seu sabor i els millors mètodes de preparació."
+      }
+    },
+    "team": {
+      "title": "El Nostre Equip",
+      "text": "Som un equip petit però apassionat d'experts en cafè, torradors i amants d'aquesta beguda mil·lenària. Cada membre del nostre equip aporta una perspectiva única i un compromís ferm amb l'excel·lència."
+    },
+    "cta": {
+      "title": "Uneix-te a la Nostra Comunitat",
+      "text": "Forma part de la nostra història i descobreix el món del cafè d'especialitat",
+      "button": "Comença la teva Subscripció"
+    }
+  },
+  "home": {
+    "meta": {
+      "description": "Cafè d'especialitat acabat de torrar, seleccionat per gaudir-ne a casa.",
+      "title": "Café Rico"
+    },
+    "hero": {
+      "title1": "Bon",
+      "title2": "cafè,",
+      "title3": "millors",
+      "title4": "dies",
+      "subtitle": "Cafè acabat de torrar, a casa teva cada mes.",
+      "text": "Torrem en petits lots grans d'origen únic i te'ls portem frescos a casa. Descobreix les nostres seleccions prèmium.",
+      "subscribe": "Subscriu-te ara",
+      "coffees": "Veure Cafès",
+      "bagAlt": "Bossa de cafè Etiòpia Floral, notes florals i cítriques"
+    },
+    "breakfast": {
+      "eyebrow": "CAFÉ RICO · MATINS",
+      "title": "Esmorzars",
+      "titleStart": "ESMOR",
+      "titleMiddle": "",
+      "titleEnd": "ZARS",
+      "text": "Comença el dia amb cafè acabat de fer, brioixeria artesana i alguna cosa bona.",
+      "button": "VEURE LA CARTA"
+    },
+    "location": {
+      "title": "Un lloc per gaudir",
+      "text": "Bon cafè, bona companyia i un ambient únic a la ciutat.",
+      "place": "Ubicació",
+      "city": "28003 Madrid, Espanya",
+      "hours": "Horari",
+      "weekdays": "Dilluns - Divendres:",
+      "saturday": "Dissabte:",
+      "sunday": "Diumenge:",
+      "closed": "Tancat",
+      "directions": "Com Arribar-hi amb Google Maps",
+      "craft": {
+        "title": "Cafè Artesà",
+        "text": "Seleccionat i torrat a la perfecció"
+      },
+      "ambience": {
+        "title": "Ambient Únic",
+        "text": "Música i bona companyia garantides"
+      },
+      "community": {
+        "title": "Comunitat",
+        "text": "Connecta amb altres amants del cafè"
+      }
+    },
+    "cta": {
+      "title": "El teu cafè, on vulguis",
+      "text": "Gaudeix de la nostra carta al local o fes la teva comanda en línia per emportar.",
+      "menu": "Veure la Carta",
+      "subscribe": "Subscriure's"
+    },
+    "coffees": {
+      "title": "Cafès del mes",
+      "text": "Orígens d'especialitat, torrats cada setmana en petits lots.",
+      "all": "Veure tots els cafès"
+    },
+    "steps": {
+      "title": "Així funciona la teva subscripció",
+      "text": "Tres passos i el teu cafè preferit arriba a casa cada mes.",
+      "choose": {
+        "title": "Tria el teu cafè i el teu pla",
+        "text": "Tria l'origen que més t'agradi i cada quant el vols: mensual, quinzenal o setmanal."
+      },
+      "roast": {
+        "title": "El torrem",
+        "text": "Torrat en petits lots, just abans d'enviar-lo."
+      },
+      "delivery": {
+        "title": "T'arriba a casa",
+        "text": "Enviat directament a casa teva, fresc i a punt per preparar."
+      },
+      "button": "Començar la meva subscripció"
+    },
+    "plans": {
+      "title": "Tria el teu pla",
+      "text": "El mateix cafè, amb la freqüència que prefereixis. Cancel·la quan vulguis."
+    },
+    "faq": {
+      "title": "Preguntes freqüents",
+      "text": "El que més ens pregunten abans de subscriure-s'hi.",
+      "all": "Veure totes les preguntes"
+    },
+    "about": {
+      "title": "Més que Cafè",
+      "text": "Selecció de grans, torrat artesà i un profund respecte per l'origen. Treballem amb productors que comparteixen la nostra visió d'un cafè més conscient i sostenible.",
+      "origin": {
+        "title": "Origen Responsable",
+        "text": "Relacions directes amb productors locals que respecten el medi ambient"
+      },
+      "roast": {
+        "title": "Torrat Artesà",
+        "text": "Torrat en petits lots per garantir la màxima qualitat i frescor"
+      },
+      "conscious": {
+        "title": "Cafè Conscient",
+        "text": "Envasos sostenibles i pràctiques responsables a cada pas del procés"
+      },
+      "button": "La Nostra Història"
+    }
+  },
+  "coffees": {
+    "card": {
+      "details": "Veure detalls"
+    },
+    "meta": {
+      "description": "Descobreix els cafès d'especialitat del mes de Café Rico.",
+      "title": "Cafès del Mes - Café Rico"
+    },
+    "title": "Cafès del Mes",
+    "lead": "Tria el teu preferit i comença el teu viatge de sabor",
+    "listTitle": "Tots els cafès",
+    "packAlt": "Paquet de cafè"
+  },
+  "plans": {
+    "popular": "El més popular",
+    "from": "Des de",
+    "perMonth": "/mes",
+    "choose": "Triar pla"
+  },
+  "menu": {
+    "meta": {
+      "description": "Carta d'esmorzars i brioixeria de Café Rico: napolitanes, croissants, rotllets i batuts naturals.",
+      "title": "Carta - Café Rico"
+    },
+    "title": "Carta d'esmorzars i brioixeria",
+    "lead": "Brioixeria acabada de fornejar i esmorzars per acompanyar el teu cafè",
+    "listTitle": "Carta",
+    "special": {
+      "imageAlt": "Pila de creps americanes amb xarop, fruits vermells i sucre de llustre al costat d'un cafè amb llet",
+      "badge": "Especialitat de la casa",
+      "title": "Creps americanes amb fruits vermells",
+      "text": "Creps americanes esponjoses amb xarop, maduixes, gerds, nabius, menta fresca i sucre de llustre. Ideals amb un cafè amb llet."
+    }
+  },
+  "gallery": {
+    "meta": {
+      "description": "Galeria d'imatges dels nostres cafès prèmium.",
+      "title": "Galeria - Café Rico"
+    },
+    "title": "Galeria de Cafè",
+    "lead": "Explora la nostra col·lecció de cafès prèmium d'origen únic",
+    "listTitle": "Fotos",
+    "cta": {
+      "title": "T'agradaria tastar els nostres cafès?",
+      "button": "Començar Subscripció",
+      "text": "Subscriu-te i rep cafè prèmium cada mes"
+    },
+    "lightbox": {
+      "label": "Imatge ampliada",
+      "close": "Tanca",
+      "previous": "Anterior",
+      "next": "Següent"
+    }
+  },
+  "faq": {
+    "meta": {
+      "description": "Preguntes freqüents sobre Café Rico.",
+      "title": "Preguntes Freqüents - Café Rico"
+    },
+    "title": "Preguntes Freqüents",
+    "lead": "Troba respostes a les preguntes més habituals sobre els nostres cafès i serveis",
+    "listTitle": "Llista de preguntes",
+    "help": {
+      "title": "No has trobat la teva resposta?",
+      "text": "Som aquí per ajudar-te. Contacta amb nosaltres directament:",
+      "button": "Enviar Correu"
+    }
+  },
+  "contact": {
+    "meta": {
+      "description": "Contacta amb Café Rico i descobreix com visitar-nos.",
+      "title": "Contacte - Café Rico"
+    },
+    "title": "Com Arribar-hi",
+    "lead": "Visita'ns o contacta directament amb el nostre equip",
+    "location": {
+      "title": "Ubicació",
+      "office": "Oficina Principal",
+      "city": "28001 Madrid, Espanya",
+      "hours": "Horari",
+      "weekdays": "Dilluns - Divendres: 9:00 - 18:00",
+      "saturday": "Dissabte: 10:00 - 14:00",
+      "sunday": "Diumenge: Tancat",
+      "transport": "Transport Públic",
+      "metro": "Metro: Línia 3, Estació Centre",
+      "bus": "Autobús: Línia 27, Parada Café Rico"
+    },
+    "info": {
+      "title": "Contacte",
+      "phone": "Telèfon",
+      "email": "Correu electrònic",
+      "support": "Atenció al Client",
+      "response": "Resposta en 24 hores",
+      "social": "Xarxes Socials"
+    },
+    "map": {
+      "title": "La Nostra Ubicació",
+      "label": "Mapa de la ubicació de Café Rico",
+      "address": "Calle del Café, 42 - Madrid"
+    },
+    "form": {
+      "title": "Envia'ns un Missatge",
+      "required": "Tots els camps són obligatoris.",
+      "name": {
+        "label": "Nom Complet"
+      },
+      "subject": {
+        "label": "Assumpte",
+        "placeholder": "En què et podem ajudar?",
+        "error": "Indica l'assumpte del missatge."
+      },
+      "message": {
+        "label": "Missatge",
+        "placeholder": "El teu missatge...",
+        "error": "Escriu el teu missatge."
+      },
+      "submit": "Enviar Missatge",
+      "invalid": "Revisa els camps marcats abans d'enviar.",
+      "success": "Gràcies, hem rebut el teu missatge."
+    },
+    "faq": {
+      "title": "Tens Preguntes?",
+      "button": "Veure FAQ",
+      "text": "Consulta les nostres preguntes freqüents per obtenir respostes ràpides"
+    }
+  },
+  "forms": {
+    "name": {
+      "placeholder": "El teu nom",
+      "error": "Introdueix el teu nom."
+    },
+    "email": {
+      "label": "Correu electrònic",
+      "placeholder": "el-teu@email.com",
+      "error": "Introdueix un correu vàlid, per exemple nom@email.com."
+    }
+  },
+  "subscription": {
+    "meta": {
+      "description": "Configura la teva subscripció de cafè prèmium.",
+      "title": "Subscripció - Café Rico"
+    },
+    "title": "Configura la teva Subscripció",
+    "lead": "Tria el teu cafè preferit i rep-lo cada mes a casa teva",
+    "steps": {
+      "title": "Passos de la subscripció",
+      "text": "Completa els passos següents per començar a rebre el teu cafè preferit",
+      "coffee": "El teu cafè",
+      "plan": "El teu pla",
+      "delivery": "Lliurament"
+    },
+    "progress": {
+      "label": "Progrés de la subscripció",
+      "first": "Pas 1 de 3",
+      "text": "Pas {step} de {total}"
+    },
+    "coffee": {
+      "title": "Quin cafè prefereixes?",
+      "text": "Selecciona el teu cafè preferit per començar"
+    },
+    "plan": {
+      "title": "Tria el teu pla",
+      "text": "Selecciona la freqüència i la quantitat"
+    },
+    "delivery": {
+      "title": "Dades de lliurament",
+      "text": "On t'enviem el teu cafè?"
+    },
+    "form": {
+      "name": "Nom complet",
+      "address": {
+        "label": "Adreça d'enviament",
+        "placeholder": "Carrer, número, pis...",
+        "error": "Introdueix la teva adreça d'enviament."
+      },
+      "city": {
+        "label": "Ciutat",
+        "error": "Introdueix la teva ciutat."
+      },
+      "zip": {
+        "label": "Codi postal",
+        "error": "Introdueix un codi postal de 5 dígits."
+      }
+    },
+    "nav": {
+      "label": "Navegació de passos",
+      "previous": "Anterior",
+      "step": "Pas",
+      "of": "de 3",
+      "next": "Següent",
+      "finish": "Finalitza"
+    },
+    "done": {
+      "title": "Revisa el teu correu",
+      "textStart": "Per continuar amb la teva subscripció, obre el missatge que t'enviarem a",
+      "email": "el teu correu",
+      "textEnd": "i confirma les teves dades."
+    }
+  },
+  "data": {
+    "plans": {
+      "monthly": {
+        "name": "Pla Mensual",
+        "description": "1 bossa de 250g cada mes"
+      },
+      "biweekly": {
+        "name": "Pla Quinzenal",
+        "description": "1 bossa de 250g cada 15 dies"
+      },
+      "weekly": {
+        "name": "Pla Setmanal",
+        "description": "1 bossa de 250g cada setmana"
+      }
+    },
+    "menu": {
+      "napolitana-chocolate": {
+        "name": "Napolitana de xocolata",
+        "description": "Pasta de full de mantega cruixent farcida de xocolata negra",
+        "alt": "Napolitana de pasta de full daurada amb encenalls de xocolata i farcit de xocolata negra, sobre un plat de ceràmica al costat d'un cafè"
+      },
+      "croissant-mantequilla": {
+        "name": "Croissant de mantega",
+        "description": "Acabat de fornejar, lleuger i mantegós. Perfecte amb un cafè amb llet",
+        "alt": "Croissant daurat al costat d'un cafè amb llet amb art latte sobre una taula de fusta"
+      },
+      "rollo-avellanas": {
+        "name": "Rotllet d'avellanes",
+        "description": "Brioix en espiral amb caramel i avellanes trossejades",
+        "alt": "Brioix en espiral glacejat amb avellanes trossejades sobre un plat de ceràmica"
+      },
+      "desayuno-completo": {
+        "name": "Esmorzar complet",
+        "description": "Ous ferrats, pa amb formatge i melmelada, fruita fresca i cafè de filtre",
+        "alt": "Dos ous ferrats amb pa torrat i melmelada, un plat de fruita i una tassa de cafè"
+      },
+      "batidos-naturales": {
+        "name": "Batuts naturals",
+        "description": "Verd, maduixa, mango o remolatxa, preparats al moment",
+        "alt": "Quatre gots de vidre amb batuts de colors i canyetes"
+      },
+      "tarta-queso": {
+        "name": "Pastís de formatge",
+        "description": "Pastís de formatge al forn, amb la superfície caramel·litzada i l'interior cremós",
+        "alt": "Pastís de formatge al forn amb la superfície torrada i una porció tallada que deixa veure l'interior cremós, sobre un plat blanc"
+      }
+    },
+    "gallery": {
+      "desayuno": {
+        "title": "Esmorzar de cafeteria",
+        "alt": "Cafè amb llet amb un dibuix de fulla a l'escuma, al costat d'un croissant sobre una taula de fusta",
+        "description": "Un cafè amb llet amb art latte i un croissant acabat de fornejar"
+      },
+      "latte-arte": {
+        "title": "Latte amb art",
+        "alt": "Tassa de ceràmica amb un latte decorat amb un cor d'escuma, sobre una taula a la llum del sol",
+        "description": "Escuma sedosa dibuixada amb un cor, a la llum de la tarda"
+      },
+      "granos": {
+        "title": "Grans acabats de torrar",
+        "alt": "Grans de cafè torrats sortint d'un sac de jute sobre una taula de fusta",
+        "description": "Grans de torrat intens vessats d'un sac de jute"
+      },
+      "cafe-frio": {
+        "title": "Cafè fred amb llet",
+        "alt": "Got de vidre amb cafè fred, gel i llet en capes",
+        "description": "Cafè amb gel i llet, servit en capes"
+      },
+      "rincon": {
+        "title": "El nostre racó",
+        "alt": "Interior lluminós d'una cafeteria amb taules i cadires de fusta i plantes al costat de les finestres",
+        "description": "Taules de fusta, plantes i molta llum natural per quedar-s'hi una estona"
+      },
+      "bollo-avellanas": {
+        "title": "Brioix d'avellanes",
+        "alt": "Brioix en espiral glacejat amb avellanes trossejades sobre un plat de ceràmica",
+        "description": "Un brioix en espiral amb caramel i avellanes per acompanyar el cafè"
+      }
+    },
+    "faq": {
+      "cancel": {
+        "question": "Puc cancel·lar la meva subscripció?",
+        "answer": "Sí, pots cancel·lar la teva subscripció en qualsevol moment sense cap penalització. Només cal que contactis amb nosaltres des del teu compte o que ens enviïs un correu a caferico@correo.com. La cancel·lació serà efectiva al final del teu cicle de facturació actual."
+      },
+      "grind": {
+        "question": "Mòlt o en gra?",
+        "answer": "Pots triar tant grans sencers com cafè mòlt en el moment de la subscripció. Els grans sencers conserven millor l'aroma i la frescor, mentre que el cafè mòlt és més pràctic per a una preparació ràpida. Pots canviar la teva preferència en qualsevol moment."
+      },
+      "delivery": {
+        "question": "Quant triga el lliurament?",
+        "answer": "Els lliuraments normalment es fan entre 3 i 5 dies feiners després de l'enviament. T'enviarem un correu amb el número de seguiment perquè puguis seguir la teva comanda en temps real. Els lliuraments internacionals poden trigar més segons la teva ubicació."
+      },
+      "origin": {
+        "question": "D'on prové el vostre cafè?",
+        "answer": "Els nostres cafès se seleccionen amb cura de productors de tot el món. Treballem directament amb finques d'origen únic per assegurar la màxima qualitat i sostenibilitat. Cada cafè del nostre catàleg inclou informació completa sobre el seu origen, l'altitud i el procés de torrat."
+      },
+      "storage": {
+        "question": "Com he de guardar el cafè?",
+        "answer": "El cafè es conserva millor en un lloc fresc, fosc i sec. Et recomanem guardar-lo en un recipient hermètic lluny de la llum solar directa i de les temperatures extremes. Si és en gra, és millor moldre'l just abans de preparar-lo per mantenir intactes tot l'aroma i el sabor."
+      },
+      "payment": {
+        "question": "Quins mètodes de pagament accepteu?",
+        "answer": "Acceptem totes les targetes de crèdit principals (Visa, Mastercard, American Express), transferències bancàries i moneders digitals. La teva informació de pagament és completament segura i es processa a través de plataformes de pagament certificades."
+      },
+      "international": {
+        "question": "Feu enviaments internacionals?",
+        "answer": "Sí, fem enviaments a molts països de tot el món. Els costos d'enviament internacional varien segons la teva ubicació. Durant el procés de subscripció podràs veure si el teu país està disponible i quin seria el cost exacte d'enviament per a la teva zona."
+      },
+      "change": {
+        "question": "Puc canviar la meva selecció de cafè?",
+        "answer": "I tant. Pots canviar el cafè seleccionat, el tipus de mòlta o el teu pla d'enviament en qualsevol moment. Els canvis entraran en vigor en el teu proper cicle d'enviament. Només has d'accedir al teu compte i fer les modificacions que necessitis."
+      },
+      "discounts": {
+        "question": "Hi ha descomptes per volum?",
+        "answer": "Els nostres plans setmanals i quinzenals ofereixen millor preu que el pla mensual. A més, som membres de diversos programes de sostenibilitat que permeten descomptes especials per a clients compromesos amb el cafè d'origen ètic."
+      },
+      "returns": {
+        "question": "Quina és la vostra política de devolució?",
+        "answer": "Si no estàs completament satisfet amb el teu cafè, et podem oferir un recanvi o una devolució dins dels 30 dies posteriors a la compra. Volem que gaudeixis de cada tassa, així que no dubtis a contactar amb nosaltres si tens cap problema."
+      }
+    },
+    "coffees": {
+      "etiopia": {
+        "name": "Etiòpia Floral",
+        "description": "Notes florals, cítriques i dolces",
+        "origin": "Etiòpia - Yirgacheffe",
+        "roast": "Torrat Mitjà",
+        "detailedDescription": "Aquest cafè etíop presenta notes florals delicades combinades amb tocs cítrics frescos i una dolçor natural. Procedent de les muntanyes d'Etiòpia, cada tassa és una experiència sensorial única. Perfecte per als amants dels cafès amb caràcter, aquest gra és ideal per preparar amb mètodes de filtratge com el pour-over o la premsa francesa.",
+        "flavorProfile": [
+          {
+            "title": "Notes Florals",
+            "description": "Aromes delicades de gessamí i lavanda"
+          },
+          {
+            "title": "Notes Cítriques",
+            "description": "Tocs de llimona i taronja fresca"
+          },
+          {
+            "title": "Dolçor Natural",
+            "description": "Notes de mel i caramel suau"
+          }
+        ],
+        "brewing": {
+          "grind": "Mitjana a fina (semblant al sucre de taula)",
+          "methods": "Pour Over, Premsa Francesa, AeroPress",
+          "ratio": "1:16 (1 part de cafè per 16 parts d'aigua)"
+        },
+        "production": "250g per bossa"
+      },
+      "colombia": {
+        "name": "Colòmbia Caramel",
+        "description": "Caramel, xocolata i fruits secs",
+        "origin": "Colòmbia - Huila",
+        "roast": "Torrat Mitjà-Fosc",
+        "detailedDescription": "Un cafè colombià de cos ple amb notes de caramel i xocolata. Aquest gra està perfectament equilibrat i ofereix una experiència suau i agradable. Ideal per gaudir-ne a qualsevol hora del dia, tant sol com en begudes amb llet.",
+        "flavorProfile": [
+          {
+            "title": "Xocolata",
+            "description": "Aromes profundes de cacau fosc"
+          },
+          {
+            "title": "Caramel",
+            "description": "Dolçor natural i notes de toffee"
+          },
+          {
+            "title": "Fruits Secs",
+            "description": "Tocs subtils d'ametlla i nou"
+          }
+        ],
+        "brewing": {
+          "grind": "Mitjana (semblant al cafè mòlt comercial)",
+          "methods": "Espresso, Premsa Francesa, Pour Over",
+          "ratio": "1:16 (1 part de cafè per 16 parts d'aigua)"
+        },
+        "production": "250g per bossa"
+      },
+      "kenia": {
+        "name": "Kenya Fruits Vermells",
+        "description": "Fruits vermells, acidesa brillant",
+        "origin": "Kenya - Mount Kenya",
+        "roast": "Torrat Lleuger",
+        "detailedDescription": "Un cafè kenyà vibrant amb notes sucoses de fruits vermells. La seva acidesa brillant i complexa el fa perfecte per als qui busquen un cafè amb personalitat. Cada glop revela noves capes de sabor, i en fa una experiència realment memorable.",
+        "flavorProfile": [
+          {
+            "title": "Fruits Vermells",
+            "description": "Notes de maduixa, gerd i cirera"
+          },
+          {
+            "title": "Acidesa Brillant",
+            "description": "Sensació viva i fresca a la boca"
+          },
+          {
+            "title": "Complexitat",
+            "description": "Capes subtils de nabiu i te negre"
+          }
+        ],
+        "brewing": {
+          "grind": "Fina a mitjana (per realçar l'acidesa)",
+          "methods": "Pour Over, AeroPress, Filtre de paper",
+          "ratio": "1:16 (1 part de cafè per 16 parts d'aigua)"
+        },
+        "production": "250g per bossa"
+      },
+      "brasil": {
+        "name": "Brasil Avellana",
+        "description": "Avellana, cacau i cos cremós",
+        "roast": "Torrat Mitjà-Fosc",
+        "detailedDescription": "Un cafè brasiler suau i rodó, amb cos cremós i acidesa baixa. Les seves notes d'avellana torrada i cacau el converteixen en una base excel·lent per a l'espresso i per a begudes amb llet. Un clàssic reconfortant per al dia a dia.",
+        "flavorProfile": [
+          {
+            "title": "Avellana",
+            "description": "Notes d'avellana torrada i praliné"
+          },
+          {
+            "title": "Cacau",
+            "description": "Tocs de xocolata amb llet"
+          },
+          {
+            "title": "Cos Cremós",
+            "description": "Textura suau i untuosa a la boca"
+          }
+        ],
+        "brewing": {
+          "grind": "Mitjana-fina (per a espresso) o mitjana (per a moka)",
+          "methods": "Espresso, Moka, Premsa Francesa",
+          "ratio": "1:16 (1 part de cafè per 16 parts d'aigua)"
+        },
+        "production": "250g per bossa"
+      },
+      "guatemala": {
+        "name": "Guatemala Cítric",
+        "description": "Taronja, panela i espècies suaus",
+        "roast": "Torrat Mitjà",
+        "detailedDescription": "Conreat a l'ombra dels volcans d'Antigua, aquest cafè ofereix un equilibri elegant entre acidesa cítrica i dolçor de panela. Deixa un final llarg amb notes lleugerament especiades. Molt versàtil, funciona bé tant en filtre com en espresso.",
+        "flavorProfile": [
+          {
+            "title": "Taronja",
+            "description": "Acidesa sucosa de taronja i mandarina"
+          },
+          {
+            "title": "Panela",
+            "description": "Dolçor profunda de canya de sucre"
+          },
+          {
+            "title": "Espècies",
+            "description": "Final amb matisos de canyella i clau"
+          }
+        ],
+        "brewing": {
+          "grind": "Mitjana (semblant a la sal gruixuda fina)",
+          "methods": "Pour Over, Espresso, AeroPress",
+          "ratio": "1:16 (1 part de cafè per 16 parts d'aigua)"
+        },
+        "production": "250g per bossa"
+      },
+      "costa-rica": {
+        "name": "Costa Rica Préssec",
+        "description": "Préssec, mel i te blanc",
+        "roast": "Torrat Lleuger",
+        "detailedDescription": "Un lot de procés honey de la regió de Tarrazú. Destaca per la seva dolçor afruitada, amb notes de préssec madur i mel, i una textura sedosa. Un cafè delicat i net, pensat per als qui gaudeixen de les tasses dolces i lluminoses.",
+        "flavorProfile": [
+          {
+            "title": "Préssec",
+            "description": "Fruita de pinyol madura i sucosa"
+          },
+          {
+            "title": "Mel",
+            "description": "Dolçor suau del procés honey"
+          },
+          {
+            "title": "Te Blanc",
+            "description": "Final lleuger, floral i delicat"
+          }
+        ],
+        "brewing": {
+          "grind": "Mitjana a fina (semblant al sucre de taula)",
+          "methods": "Pour Over, V60, Chemex",
+          "ratio": "1:16 (1 part de cafè per 16 parts d'aigua)"
+        },
+        "production": "250g per bossa"
+      }
+    }
+  },
+  "coffee": {
+    "back": "Torna a Cafès",
+    "ratingPrefix": "Valoració:",
+    "ratingSuffix": "de 5",
+    "reviews": "ressenyes",
+    "descriptionTitle": "Descripció",
+    "specsTitle": "Fitxa tècnica",
+    "specs": {
+      "origin": "Origen",
+      "roast": "Torrat",
+      "altitude": "Altitud",
+      "production": "Producció"
+    },
+    "flavorTitle": "Perfil de Sabor",
+    "brewingTitle": "Recomanacions de Preparació",
+    "brewing": {
+      "temperature": "Temperatura",
+      "grind": "Mòlta",
+      "ratio": "Proporció",
+      "methods": "Mètodes Recomanats"
+    },
+    "cta": {
+      "title": "T'agradaria tastar-lo?",
+      "text": "Subscriu-te i rep aquest cafè prèmium cada mes",
+      "button": "Començar Subscripció"
+    }
+  },
+  "theme": {
+    "current": "Canvia el tema, actual:",
+    "light": "Clar",
+    "menu": "Selecciona el tema",
+    "dark": "Fosc",
+    "matcha": "Matcha",
+    "cafe": "Cafè",
+    "blue": "Blau",
+    "violet": "Violeta"
+  },
+  "sectionNav": {
+    "label": "Accessos complementaris",
+    "nav": "Navegació per seccions",
+    "hero": "Inici",
+    "breakfast": "Esmorzar",
+    "location": "Ubicació",
+    "cta": "El teu cafè, on vulguis",
+    "coffees": "Cafès del mes",
+    "steps": "Com funciona",
+    "plans": "Plans",
+    "faq": "Preguntes freqüents",
+    "about": "Més que cafè"
+  }
+}

@@ -1,19 +1,8 @@
 import coffees from "../../data/coffees.json";
-import coffeeOptionTemplate from "../../components/subscription/subscription-coffee-option.html?raw";
-import { coffeeFields, formatPrice, renderTemplate } from "../lib/template.js";
+import { formatPrice } from "../lib/template.js";
 
-const renderCoffeeOptions = () => {
-  const list = document.getElementById("subscription__coffee-options");
-  if (!list) return;
-  list.innerHTML = coffees
-    .map((coffee, index) =>
-      renderTemplate(coffeeOptionTemplate, {
-        ...coffeeFields(coffee),
-        checked: index === 0 ? "checked" : "",
-      }),
-    )
-    .join("");
-};
+// The coffee options are rendered at build time (<repeat> in
+// subscription.html, already translated); prices come from coffees.json
 
 const updatePlanPrices = (form) => {
   const coffee = coffees.find(({ id }) => id === form.coffee.value);
@@ -41,7 +30,6 @@ const preselectPlan = (form) => {
 };
 
 export const initSubscriptionOptions = () => {
-  renderCoffeeOptions();
   const form = document.getElementById("subscription__form");
   if (!form) return;
   initPlanPrices(form);

@@ -23,7 +23,13 @@ const renderBar = (currentStep, totalSteps) => {
   if (!track) return;
   track.setAttribute("aria-valuemax", String(totalSteps));
   track.setAttribute("aria-valuenow", String(currentStep));
-  track.setAttribute("aria-valuetext", `Paso ${currentStep} de ${totalSteps}`);
+  // "Paso {step} de {total}", translated at build in data-step-text
+  track.setAttribute(
+    "aria-valuetext",
+    track.dataset.stepText
+      .replace("{step}", currentStep)
+      .replace("{total}", totalSteps),
+  );
 };
 
 const renderControls = (currentStep, totalSteps) => {
@@ -33,9 +39,10 @@ const renderControls = (currentStep, totalSteps) => {
   if (previous) previous.disabled = currentStep === 1;
   if (next) {
     const isLast = currentStep === totalSteps;
+    // Both labels come translated from data-* attributes on the button
     next.querySelector("[data-next-label]").textContent = isLast
-      ? "Finalizar"
-      : "Siguiente";
+      ? next.dataset.finishText
+      : next.dataset.nextText;
     next.querySelector("[data-next-icon]").classList.toggle("hidden", isLast);
   }
   if (label) label.textContent = currentStep;

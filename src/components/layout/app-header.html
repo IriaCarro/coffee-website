@@ -2,7 +2,7 @@
   href="#main-content"
   class="border-focus-ring bg-surface-container text-text-primary fixed top-2 left-2 z-60 -translate-y-24 rounded-lg border-2 px-4 py-2 font-medium focus-visible:translate-y-0 motion-safe:transition-transform motion-safe:duration-200"
 >
-  Saltar al contenido
+  {{t:header.skipLink}}
 </a>
 
 <header
@@ -13,7 +13,7 @@
     <button
       type="button"
       popovertarget="site-menu"
-      aria-label="Menú"
+      aria-label="{{t:header.menuButton}}"
       class="text-text-primary flex size-(--header-button-size) items-center justify-center rounded-lg text-2xl transition-colors duration-200 hover:opacity-75 lg:hidden"
     >
       <span
@@ -24,7 +24,7 @@
     <a href="/" class="flex items-center gap-3 text-inherit no-underline">
       <img
         src="/icons/logo.webp"
-        alt="Café rico, inicio"
+        alt="{{t:header.logoAlt}}"
         class="size-(--brand-logo-size) rounded-lg object-cover shadow-sm"
         width="40"
         height="40"
@@ -35,7 +35,7 @@
   <nav
     id="site-menu"
     popover
-    aria-label="Navegación principal"
+    aria-label="{{t:header.nav.label}}"
     class="border-border-subtle bg-surface-page text-text-primary fixed inset-x-0 top-[calc(var(--brand-logo-size)+1rem)] bottom-auto m-0 h-auto w-auto border-0 border-b p-4 sm:top-(--header-height) lg:static lg:block lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0"
   >
     <ul class="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-8">
@@ -44,7 +44,7 @@
           href="/"
           class="text-text-primary block py-3 font-medium transition-colors duration-200 hover:opacity-75 lg:py-0"
         >
-          Inicio
+          {{t:header.nav.home}}
         </a>
       </li>
       <li>
@@ -52,7 +52,7 @@
           href="/src/pages/coffees.html"
           class="text-text-primary block py-3 font-medium transition-colors duration-200 hover:opacity-75 lg:py-0"
         >
-          Caf&eacute;s
+          {{t:header.nav.coffees}}
         </a>
       </li>
       <li>
@@ -60,7 +60,7 @@
           href="/src/pages/menu.html"
           class="text-text-primary block py-3 font-medium transition-colors duration-200 hover:opacity-75 lg:py-0"
         >
-          Men&uacute;
+          {{t:header.nav.menu}}
         </a>
       </li>
       <li>
@@ -68,7 +68,7 @@
           href="/src/pages/about.html"
           class="text-text-primary block py-3 font-medium transition-colors duration-200 hover:opacity-75 lg:py-0"
         >
-          Nuestra Historia
+          {{t:header.nav.about}}
         </a>
       </li>
       <li>
@@ -76,7 +76,7 @@
           href="/src/pages/gallery.html"
           class="text-text-primary block py-3 font-medium transition-colors duration-200 hover:opacity-75 lg:py-0"
         >
-          Galer&iacute;a
+          {{t:header.nav.gallery}}
         </a>
       </li>
       <li>
@@ -84,11 +84,13 @@
           href="/src/pages/subscription.html"
           class="btn btn--primary block text-center lg:py-2"
         >
-          Suscr&iacute;bete
+          {{t:header.nav.subscribe}}
         </a>
       </li>
     </ul>
   </nav>
 
-  <theme-selector class="relative block"></theme-selector>
+  <theme-selector class="relative block">
+    <theme-selector-menu></theme-selector-menu>
+  </theme-selector>
 </header>

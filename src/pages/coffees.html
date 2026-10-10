@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Descubre los cafés de especialidad del mes de Café Rico."
-    />
-    <title>Cafés del Mes - Café Rico</title>
+    <meta name="description" content="{{t:coffees.meta.description}}" />
+    <title>{{t:coffees.meta.title}}</title>
     <link
       rel="icon"
       type="image/png"
@@ -41,15 +38,13 @@
 
           <page-header
             heading-id="coffees__title"
-            heading="Cafés del Mes"
+            heading="{{t:coffees.title}}"
             class="enter-fade-up mb-8 text-center sm:mb-12"
           >
-            <p class="lead">
-              Selecciona tu favorito y comienza tu viaje de sabor
-            </p>
+            <p class="lead">{{t:coffees.lead}}</p>
           </page-header>
 
-          <h2 class="sr-only">Todos los cafés</h2>
+          <h2 class="sr-only">{{t:coffees.listTitle}}</h2>
           <ul
             id="coffees__grid"
             class="enter-fade-up grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"

@@ -1,4 +1,3 @@
-import sectionNavigationTemplate from "../../components/layout/section-navigation.html?raw";
 import { setAttributeOrRemove } from "../lib/aria.js";
 
 // The active section is the last one whose top passed a probe line placed
@@ -15,10 +14,8 @@ class SectionNavigation extends HTMLElement {
   }
 
   connectedCallback() {
-    if (!this.querySelector("[data-section-link]")) {
-      this.innerHTML = sectionNavigationTemplate;
-    }
-
+    // The links are rendered (and translated) at build time inside the
+    // element: see section-navigation-links.html
     this.links = this.querySelectorAll("[data-section-link]");
     this.addEventListener("click", this.handleLinkClick);
     this.sections = [...this.links]

@@ -1,5 +1,8 @@
 <div class="mx-auto max-w-4xl">
-  <back-link href="/src/pages/coffees.html" label="Volver a Cafés"></back-link>
+  <back-link
+    href="/src/pages/coffees.html"
+    label="{{t:coffee.back}}"
+  ></back-link>
 
   <header class="mb-8 grid gap-8 sm:mb-12 md:grid-cols-2">
     <div class="flex items-center justify-center">
@@ -10,7 +13,7 @@
         width="800"
         height="1200"
         fetchpriority="high"
-        alt="Pack de café {{name}}"
+        alt="{{t:coffees.packAlt}} {{name}}"
         class="max-h-72 w-full object-contain sm:max-h-[36rem]"
       />
     </div>
@@ -22,7 +25,7 @@
         <p class="lead mb-2">{{description}}</p>
         <p class="text-text-primary text-3xl font-bold">
           {{formattedPrice}}
-          <span class="text-lg">/mes</span>
+          <span class="text-lg">{{t:plans.perMonth}}</span>
         </p>
       </div>
 
@@ -30,54 +33,58 @@
         <div
           class="mb-2 flex gap-1"
           role="img"
-          aria-label="Valoración: {{rating}} de 5"
+          aria-label="{{t:coffee.ratingPrefix}} {{rating}} {{t:coffee.ratingSuffix}}"
         >
           <span class="flex gap-0.5 text-xl" aria-hidden="true">{{stars}}</span>
         </div>
-        <p class="text-text-primary">{{reviews}} reseñas</p>
+        <p class="text-text-primary">{{reviews}} {{t:coffee.reviews}}</p>
       </div>
     </div>
   </header>
 
   <section class="mb-8 sm:mb-12" aria-labelledby="detail__description-title">
     <h2 id="detail__description-title" class="heading heading--section mb-4">
-      Descripción
+      {{t:coffee.descriptionTitle}}
     </h2>
     <p class="lead">{{detailedDescription}}</p>
   </section>
 
   <section aria-labelledby="detail__specs-title">
-    <h2 id="detail__specs-title" class="sr-only">Ficha técnica</h2>
+    <h2 id="detail__specs-title" class="sr-only">{{t:coffee.specsTitle}}</h2>
     <dl class="mb-8 grid grid-cols-2 gap-3 sm:mb-12 sm:gap-6 lg:grid-cols-4">
-      <spec-item term="Origen">{{origin}}</spec-item>
+      <spec-item term="{{t:coffee.specs.origin}}">{{origin}}</spec-item>
 
-      <spec-item term="Tueste">{{roast}}</spec-item>
+      <spec-item term="{{t:coffee.specs.roast}}">{{roast}}</spec-item>
 
-      <spec-item term="Altitud">{{altitude}}</spec-item>
+      <spec-item term="{{t:coffee.specs.altitude}}">{{altitude}}</spec-item>
 
-      <spec-item term="Producción">{{production}}</spec-item>
+      <spec-item term="{{t:coffee.specs.production}}">{{production}}</spec-item>
     </dl>
   </section>
 
   <section class="mb-8 sm:mb-12" aria-labelledby="detail__flavor-title">
     <h2 id="detail__flavor-title" class="heading heading--section mb-6">
-      Perfil de Sabor
+      {{t:coffee.flavorTitle}}
     </h2>
     <dl class="space-y-4">{{flavorProfileHtml}}</dl>
   </section>
 
   <section class="mb-8 sm:mb-12" aria-labelledby="detail__brewing-title">
     <h2 id="detail__brewing-title" class="heading heading--section mb-6">
-      Recomendaciones de Preparación
+      {{t:coffee.brewingTitle}}
     </h2>
     <dl class="space-y-4">
-      <spec-item term="Temperatura">{{brewing.temperature}}</spec-item>
+      <spec-item term="{{t:coffee.brewing.temperature}}">
+        {{brewing.temperature}}
+      </spec-item>
 
-      <spec-item term="Molienda">{{brewing.grind}}</spec-item>
+      <spec-item term="{{t:coffee.brewing.grind}}">{{brewing.grind}}</spec-item>
 
-      <spec-item term="Proporción">{{brewing.ratio}}</spec-item>
+      <spec-item term="{{t:coffee.brewing.ratio}}">{{brewing.ratio}}</spec-item>
 
-      <spec-item term="Métodos Recomendados">{{brewing.methods}}</spec-item>
+      <spec-item term="{{t:coffee.brewing.methods}}">
+        {{brewing.methods}}
+      </spec-item>
     </dl>
   </section>
 
@@ -86,14 +93,14 @@
     aria-labelledby="detail__cta-title"
   >
     <h2 id="detail__cta-title" class="heading heading--section mb-4">
-      ¿Te gustaría probarlo?
+      {{t:coffee.cta.title}}
     </h2>
-    <p class="lead mb-6">Suscríbete y recibe este café premium cada mes</p>
+    <p class="lead mb-6">{{t:coffee.cta.text}}</p>
     <a
       href="/src/pages/subscription.html#wizard"
       class="btn btn--primary inline-block"
     >
-      Comenzar Suscripción
+      {{t:coffee.cta.button}}
     </a>
   </aside>
 </div>

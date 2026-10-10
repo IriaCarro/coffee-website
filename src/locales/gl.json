@@ -1,0 +1,739 @@
+{
+  "common": {
+    "backHome": "Volver ao inicio",
+    "languages": "Idioma",
+    "newTab": "(ábrese nunha lapela nova)",
+    "back": "Volver"
+  },
+  "header": {
+    "skipLink": "Saltar ao contido",
+    "menuButton": "Menú",
+    "logoAlt": "Café Rico, inicio",
+    "nav": {
+      "label": "Navegación principal",
+      "home": "Inicio",
+      "coffees": "Cafés",
+      "menu": "Menú",
+      "about": "A Nosa Historia",
+      "gallery": "Galería",
+      "subscribe": "Subscríbete"
+    }
+  },
+  "footer": {
+    "logoAlt": "Logotipo de Café Rico",
+    "tagline": "Café de especialidade acabado de torrar, seleccionado con respecto pola orixe e entregado na túa porta cada mes.",
+    "links": {
+      "title": "Ligazóns",
+      "label": "Ligazóns do pé",
+      "home": "Inicio",
+      "coffees": "Cafés",
+      "faq": "Preguntas Frecuentes",
+      "contact": "Contacto",
+      "about": "A Nosa Historia",
+      "gallery": "Galería"
+    },
+    "visit": {
+      "title": "Visítanos",
+      "weekdays": "L-V: 9:00 - 18:00",
+      "saturday": "Sáb: 10:00 - 14:00",
+      "sunday": "Dom: Pechado",
+      "directions": "Como chegar"
+    },
+    "newsletter": {
+      "title": "Boletín",
+      "text": "Recibe novidades, novas orixes e ofertas de subscrición. Sen spam.",
+      "label": "Correo electrónico",
+      "placeholder": "o-teu@email.com",
+      "error": "Introduce un correo válido, por exemplo nome@email.com.",
+      "submit": "Subscribirme",
+      "invalid": "Revisa o correo antes de enviar.",
+      "success": "Grazas, apuntámoste ao boletín."
+    },
+    "rights": "Café Rico. Todos os dereitos reservados.",
+    "contact": "Contacta connosco"
+  },
+  "about": {
+    "meta": {
+      "title": "A Nosa Historia - Café Rico",
+      "description": "Coñece a historia de Café Rico e a nosa paixón polo café de especialidade."
+    },
+    "title": "A Nosa Historia",
+    "lead": "Descubre como Café Rico naceu dunha paixón polo café de especialidade",
+    "beginning": {
+      "title": "O Comezo",
+      "p1": "Café Rico comezou en 2018 cando un grupo de amigos apaixonados polo café decidiu compartir o seu amor por esta bebida milenaria. O que comezou como un pasatempo nunha pequena cociña pronto se converteu nunha misión: levar os mellores cafés de orixe única directamente ás casas dos amantes do café.",
+      "p2": "Decatámonos de que a maioría das persoas non tiña acceso a cafés de calidade premium sen pagar prezos desorbitados. Así que decidimos cambialo, establecendo relacións directas con produtores de diferentes partes do mundo.",
+      "imageAlt": "Grans de café e unha cunca nunha finca ao amencer"
+    },
+    "journey": {
+      "title": "A Nosa Viaxe Global",
+      "p1": "Ao longo dos anos, viaxamos ás principais rexións produtoras de café do mundo: Etiopía, Colombia, Kenia e moitos outros países. Coñecemos os agricultores, entendemos os seus desafíos e aprendemos as técnicas tradicionais que fan que cada café sexa único.",
+      "p2": "Estas viaxes non só nos permitiron seleccionar os mellores grans, senón tamén establecer relacións duradeiras baseadas no respecto, a sustentabilidade e o comercio xusto.",
+      "imageAlt": "Interior acolledor dunha cafetería"
+    },
+    "mission": {
+      "title": "A Nosa Misión Hoxe",
+      "p1": "Hoxe, Café Rico é máis ca unha empresa de subscrición de café. Somos unha comunidade de amantes do café comprometidos con levar sustentabilidade, calidade e educación ao mundo do café de especialidade.",
+      "p2": "Cada mes, seleccionamos coidadosamente tres variedades dos nosos provedores favoritos, torrámolas á perfección nas nosas instalacións e enviámolas directamente á túa porta. Queremos que goces de café acabado de torrar coa máxima frescura.",
+      "p3": "Cremos que o café é máis ca unha bebida; é unha experiencia, unha conexión con culturas afastadas e unha oportunidade para marcar a diferenza na vida dos produtores.",
+      "imageAlt": "Barista preparando un café expreso"
+    },
+    "values": {
+      "title": "Os Nosos Valores",
+      "quality": {
+        "title": "Calidade",
+        "text": "Seleccionamos só os mellores grans e torrámolos con precisión para garantir a máxima calidade en cada cunca."
+      },
+      "sustainability": {
+        "title": "Sustentabilidade",
+        "text": "Traballamos directamente con produtores que practican a agricultura sustentable e o comercio xusto."
+      },
+      "education": {
+        "title": "Educación",
+        "text": "Encántanos compartir o coñecemento sobre o café: a súa orixe, o seu sabor e os mellores métodos de preparación."
+      }
+    },
+    "team": {
+      "title": "O Noso Equipo",
+      "text": "Somos un equipo pequeno pero apaixonado de expertos en café, torradores e amantes desta bebida milenaria. Cada membro do noso equipo achega unha perspectiva única e un compromiso inquebrantable coa excelencia."
+    },
+    "cta": {
+      "title": "Únete á Nosa Comunidade",
+      "text": "Forma parte da nosa historia e descubre o mundo do café de especialidade",
+      "button": "Comeza a túa Subscrición"
+    }
+  },
+  "home": {
+    "meta": {
+      "description": "Café de especialidade acabado de torrar, seleccionado para gozar na casa.",
+      "title": "Café Rico"
+    },
+    "hero": {
+      "title1": "Bo",
+      "title2": "café,",
+      "title3": "mellores",
+      "title4": "días",
+      "subtitle": "Café acabado de torrar, na túa porta cada mes.",
+      "text": "Torramos en pequenos lotes grans de orixe única e levámolos frescos á túa casa. Descubre as nosas seleccións premium.",
+      "subscribe": "Subscríbete agora",
+      "coffees": "Ver Cafés",
+      "bagAlt": "Bolsa de café Etiopía Floral, notas florais e cítricas"
+    },
+    "breakfast": {
+      "eyebrow": "CAFÉ RICO · MAÑÁS",
+      "title": "Almorzos",
+      "titleStart": "ALMOR",
+      "titleMiddle": "",
+      "titleEnd": "ZOS",
+      "text": "Comeza o día cun café recén feito, bolaría artesanal e algo rico.",
+      "button": "VER MENÚ"
+    },
+    "location": {
+      "title": "Un lugar para gozar",
+      "text": "Bo café, boa compañía e un ambiente único na cidade.",
+      "place": "Localización",
+      "city": "28003 Madrid, España",
+      "hours": "Horario",
+      "weekdays": "Luns - Venres:",
+      "saturday": "Sábado:",
+      "sunday": "Domingo:",
+      "closed": "Pechado",
+      "directions": "Como Chegar en Google Maps",
+      "craft": {
+        "title": "Café Artesanal",
+        "text": "Seleccionado e torrado á perfección"
+      },
+      "ambience": {
+        "title": "Ambiente Único",
+        "text": "Música e boa compañía garantidas"
+      },
+      "community": {
+        "title": "Comunidade",
+        "text": "Conecta con outros amantes do café"
+      }
+    },
+    "cta": {
+      "title": "O teu café, onde queiras",
+      "text": "Goza do noso menú no local ou fai o teu pedido en liña para levar.",
+      "menu": "Ver Menú",
+      "subscribe": "Subscribirse"
+    },
+    "coffees": {
+      "title": "Cafés do mes",
+      "text": "Orixes de especialidade, torrados cada semana en pequenos lotes.",
+      "all": "Ver todos os cafés"
+    },
+    "steps": {
+      "title": "Así funciona a túa subscrición",
+      "text": "Tres pasos e o teu café favorito chega á casa cada mes.",
+      "choose": {
+        "title": "Escolle o teu café e o teu plan",
+        "text": "Escolle a orixe que máis che guste e cada canto o queres: mensual, quincenal ou semanal."
+      },
+      "roast": {
+        "title": "Torrámolo",
+        "text": "Torrado en pequenos lotes, xusto antes de envialo."
+      },
+      "delivery": {
+        "title": "Chégache á casa",
+        "text": "Enviado directamente á túa porta, fresco e listo para preparar."
+      },
+      "button": "Comezar a miña subscrición"
+    },
+    "plans": {
+      "title": "Escolle o teu plan",
+      "text": "O mesmo café, coa frecuencia que prefiras. Cancela cando queiras."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "text": "O que máis nos preguntan antes de subscribirse.",
+      "all": "Ver todas as preguntas"
+    },
+    "about": {
+      "title": "Máis que Café",
+      "text": "Selección de grans, torrefacción artesanal e un profundo respecto pola orixe. Traballamos con produtores que comparten a nosa visión dun café máis consciente e sustentable.",
+      "origin": {
+        "title": "Orixe Responsable",
+        "text": "Relacións directas con produtores locais que respectan o medio ambiente"
+      },
+      "roast": {
+        "title": "Torrefacción Artesanal",
+        "text": "Torrado en pequenos lotes para garantir a máxima calidade e frescura"
+      },
+      "conscious": {
+        "title": "Café Consciente",
+        "text": "Envases sustentables e prácticas responsables en cada paso do proceso"
+      },
+      "button": "A Nosa Historia"
+    }
+  },
+  "coffees": {
+    "card": {
+      "details": "Ver detalles"
+    },
+    "meta": {
+      "description": "Descubre os cafés de especialidade do mes de Café Rico.",
+      "title": "Cafés do Mes - Café Rico"
+    },
+    "title": "Cafés do Mes",
+    "lead": "Escolle o teu favorito e comeza a túa viaxe de sabor",
+    "listTitle": "Todos os cafés",
+    "packAlt": "Paquete de café"
+  },
+  "plans": {
+    "popular": "Máis popular",
+    "from": "Desde",
+    "perMonth": "/mes",
+    "choose": "Escoller plan"
+  },
+  "menu": {
+    "meta": {
+      "description": "Carta de almorzos e bolaría de Café Rico: napolitanas, cruasáns, roliños e batidos naturais.",
+      "title": "Menú - Café Rico"
+    },
+    "title": "Menú de almorzos e bolaría",
+    "lead": "Bolaría acabada de fornear e almorzos para acompañar o teu café",
+    "listTitle": "Carta",
+    "special": {
+      "imageAlt": "Pila de filloas con xarope, froitos vermellos e azucre glas xunto a un café con leite",
+      "badge": "Especial da casa",
+      "title": "Filloas con froitos vermellos",
+      "text": "Filloas esponxosas con xarope, amorodos, framboesas, arandos, menta fresca e azucre glas. Ideais cun café con leite."
+    }
+  },
+  "gallery": {
+    "meta": {
+      "description": "Galería de imaxes dos nosos cafés premium.",
+      "title": "Galería - Café Rico"
+    },
+    "title": "Galería de Café",
+    "lead": "Explora a nosa colección de cafés premium de orixe única",
+    "listTitle": "Fotos",
+    "cta": {
+      "title": "Gustaríache probar os nosos cafés?",
+      "button": "Comezar Subscrición",
+      "text": "Subscríbete e recibe café premium cada mes"
+    },
+    "lightbox": {
+      "label": "Imaxe ampliada",
+      "close": "Pechar",
+      "previous": "Anterior",
+      "next": "Seguinte"
+    }
+  },
+  "faq": {
+    "meta": {
+      "description": "Preguntas frecuentes sobre Café Rico.",
+      "title": "Preguntas Frecuentes - Café Rico"
+    },
+    "title": "Preguntas Frecuentes",
+    "lead": "Atopa respostas ás preguntas máis comúns sobre os nosos cafés e servizos",
+    "listTitle": "Lista de preguntas",
+    "help": {
+      "title": "Non atopaches a túa resposta?",
+      "text": "Estamos aquí para axudarche. Contacta connosco directamente:",
+      "button": "Enviar Correo"
+    }
+  },
+  "contact": {
+    "meta": {
+      "description": "Contacta con Café Rico e descubre como visitarnos.",
+      "title": "Contacto - Café Rico"
+    },
+    "title": "Como Chegar",
+    "lead": "Visítanos ou contacta directamente co noso equipo",
+    "location": {
+      "title": "Localización",
+      "office": "Oficina Principal",
+      "city": "28001 Madrid, España",
+      "hours": "Horario",
+      "weekdays": "Luns - Venres: 9:00 - 18:00",
+      "saturday": "Sábado: 10:00 - 14:00",
+      "sunday": "Domingo: Pechado",
+      "transport": "Transporte Público",
+      "metro": "Metro: Liña 3, Estación Centro",
+      "bus": "Autobús: Liña 27, Parada Café Rico"
+    },
+    "info": {
+      "title": "Contacto",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "support": "Atención ao Cliente",
+      "response": "Resposta en 24 horas",
+      "social": "Redes Sociais"
+    },
+    "map": {
+      "title": "A Nosa Localización",
+      "label": "Mapa da localización de Café Rico",
+      "address": "Calle del Café, 42 - Madrid"
+    },
+    "form": {
+      "title": "Envíanos unha Mensaxe",
+      "required": "Todos os campos son obrigatorios.",
+      "name": {
+        "label": "Nome Completo"
+      },
+      "subject": {
+        "label": "Asunto",
+        "placeholder": "En que podemos axudarche?",
+        "error": "Indica o asunto da mensaxe."
+      },
+      "message": {
+        "label": "Mensaxe",
+        "placeholder": "A túa mensaxe...",
+        "error": "Escribe a túa mensaxe."
+      },
+      "submit": "Enviar Mensaxe",
+      "invalid": "Revisa os campos marcados antes de enviar.",
+      "success": "Grazas, recibimos a túa mensaxe."
+    },
+    "faq": {
+      "title": "Tes Preguntas?",
+      "button": "Ver FAQ",
+      "text": "Consulta as nosas preguntas frecuentes para obter respostas rápidas"
+    }
+  },
+  "forms": {
+    "name": {
+      "placeholder": "O teu nome",
+      "error": "Introduce o teu nome."
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": "o-teu@email.com",
+      "error": "Introduce un correo válido, por exemplo nome@email.com."
+    }
+  },
+  "subscription": {
+    "meta": {
+      "description": "Configura a túa subscrición de café premium.",
+      "title": "Subscrición - Café Rico"
+    },
+    "title": "Configura a túa Subscrición",
+    "lead": "Escolle o teu café favorito e recíbeo cada mes na túa porta",
+    "steps": {
+      "title": "Pasos da subscrición",
+      "text": "Completa os seguintes pasos para comezar a recibir o teu café favorito",
+      "coffee": "O teu café",
+      "plan": "O teu plan",
+      "delivery": "Entrega"
+    },
+    "progress": {
+      "label": "Progreso da subscrición",
+      "first": "Paso 1 de 3",
+      "text": "Paso {step} de {total}"
+    },
+    "coffee": {
+      "title": "Que café prefires?",
+      "text": "Selecciona o teu café favorito para comezar"
+    },
+    "plan": {
+      "title": "Escolle o teu plan",
+      "text": "Selecciona a frecuencia e a cantidade"
+    },
+    "delivery": {
+      "title": "Datos de entrega",
+      "text": "Onde che enviamos o teu café?"
+    },
+    "form": {
+      "name": "Nome completo",
+      "address": {
+        "label": "Enderezo de envío",
+        "placeholder": "Rúa, número, andar...",
+        "error": "Introduce o teu enderezo de envío."
+      },
+      "city": {
+        "label": "Cidade",
+        "error": "Introduce a túa cidade."
+      },
+      "zip": {
+        "label": "Código postal",
+        "error": "Introduce un código postal de 5 díxitos."
+      }
+    },
+    "nav": {
+      "label": "Navegación de pasos",
+      "previous": "Anterior",
+      "step": "Paso",
+      "of": "de 3",
+      "next": "Seguinte",
+      "finish": "Finalizar"
+    },
+    "done": {
+      "title": "Revisa o teu correo",
+      "textStart": "Para continuar coa túa subscrición, abre a mensaxe que che enviaremos a",
+      "email": "o teu correo",
+      "textEnd": "e confirma os teus datos."
+    }
+  },
+  "data": {
+    "plans": {
+      "monthly": {
+        "name": "Plan Mensual",
+        "description": "1 bolsa de 250g cada mes"
+      },
+      "biweekly": {
+        "name": "Plan Quincenal",
+        "description": "1 bolsa de 250g cada 15 días"
+      },
+      "weekly": {
+        "name": "Plan Semanal",
+        "description": "1 bolsa de 250g cada semana"
+      }
+    },
+    "menu": {
+      "napolitana-chocolate": {
+        "name": "Napolitana de chocolate",
+        "description": "Follado de manteiga crocante recheo de chocolate negro",
+        "alt": "Napolitana de follado dourado con raspas de chocolate e recheo de chocolate negro, sobre un prato de cerámica xunto a un café"
+      },
+      "croissant-mantequilla": {
+        "name": "Cruasán de manteiga",
+        "description": "Acabado de fornear, lixeiro e mantecoso. Perfecto cun café con leite",
+        "alt": "Cruasán dourado xunto a un café con leite con arte latte sobre unha táboa de madeira"
+      },
+      "rollo-avellanas": {
+        "name": "Roliño de abelás",
+        "description": "Bolo en espiral con caramelo e abelás picadas",
+        "alt": "Bolo en espiral glaseado con abelás picadas sobre un prato de cerámica"
+      },
+      "desayuno-completo": {
+        "name": "Almorzo completo",
+        "description": "Ovos fritidos, pan con queixo e marmelada, froita fresca e café de filtro",
+        "alt": "Dous ovos fritidos con pan torrado e marmelada, un prato de froita e unha cunca de café"
+      },
+      "batidos-naturales": {
+        "name": "Batidos naturais",
+        "description": "Verde, amorodo, mango ou remolacha, preparados ao momento",
+        "alt": "Catro vasos de cristal con batidos de cores e palliñas"
+      },
+      "tarta-queso": {
+        "name": "Torta de queixo",
+        "description": "Torta de queixo ao forno, coa superficie caramelizada e o interior cremoso",
+        "alt": "Torta de queixo ao forno coa superficie torrada e unha porción cortada que deixa ver o interior cremoso, sobre un prato branco"
+      }
+    },
+    "gallery": {
+      "desayuno": {
+        "title": "Almorzo de cafetería",
+        "alt": "Café con leite cun debuxo de folla na escuma, xunto a un cruasán sobre unha táboa de madeira",
+        "description": "Un café con leite con arte latte e un cruasán acabado de fornear"
+      },
+      "latte-arte": {
+        "title": "Latte con arte",
+        "alt": "Cunca de cerámica cun latte decorado cun corazón de escuma, sobre unha mesa á luz do sol",
+        "description": "Escuma sedosa debuxada cun corazón, á luz da tarde"
+      },
+      "granos": {
+        "title": "Grans acabados de torrar",
+        "alt": "Grans de café torrados saíndo dun saco de xuta sobre unha mesa de madeira",
+        "description": "Grans de torrefacción intensa derramados dun saco de xuta"
+      },
+      "cafe-frio": {
+        "title": "Café frío con leite",
+        "alt": "Vaso de cristal con café frío, xeo e leite en capas",
+        "description": "Café con xeo e leite, servido en capas"
+      },
+      "rincon": {
+        "title": "O noso recuncho",
+        "alt": "Interior luminoso dunha cafetería con mesas e cadeiras de madeira e plantas xunto ás fiestras",
+        "description": "Mesas de madeira, plantas e moita luz natural para quedar un anaco"
+      },
+      "bollo-avellanas": {
+        "title": "Bolo de abelás",
+        "alt": "Bolo en espiral glaseado con abelás picadas sobre un prato de cerámica",
+        "description": "Un bolo en espiral con caramelo e abelás para acompañar o café"
+      }
+    },
+    "faq": {
+      "cancel": {
+        "question": "Podo cancelar a miña subscrición?",
+        "answer": "Si, podes cancelar a túa subscrición en calquera momento sen ningunha penalización. Só tes que contactar connosco a través da túa conta ou enviarnos un correo a caferico@correo.com. A cancelación será efectiva ao final do teu ciclo de facturación actual."
+      },
+      "grind": {
+        "question": "Moído ou en gran?",
+        "answer": "Podes escoller tanto grans enteiros como café moído no momento da túa subscrición. Os grans enteiros manteñen mellor o aroma e a frescura, mentres que o café moído é máis cómodo para unha preparación rápida. Podes cambiar a túa preferencia en calquera momento."
+      },
+      "delivery": {
+        "question": "Canto tempo tarda a entrega?",
+        "answer": "As entregas adoitan realizarse entre 3 e 5 días hábiles despois do envío. Enviarémosche un correo co número de seguimento para que poidas seguir o teu pedido en tempo real. As entregas internacionais poden tardar máis segundo a túa localización."
+      },
+      "origin": {
+        "question": "De onde procede o voso café?",
+        "answer": "Os nosos cafés son seleccionados coidadosamente de produtores de todo o mundo. Traballamos directamente con fincas de orixe única para asegurar a máxima calidade e sustentabilidade. Cada café do noso catálogo inclúe información completa sobre a súa orixe, altitude e proceso de torrefacción."
+      },
+      "storage": {
+        "question": "Como debo almacenar o café?",
+        "answer": "O café consérvase mellor nun lugar fresco, escuro e seco. Recomendámosche gardalo nun recipiente hermético lonxe da luz solar directa e das temperaturas extremas. Se é en gran, é mellor moelo xusto antes de preparalo para manter intactos todo o aroma e o sabor."
+      },
+      "payment": {
+        "question": "Que métodos de pagamento aceptades?",
+        "answer": "Aceptamos todas as tarxetas de crédito principais (Visa, Mastercard, American Express), transferencias bancarias e carteiras dixitais. A túa información de pagamento está completamente segura e procésase a través de plataformas de pagamento certificadas."
+      },
+      "international": {
+        "question": "Facedes envíos internacionais?",
+        "answer": "Si, facemos envíos a moitos países de todo o mundo. Os custos de envío internacional varían segundo a túa localización. Durante o proceso de subscrición poderás ver se o teu país está dispoñible e cal sería o custo exacto de envío para a túa zona."
+      },
+      "change": {
+        "question": "Podo cambiar a miña selección de café?",
+        "answer": "Por suposto. Podes cambiar o café seleccionado, o tipo de moenda ou o teu plan de envío en calquera momento. Os cambios entrarán en vigor no teu próximo ciclo de envío. Só tes que acceder á túa conta e facer as modificacións que precises."
+      },
+      "discounts": {
+        "question": "Hai descontos por volume?",
+        "answer": "Os nosos plans semanais e quincenais ofrecen mellor prezo que o plan mensual. Ademais, somos membros de varios programas de sustentabilidade que permiten descontos especiais para clientes comprometidos co café de orixe ética."
+      },
+      "returns": {
+        "question": "Cal é a vosa política de devolución?",
+        "answer": "Se non estás completamente satisfeito co teu café, podemos ofrecerche unha substitución ou devolución nos 30 días seguintes á compra. Queremos que goces de cada cunca, así que non dubides en contactar connosco se tes algún problema."
+      }
+    },
+    "coffees": {
+      "etiopia": {
+        "name": "Etiopía Floral",
+        "description": "Notas florais, cítricas e doces",
+        "roast": "Torrefacción Media",
+        "detailedDescription": "Este café etíope presenta delicadas notas florais combinadas con toques cítricos frescos e unha dozura natural. Procedente das montañas de Etiopía, cada cunca é unha experiencia sensorial única. Perfecto para os amantes dos cafés con carácter, este gran é ideal para preparar con métodos de filtrado como pour-over ou prensa francesa.",
+        "flavorProfile": [
+          {
+            "title": "Notas Florais",
+            "description": "Aromas delicados de xasmín e lavanda"
+          },
+          {
+            "title": "Notas Cítricas",
+            "description": "Toques de limón e laranxa fresca"
+          },
+          {
+            "title": "Dozura Natural",
+            "description": "Notas de mel e caramelo suave"
+          }
+        ],
+        "brewing": {
+          "grind": "Media a fina (semellante ao azucre de mesa)",
+          "methods": "Pour Over, Prensa Francesa, AeroPress",
+          "ratio": "1:16 (1 parte de café por 16 partes de auga)"
+        },
+        "production": "250g por bolsa"
+      },
+      "colombia": {
+        "name": "Colombia Caramelo",
+        "description": "Caramelo, chocolate e froitos secos",
+        "roast": "Torrefacción Media-Escura",
+        "detailedDescription": "Un café colombiano de corpo pleno con notas de caramelo e chocolate. Este gran está perfectamente equilibrado e ofrece unha experiencia suave e agradable. Ideal para gozar a calquera hora do día, tanto só como en bebidas con leite.",
+        "flavorProfile": [
+          {
+            "title": "Chocolate",
+            "description": "Aromas profundos de cacao escuro"
+          },
+          {
+            "title": "Caramelo",
+            "description": "Dozura natural e notas de toffee"
+          },
+          {
+            "title": "Froitos Secos",
+            "description": "Toques sutís de améndoa e noz"
+          }
+        ],
+        "brewing": {
+          "grind": "Media (semellante ao café moído comercial)",
+          "methods": "Espresso, Prensa Francesa, Pour Over",
+          "ratio": "1:16 (1 parte de café por 16 partes de auga)"
+        },
+        "production": "250g por bolsa"
+      },
+      "kenia": {
+        "name": "Kenia Froitos Vermellos",
+        "description": "Froitos vermellos, acidez brillante",
+        "roast": "Torrefacción Lixeira",
+        "detailedDescription": "Un café keniano vibrante con notas zumarentas de froitos vermellos. A súa acidez brillante e complexa faino perfecto para quen busca un café con personalidade. Cada grolo revela novas capas de sabor, o que o converte nunha experiencia verdadeiramente memorable.",
+        "flavorProfile": [
+          {
+            "title": "Froitos Vermellos",
+            "description": "Notas de amorodo, framboesa e cereixa"
+          },
+          {
+            "title": "Acidez Brillante",
+            "description": "Sensación viva e fresca na boca"
+          },
+          {
+            "title": "Complexidade",
+            "description": "Capas sutís de arando e té negro"
+          }
+        ],
+        "brewing": {
+          "grind": "Fina a media (para realzar a acidez)",
+          "methods": "Pour Over, AeroPress, Filtro de papel",
+          "ratio": "1:16 (1 parte de café por 16 partes de auga)"
+        },
+        "production": "250g por bolsa"
+      },
+      "brasil": {
+        "name": "Brasil Abelá",
+        "description": "Abelá, cacao e corpo cremoso",
+        "roast": "Torrefacción Media-Escura",
+        "detailedDescription": "Un café brasileiro suave e redondo, con corpo cremoso e baixa acidez. As súas notas de abelá torrada e cacao convérteno nunha base excelente para espresso e para bebidas con leite. Un clásico reconfortante para o día a día.",
+        "flavorProfile": [
+          {
+            "title": "Abelá",
+            "description": "Notas de abelá torrada e praliné"
+          },
+          {
+            "title": "Cacao",
+            "description": "Toques de chocolate con leite"
+          },
+          {
+            "title": "Corpo Cremoso",
+            "description": "Textura suave e untuosa na boca"
+          }
+        ],
+        "brewing": {
+          "grind": "Media-fina (para espresso) ou media (para moka)",
+          "methods": "Espresso, Moka, Prensa Francesa",
+          "ratio": "1:16 (1 parte de café por 16 partes de auga)"
+        },
+        "production": "250g por bolsa"
+      },
+      "guatemala": {
+        "name": "Guatemala Cítrico",
+        "description": "Laranxa, panela e especias suaves",
+        "roast": "Torrefacción Media",
+        "detailedDescription": "Cultivado á sombra dos volcáns de Antigua, este café ofrece un equilibrio elegante entre acidez cítrica e dozura de panela. Deixa un final longo con lixeiras notas especiadas. Moi versátil, funciona ben tanto en filtro como en espresso.",
+        "flavorProfile": [
+          {
+            "title": "Laranxa",
+            "description": "Acidez zumarenta de laranxa e mandarina"
+          },
+          {
+            "title": "Panela",
+            "description": "Dozura profunda de cana de azucre"
+          },
+          {
+            "title": "Especias",
+            "description": "Final con matices de canela e cravo"
+          }
+        ],
+        "brewing": {
+          "grind": "Media (semellante ao sal groso fino)",
+          "methods": "Pour Over, Espresso, AeroPress",
+          "ratio": "1:16 (1 parte de café por 16 partes de auga)"
+        },
+        "production": "250g por bolsa"
+      },
+      "costa-rica": {
+        "name": "Costa Rica Pexego",
+        "description": "Pexego, mel e té branco",
+        "roast": "Torrefacción Lixeira",
+        "detailedDescription": "Un lote de proceso honey da rexión de Tarrazú. Destaca pola súa dozura afroitada, con notas de pexego maduro e mel, e unha textura sedosa. Un café delicado e limpo, pensado para quen goza das cuncas doces e luminosas.",
+        "flavorProfile": [
+          {
+            "title": "Pexego",
+            "description": "Froita de óso madura e zumarenta"
+          },
+          {
+            "title": "Mel",
+            "description": "Dozura suave do proceso honey"
+          },
+          {
+            "title": "Té Branco",
+            "description": "Final lixeiro, floral e delicado"
+          }
+        ],
+        "brewing": {
+          "grind": "Media a fina (semellante ao azucre de mesa)",
+          "methods": "Pour Over, V60, Chemex",
+          "ratio": "1:16 (1 parte de café por 16 partes de auga)"
+        },
+        "production": "250g por bolsa"
+      }
+    }
+  },
+  "coffee": {
+    "back": "Volver a Cafés",
+    "ratingPrefix": "Valoración:",
+    "ratingSuffix": "de 5",
+    "reviews": "recensións",
+    "descriptionTitle": "Descrición",
+    "specsTitle": "Ficha técnica",
+    "specs": {
+      "origin": "Orixe",
+      "roast": "Torrefacción",
+      "altitude": "Altitude",
+      "production": "Produción"
+    },
+    "flavorTitle": "Perfil de Sabor",
+    "brewingTitle": "Recomendacións de Preparación",
+    "brewing": {
+      "temperature": "Temperatura",
+      "grind": "Moenda",
+      "ratio": "Proporción",
+      "methods": "Métodos Recomendados"
+    },
+    "cta": {
+      "title": "Gustaríache probalo?",
+      "text": "Subscríbete e recibe este café premium cada mes",
+      "button": "Comezar Subscrición"
+    }
+  },
+  "theme": {
+    "current": "Cambiar tema, actual:",
+    "light": "Claro",
+    "menu": "Seleccionar tema",
+    "dark": "Escuro",
+    "matcha": "Matcha",
+    "cafe": "Café",
+    "blue": "Azul",
+    "violet": "Violeta"
+  },
+  "sectionNav": {
+    "label": "Accesos complementarios",
+    "nav": "Navegación por seccións",
+    "hero": "Inicio",
+    "breakfast": "Almorzo",
+    "location": "Localización",
+    "cta": "O teu café, onde queiras",
+    "coffees": "Cafés do mes",
+    "steps": "Como funciona",
+    "plans": "Plans",
+    "faq": "Preguntas frecuentes",
+    "about": "Máis que café"
+  }
+}

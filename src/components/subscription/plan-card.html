@@ -6,20 +6,20 @@
     <span
       class="bg-accent text-text-on-accent absolute -top-3 left-1/2 hidden -translate-x-1/2 rounded-full px-3 py-0.5 text-xs font-bold whitespace-nowrap group-data-[featured=true]:block"
     >
-      Más popular
+      {{t:plans.popular}}
     </span>
     <h3 class="heading heading--item mb-2">{{name}}</h3>
     <p class="text-text-secondary mb-6">{{description}}</p>
-    <p class="text-text-secondary mb-1 text-sm">Desde</p>
+    <p class="text-text-secondary mb-1 text-sm">{{t:plans.from}}</p>
     <p class="text-accent mb-6 text-3xl font-bold">
       {{fromPrice}}
-      <span class="text-base font-medium">/mes</span>
+      <span class="text-base font-medium">{{t:plans.perMonth}}</span>
     </p>
     <a
       href="/src/pages/subscription.html?plan={{id}}"
       class="btn btn--primary mt-auto inline-block no-underline"
     >
-      Elegir plan
+      {{t:plans.choose}}
       <span class="sr-only">{{name}}</span>
     </a>
   </article>

@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Configura tu suscripción de café premium."
-    />
-    <title>Suscripción - Café Rico</title>
+    <meta name="description" content="{{t:subscription.meta.description}}" />
+    <title>{{t:subscription.meta.title}}</title>
     <link
       rel="icon"
       type="image/png"
@@ -43,11 +40,9 @@
 
           <page-header
             heading-id="subscription__title"
-            heading="Configura tu Suscripción"
+            heading="{{t:subscription.title}}"
           >
-            <p class="lead">
-              Elige tu café favorito y recíbelo cada mes en tu puerta
-            </p>
+            <p class="lead">{{t:subscription.lead}}</p>
           </page-header>
 
           <section
@@ -57,23 +52,23 @@
           >
             <header class="mb-8 text-center">
               <h2 id="subscription__wizard-title" class="sr-only">
-                Pasos de la suscripción
+                {{t:subscription.steps.title}}
               </h2>
               <p class="text-text-secondary text-lg">
-                Completa los siguientes pasos para empezar a recibir tu café
-                favorito
+                {{t:subscription.steps.text}}
               </p>
             </header>
 
             <div
               id="subscription__progress-track"
+              data-step-text="{{t:subscription.progress.text}}"
               class="theme-transition bg-surface-muted relative mb-6 h-2 rounded-full"
               role="progressbar"
-              aria-label="Progreso de la suscripción"
+              aria-label="{{t:subscription.progress.label}}"
               aria-valuemin="1"
               aria-valuemax="3"
               aria-valuenow="1"
-              aria-valuetext="Paso 1 de 3"
+              aria-valuetext="{{t:subscription.progress.first}}"
             >
               <div
                 id="subscription__progress-bar"
@@ -84,7 +79,7 @@
             <ol
               id="subscription__progress-steps"
               class="mb-8 grid grid-cols-3 gap-4"
-              aria-label="Pasos de la suscripción"
+              aria-label="{{t:subscription.steps.title}}"
             >
               <li class="flex flex-col items-center">
                 <span
@@ -95,7 +90,7 @@
                   1
                 </span>
                 <span class="text-text-secondary text-sm font-medium">
-                  Tu café
+                  {{t:subscription.steps.coffee}}
                 </span>
               </li>
               <li class="flex flex-col items-center">
@@ -106,7 +101,7 @@
                   2
                 </span>
                 <span class="text-text-secondary text-sm font-medium">
-                  Tu plan
+                  {{t:subscription.steps.plan}}
                 </span>
               </li>
               <li class="flex flex-col items-center">
@@ -117,7 +112,7 @@
                   3
                 </span>
                 <span class="text-text-secondary text-sm font-medium">
-                  Entrega
+                  {{t:subscription.steps.delivery}}
                 </span>
               </li>
             </ol>
@@ -130,20 +125,26 @@
             >
               <fieldset class="wizard__step" data-step="1">
                 <legend class="heading heading--item mb-2">
-                  ¿Qué café prefieres?
+                  {{t:subscription.coffee.title}}
                 </legend>
                 <p class="text-text-secondary mb-6">
-                  Selecciona tu café favorito para empezar
+                  {{t:subscription.coffee.text}}
                 </p>
-                <div class="space-y-3" id="subscription__coffee-options"></div>
+                <div class="space-y-3" id="subscription__coffee-options">
+                  <repeat
+                    data="coffees"
+                    component="subscription-coffee-option"
+                    lcp="false"
+                  ></repeat>
+                </div>
               </fieldset>
 
               <fieldset class="wizard__step hidden" data-step="2">
                 <legend class="heading heading--item mb-2">
-                  Elige tu plan
+                  {{t:subscription.plan.title}}
                 </legend>
                 <p class="text-text-secondary mb-6">
-                  Selecciona la frecuencia y cantidad
+                  {{t:subscription.plan.text}}
                 </p>
                 <div class="space-y-3">
                   <repeat data="plans" component="plan-option"></repeat>
@@ -152,66 +153,66 @@
 
               <fieldset class="wizard__step hidden" data-step="3">
                 <legend class="heading heading--item mb-2">
-                  Datos de entrega
+                  {{t:subscription.delivery.title}}
                 </legend>
                 <p class="text-text-secondary mb-6">
-                  ¿Dónde te enviamos tu café?
+                  {{t:subscription.delivery.text}}
                 </p>
                 <div class="grid gap-4 sm:grid-cols-2">
                   <form-field
                     id="subscription__name"
                     name="name"
-                    label="Nombre completo"
+                    label="{{t:subscription.form.name}}"
                     type="text"
-                    placeholder="Tu nombre"
+                    placeholder="{{t:forms.name.placeholder}}"
                     autocomplete="name"
-                    error="Introduce tu nombre."
+                    error="{{t:forms.name.error}}"
                     class="sm:col-span-2"
                   ></form-field>
                   <form-field
                     id="subscription__email"
                     name="email"
-                    label="Email"
+                    label="{{t:forms.email.label}}"
                     type="email"
-                    placeholder="tu@email.com"
+                    placeholder="{{t:forms.email.placeholder}}"
                     autocomplete="email"
-                    error="Introduce un email válido, por ejemplo nombre@email.com."
+                    error="{{t:forms.email.error}}"
                     class="sm:col-span-2"
                   ></form-field>
                   <form-field
                     id="subscription__address"
                     name="address"
-                    label="Dirección de envío"
+                    label="{{t:subscription.form.address.label}}"
                     type="text"
-                    placeholder="Calle, número, piso..."
+                    placeholder="{{t:subscription.form.address.placeholder}}"
                     autocomplete="street-address"
-                    error="Introduce tu dirección de envío."
+                    error="{{t:subscription.form.address.error}}"
                     class="sm:col-span-2"
                   ></form-field>
                   <form-field
                     id="subscription__city"
                     name="city"
-                    label="Ciudad"
+                    label="{{t:subscription.form.city.label}}"
                     type="text"
                     placeholder="Madrid"
                     autocomplete="address-level2"
-                    error="Introduce tu ciudad."
+                    error="{{t:subscription.form.city.error}}"
                   ></form-field>
                   <form-field
                     id="subscription__zip"
                     name="zip"
-                    label="Código postal"
+                    label="{{t:subscription.form.zip.label}}"
                     type="text"
                     placeholder="28001"
                     autocomplete="postal-code"
-                    error="Introduce un código postal de 5 dígitos."
+                    error="{{t:subscription.form.zip.error}}"
                     extra='pattern="[0-9]{5}" inputmode="numeric"'
                   ></form-field>
                 </div>
               </fieldset>
 
               <nav
-                aria-label="Navegación de pasos"
+                aria-label="{{t:subscription.nav.label}}"
                 class="subscription__nav flex flex-wrap items-center justify-between gap-x-2 gap-y-4 pt-6 sm:gap-x-4"
               >
                 <button
@@ -224,22 +225,24 @@
                     class="icon mask-[url(/icons/ui/arrow-left.svg)]"
                     aria-hidden="true"
                   ></span>
-                  Anterior
+                  {{t:subscription.nav.previous}}
                 </button>
                 <span
                   class="order-first w-full text-center text-sm font-medium"
                   aria-live="polite"
                 >
-                  Paso
+                  {{t:subscription.nav.step}}
                   <span id="subscription__current-step">1</span>
-                  de 3
+                  {{t:subscription.nav.of}}
                 </span>
                 <button
                   type="button"
                   id="subscription__btn-next"
+                  data-next-text="{{t:subscription.nav.next}}"
+                  data-finish-text="{{t:subscription.nav.finish}}"
                   class="btn btn--primary px-4 whitespace-nowrap sm:px-6"
                 >
-                  <span data-next-label>Siguiente</span>
+                  <span data-next-label>{{t:subscription.nav.next}}</span>
                   <span
                     class="icon mask-[url(/icons/ui/arrow-right.svg)]"
                     aria-hidden="true"
@@ -264,18 +267,19 @@
                 class="heading heading--section mb-3"
                 tabindex="-1"
               >
-                Revisa tu correo
+                {{t:subscription.done.title}}
               </h2>
               <p
                 class="text-text-secondary [&_strong]:text-text-primary mb-6 max-w-md [&_strong]:font-bold [&_strong]:break-all"
               >
-                Para continuar con tu suscripción, abre el mensaje que te
-                enviaremos a
-                <strong id="subscription__confirmation-email">tu correo</strong>
-                y confirma tus datos.
+                {{t:subscription.done.textStart}}
+                <strong id="subscription__confirmation-email">
+                  {{t:subscription.done.email}}
+                </strong>
+                {{t:subscription.done.textEnd}}
               </p>
               <a href="/" class="btn btn--secondary inline-block no-underline">
-                Volver al inicio
+                {{t:common.backHome}}
               </a>
             </section>
           </section>

@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Café de especialidad recién tostado, seleccionado para disfrutar en casa."
-    />
-    <title>Café rico</title>
+    <meta name="description" content="{{t:home.meta.description}}" />
+    <title>{{t:home.meta.title}}</title>
     <link
       rel="icon"
       type="image/png"
@@ -48,7 +45,9 @@
 
   <body>
     <app-header></app-header>
-    <section-navigation class="contents"></section-navigation>
+    <section-navigation class="contents">
+      <section-navigation-links></section-navigation-links>
+    </section-navigation>
     <main id="main-content">
       <home-section
         id="hero"
@@ -60,19 +59,20 @@
             id="hero__title"
             class="text-text-on-image-title text-6xl leading-[0.9] font-bold sm:text-7xl lg:text-8xl xl:text-9xl"
           >
-            <span class="block">Buen</span>
-            <span class="text-text-on-image-accent block">café,</span>
-            <span class="block">mejores</span>
-            <span class="block">días</span>
+            <span class="block">{{t:home.hero.title1}}</span>
+            <span class="text-text-on-image-accent block">
+              {{t:home.hero.title2}}
+            </span>
+            <span class="block">{{t:home.hero.title3}}</span>
+            <span class="block">{{t:home.hero.title4}}</span>
           </h1>
           <h2
             class="text-text-on-image-subtitle mt-6 mb-4 text-lg leading-tight font-bold sm:mt-8 sm:mb-6 sm:text-xl"
           >
-            Café recién tostado, en tu puerta cada mes.
+            {{t:home.hero.subtitle}}
           </h2>
           <p class="text-text-on-image-muted mb-8 max-w-prose text-lg">
-            Tostamos en pequeños lotes granos de origen único y te los llevamos
-            frescos a casa. Descubre nuestras selecciones premium.
+            {{t:home.hero.text}}
           </p>
           <ul class="flex flex-wrap gap-4">
             <li class="mb-4 w-full sm:w-auto">
@@ -80,7 +80,7 @@
                 href="/src/pages/subscription.html"
                 class="btn btn--primary btn--on-image block text-center sm:inline-block"
               >
-                Suscríbete ahora
+                {{t:home.hero.subscribe}}
               </a>
             </li>
             <li class="mb-4 w-full sm:w-auto">
@@ -88,7 +88,7 @@
                 href="/src/pages/coffees.html"
                 class="btn btn--secondary btn--on-image block text-center sm:inline-block"
               >
-                Ver Cafés
+                {{t:home.hero.coffees}}
               </a>
             </li>
           </ul>
@@ -104,7 +104,7 @@
             sizes="(min-width: 1024px) 336px, (min-width: 768px) 280px, 200px"
             width="800"
             height="1200"
-            alt="Bolsa de café Etiopía Floral, notas florales y cítricas"
+            alt="{{t:home.hero.bagAlt}}"
             fetchpriority="low"
             decoding="async"
             class="max-h-72 w-auto object-contain drop-shadow-2xl md:max-h-[28rem] lg:max-h-[34rem]"
@@ -128,7 +128,7 @@
 
         <section-body class="max-w-[1250px]">
           <p class="text-text-primary mb-4 text-sm font-bold tracking-[0.16em]">
-            CAFÉ RICO · MAÑANAS
+            {{t:home.breakfast.eyebrow}}
           </p>
 
           <div
@@ -137,14 +137,16 @@
             <h2
               id="breakfast__title"
               class="font-marker text-text-primary text-hero-mark max-hero:block max-hero:text-hero-mark-compact max-hero:leading-[0.78] max-hero:whitespace-normal relative z-10 m-0 flex w-full -rotate-3 items-center leading-[0.75] tracking-[-0.07em] whitespace-nowrap select-none"
-              aria-label="Desayunos"
+              aria-label="{{t:home.breakfast.title}}"
             >
               <span class="max-hero:inline relative" aria-hidden="true">
-                DESA
+                {{t:home.breakfast.titleStart}}
               </span>
-              <span class="max-hero:inline relative" aria-hidden="true">Y</span>
               <span class="max-hero:inline relative" aria-hidden="true">
-                UNOS
+                {{t:home.breakfast.titleMiddle}}
+              </span>
+              <span class="max-hero:inline relative" aria-hidden="true">
+                {{t:home.breakfast.titleEnd}}
               </span>
             </h2>
 
@@ -186,14 +188,13 @@
             <p
               class="text-text-secondary text-hero-sub max-w-[390px] leading-[1.45]"
             >
-              Empieza el día con café recién hecho, bollería artesanal y algo
-              rico.
+              {{t:home.breakfast.text}}
             </p>
             <a
               class="border-border-button-tertiary bg-surface-button-tertiary text-text-button-tertiary hover:bg-surface-button-tertiary-hover hover:text-text-button-tertiary-hover max-hero:justify-self-end inline-flex items-center gap-3 rounded-full border-2 px-5 py-4 font-bold whitespace-nowrap no-underline transition-[translate,background-color,color] duration-200 ease-[ease] hover:-translate-y-0.75 motion-reduce:transition-none"
               href="/src/pages/menu.html"
             >
-              VER MENÚ
+              {{t:home.breakfast.button}}
               <span
                 class="icon mask-[url(/icons/ui/arrow-up-right.svg)]"
                 aria-hidden="true"
@@ -216,13 +217,13 @@
                 id="location__title"
                 class="heading heading--section md:text-5xl"
               >
-                Un lugar para disfrutar
+                {{t:home.location.title}}
               </h2>
 
               <p
                 class="text-text-secondary mb-6 text-lg leading-relaxed sm:mb-8 sm:text-xl"
               >
-                Buen café, buena compañía y un ambiente único en la ciudad.
+                {{t:home.location.text}}
               </p>
 
               <section
@@ -237,11 +238,11 @@
                     class="icon text-accent mask-[url(/icons/ui/pin.svg)]"
                     aria-hidden="true"
                   ></span>
-                  <span class="text-lg">Ubicación</span>
+                  <span class="text-lg">{{t:home.location.place}}</span>
                 </h3>
                 <address class="text-text-secondary space-y-1 not-italic">
                   <strong>Calle del Café, 42</strong>
-                  <p>28003 Madrid, España</p>
+                  <p>{{t:home.location.city}}</p>
                 </address>
               </section>
 
@@ -257,20 +258,20 @@
                     class="icon text-accent mask-[url(/icons/ui/clock.svg)]"
                     aria-hidden="true"
                   ></span>
-                  <span class="text-lg">Horario</span>
+                  <span class="text-lg">{{t:home.location.hours}}</span>
                 </h3>
                 <ul class="text-text-secondary space-y-2">
                   <li class="flex justify-between">
-                    <p>Lunes - Viernes:</p>
+                    <p>{{t:home.location.weekdays}}</p>
                     <strong>9:00 - 18:00</strong>
                   </li>
                   <li class="flex justify-between">
-                    <p>Sábado:</p>
+                    <p>{{t:home.location.saturday}}</p>
                     <strong>10:00 - 14:00</strong>
                   </li>
                   <li class="text-accent flex justify-between">
-                    <p>Domingo:</p>
-                    <strong>Cerrado</strong>
+                    <p>{{t:home.location.sunday}}</p>
+                    <strong>{{t:home.location.closed}}</strong>
                   </li>
                 </ul>
               </section>
@@ -286,8 +287,8 @@
                   aria-hidden="true"
                 ></span>
                 <span>
-                  Cómo Llegar en Google Maps
-                  <span class="sr-only">(se abre en una pestaña nueva)</span>
+                  {{t:home.location.directions}}
+                  <span class="sr-only">{{t:common.newTab}}</span>
                 </span>
               </a>
             </div>
@@ -300,9 +301,9 @@
                   class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/coffee.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
-                <h3 class="mb-2">Café Artesanal</h3>
+                <h3 class="mb-2">{{t:home.location.craft.title}}</h3>
                 <p class="text-text-on-image-muted">
-                  Seleccionado y tostado a la perfección
+                  {{t:home.location.craft.text}}
                 </p>
               </li>
 
@@ -313,9 +314,9 @@
                   class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/music.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
-                <h3 class="mb-2">Ambiente Único</h3>
+                <h3 class="mb-2">{{t:home.location.ambience.title}}</h3>
                 <p class="text-text-on-image-muted">
-                  Música y buena compañía garantizadas
+                  {{t:home.location.ambience.text}}
                 </p>
               </li>
 
@@ -326,9 +327,9 @@
                   class="hover-zoom__target icon mb-4 block mask-[url(/icons/ui/users.svg)] text-5xl"
                   aria-hidden="true"
                 ></span>
-                <h3 class="mb-2">Comunidad</h3>
+                <h3 class="mb-2">{{t:home.location.community.title}}</h3>
                 <p class="text-text-on-image-muted">
-                  Conecta con otros amantes del café
+                  {{t:home.location.community.text}}
                 </p>
               </li>
             </ul>
@@ -345,14 +346,13 @@
             class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             id="cta__title"
           >
-            Tu café, donde quieras
+            {{t:home.cta.title}}
           </h2>
 
           <p
             class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
           >
-            Disfruta de nuestro menú en el local o haz tu pedido online para
-            llevar.
+            {{t:home.cta.text}}
           </p>
 
           <ul
@@ -367,7 +367,7 @@
                   class="icon mask-[url(/icons/ui/clipboard.svg)]"
                   aria-hidden="true"
                 ></span>
-                <span>Ver Menú</span>
+                <span>{{t:home.cta.menu}}</span>
               </a>
             </li>
             <li>
@@ -379,7 +379,7 @@
                   class="icon mask-[url(/icons/ui/coffee.svg)]"
                   aria-hidden="true"
                 ></span>
-                <span>Suscribirse</span>
+                <span>{{t:home.cta.subscribe}}</span>
               </a>
             </li>
           </ul>
@@ -395,12 +395,12 @@
             class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             id="coffees__title"
           >
-            Cafés del mes
+            {{t:home.coffees.title}}
           </h2>
           <p
             class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
           >
-            Orígenes de especialidad, tostados cada semana en pequeños lotes.
+            {{t:home.coffees.text}}
           </p>
           <ul class="mt-8 mb-8 grid gap-6 md:grid-cols-3">
             <repeat
@@ -415,7 +415,7 @@
               href="/src/pages/coffees.html"
               class="btn btn--secondary btn--on-image inline-block no-underline"
             >
-              Ver todos los cafés
+              {{t:home.coffees.all}}
             </a>
           </p>
         </section-body>
@@ -430,13 +430,13 @@
             class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             id="steps__title"
           >
-            Así funciona tu suscripción
+            {{t:home.steps.title}}
           </h2>
 
           <p
             class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
           >
-            Tres pasos y tu café favorito llega a casa cada mes.
+            {{t:home.steps.text}}
           </p>
 
           <ol class="mt-8 mb-10 flex flex-col gap-10 md:flex-row md:gap-8">
@@ -448,11 +448,10 @@
                 1
               </span>
               <h3 class="text-text-on-image mb-2 text-2xl font-bold">
-                Elige tu café y tu plan
+                {{t:home.steps.choose.title}}
               </h3>
               <p class="text-text-on-image-muted">
-                Escoge el origen que más te guste y cada cuánto lo quieres:
-                mensual, quincenal o semanal.
+                {{t:home.steps.choose.text}}
               </p>
             </li>
 
@@ -464,10 +463,10 @@
                 2
               </span>
               <h3 class="text-text-on-image mb-2 text-2xl font-bold">
-                Lo tostamos
+                {{t:home.steps.roast.title}}
               </h3>
               <p class="text-text-on-image-muted">
-                Tostado en pequeños lotes, justo antes de enviarlo.
+                {{t:home.steps.roast.text}}
               </p>
             </li>
 
@@ -479,10 +478,10 @@
                 3
               </span>
               <h3 class="text-text-on-image mb-2 text-2xl font-bold">
-                Te llega a casa
+                {{t:home.steps.delivery.title}}
               </h3>
               <p class="text-text-on-image-muted">
-                Enviado directamente a tu puerta, fresco y listo para preparar.
+                {{t:home.steps.delivery.text}}
               </p>
             </li>
           </ol>
@@ -495,7 +494,7 @@
               class="icon mask-[url(/icons/ui/coffee.svg)]"
               aria-hidden="true"
             ></span>
-            <span>Empezar mi suscripción</span>
+            <span>{{t:home.steps.button}}</span>
           </a>
         </section-body>
       </home-section>
@@ -509,13 +508,12 @@
             class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             id="plans__title"
           >
-            Elige tu plan
+            {{t:home.plans.title}}
           </h2>
           <p
             class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
           >
-            El mismo café, con la frecuencia que prefieras. Cancela cuando
-            quieras.
+            {{t:home.plans.text}}
           </p>
           <ul class="mt-10 grid gap-8 md:grid-cols-3">
             <repeat data="plans" component="plan-card"></repeat>
@@ -532,12 +530,12 @@
             class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             id="faq__title"
           >
-            Preguntas frecuentes
+            {{t:home.faq.title}}
           </h2>
           <p
             class="text-text-on-image-muted text-center text-xl leading-relaxed md:text-2xl"
           >
-            Lo que más nos preguntan antes de suscribirse.
+            {{t:home.faq.text}}
           </p>
           <ul class="mx-auto mt-8 mb-8 max-w-3xl space-y-4">
             <repeat data="faq" component="faq-item" limit="4"></repeat>
@@ -547,7 +545,7 @@
               href="/src/pages/faq.html"
               class="btn btn--secondary btn--on-image inline-block no-underline"
             >
-              Ver todas las preguntas
+              {{t:home.faq.all}}
             </a>
           </p>
         </section-body>
@@ -563,15 +561,13 @@
               id="about__title"
               class="text-text-on-image mb-6 text-center text-5xl font-bold md:text-6xl"
             >
-              Más que Café
+              {{t:home.about.title}}
             </h2>
 
             <p
               class="text-text-on-image-muted mx-auto max-w-3xl text-center text-xl leading-relaxed md:text-2xl"
             >
-              Selección de granos, tueste artesanal y un profundo respeto por el
-              origen. Trabajamos con productores que comparten nuestra visión de
-              un café más consciente y sostenible.
+              {{t:home.about.text}}
             </p>
           </header>
 
@@ -582,11 +578,10 @@
                 aria-hidden="true"
               ></span>
               <h3 class="text-text-on-image mb-3 text-2xl font-bold">
-                Origen Responsable
+                {{t:home.about.origin.title}}
               </h3>
               <p class="text-text-on-image-muted">
-                Relaciones directas con productores locales que respetan el
-                medio ambiente
+                {{t:home.about.origin.text}}
               </p>
             </li>
 
@@ -596,11 +591,10 @@
                 aria-hidden="true"
               ></span>
               <h3 class="text-text-on-image mb-3 text-2xl font-bold">
-                Tueste Artesanal
+                {{t:home.about.roast.title}}
               </h3>
               <p class="text-text-on-image-muted">
-                Tostado a pequeños lotes para garantizar la máxima calidad y
-                frescura
+                {{t:home.about.roast.text}}
               </p>
             </li>
 
@@ -610,11 +604,10 @@
                 aria-hidden="true"
               ></span>
               <h3 class="text-text-on-image mb-3 text-2xl font-bold">
-                Café Consciente
+                {{t:home.about.conscious.title}}
               </h3>
               <p class="text-text-on-image-muted">
-                Envases sostenibles y prácticas responsables en cada paso del
-                proceso
+                {{t:home.about.conscious.text}}
               </p>
             </li>
           </ul>
@@ -627,7 +620,7 @@
               class="icon mask-[url(/icons/ui/book-open.svg)]"
               aria-hidden="true"
             ></span>
-            <span>Nuestra Historia</span>
+            <span>{{t:home.about.button}}</span>
           </a>
         </section-body>
       </home-section>

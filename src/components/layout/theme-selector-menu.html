@@ -5,8 +5,8 @@
   class="group text-accent hover:bg-accent/10 flex items-center gap-2 rounded-lg px-3 py-2 transition-colors duration-200"
 >
   <img data-theme-icon alt="" class="h-5 w-5" />
-  <span class="sr-only">Cambiar tema, actual:</span>
-  <span data-theme-label class="text-sm font-medium">Claro</span>
+  <span class="sr-only">{{t:theme.current}}</span>
+  <span data-theme-label class="text-sm font-medium">{{t:theme.light}}</span>
   <img
     data-theme-chevron
     src="/icons/theme/chevron-down.svg"
@@ -18,7 +18,7 @@
 
 <ul
   data-theme-menu
-  aria-label="Seleccionar tema"
+  aria-label="{{t:theme.menu}}"
   class="border-border-subtle bg-surface-container text-text-primary absolute right-0 z-50 mt-2 hidden w-44 overflow-hidden rounded-lg border shadow-lg transition-all duration-200"
 >
   <li>
@@ -34,7 +34,7 @@
         alt=""
         class="h-5 w-5"
       />
-      <span class="text-sm font-medium">Claro</span>
+      <span class="text-sm font-medium">{{t:theme.light}}</span>
     </button>
   </li>
   <li>
@@ -50,7 +50,7 @@
         alt=""
         class="h-5 w-5"
       />
-      <span class="text-sm font-medium">Oscuro</span>
+      <span class="text-sm font-medium">{{t:theme.dark}}</span>
     </button>
   </li>
   <li>
@@ -66,7 +66,7 @@
         alt=""
         class="h-5 w-5"
       />
-      <span class="text-sm font-medium">Matcha</span>
+      <span class="text-sm font-medium">{{t:theme.matcha}}</span>
     </button>
   </li>
   <li>
@@ -82,7 +82,7 @@
         alt=""
         class="h-5 w-5"
       />
-      <span class="text-sm font-medium">Café</span>
+      <span class="text-sm font-medium">{{t:theme.cafe}}</span>
     </button>
   </li>
   <li>
@@ -98,7 +98,7 @@
         alt=""
         class="h-5 w-5"
       />
-      <span class="text-sm font-medium">Azul</span>
+      <span class="text-sm font-medium">{{t:theme.blue}}</span>
     </button>
   </li>
   <li>
@@ -114,7 +114,7 @@
         alt=""
         class="h-5 w-5"
       />
-      <span class="text-sm font-medium">Violeta</span>
+      <span class="text-sm font-medium">{{t:theme.violet}}</span>
     </button>
   </li>
 </ul>

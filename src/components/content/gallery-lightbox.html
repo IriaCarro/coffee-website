@@ -1,19 +1,19 @@
 <dialog
   id="gallery__lightbox"
-  aria-label="Imagen ampliada"
+  aria-label="{{t:gallery.lightbox.label}}"
   class="bg-surface-transparent backdrop:bg-surface-modal-overlay m-auto h-screen max-h-none w-screen max-w-none p-2 backdrop:backdrop-blur-[4px] open:flex open:items-center open:justify-center open:gap-2 sm:p-4 sm:open:gap-4"
 >
   <button
     type="button"
     class="gallery-lightbox__control gallery-lightbox__close absolute top-4 right-4"
-    aria-label="Cerrar"
+    aria-label="{{t:gallery.lightbox.close}}"
   >
     <span aria-hidden="true">&times;</span>
   </button>
   <button
     type="button"
     class="gallery-lightbox__control gallery-lightbox__prev"
-    aria-label="Anterior"
+    aria-label="{{t:gallery.lightbox.previous}}"
   >
     <span aria-hidden="true">&#8249;</span>
   </button>
@@ -29,7 +29,7 @@
   <button
     type="button"
     class="gallery-lightbox__control gallery-lightbox__next"
-    aria-label="Siguiente"
+    aria-label="{{t:gallery.lightbox.next}}"
   >
     <span aria-hidden="true">&#8250;</span>
   </button>

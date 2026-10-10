@@ -1,11 +1,9 @@
-import galleryLightboxTemplate from "../../components/content/gallery-lightbox.html?raw";
-
 function initGalleryLightbox() {
   const gallery = document.querySelector("[data-gallery]");
   const figures = [...(gallery?.querySelectorAll("figure") ?? [])];
   if (!figures.length) return;
 
-  document.body.insertAdjacentHTML("beforeend", galleryLightboxTemplate);
+  // Rendered at build time by <gallery-lightbox> in gallery.html
   const dialog = document.getElementById("gallery__lightbox");
 
   const img = dialog.querySelector("img");

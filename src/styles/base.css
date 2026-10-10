@@ -56,13 +56,4 @@
   input[type="checkbox"] {
     @apply h-4 w-4;
   }
-
-  /* Lists filled by JS start empty. What sits below them stays invisible until
-     they have content: invisible elements don't count as layout shift when the
-     list pushes them down. */
-  #subscription__coffee-options:empty ~ *,
-  body:has(#subscription__coffee-options:empty)
-    :is(body > footer, .subscription__nav) {
-    @apply invisible;
-  }
 }

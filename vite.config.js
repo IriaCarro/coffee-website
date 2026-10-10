@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import coffeePages from "./vite-plugins/coffee-pages.js";
 import htmlComponents from "./vite-plugins/html-components.js";
+import i18n from "./vite-plugins/i18n.js";
 import inlineThemeScript from "./vite-plugins/inline-theme-script.js";
 import lowPriorityScripts from "./vite-plugins/low-priority-scripts.js";
 import preloadFonts from "./vite-plugins/preload-fonts.js";
@@ -11,6 +12,7 @@ export default defineConfig({
     tailwindcss(),
     htmlComponents(),
     coffeePages(),
+    i18n(),
     inlineThemeScript(),
     lowPriorityScripts(),
     preloadFonts(),

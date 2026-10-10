@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Contacta con Café Rico y descubre cómo visitarnos."
-    />
-    <title>Contacto - Café Rico</title>
+    <meta name="description" content="{{t:contact.meta.description}}" />
+    <title>{{t:contact.meta.title}}</title>
     <link
       rel="icon"
       type="image/png"
@@ -44,10 +41,11 @@
         <div class="mx-auto max-w-4xl">
           <back-link></back-link>
 
-          <page-header heading-id="contact__title" heading="Cómo Llegar">
-            <p class="text-text-primary text-xl">
-              Visítanos o contacta directamente con nuestro equipo
-            </p>
+          <page-header
+            heading-id="contact__title"
+            heading="{{t:contact.title}}"
+          >
+            <p class="text-text-primary text-xl">{{t:contact.lead}}</p>
           </page-header>
 
           <div class="mb-8 grid gap-5 sm:mb-12 sm:gap-8 md:grid-cols-2">
@@ -63,32 +61,34 @@
                   class="icon text-accent mask-[url(/icons/ui/pin.svg)] text-3xl"
                   aria-hidden="true"
                 ></span>
-                Ubicación
+                {{t:contact.location.title}}
               </h2>
               <dl>
-                <contact-item term="Oficina Principal">
+                <contact-item term="{{t:contact.location.office}}">
                   <dd>
                     <address class="text-text-primary not-italic">
                       Calle del Café, 42
                       <br />
-                      28001 Madrid, España
+                      {{t:contact.location.city}}
                     </address>
                   </dd>
                 </contact-item>
-                <contact-item term="Horario">
+                <contact-item term="{{t:contact.location.hours}}">
                   <dd class="text-text-primary">
-                    Lunes - Viernes: 9:00 - 18:00
+                    {{t:contact.location.weekdays}}
                   </dd>
-                  <dd class="text-text-primary">Sábado: 10:00 - 14:00</dd>
-                  <dd class="text-text-primary">Domingo: Cerrado</dd>
+                  <dd class="text-text-primary">
+                    {{t:contact.location.saturday}}
+                  </dd>
+                  <dd class="text-text-primary">
+                    {{t:contact.location.sunday}}
+                  </dd>
                 </contact-item>
-                <contact-item term="Transporte Público">
+                <contact-item term="{{t:contact.location.transport}}">
                   <dd class="text-text-primary">
-                    Metro: Línea 3, Estación Centro
+                    {{t:contact.location.metro}}
                   </dd>
-                  <dd class="text-text-primary">
-                    Autobús: Línea 27, Parada Café Rico
-                  </dd>
+                  <dd class="text-text-primary">{{t:contact.location.bus}}</dd>
                 </contact-item>
               </dl>
             </section>
@@ -105,10 +105,10 @@
                   class="icon text-accent mask-[url(/icons/ui/phone.svg)] text-3xl"
                   aria-hidden="true"
                 ></span>
-                Contacto
+                {{t:contact.info.title}}
               </h2>
               <dl>
-                <contact-item term="Teléfono">
+                <contact-item term="{{t:contact.info.phone}}">
                   <dd>
                     <a
                       href="tel:+34912345678"
@@ -118,7 +118,7 @@
                     </a>
                   </dd>
                 </contact-item>
-                <contact-item term="Email">
+                <contact-item term="{{t:contact.info.email}}">
                   <dd>
                     <a
                       href="mailto:caferico@correo.com"
@@ -128,7 +128,7 @@
                     </a>
                   </dd>
                 </contact-item>
-                <contact-item term="Atención al Cliente">
+                <contact-item term="{{t:contact.info.support}}">
                   <dd>
                     <a
                       href="mailto:soporte@caferico.com"
@@ -137,11 +137,11 @@
                       soporte@caferico.com
                     </a>
                     <p class="text-text-primary mt-2 text-sm">
-                      Respuesta en 24 horas
+                      {{t:contact.info.response}}
                     </p>
                   </dd>
                 </contact-item>
-                <contact-item term="Redes Sociales">
+                <contact-item term="{{t:contact.info.social}}">
                   <dd>
                     <social-links></social-links>
                   </dd>
@@ -152,7 +152,7 @@
 
           <section class="mb-8 sm:mb-12" aria-labelledby="contact__map-title">
             <h2 class="heading heading--section mb-6" id="contact__map-title">
-              Nuestra Ubicación
+              {{t:contact.map.title}}
             </h2>
             <figure
               class="bg-surface-container flex h-72 flex-col items-center justify-center overflow-hidden rounded-lg p-4 text-center sm:h-96"
@@ -165,24 +165,26 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2901.0012573805175!2d-8.418727908628519!3d43.35608429664725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7c9211c4bc45%3A0x4a44c57033aeb1ed!2sLa%20Era!5e0!3m2!1ses!2ses!4v1791398525187!5m2!1ses!2ses"
                 width="850"
                 height="288"
-                title="Mapa de la ubicación de Café Rico"
+                title="{{t:contact.map.label}}"
                 class="w-full max-w-full border-0"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
               <figcaption class="text-text-primary mt-2 text-sm">
-                Calle del Café, 42 - Madrid
+                {{t:contact.map.address}}
               </figcaption>
             </figure>
           </section>
 
           <section class="mb-8 sm:mb-12" aria-labelledby="contact__form-title">
             <h2 class="heading heading--section mb-6" id="contact__form-title">
-              Envíanos un Mensaje
+              {{t:contact.form.title}}
             </h2>
             <form
               id="contact__form"
+              data-invalid-message="{{t:contact.form.invalid}}"
+              data-success-message="{{t:contact.form.success}}"
               class="bg-surface-container grid gap-6 rounded-lg p-5 sm:grid-cols-2 sm:p-8"
               aria-describedby="contact__note"
               novalidate
@@ -192,49 +194,49 @@
                 class="text-text-primary mt-2 text-sm sm:col-span-2"
                 id="contact__note"
               >
-                Todos los campos son obligatorios.
+                {{t:contact.form.required}}
               </p>
               <form-field
                 id="contact__name"
                 name="name"
-                label="Nombre Completo"
+                label="{{t:contact.form.name.label}}"
                 type="text"
-                placeholder="Tu nombre"
+                placeholder="{{t:forms.name.placeholder}}"
                 autocomplete="name"
-                error="Introduce tu nombre."
+                error="{{t:forms.name.error}}"
               ></form-field>
               <form-field
                 id="contact__email"
                 name="email"
-                label="Email"
+                label="{{t:forms.email.label}}"
                 type="email"
-                placeholder="tu@email.com"
+                placeholder="{{t:forms.email.placeholder}}"
                 autocomplete="email"
-                error="Introduce un email válido, por ejemplo nombre@email.com."
+                error="{{t:forms.email.error}}"
               ></form-field>
               <form-field
                 id="contact__subject"
                 name="subject"
-                label="Asunto"
+                label="{{t:contact.form.subject.label}}"
                 type="text"
-                placeholder="¿En qué podemos ayudarte?"
-                error="Indica el asunto del mensaje."
+                placeholder="{{t:contact.form.subject.placeholder}}"
+                error="{{t:contact.form.subject.error}}"
                 class="sm:col-span-2"
               ></form-field>
               <form-textarea
                 id="contact__message"
                 name="message"
-                label="Mensaje"
+                label="{{t:contact.form.message.label}}"
                 rows="5"
-                placeholder="Tu mensaje..."
-                error="Escribe tu mensaje."
+                placeholder="{{t:contact.form.message.placeholder}}"
+                error="{{t:contact.form.message.error}}"
                 class="sm:col-span-2"
               ></form-textarea>
               <button
                 type="submit"
                 class="bg-accent text-text-on-accent hover:bg-accent-hover hover:text-text-on-accent-hover w-full rounded-lg px-6 py-3 font-medium transition-colors duration-200 sm:col-span-2"
               >
-                Enviar Mensaje
+                {{t:contact.form.submit}}
               </button>
               <p
                 role="status"
@@ -246,11 +248,11 @@
 
           <cta-card
             heading-id="contact__faq-title"
-            heading="¿Tienes Preguntas?"
+            heading="{{t:contact.faq.title}}"
             href="/src/pages/faq.html"
-            label="Ver FAQ"
+            label="{{t:contact.faq.button}}"
           >
-            Consulta nuestras preguntas frecuentes para respuestas rápidas
+            {{t:contact.faq.text}}
           </cta-card>
         </div>
       </section>
