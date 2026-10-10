@@ -52,7 +52,7 @@ const renderControls = (currentStep, totalSteps) => {
 export const renderProgress = (steps, currentStep) => {
   const totalSteps = steps.length;
   steps.forEach((step) => {
-    step.hidden = Number(step.dataset.step) !== currentStep;
+    step.hidden = Number(step.dataset.wizardStep) !== currentStep;
   });
   renderIndicators(currentStep);
   renderBar(currentStep, totalSteps);

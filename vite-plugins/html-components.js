@@ -2,11 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   coffeeFields,
+  formatPlanPrice,
   formatPrice,
   imageVariants,
   lcpPriority,
   renderTemplate,
 } from "../src/js/lib/template.js";
+import { coffeeUrl } from "./coffee-urls.js";
 import { localeFromPath, localizeItem } from "./locales.js";
 
 // Build-time components: <name attr="...">slot</name> is replaced by
@@ -18,12 +20,16 @@ const COMPONENTS = {
   "app-footer": { class: "", year: String(new Date().getFullYear()) },
   "app-header": {},
   "back-link": { href: "/", label: "{{t:common.backHome}}" },
+  "card-text": {},
   "contact-item": {},
   "cta-card": { class: "" },
   "form-field": { type: "text", autocomplete: "off", class: "", extra: "" },
   "form-textarea": { rows: "5", class: "" },
   "gallery-lightbox": {},
   "home-section": { class: "" },
+  "item-card": { class: "" },
+  "option-card": { featured: "", checked: "" },
+  "option-text": {},
   "page-header": { class: "mb-8 text-center sm:mb-12" },
   "section-body": { class: "max-w-6xl" },
   "section-navigation-links": {},
@@ -38,7 +44,8 @@ const COLLECTIONS = {
   // "checked" pre-selects the first coffee of the subscription wizard
   coffees: (item, index, { lcp }) => ({
     ...coffeeFields(item),
-    ...(lcp ? lcpPriority(index) : { loading: "lazy", priority: "auto" }),
+    ...lcpPriority(index, lcp),
+    url: coffeeUrl(item.id),
     checked: index === 0 ? "checked" : "",
   }),
   faq: (item) => item,
@@ -48,8 +55,8 @@ const COLLECTIONS = {
     const prices = read("coffees").map(({ price }) => price);
     return {
       ...item,
-      fromPrice: formatPrice(Math.min(...prices) * item.bags),
-      defaultPrice: formatPrice(prices[0] * item.bags),
+      fromPrice: formatPlanPrice(Math.min(...prices), item.bags),
+      defaultPrice: formatPlanPrice(prices[0], item.bags),
       checked: item.featured ? "checked" : "",
     };
   },
@@ -58,10 +65,10 @@ const COLLECTIONS = {
     ...imageVariants(item.image),
     formattedPrice: formatPrice(item.price),
   }),
-  gallery: (item, index) => ({
+  gallery: (item, index, { lcp }) => ({
     ...item,
     ...imageVariants(item.image),
-    ...lcpPriority(index),
+    ...lcpPriority(index, lcp),
     // Rendered width of the tile per breakpoint: the featured tile spans 2 of
     // the 3 columns from lg (1024px) and 1 of 2 from sm (640px)
     sizes: item.featured

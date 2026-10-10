@@ -35,6 +35,7 @@ La web está en castellano, gallego y catalán: el castellano en la raíz (`/`) 
 
 - **Textos de la interfaz:** [es.json](src/locales/es.json), [gl.json](src/locales/gl.json) y [ca.json](src/locales/ca.json) (formato JSON anidado de i18next); el marcado usa `{{t:clave}}`.
 - **Datos (cafés, menú, FAQ, galería, planes):** siguen en castellano en `src/data/`; las traducciones van en `gl.json` y `ca.json`, bajo `data`, por `id` de cada elemento.
+- **Datos de la tienda** (dirección, teléfono, email, horario y precio del especial): están una sola vez en [shop.json](src/data/shop.json), son iguales en todos los idiomas y el marcado los usa con `{{data:shop.campo}}`.
 - **Cómo se genera:** [i18n.js](vite-plugins/i18n.js) crea las copias `/gl/` y `/ca/` de cada página, traduce las claves, pone el `lang` y mantiene los enlaces en el mismo idioma; [coffee-pages.js](vite-plugins/coffee-pages.js) hace lo mismo con las páginas de cada café.
 - Las traducciones al gallego y al catalán están pendientes de revisión por una persona nativa.
 
@@ -128,7 +129,7 @@ Para saber qué frena el móvil se midió Lighthouse 13 (solo rendimiento, móvi
 
 - **Inlinar el CSS sigue sin ayudar:** el FCP no baja (2,0 s en Inicio, 1,7 s en el resto). El CSS no es lo que frena el primer pintado. `vite preview` ya sirve el CSS comprimido (unos 14 kB transferidos de 83 kB), así que la diferencia entre las dos primeras columnas viene del servidor, no de la compresión.
 - **El cuello de botella eran las fuentes.** Las seis fuentes (Roboto 400/500/700, Playfair Display 500/700 y Permanent Marker) se descubren en el CSS y se piden con prioridad alta, y la simulación de móvil de Lighthouse las cuenta en el primer pintado. Quitando todos los `@font-face`, el FCP bajaba de 1,7 s a 0,9 s.
-- **Lo que se aplicó:** se quitó Roboto (el texto de cuerpo usa la fuente del sistema, `system-ui`) y el peso 500 de Playfair Display. Ningún título pedía el 500: lo descargaban tres `h3` de Inicio y los `h2` ocultos (`sr-only`), que piden peso 400, y sin archivo de 400 el navegador bajaba el más cercano. Ahora todos usan el 700. Permanent Marker se mantiene para el título de «Desayunos» y solo se descarga en Inicio. Con esto el móvil pasó a 98–100. Más tarde Roboto volvió con un solo archivo (ver «Roboto de vuelta» abajo).
+- **Lo que se aplicó:** se quitó Roboto (el texto de cuerpo usa la fuente del sistema, `system-ui`) y el peso 500 de Playfair Display. Ningún título pedía el 500: lo descargaban tres `h3` de Inicio y los `h2` ocultos (`sr-only`), que piden peso 400, y sin archivo de 400 el navegador bajaba el más cercano. Siguen pidiendo el 400, pero como ya solo queda el archivo del 700, el navegador usa ese, que ya está descargado. Permanent Marker se mantiene para el título de «Desayunos» y solo se descarga en Inicio. Con esto el móvil pasó a 98–100. Más tarde Roboto volvió con un solo archivo (ver «Roboto de vuelta» abajo).
 
 **Segunda y tercera ronda: los últimos puntos.** Medido el 10 de octubre con `vite preview`, comparando cada cambio con dos pases.
 
@@ -149,21 +150,21 @@ Para saber qué frena el móvil se midió Lighthouse 13 (solo rendimiento, móvi
 
 - [x] **O1** — Estructura semántica (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, un solo `<h1>`, `alt` en imágenes)
 - [x] **O2** — Tema visual con `@theme` (color de marca `coffee-50…950`, acento, tipografía personalizada). Los tonos no se usan como `bg-coffee-*` en el HTML: [themes.css](src/styles/themes.css) los asigna a variables semánticas (`--surface-page`, `--accent`…) por tema, y el marcado usa esas variables para que un cambio de tema no toque el HTML (D3)
-- [x] **O3** — Cabecera con flexbox (logo izquierda, menú derecha, responsive, `hover:` + `focus-visible:`)
+- [x] **O3** — Cabecera con flexbox (logo a la izquierda y responsive: en escritorio el menú queda en el centro y el selector de tema a la derecha, y en móvil el menú se abre con el botón ☰ junto al logo; `hover:` en los enlaces y el foco con la regla global de `:focus-visible` de [base.css](src/styles/base.css))
 - [x] **O4** — Hero (título + texto + 2 botones + `<img>` de una bolsa de café sobre una foto de fondo; en columna en móvil y texto e imagen lado a lado desde `md:`, con `max-w-prose` en el párrafo)
-- [x] **O5** — Rejilla de tarjetas (6+ tarjetas, `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`, hover lift, `aspect-video` con la bolsa en `object-contain` sobre un fondo desenfocado en `object-cover`)
+- [x] **O5** — Rejilla de tarjetas (6 tarjetas en la página [Cafés](src/pages/coffees.html) con `grid sm:grid-cols-2 lg:grid-cols-3`, y las 3 primeras en la home; hover lift con `-translate-y-2`, `aspect-video` con la bolsa en `object-contain` sobre un fondo desenfocado en `object-cover`)
 - [x] **O6** — Sección de pasos (3 items, `flex-col md:flex-row`, contenido centrado)
 - [x] **O7** — Pie de página (3+ columnas en escritorio, apiladas en móvil, copyright con `border-top`)
-- [x] **O8** — Accesibilidad (navegación por teclado, `focus-visible:`, Lighthouse ≥ 90)
+- [x] **O8** — Accesibilidad (navegación por teclado, foco visible con `:focus-visible`, Lighthouse ≥ 90)
 - [x] **O9** — README + bitácora de IA (este archivo)
 
 #### Opcionales (P1–P7)
 
 - [x] **P1** — Modo oscuro con toggle (en vez de `dark:` o `@custom-variant`, el tema se guarda en `data-theme` y cada tema define sus variables CSS; sin elección guardada sigue `prefers-color-scheme`)
 - [x] **P2** — Cabecera fija con efecto cristal (`sticky backdrop-blur`)
-- [x] **P3** — Planes con tarjeta destacada: sección `#plans` de la home con 3 tarjetas ([plan-card.html](src/components/subscription/plan-card.html), datos en [plans.json](src/data/plans.json)) y la del plan mensual destacada con borde de acento y una insignia «Más popular» con `absolute -top-3`; el asistente de [suscripción](src/pages/subscription.html) reutiliza los mismos datos
+- [x] **P3** — Planes con tarjeta destacada: sección `#plans` de la home con 3 tarjetas ([plan-card.html](src/components/subscription/plan-card.html), datos en [plans.json](src/data/plans.json)) y la del plan mensual destacada con borde de acento, más sombra y una insignia «Más popular» con `absolute -top-3` (es la primera tarjeta, no la central, y no es más grande que las otras); el asistente de [suscripción](src/pages/subscription.html) reutiliza los mismos datos
 - [x] **P4** — FAQ plegable sin JavaScript (`<details class="group">` + `group-open:-rotate-[135deg]` en el icono, ver [faq-item.html](src/components/content/faq-item.html))
-- [x] **P5** — Formulario con estados (`focus:`, `user-invalid:`, `disabled:`; el aviso de error usa `peer-user-invalid:block` y `peer-aria-invalid:block` dentro de `.form__error` en [ui.css](src/styles/components/ui.css), y los campos llevan `peer` en [form-field.html](src/components/forms/form-field.html); `aria-invalid` se pone desde JS para el envío y los pasos)
+- [x] **P5** — Formulario con estados (los estilos de foco, error y deshabilitado de los campos están en [base.css](src/styles/base.css) como selectores de los elementos nativos, `:focus`, `:user-invalid`, `[aria-invalid]` y `:disabled`, no como variantes en el HTML; la variante `disabled:` sí se usa en el botón «Anterior» del asistente. El aviso de error usa `peer-user-invalid:block` y `peer-aria-invalid:block` dentro de `.form__error` en [ui.css](src/styles/components/ui.css), y los campos llevan `peer` en [form-field.html](src/components/forms/form-field.html); `aria-invalid` lo pone [form-validation.js](src/js/lib/form-validation.js) al validar el envío y los pasos)
 - [x] **P6** — Bento grid (`col-span-2 row-span-2`)
 - [x] **P7** — Animaciones con `motion-safe:`
 
@@ -185,7 +186,7 @@ Para saber qué frena el móvil se midió Lighthouse 13 (solo rendimiento, móvi
 
 La cabecera usa `sticky top-0 z-50` ([app-header.html](src/components/layout/app-header.html)).
 
-- **Por qué `sticky` y no `fixed`:** una cabecera `fixed` sale del flujo del documento, así que no ocupa sitio y el contenido empieza debajo de ella; hay que compensarlo con un `padding-top` igual a su altura, y esa altura cambia cuando el menú pasa a dos filas en móvil. Con `sticky` la cabecera sigue en el flujo, reserva su propio espacio y solo se queda pegada arriba al hacer scroll. No hay que calcular nada.
+- **Por qué `sticky` y no `fixed`:** una cabecera `fixed` sale del flujo del documento, así que no ocupa sitio y el contenido empieza debajo de ella; hay que compensarlo con un `padding-top` igual a su altura, y esa altura cambia con el ancho de pantalla (el relleno y los botones no miden lo mismo en móvil, tablet y escritorio). Con `sticky` la cabecera sigue en el flujo, reserva su propio espacio y solo se queda pegada arriba al hacer scroll, así que el contenido no tiene que compensar nada. La altura sí se calcula en CSS (`--header-height`, en [themes.css](src/styles/themes.css)), pero solo para que cada sección de Inicio ocupe la pantalla que queda debajo de la cabecera y para abrir el panel del menú justo debajo.
 - **Por qué el `z-index`:** al hacer scroll, el contenido pasa por debajo de la cabecera. Sin `z-index`, los elementos posicionados que vienen después en el HTML (imágenes con `relative`, tarjetas con `transform` en el hover, el hero con `isolation`) se pintan encima de ella. Con `z-50` la cabecera queda por encima de todos.
 - **Cristal:** el efecto de la cabecera es `backdrop-filter: blur(12px)` sobre un fondo semitransparente que sale de la variable del tema (`--surface-header`), así que funciona igual en los seis temas.
 
@@ -199,11 +200,11 @@ En móvil el menú se esconde tras un botón ☰. Lo he hecho con el atributo `p
 | **`<details>` / `<summary>`**                | Es lo más accesible de serie: `summary` es un botón con teclado (Enter y Espacio) y anuncia su estado. Pero tampoco se cierra con Esc ni al pulsar fuera, es difícil dejarlo siempre abierto en escritorio (hay que ponerle el atributo `open` con JS) y como panel flotante el estilo es limitado.                                                                            |
 | **`popover` + `popovertarget` (la que uso)** | Se cierra con Esc y al pulsar fuera, sin JS, y devuelve el foco al botón. El botón sigue siendo un `<button>` real con `aria-label="Menú"`. El inconveniente es el soporte: Chrome 114+, Safari 17+ y Firefox 128+, que ya cubre la línea de navegadores que declaro arriba.                                                                                                   |
 
-Con las tres técnicas, el menú debe poder usarse solo con teclado: con `popover`, el primer Tab tras el botón entra en los enlaces porque el panel está justo después en el HTML. No lo he probado con lector de pantalla.
+Con las tres técnicas, el menú debe poder usarse solo con teclado: con `popover`, el primer Tab tras el botón entra en los enlaces: en el HTML el logo está entre el botón y el panel, pero el navegador coloca el contenido de un popover abierto justo después del botón que lo abre en el orden de tabulación. No lo he probado con lector de pantalla.
 
 #### D2 · Container queries
 
-La tarjeta de café ([coffee-card.html](src/components/coffee/coffee-card.html)) y la del menú ([menu-item.html](src/components/content/menu-item.html)) cambian de diseño según el ancho de **su propia columna**, no el de la ventana: el `<li>` es el contenedor (`@container`) y la tarjeta usa `@xs:` (20rem). En una columna estrecha es vertical (imagen arriba) y a partir de 20rem pasa a horizontal (imagen a la izquierda). Se ve en las páginas **Cafés** y **Menú**, al estrechar la ventana: en móvil y en pantallas grandes (con tres columnas anchas) salen horizontales, y en tablet y escritorio medio (columnas estrechas) verticales.
+La tarjeta de café ([coffee-card.html](src/components/coffee/coffee-card.html)) y la del menú ([menu-item.html](src/components/content/menu-item.html)) cambian de diseño según el ancho de **su propia columna**, no el de la ventana: las dos comparten el armazón [item-card.html](src/components/content/item-card.html), cuyo `<li>` es el contenedor (`@container`), y la tarjeta usa `@xs:` (20rem). En una columna estrecha es vertical (imagen arriba) y a partir de 20rem pasa a horizontal (imagen a la izquierda). Se ve en las páginas **Cafés** y **Menú**, al estrechar la ventana: en móvil y en pantallas grandes (con tres columnas anchas) salen horizontales, y en tablet y escritorio medio (columnas estrechas) verticales.
 
 La misma tarjeta (la primera de Cafés), medida en dos columnas de distinto ancho: a 1024 px de ventana la columna mide 299 px y la tarjeta es vertical; a 1280 px mide 363 px y es horizontal.
 
@@ -216,7 +217,7 @@ Las utilidades propias están en [utilities.css](src/styles/utilities.css): `pag
 **Cuándo crear una utilidad o un componente y cuándo repetir clases**
 
 - **Repetir clases** cuando es algo pequeño y el elemento aparece pocas veces: es lo más legible, porque el estilo está donde se usa y no hay que saltar a otro archivo.
-- **Crear una utilidad con `@utility`** cuando es un puñado de declaraciones que van siempre juntas, sin estructura, y se repiten en muchos sitios y con variantes. Por ejemplo `theme-transition` está en 10 archivos.
+- **Crear una utilidad con `@utility`** cuando es un puñado de declaraciones que van siempre juntas, sin estructura, y se repiten en muchos sitios y con variantes. Por ejemplo `theme-transition` está en 7 archivos (seis plantillas HTML y `ui.css`).
 - **Crear un componente** (HTML/JS en `src/components/`) cuando se repite una estructura entera, no solo estilos: la tarjeta de café, el elemento del menú, la cabecera o el pie. Reutilizar clases en markup copiado a mano genera divergencias; con un componente se cambia en un sitio.
 - **Crear una clase semántica en CSS** (`btn btn--primary`) cuando varios elementos comparten un patrón visual que además tiene nombre y significado propio.
 
@@ -228,7 +229,7 @@ Las utilidades propias están en [utilities.css](src/styles/utilities.css): `pag
 - En Tailwind v4 los archivos CSS separados necesitan `@reference` para poder usarlo.
 - La propia documentación de Tailwind recomienda usarlo poco y preferir extraer un componente.
 
-En este proyecto lo uso poco, y de forma consciente (unas 40 líneas, solo en componentes compartidos como `btn`, `form__error` o `heading`, y en los estilos base de los elementos nativos). Lo que se repite en el HTML se extrae primero como componente de `src/components/` (`cta-card`, `faq-item`, `home-section`…), y el resto de utilidades queda escrito directamente en el marcado.
+En este proyecto lo uso poco, y de forma consciente (unas 40 líneas: componentes compartidos como `btn`, `form__error` o `heading`, los estilos base de los elementos nativos, las tres `@utility` y el `color-scheme` de cada tema). Lo que se repite en el HTML se extrae primero como componente de `src/components/` (`cta-card`, `item-card`, `option-card`, `home-section`…), y el resto de utilidades queda escrito directamente en el marcado.
 
 ---
 
@@ -300,6 +301,6 @@ Un informe con unos 25 hallazgos de estándares (secciones sin encabezado, ids q
 
 ### Qué corregí y por qué
 
-Comprobé los datos antes de arreglar nada. El bento no faltaba: la clase `lg:col-span-2 lg:row-span-2` sale del campo `layout` de los datos y por eso no aparece en el HTML fuente, así que era un falso positivo. El README sí estaba mal: `@apply` aparecía unas 40 veces, no 384, y también enlazaba archivos CSS ya borrados. Arreglé lo real (encabezados y `aria-labelledby`, ids BEM, la clase sin definir, el README) y dejé como estaba lo que la IA había entendido mal.
+Comprobé los datos antes de arreglar nada. El bento no faltaba: la clase `lg:col-span-2 lg:row-span-2` la añade al construir [html-components.js](vite-plugins/html-components.js) a partir del campo `featured` de los datos, y por eso no aparece en el HTML fuente, así que era un falso positivo. El README sí estaba mal: `@apply` aparecía unas 40 veces, no 384, y también enlazaba archivos CSS ya borrados. Arreglé lo real (encabezados y `aria-labelledby`, ids BEM, la clase sin definir, el README) y dejé como estaba lo que la IA había entendido mal.
 
 ---

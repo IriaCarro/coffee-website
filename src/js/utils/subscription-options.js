@@ -1,5 +1,5 @@
 import coffees from "../../data/coffees.json";
-import { formatPrice } from "../lib/template.js";
+import { formatPlanPrice } from "../lib/template.js";
 
 // The coffee options are rendered at build time (<repeat> in
 // subscription.html, already translated); prices come from coffees.json
@@ -8,7 +8,10 @@ const updatePlanPrices = (form) => {
   const coffee = coffees.find(({ id }) => id === form.coffee.value);
   if (!coffee) return;
   form.querySelectorAll("[data-plan-price]").forEach((el) => {
-    el.textContent = formatPrice(coffee.price * Number(el.dataset.planPrice));
+    el.textContent = formatPlanPrice(
+      coffee.price,
+      Number(el.dataset.planPrice),
+    );
   });
 };
 

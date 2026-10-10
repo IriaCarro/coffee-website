@@ -1,22 +1,17 @@
-<li class="@container">
-  <article
-    class="hover-zoom border-border-subtle bg-surface-container theme-transition block h-full overflow-hidden rounded-lg border shadow-lg @xs:grid @xs:grid-cols-[10rem_1fr]"
-  >
-    <div class="relative aspect-[4/3] overflow-hidden @xs:aspect-auto">
-      <img
-        class="hover-zoom__target absolute inset-0 h-full w-full object-cover"
-        src="{{image800}}"
-        srcset="{{image400}} 400w, {{image800}} 800w"
-        sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
-        alt="{{alt}}"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-    <div class="self-center p-5 @xs:p-4">
-      <h3 class="heading heading--item mb-2 @xs:mb-1 @xs:text-lg">{{name}}</h3>
-      <p class="text-text-secondary mb-4 text-sm @xs:mb-2">{{description}}</p>
-      <p class="text-accent text-lg font-bold">{{formattedPrice}}</p>
-    </div>
-  </article>
-</li>
+<item-card class="theme-transition shadow-lg">
+  <div class="relative aspect-[4/3] overflow-hidden @xs:aspect-auto">
+    <img
+      class="hover-zoom__target absolute inset-0 h-full w-full object-cover"
+      src="{{image800}}"
+      srcset="{{image400}} 400w, {{image800}} 800w"
+      sizes="(min-width: 1280px) 160px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 160px"
+      alt="{{alt}}"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div class="self-center p-5 @xs:p-4">
+    <card-text heading="{{name}}" description="{{description}}"></card-text>
+    <p class="text-accent text-lg font-bold">{{formattedPrice}}</p>
+  </div>
+</item-card>

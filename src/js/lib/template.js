@@ -8,6 +8,10 @@ export const renderTemplate = (template, data) =>
 
 export const formatPrice = (price) => `${price.toFixed(2).replace(".", ",")} €`;
 
+// A plan sends `bags` bags of the chosen coffee each month
+export const formatPlanPrice = (coffeePrice, bags) =>
+  formatPrice(coffeePrice * bags);
+
 // Photos ship next to their resized copies: pack.webp, pack-400.webp...
 export const imageVariant = (src, width) =>
   src.replace(".webp", `-${width}.webp`);
@@ -28,8 +32,9 @@ export const coffeeFields = (coffee) => ({
 });
 
 // The first image of a list is the LCP (largest contentful paint) element:
-// load it right away at high priority and keep the rest lazy
-export const lcpPriority = (index) =>
-  index === 0
+// load it right away at high priority and keep the rest lazy. A list below
+// the fold (lcp false) keeps every image lazy.
+export const lcpPriority = (index, lcp = true) =>
+  lcp && index === 0
     ? { loading: "eager", priority: "high" }
     : { loading: "lazy", priority: "auto" };

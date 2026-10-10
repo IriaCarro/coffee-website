@@ -30,11 +30,17 @@ function initGalleryLightbox() {
     dialog.showModal();
   });
 
+  // Buttons name their action in data-lightbox-action; a click on the
+  // backdrop (the dialog itself) closes it too
+  const actions = {
+    close: () => dialog.close(),
+    previous: () => show(current - 1),
+    next: () => show(current + 1),
+  };
   dialog.addEventListener("click", (e) => {
-    if (e.target.closest(".gallery-lightbox__close") || e.target === dialog)
-      dialog.close();
-    else if (e.target.closest(".gallery-lightbox__prev")) show(current - 1);
-    else if (e.target.closest(".gallery-lightbox__next")) show(current + 1);
+    if (e.target === dialog) return dialog.close();
+    const button = e.target.closest("[data-lightbox-action]");
+    actions[button?.dataset.lightboxAction]?.();
   });
 
   dialog.addEventListener("keydown", (e) => {

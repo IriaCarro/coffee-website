@@ -26,8 +26,6 @@
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
     <script type="module" src="/src/js/main.js"></script>
-    <script type="module" src="/src/js/utils/form-validation.js"></script>
-    <script type="module" src="/src/js/utils/contact-form.js"></script>
   </head>
 
   <body>
@@ -179,7 +177,6 @@
               {{t:contact.form.title}}
             </h2>
             <form
-              id="contact__form"
               data-invalid-message="{{t:contact.form.invalid}}"
               data-success-message="{{t:contact.form.success}}"
               class="bg-surface-container grid gap-6 rounded-lg p-5 sm:grid-cols-2 sm:p-8"
@@ -238,7 +235,6 @@
               <p
                 role="status"
                 class="text-text-primary mt-2 text-sm sm:col-span-2"
-                id="contact__status"
               ></p>
             </form>
           </section>

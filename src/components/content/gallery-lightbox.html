@@ -5,14 +5,16 @@
 >
   <button
     type="button"
-    class="gallery-lightbox__control gallery-lightbox__close absolute top-4 right-4"
+    data-lightbox-action="close"
+    class="gallery-lightbox__control absolute top-4 right-4"
     aria-label="{{t:gallery.lightbox.close}}"
   >
     <span class="icon mask-[url(/icons/ui/x.svg)]" aria-hidden="true"></span>
   </button>
   <button
     type="button"
-    class="gallery-lightbox__control gallery-lightbox__prev"
+    data-lightbox-action="previous"
+    class="gallery-lightbox__control"
     aria-label="{{t:gallery.lightbox.previous}}"
   >
     <span
@@ -31,7 +33,8 @@
   </figure>
   <button
     type="button"
-    class="gallery-lightbox__control gallery-lightbox__next"
+    data-lightbox-action="next"
+    class="gallery-lightbox__control"
     aria-label="{{t:gallery.lightbox.next}}"
   >
     <span

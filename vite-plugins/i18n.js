@@ -9,6 +9,7 @@ import {
   lookup,
   readLocale,
 } from "./locales.js";
+import { isCoffeeUrl } from "./coffee-urls.js";
 
 // Build-time translations. Every page listed in build.rollupOptions.input is
 // also generated at /<locale>/<same path> for each extra locale, so each
@@ -33,8 +34,7 @@ export default function i18n() {
   // index.html is served at "/"; every other page keeps its file path
   const pageUrl = (file) => (file === "index.html" ? "/" : `/${file}`);
   const isTranslated = (url) =>
-    pages.some((file) => pageUrl(file) === url) ||
-    /^\/coffees\/[\w-]+\/$/.test(url);
+    pages.some((file) => pageUrl(file) === url) || isCoffeeUrl(url);
   const virtualId = (locale, file) => path.resolve(root, locale, file);
 
   // Splits a request path into its locale and the page URL it points to
@@ -102,7 +102,7 @@ export default function i18n() {
         .filter(
           (file) =>
             !file.startsWith("..") &&
-            !file.includes("coffees/") &&
+            !isCoffeeUrl(`/${path.dirname(file)}/`) &&
             !LOCALE_PREFIX.test(`/${file}`),
         );
     },

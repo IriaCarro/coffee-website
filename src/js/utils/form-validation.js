@@ -1,27 +1,7 @@
-const FIELD_SELECTOR = "input:not([type=radio]):not([type=checkbox]), textarea";
+import { FIELD_SELECTOR, validateField } from "../lib/form-validation.js";
 
-const getError = (field) =>
-  field.closest("label")?.querySelector(".form__error") ?? null;
-
-// aria-invalid drives the error styles and the message (see ui.css); the
-// message is only linked to the field while it is shown
-export const validateField = (field) => {
-  const invalid = !field.checkValidity();
-  const error = getError(field);
-  field.setAttribute("aria-invalid", String(invalid));
-  if (error && invalid) field.setAttribute("aria-describedby", error.id);
-  else field.removeAttribute("aria-describedby");
-  return !invalid;
-};
-
-// Validates every field in the container and focuses the first invalid one
-export const validateFields = (container) => {
-  const fields = [...container.querySelectorAll(FIELD_SELECTOR)];
-  const invalid = fields.filter((field) => !validateField(field));
-  invalid[0]?.focus();
-  return invalid.length === 0;
-};
-
+// Live validation for every form[data-validated]: a field is checked when it
+// loses focus, and again on each keystroke while it is marked invalid
 const initFormValidation = () => {
   document.querySelectorAll("form[data-validated]").forEach((form) => {
     form.addEventListener("focusout", ({ target }) => {

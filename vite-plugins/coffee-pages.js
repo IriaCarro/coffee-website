@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { coffeeFields, renderTemplate } from "../src/js/lib/template.js";
+import { coffeeUrl } from "./coffee-urls.js";
 import {
   DEFAULT_LOCALE,
   EXTRA_LOCALES,
@@ -24,13 +25,7 @@ export default function coffeePages() {
   const getCoffees = () =>
     (coffees ??= JSON.parse(read("src/data/coffees.json")));
   const pageFile = (locale, id) =>
-    path.resolve(
-      root,
-      ...(locale === DEFAULT_LOCALE ? [] : [locale]),
-      "coffees",
-      id,
-      "index.html",
-    );
+    path.join(root, localizedUrl(coffeeUrl(id), locale), "index.html");
   const pages = () =>
     LOCALES.flatMap((locale) =>
       getCoffees().map((coffee) => ({ locale, coffee })),
@@ -97,7 +92,7 @@ export default function coffeePages() {
       server.middlewares.use(async (req, res, next) => {
         const page = pages().find(({ locale, coffee }) =>
           new RegExp(
-            `^${localizedUrl(`/coffees/${coffee.id}/`, locale)}?(?:[?#].*)?$`,
+            `^${localizedUrl(coffeeUrl(coffee.id), locale)}?(?:[?#].*)?$`,
           ).test(req.url ?? ""),
         );
         if (!page) return next();

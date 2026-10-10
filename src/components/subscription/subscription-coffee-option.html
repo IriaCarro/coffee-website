@@ -1,7 +1,4 @@
-<label
-  class="border-border-input bg-surface-transparent hover:bg-accent/10 relative flex cursor-pointer items-center rounded-lg border-2 p-4 transition-all duration-300"
->
-  <input type="radio" name="coffee" value="{{id}}" {{checked}} />
+<option-card group="coffee" value="{{id}}" checked="{{checked}}">
   <img
     class="ml-3 h-20 w-16 shrink-0 object-contain sm:ml-4"
     src="{{packImage200}}"
@@ -13,11 +10,9 @@
     decoding="async"
     alt="{{t:coffees.packAlt}} {{name}}, {{production}}"
   />
-  <span class="ml-3 flex min-w-0 flex-1 flex-col sm:ml-4">
-    <strong class="text-text-primary font-medium">{{name}}</strong>
-    <span class="text-text-secondary text-sm">{{description}}</span>
+  <option-text heading="{{name}}" description="{{description}}">
     <span class="text-text-secondary text-sm">
       {{formattedPrice}}{{t:plans.perMonth}}
     </span>
-  </span>
-</label>
+  </option-text>
+</option-card>

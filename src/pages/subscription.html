@@ -26,7 +26,6 @@
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
     <script type="module" src="/src/js/main.js"></script>
-    <script type="module" src="/src/js/utils/form-validation.js"></script>
     <script type="module" src="/src/js/utils/subscription-wizard.js"></script>
   </head>
 
@@ -123,23 +122,22 @@
               novalidate
               data-validated
             >
-              <fieldset class="wizard__step" data-step="1">
+              <fieldset data-wizard-step="1">
                 <legend class="heading heading--item mb-2">
                   {{t:subscription.coffee.title}}
                 </legend>
                 <p class="text-text-secondary mb-6">
                   {{t:subscription.coffee.text}}
                 </p>
-                <div class="space-y-3" id="subscription__coffee-options">
+                <div class="space-y-3">
                   <repeat
                     data="coffees"
                     component="subscription-coffee-option"
-                    lcp="false"
                   ></repeat>
                 </div>
               </fieldset>
 
-              <fieldset class="wizard__step" data-step="2" hidden>
+              <fieldset data-wizard-step="2" hidden>
                 <legend class="heading heading--item mb-2">
                   {{t:subscription.plan.title}}
                 </legend>
@@ -151,7 +149,7 @@
                 </div>
               </fieldset>
 
-              <fieldset class="wizard__step" data-step="3" hidden>
+              <fieldset data-wizard-step="3" hidden>
                 <legend class="heading heading--item mb-2">
                   {{t:subscription.delivery.title}}
                 </legend>

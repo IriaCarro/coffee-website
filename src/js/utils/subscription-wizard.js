@@ -1,8 +1,8 @@
-import { validateFields } from "./form-validation.js";
+import { validateFields } from "../lib/form-validation.js";
 import { initSubscriptionOptions } from "./subscription-options.js";
 import { renderProgress } from "./wizard-progress.js";
 
-const stepSelector = (step) => `.wizard__step[data-step="${step}"]`;
+const stepSelector = (step) => `[data-wizard-step="${step}"]`;
 
 // Move focus to the step's legend so screen readers announce the change
 const focusStep = (form, step) => {
@@ -42,7 +42,7 @@ const initSubscriptionWizard = () => {
   const form = document.getElementById("subscription__form");
   if (!form) return;
 
-  const steps = form.querySelectorAll(".wizard__step");
+  const steps = form.querySelectorAll("[data-wizard-step]");
   const totalSteps = steps.length;
   let currentStep = 1;
 
